@@ -1,0 +1,46 @@
+<modification>
+	<id>Enter Discounts And Specials as Percentages</id>
+	<version>1.0.0</version>
+	<vqmver>2.1.6</vqmver>
+	<author>qphoria@gmail.com</author>
+	
+	<file name="admin/model/catalog/product.php">
+	
+		<operation error="skip"><!-- v14x Product Discount -->	
+			<search position="after"><![CDATA[
+			foreach ($data['product_discount'] as $value
+			]]></search>
+			<add><![CDATA[
+			if (strpos($value['price'], '%') !== false) { $value['price'] = $data['price'] - ($data['price'] * (str_replace('%', '', $value['price']) / 100)); }
+			]]></add>
+		</operation>
+		
+		<operation error="skip"><!-- v14x Product Special -->	
+			<search position="after"><![CDATA[
+			foreach ($data['product_special'] as $value
+			]]></search>
+			<add><![CDATA[
+			if (strpos($value['price'], '%') !== false) { $value['price'] = $data['price'] - ($data['price'] * (str_replace('%', '', $value['price']) / 100)); }
+			]]></add>
+		</operation>
+		
+		<operation error="skip"><!-- v15x Product Discount -->	
+			<search position="after"><![CDATA[
+			foreach ($data['product_discount'] as $product_discount
+			]]></search>
+			<add><![CDATA[
+			if (strpos($product_discount['price'], '%') !== false) { $product_discount['price'] = $data['price'] - ($data['price'] * (str_replace('%', '', $product_discount['price']) / 100)); }
+			]]></add>
+		</operation>
+				
+		<operation error="skip"><!-- v15x Product Special -->	
+			<search position="after"><![CDATA[
+			foreach ($data['product_special'] as $product_special
+			]]></search>
+			<add><![CDATA[
+			if (strpos($product_special['price'], '%') !== false) { $product_special['price'] = $data['price'] - ($data['price'] * (str_replace('%', '', $product_special['price']) / 100)); }
+			]]></add>
+		</operation>
+		
+	</file>
+</modification>

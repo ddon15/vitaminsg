@@ -1,0 +1,536 @@
+a:8:{i:0;a:7:{s:14:"information_id";s:2:"14";s:6:"bottom";s:1:"1";s:10:"sort_order";s:3:"100";s:6:"status";s:1:"1";s:11:"language_id";s:1:"1";s:5:"title";s:10:"Campaign 1";s:11:"description";s:203:"&lt;div style=&quot;width:100%;height:100%;&quot;&gt;&lt;iframe frameborder=&quot;0&quot; height=&quot;100%&quot; src=&quot;/blog/campaign-1/&quot; width=&quot;100%&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
+";}i:1;a:7:{s:14:"information_id";s:1:"6";s:6:"bottom";s:1:"1";s:10:"sort_order";s:1:"2";s:6:"status";s:1:"1";s:11:"language_id";s:1:"1";s:5:"title";s:20:"Delivery Information";s:11:"description";s:1290:"&lt;p&gt;Delivery Information&lt;/p&gt;
+
+&lt;ol&gt;
+	&lt;li&gt;We only deliver to one delivery address per order. Any redirection of address will be subjected to an additional re-routing delivery fee of S$6.00 for Singapore orders. For overseas orders, our Customer Service team will advise you on the shipping charge (depending on the quantity and weight of the Product). We are not responsible for delivery to an incorrect or non-existent delivery address provided by you in the order.&lt;/li&gt;
+	&lt;li&gt;For Singapore orders less than S$250, we normally will ship via SingPost smartpac .Delivery of such packages will be subjected to standard SingPost terms &amp;amp; conditions.&lt;/li&gt;
+	&lt;li&gt;Other Singapore orders (greater than S$250 or bulky/ over weight items) will be shipped via courier. if you are not available during point of delivery, we will leave a notice slip indicating instructions to call / email for re-delivery arrangements. If delivery of goods to you is still unsuccessful within 7 days from the date of the 1st delivery, a re-delivery fee of S$6.00 will be charged. The best way to ensure a successful delivery is to provide us with the address that you will be at during our delivery time.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+";}i:2;a:7:{s:14:"information_id";s:1:"7";s:6:"bottom";s:1:"0";s:10:"sort_order";s:1:"5";s:6:"status";s:1:"1";s:11:"language_id";s:1:"1";s:5:"title";s:3:"FAQ";s:11:"description";s:20975:"&lt;h2&gt;General Enquiries&lt;/h2&gt;
+
+&lt;p&gt;&lt;span style=&quot;font-size:14px&quot;&gt;&lt;span style=&quot;color:#FF0000&quot;&gt;&lt;strong&gt;Do I have to register for an account to place an order?&lt;/strong&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;We invite you to browse our site or make purchases without registering for an account. &lt;span style=&quot;color:#0000FF&quot;&gt;To make purchases, you are required to enter your &lt;strong&gt;Billing Details, Delivery Details, Delivery Method, Payment Method&lt;/strong&gt; to facilitate our processing and delivery purposes&lt;/span&gt;&lt;span style=&quot;color:#00A651&quot;&gt;.&lt;/span&gt; However, by joining as a &lt;a href=&quot;index.php?route=premium_member/register&quot;&gt;&lt;span style=&quot;color:#0000FF&quot;&gt;Vitamin.sg member&lt;/span&gt;&lt;/a&gt; &amp;ndash; at a limited-time offer of $35, you can enjoy faster checkout by saving your address information, access to your order history, track order status, save 10% off all purchases, and participate in our Loyalty Program* where you can earn Vit$ to offset your purchase / membership renewal or redeem a host of attractive items.&lt;/p&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;&lt;strong&gt;How do I register for an account?&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol style=&quot;margin-left:40px&quot;&gt;
+	&lt;li&gt;Add products to cart, click &lt;strong&gt;&amp;quot;Checkout&amp;quot;&lt;/strong&gt;&lt;/li&gt;
+	&lt;li&gt;Select &lt;strong&gt;&amp;quot;Guest Checkout&amp;quot;&lt;/strong&gt;&lt;/li&gt;
+	&lt;li&gt;Enter your Billing Details, Delivery Details, Delivery Method, Payment Method and click &lt;strong&gt;&amp;quot;Confirm Order&amp;quot;&lt;/strong&gt;&lt;/li&gt;
+	&lt;li&gt;To check order status, please contact our Customer Service Team at &lt;a href=&quot;mailto:info@vitamin.sg&quot;&gt;&lt;span style=&quot;color:#0000FF&quot;&gt;info@vitamin.sg&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;color:#0000FF&quot;&gt; &lt;/span&gt;| &lt;strong&gt;+65 6255 7533&lt;/strong&gt;, quoting your &lt;strong&gt;Order Confirmation No / Email Address&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;span style=&quot;color:#FF0000&quot;&gt;&lt;span style=&quot;font-size:14px&quot;&gt;&lt;strong&gt;How do I sign up for Vitamin.sg Membership?&lt;/strong&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;ol style=&quot;margin-left:40px&quot;&gt;
+	&lt;li&gt;Click on &lt;strong&gt;&amp;quot;Join As Member&amp;quot;&lt;/strong&gt; on the top left menu of the website&lt;/li&gt;
+	&lt;li&gt;Enter Your Personal Details, You Address, Your Password and Notifications options, and click &lt;strong&gt;&amp;quot;Continue&amp;quot;&lt;/strong&gt;&lt;/li&gt;
+	&lt;li&gt;You will be directed to PayPal page to make payment for the membership fee. Upon successful payment, you will be redirected back to &lt;a href=&quot;/&quot;&gt;&lt;span style=&quot;color:#0000FF&quot;&gt;www.vitamin.sg&lt;/span&gt;&lt;/a&gt;, receive a Confirmation Order on the membership purchase via the email account registered with us&lt;/li&gt;
+	&lt;li&gt;You can login to purchase products at member&amp;#39;s rate instantly, view order history, track order status, and enjoy other &lt;a href=&quot;index.php?route=premium_member/register&quot;&gt;&lt;span style=&quot;color:#0000FF&quot;&gt;members-only benefits&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;color:#0000FF&quot;&gt;.&lt;/span&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;span style=&quot;color:#0000FF&quot;&gt;Kindly note that Membership Fee is NOT Refundable.&lt;/span&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;span style=&quot;color:#FF0000&quot;&gt;&lt;span style=&quot;font-size:14px&quot;&gt;&lt;strong&gt;Are there any alternative ways to place an order?&lt;/strong&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;ol style=&quot;margin-left:40px&quot;&gt;
+	&lt;li&gt;
+	&lt;p&gt;Orders are placed via our website. If you are facing any issue while placing an order, you can contact our friendly Customer Service team at +65 6255 7533.&lt;/p&gt;
+	&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;span style=&quot;color:#FF0000&quot;&gt;&lt;span style=&quot;font-size:14px&quot;&gt;&lt;strong&gt;How can I be notified of Vitamin.sg&amp;#39;s latest promotions and special offers?&lt;/strong&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Sign up for Vitamin.sg eNewsletter at absolutely &lt;strong&gt;NO COST&lt;/strong&gt; to get first-hand updates from us! For customers and members, you will be receiving our updates via email and SMS. Oh yes, in case you are concerned about privacy intrusion, our SMS marketing efforts are done in compliance with Singapore&amp;#39;s &lt;strong&gt;Do-Not-Call &lt;/strong&gt;(DNC) list regulations.&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;&lt;span style=&quot;color:#FF0000&quot;&gt;&lt;span style=&quot;font-size:14px&quot;&gt;&lt;strong&gt;Does Vitamin.sg deliver to my location?&lt;/strong&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;We currently deliver to Singapore, Indonesia, Malaysia, Philippines, Thailand (Exclusions apply to restricted zones within the countries). For countries that are not listed on the delivery list, please contact us at &lt;a href=&quot;mailto:info@vitamin.sg&quot;&gt;&lt;span style=&quot;color:#0000FF&quot;&gt;info@vitamin.sg&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol style=&quot;margin-left:40px&quot;&gt;
+	&lt;li&gt;
+	&lt;p&gt;&lt;strong&gt;Can I change my address, or cancel my order, after the order is confirmed?&lt;/strong&gt;&lt;/p&gt;
+
+	&lt;p&gt;If there&amp;#39;s a need to amend your address or you have changed your mind about the order, please contact our Customer Service Team &lt;strong&gt;immediately&lt;/strong&gt; at &lt;a href=&quot;mailto:info@vitamin.sg&quot;&gt;&lt;span style=&quot;color:#0000FF&quot;&gt;info@vitamin.sg&lt;/span&gt;&lt;/a&gt; | +65 6255 7533 from Monday to Friday, 9am to 5pm.&lt;/p&gt;
+
+	&lt;p&gt;Once order is packed and dispatched for delivery, it cannot be cancelled. For membership sales order, cancellation is strictly not allowed.&lt;/p&gt;
+	&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;&amp;nbsp;&lt;/h2&gt;
+
+&lt;h2&gt;Shipping &amp;amp; Delivery&lt;/h2&gt;
+
+&lt;p&gt;For more information, please check out our &lt;span style=&quot;color:#0000FF&quot;&gt;&lt;u&gt;Delivery Information&lt;/u&gt;&lt;/span&gt; and&amp;nbsp;&lt;a href=&quot;terms-and-conditions&quot;&gt;&lt;span style=&quot;color:#0000FF&quot;&gt;Terms &amp;amp; Conditions&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;color:#0000FF&quot;&gt;.&lt;/span&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+	&lt;li&gt;
+	&lt;p&gt;&lt;strong&gt;How do I track my order?&lt;/strong&gt;&lt;/p&gt;
+
+	&lt;ol&gt;
+		&lt;li&gt;For members, you can login to &lt;a href=&quot;index.php?route=account/account&quot;&gt;&lt;span style=&quot;color:#0000FF&quot;&gt;My Account&lt;/span&gt;&lt;/a&gt; to view your order status.&lt;/li&gt;
+		&lt;li&gt;For non-members, you can contact our Customer Service Team at &lt;a href=&quot;mailto:info@vitamin.sg&quot;&gt;&lt;span style=&quot;color:#0000FF&quot;&gt;info@vitamin.sg&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;color:#0000FF&quot;&gt; &lt;/span&gt;| +65 6255 7533, quoting your &lt;strong&gt;Order Confirmation No / Email Address&lt;/strong&gt; to enquire on your order status.&lt;/li&gt;
+	&lt;/ol&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+	&lt;p&gt;&lt;strong&gt;What are my options for delivery?&lt;/strong&gt;&lt;/p&gt;
+
+	&lt;p&gt;For Singapore orders, you can either opt for &lt;strong&gt;&lt;em&gt;Delivery Method - Delivery&lt;/em&gt;&lt;/strong&gt; or &lt;strong&gt;&lt;em&gt;Delivery Method - Pickup from Store&lt;/em&gt;&lt;/strong&gt; at 59 Jalan Pemimpin, #02-02 L&amp;amp;Y Building, Singapore 577218&lt;/p&gt;
+
+	&lt;p&gt;For overseas orders, you can only opt for &lt;strong&gt;&lt;em&gt;Delivery Method - Delivery&lt;/em&gt;&lt;/strong&gt;.&lt;/p&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+	&lt;p&gt;&lt;strong&gt;How long does it take to receive my order?&lt;/strong&gt;&lt;/p&gt;
+	&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p style=&quot;margin-left:40px&quot;&gt;For Singapore orders, we always aim to deliver within three (3) working days (for available Product) and within seven (7) working days (for out-of-stock Product) from the date of order confirmation.&amp;nbsp;&lt;/p&gt;
+
+&lt;table border=&quot;2&quot; cellpadding=&quot;1&quot; cellspacing=&quot;1&quot; class=&quot;bordered-table&quot; style=&quot;width:700px&quot;&gt;
+	&lt;tbody&gt;
+		&lt;tr&gt;
+			&lt;td&gt;&lt;strong&gt;PAYMENT MODE&lt;/strong&gt;&lt;/td&gt;
+			&lt;td&gt;&lt;strong&gt;DELIVERY CHOICE&lt;/strong&gt;&lt;/td&gt;
+			&lt;td&gt;&lt;strong&gt;DELIVERY / COLLECTION INSTRUCTIONS&lt;/strong&gt;&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;th rowspan=&quot;2&quot; style=&quot;text-align:center&quot;&gt;PayPal Express (credit cards)&lt;/th&gt;
+			&lt;td&gt;Delivery&lt;/td&gt;
+			&lt;td&gt;
+			&lt;p&gt;Delivery is estimated to reach you within three (3) working days (for available products) and within seven (7) working days (for out-of-stock products).&lt;/p&gt;
+			&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;Pickup from Store&lt;/td&gt;
+			&lt;td&gt;You will be contacted via SMS to pick up your order from 59 Jalan Pemimpin, #02-02 L&amp;amp;Y Building, Singapore 577218&amp;nbsp;&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p style=&quot;margin-left:40px&quot;&gt;For overseas orders, delivery time will be advised accordingly, depending on your country of destination. Delivery will be via Singapore registered post, and you will be provided with a package tracking number.&lt;/p&gt;
+
+&lt;p style=&quot;margin-left:40px&quot;&gt;We always aim to deliver your order as close as possible within the estimated delivery dates, but we cannot guarantee any firm delivery dates or timing.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&amp;nbsp; &amp;nbsp; 4. What if I am not around when the delivery man arrives?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;For Singapore orders less than $250, we normally will ship via SingPost smartpac. Delivery of such packages will be subjetced to standard SingPost terms and conditions.&lt;/p&gt;
+
+&lt;p style=&quot;margin-left:40px&quot;&gt;Singapore orders&amp;nbsp;greater than S$250 or bulky/ over weight items will be shipped via courier. if you are not available during point &amp;nbsp;of delivery, we will leave a notice slip indicating instructions to call / email for re-delivery arrangements. If delivery of goods to you is still unsuccessful within 7 days from the date of the 1st delivery, a re-delivery fee of S$6.00 will be charged. The best way to ensure a successful delivery is to provide us with the address that you will be at during our delivery time.&lt;/p&gt;
+
+&lt;p&gt;For more information, please check out our &lt;a href=&quot;terms-and-conditions&quot; style=&quot;line-height: 1.6;&quot;&gt;&lt;span style=&quot;color:#0000FF&quot;&gt;Terms &amp;amp; Condition&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&amp;nbsp; &amp;nbsp; 5. What&amp;#39;s the minimum order to receive free delivery?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+	&lt;li&gt;For Singapore orders, with $80 &amp;amp; above in a single transaction, qualify for free delivery. Orders below $80 will be charged a flat delivery fee of $6.&lt;/li&gt;
+	&lt;li&gt;For overseas orders, please contact our Customer Service at&lt;span style=&quot;color:#0000FF&quot;&gt; &lt;/span&gt;&lt;a href=&quot;mailto:info@vitamin.sg&quot;&gt;&lt;span style=&quot;color:#0000FF&quot;&gt;info@vitamin.sg&lt;/span&gt;&lt;/a&gt; | +65 6255 7533 for the best rates.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;&amp;nbsp; &amp;nbsp; 6. Does Vitamin.sg deliver worldwide?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;For Singapore: We deliver to all addresses, except for selected restricted zones and P.O. Box addresses. For addresses that we are unable to deliver, we will contact you and arrange for delivery to an alternative delivery address.&lt;/p&gt;
+
+&lt;p&gt;For overseas: We currently deliver to Indonesia, Malaysia, Philippines and Thailand. However, if you don&amp;rsquo;t reside in any of these countries, please contact our Customer Service Team at &lt;a href=&quot;mailto:info@vitamin.sg&quot;&gt;&lt;span style=&quot;color:#0000FF&quot;&gt;info@vitamin.sg&lt;/span&gt;&lt;/a&gt; | +65 6255 7533, and we will try our best to fulfil your order delivery.&lt;/p&gt;
+
+&lt;p&gt;For more information, please check out our &lt;a href=&quot;terms-and-conditions&quot;&gt;&lt;span style=&quot;color:#0000FF&quot;&gt;Terms &amp;amp; Conditions&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Payment Methods&lt;/h2&gt;
+
+&lt;ol&gt;
+	&lt;li&gt;
+	&lt;p&gt;&lt;strong&gt;What are the available payment methods on Vitamin.sg?&lt;/strong&gt;&lt;/p&gt;
+
+	&lt;p&gt;Payment is a breeze with&amp;nbsp;&lt;span style=&quot;font-size:13px&quot;&gt;PayPal &amp;ndash; It&amp;#39;s Fast, Easy and Secure. No need to create any account, simply pay using any Debit/Credit card (see below) supported by PayPal.&lt;/span&gt;&lt;/p&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+	&lt;p&gt;&lt;strong&gt;Is it safe to make payment via Vitamin.sg?&lt;/strong&gt;&lt;/p&gt;
+
+	&lt;p&gt;We do not store your information on our site, because we use a PayPal as our payment processor. For more information about Paypal&amp;#39;s security, please click &lt;a href=&quot;https://www.paypal.com/sg/webapps/mpp/paypal-safety-and-security&quot;&gt;&lt;span style=&quot;color:#0000FF&quot;&gt;here&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+	&lt;p&gt;&lt;strong&gt;How do I know if my payment (via PayPal) went through successfully?&lt;/strong&gt;&lt;/p&gt;
+
+	&lt;p&gt;Upon successful payment, you will receive a confirmation email from PayPal.&lt;/p&gt;
+	&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;Returns and Refunds (for Singapore orders only)&lt;/h2&gt;
+
+&lt;ol&gt;
+	&lt;li&gt;
+	&lt;p&gt;&lt;strong&gt;Can I return and get a refund for my Vitamin.sg purchase?&lt;/strong&gt;&lt;/p&gt;
+
+	&lt;p&gt;We want to make sure you are happy with your purchases. If you are unsatisfied in any way, return your purchase within 7 days of the delivery date, together with the original invoice, and we will refund the money received from you using the same method originally used by you to pay for the purchase.&lt;/p&gt;
+
+	&lt;p&gt;Where to send your returned purchases:&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;strong&gt;Product Returns&lt;/strong&gt;&lt;br /&gt;
+	59 Jalan Pemimpin&lt;br /&gt;
+	#02-02 L&amp;amp;Y Building&lt;br /&gt;
+	Singapore 577218&lt;/p&gt;
+
+	&lt;p&gt;Exclusions for product returns and refunds apply to:&lt;/p&gt;
+
+	&lt;ul&gt;
+		&lt;li&gt;Products bought at sales promotional rates&lt;/li&gt;
+		&lt;li&gt;Products purchased from the Clearance section&lt;/li&gt;
+		&lt;li&gt;Vitamin.sg Membership Fee&lt;/li&gt;
+		&lt;li&gt;Overseas orders&lt;br /&gt;
+		&amp;nbsp;&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+	&lt;p&gt;&lt;strong&gt;Do I have to pay for delivery when I return my purchase?&lt;/strong&gt;&lt;/p&gt;
+
+	&lt;p&gt;If you do not wish to bear any additional cost, you can drop by our office to return your purchase. However, if you opt for return service by our courier, all applicable return delivery fees will be borne by you.&lt;/p&gt;
+
+	&lt;p&gt;Where to send your returned purchases:&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;strong&gt;Product Returns&lt;/strong&gt;&lt;br /&gt;
+	59 Jalan Pemimpin&lt;br /&gt;
+	#02-02 L&amp;amp;Y Building&lt;br /&gt;
+	Singapore 577218&lt;/p&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+	&lt;p&gt;&lt;strong&gt;How long does it take to receive my refund?&lt;/strong&gt;&lt;/p&gt;
+
+	&lt;p&gt;We will refund the money received from you using the same method originally used by you to pay for the purchase within fourteen (14) working days.&lt;/p&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+	&lt;p&gt;&lt;strong&gt;I have received a wrong / damaged / expired product for my purchase, what should I do? Do I have to pay for the product exchange?&lt;/strong&gt;&lt;/p&gt;
+
+	&lt;p&gt;We always take extreme care to deliver your purchase. However, if you inform us that the product has been delivered to you in a damaged condition, or wrong / expired product has been delivered, we will need your prompt action to provide certain information regarding the product to &lt;a href=&quot;mailto:info@vitamin.sg&quot;&gt;&lt;span style=&quot;color:#0000FF&quot;&gt;info@vitamin.sg&lt;/span&gt;&lt;/a&gt; within two (2) working days from the delivery date, including:&lt;/p&gt;
+
+	&lt;ol&gt;
+		&lt;li&gt;Photo of the damaged / wrong / expired product&lt;/li&gt;
+		&lt;li&gt;Name and order number&lt;br /&gt;
+		&amp;nbsp;&lt;/li&gt;
+	&lt;/ol&gt;
+
+	&lt;p&gt;&lt;span style=&quot;font-size:13px&quot;&gt;If the product was proven to be damaged / wrong / expired due to negligence on our end, we will collect the product from you, and do a one-for-one exchange, with the product delivered to your location. There will strictly be no refund, unless the product is not available or has been discontinued.&lt;/span&gt;&lt;/p&gt;
+	&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;Vouchers and Discounts&lt;/h2&gt;
+
+&lt;ol&gt;
+	&lt;li&gt;
+	&lt;p&gt;&lt;strong&gt;I have a coupon code from Vitamin.sg. How do I use it?&lt;/strong&gt;&lt;/p&gt;
+
+	&lt;p&gt;Having a coupon code means you are going to save on your purchase! To use the coupon code, simply follow the instructions below:&lt;/p&gt;
+
+	&lt;ol&gt;
+		&lt;li&gt;Add products into your shopping cart, click on View Cart&lt;/li&gt;
+		&lt;li&gt;Under the &amp;ldquo;Do you have a coupon code&amp;rdquo; section, click &amp;ldquo;Yes&amp;rdquo;&lt;/li&gt;
+		&lt;li&gt;Enter the coupon code and click Apply Coupon to enjoy savings on your purchase&lt;br /&gt;
+		&amp;nbsp;&lt;/li&gt;
+	&lt;/ol&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+	&lt;p&gt;&lt;strong&gt;I have entered the coupon code, but there isn&amp;rsquo;t any discount reflected on the total amount. What&amp;#39;s wrong?&lt;/strong&gt;&lt;/p&gt;
+
+	&lt;p&gt;The coupon code may be expired, has exceeded the usage limit, or cannot be applied on non-sale brands. You can view the list of non-sale brands &lt;a href=&quot;non-sale-list&quot;&gt;&lt;span style=&quot;color:#0000FF&quot;&gt;here&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
+	&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;Membership&lt;/h2&gt;
+
+&lt;ol&gt;
+	&lt;li&gt;
+	&lt;p&gt;&lt;strong&gt;Is Vitamin.sg Membership free?&lt;/strong&gt;&lt;/p&gt;
+
+	&lt;p&gt;We are offering a promotional rate of $35 (U.P. $70) for a 2-year Vitamin.sg Membership.&lt;/p&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+	&lt;p&gt;&lt;strong&gt;How do I identify myself as a Vitamin.sg member?&lt;/strong&gt;&lt;/p&gt;
+
+	&lt;p&gt;You can quote the email address registered with Vitamin.sg for identification purpose.&lt;/p&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+	&lt;p&gt;&lt;strong&gt;What are the benefits of being a Vitamin.sg member?&lt;/strong&gt;&lt;/p&gt;
+
+	&lt;p&gt;You can enjoy 10% storewide instantly, and up to 50% off selected products. Exclusions apply.&lt;/p&gt;
+
+	&lt;p&gt;In addition, you get to track your order status, reorder conveniently, and view purchase history.&lt;/p&gt;
+
+	&lt;p&gt;For more information, please check out our &lt;a href=&quot;index.php?route=premium_member/register&quot;&gt;&lt;span style=&quot;color:#0000FF&quot;&gt;Membership&lt;/span&gt;&lt;/a&gt; page.&lt;/p&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+	&lt;p&gt;&lt;strong&gt;How do I update my particulars?&lt;/strong&gt;&lt;/p&gt;
+
+	&lt;ol&gt;
+		&lt;li&gt;Click on &lt;strong&gt;&amp;quot;My Account&amp;quot;&lt;/strong&gt; on the top right menu of the website&lt;/li&gt;
+		&lt;li&gt;Enter your &lt;strong&gt;Email Address and Password&lt;/strong&gt; at the &lt;strong&gt;&amp;quot;Returning Customer&amp;quot;&lt;/strong&gt; section, and click &lt;strong&gt;&amp;quot;Login&amp;quot;&lt;/strong&gt;&lt;/li&gt;
+		&lt;li&gt;Click on &lt;strong&gt;&amp;quot;Edit your account information&amp;quot;&lt;/strong&gt; to edit your particulars&lt;br /&gt;
+		&amp;nbsp;&lt;/li&gt;
+	&lt;/ol&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+	&lt;p&gt;&lt;strong&gt;I have forgotten my Vitamin.sg&amp;#39;s membership login credentials. What should I do?&lt;/strong&gt;&lt;/p&gt;
+
+	&lt;p&gt;If you have forgotten your Password, please click on &lt;strong&gt;&amp;quot;Forgot Your Password?&amp;quot;&lt;/strong&gt;, and enter the email address that was registered with Vitamin.sg. An email will be sent to your account, please follow the instructions to reset your password.&lt;/p&gt;
+
+	&lt;p&gt;If you have forgotten both your Email Address and Password, please contact our Customer Service Team at &lt;a href=&quot;mailto:info@vitamin.sg&quot;&gt;&lt;span style=&quot;color:#0000FF&quot;&gt;info@vitamin.sg&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;color:#0000FF&quot;&gt; &lt;/span&gt;| +65 6255 7533 for assistance.&lt;/p&gt;
+	&lt;/li&gt;
+&lt;/ol&gt;
+";}i:3;a:7:{s:14:"information_id";s:1:"4";s:6:"bottom";s:1:"1";s:10:"sort_order";s:1:"1";s:6:"status";s:1:"1";s:11:"language_id";s:1:"1";s:5:"title";s:7:"Know Us";s:11:"description";s:5475:"&lt;div class=&quot;row&quot;&gt;
+&lt;div class=&quot;eight columns&quot;&gt;
+&lt;h2&gt;About Us&lt;/h2&gt;
+&lt;p&gt;
+	&lt;img alt=&quot;Dr. Cysewski, President Of Cyanotech with TC Yeap, MD of Sainhall Nutrihealth&quot; src=&quot;image/data/about_us/dr-cysewski-and-tc-yeap.jpg&quot; style=&quot;width: 280px; float: left; height: 250px; margin-right: 12px; &quot; title=&quot;Dr. Cysewski, President Of Cyanotech with TC Yeap, MD of Sainhall Nutrihealth&quot;&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;strong&gt;Vitamin.sg&lt;/strong&gt; is an E-Commerce portal created and supported by Sainhall Nutrihealth. Sainhall Nutrihealth, founded in 1990, is a leading distributor for health and nutritional products in South East Asia. We are market leaders in Spirulina, Natural Astaxanthin, and Healthy Fruit Snacks in Singapore and South East Asia.&lt;/p&gt;
+&lt;p&gt;
+	We distribute premium brands&amp;nbsp;health and nutritional products from U.S.A. We represent Cyanotech Inc. of U.S.A., supplying health supplements, spirulina and natural astaxanthin to the region. And we are also exclusive distributor of McDee brand of Healthy Fruit Snack from McDee Natural Products (NZ) Ltd of New Zealand.&lt;/p&gt;
+&lt;p&gt;
+	Sainhall Nutrihealth, in its capacity as major importer and exporter of health supplements, supplies a multitude of premium brands health and nutritional products to the ASEAN market. Sainhall Nutrihealth has now a global base of customers.&lt;/p&gt;
+&lt;p&gt;
+	In fact, through our NatuRose Brand, our customers can be found in over 40 countries all round the world.&lt;/p&gt;
+&lt;p&gt;
+	&lt;img alt=&quot;Sainhall Nutrihealth Customers&quot; src=&quot;image/data/about_us/naturose-customers.jpg&quot; style=&quot;width: 660px; height: 660px;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;img alt=&quot;Vitamin.sg Team&quot; src=&quot;image/data/about_us/vitaminsg-team.jpg&quot; style=&quot;margin-right: 20px&quot;&gt;&lt;img alt=&quot;Vitamin.sg Van&quot; src=&quot;image/data/about_us/vitaminsg-van.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;
+	Vitamin.sg and Sainhall Nutrihealth philosophy is to meet customers' demand with quality products, in a satisfactory and timely manner, and to offer our services to both our suppliers and customers based on mutually beneficial and long term relationship.&lt;/p&gt;
+&lt;p&gt;
+	Our online presence is supported by Sainhall Nutrihealth team of our experienced and capable management and staff, who are always looking forward to serve our customers. Customers are welcome to visit our office and outlet centrally and conveniently located in Singapore.&lt;/p&gt;
+&lt;p&gt;
+	Sainhall Nutrihealth is a major player in ASEAN for health and nutritional products, and Vitamin.sg aims to be top E-retailer in supplying vitamins and minerals, health supplements, and natural products in Singapore and the ASEAN countries.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;four columns&quot;&gt;
+	&lt;h2&gt;Contact Us&lt;/h2&gt;
+	&lt;div class=&quot;contact-info&quot;&gt;
+		&lt;div class=&quot;content&quot;&gt;
+			&lt;div class=&quot;twelve columns&quot;&gt;  
+				&lt;div class=&quot;mc&quot;&gt;    
+					&lt;span class=&quot;mm_icon&quot;&gt;&lt;img src=&quot;catalog/view/theme/oxy/image/icons_contact/icon-contact-mphone-38.png&quot;&gt;&lt;/span&gt;     
+					&lt;span class=&quot;mm&quot;&gt;+65 6255 7533&lt;/span&gt;
+				&lt;/div&gt;
+				&lt;div class=&quot;mc&quot;&gt;    
+					&lt;span class=&quot;mm_icon&quot;&gt;&lt;img src=&quot;catalog/view/theme/oxy/image/icons_contact/icon-contact-email-38.png&quot;&gt;&lt;/span&gt;     
+					&lt;span class=&quot;mm&quot;&gt;info@vitamin.sg&lt;/span&gt;
+				&lt;/div&gt;
+				&lt;div class=&quot;mc&quot;&gt;        
+					&lt;span class=&quot;mm_icon&quot;&gt;&lt;img src=&quot;catalog/view/theme/oxy/image/icons_contact/icon-contact-location-38.png&quot;&gt;&lt;/span&gt;         
+					&lt;span class=&quot;mm&quot;&gt;59 Jalan Pemimpin #02-02 L&amp;amp;Y Building Singapore 577218&lt;/span&gt;
+				&lt;/div&gt;
+				&lt;div class=&quot;mc&quot;&gt;            
+					&lt;span class=&quot;mm_icon&quot;&gt;&lt;img src=&quot;catalog/view/theme/oxy/image/icons_contact/icon-contact-hours-38.png&quot;&gt;&lt;/span&gt;         
+					&lt;span class=&quot;mm&quot;&gt;&lt;pre&gt;Monday to Friday&lt;br&gt;9:00am to 5:00pm&lt;/pre&gt;&lt;/span&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+
+	&lt;aside id=&quot;column-left&quot; class=&quot;hide-for-small&quot;&gt;
+	&lt;div class=&quot;box&quot;&gt;
+		&lt;div class=&quot;box-heading&quot; style=&quot;margin:0;&quot;&gt;Talk to Us&lt;/div&gt;
+		&lt;div class=&quot;box-content box-account&quot;&gt;
+			&lt;ul&gt;
+				&lt;li&gt;
+					&lt;a href=&quot;index.php?route=information/partnership&quot; title=&quot;Partnership Enquiry&quot;&gt;Partnership Enquiry&lt;/a&gt;
+				&lt;/li&gt;
+				&lt;li&gt;
+					&lt;a href=&quot;index.php?route=information/corporate_sales&quot; title=&quot;Corporate Sales Enquiry&quot;&gt;Corporate Sales Enquiry&lt;/a&gt;
+				&lt;/li&gt;
+				&lt;li&gt;
+					&lt;a href=&quot;index.php?route=information/suggest_product&quot; title=&quot;Suggest a Product&quot;&gt;Suggest a Product&lt;/a&gt;
+				&lt;/li&gt;
+				&lt;li&gt;
+					&lt;a href=&quot;index.php?route=information/contact&quot; title=&quot;Contact Us&quot;&gt;Contact Us&lt;/a&gt;
+				&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;/aside&gt;
+&lt;/div&gt;
+&lt;/div&gt;";}i:4;a:7:{s:14:"information_id";s:2:"10";s:6:"bottom";s:1:"0";s:10:"sort_order";s:1:"0";s:6:"status";s:1:"1";s:11:"language_id";s:1:"1";s:5:"title";s:13:"Non-Sale List";s:11:"description";s:623:"&lt;p&gt;We are pleased to bring you a wide range of top brands at the best value. &amp;nbsp;However, due to requests from our brand partners, the following brands listed below are excluded from discounts and coupon codes cannot be applied (on these brands).&lt;/p&gt;
+
+&lt;ol&gt;
+	&lt;li&gt;Abbott&lt;/li&gt;
+	&lt;li&gt;Black Gold&lt;/li&gt;
+	&lt;li&gt;Berocca&lt;/li&gt;
+	&lt;li&gt;Centrum&lt;/li&gt;
+	&lt;li&gt;Dettol&lt;/li&gt;
+	&lt;li&gt;Durex&lt;/li&gt;
+	&lt;li&gt;NZHealth Naturally&lt;/li&gt;
+	&lt;li&gt;OLIVA forte&lt;/li&gt;
+	&lt;li&gt;Redoxon&lt;/li&gt;
+	&lt;li&gt;Strepsils&lt;/li&gt;
+&lt;/ol&gt;
+";}i:5;a:7:{s:14:"information_id";s:2:"11";s:6:"bottom";s:1:"0";s:10:"sort_order";s:1:"0";s:6:"status";s:1:"1";s:11:"language_id";s:1:"1";s:5:"title";s:7:"Notices";s:11:"description";s:267:"&lt;p&gt;&lt;strong&gt;Cessation of Cash-On-Delivery (COD) Payment Mode&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;With effect from 6 August 2014, COD payment mode will no longer be available. Customers can still enjoy great convenience with payment via PayPal.&lt;/p&gt;
+";}i:6;a:7:{s:14:"information_id";s:1:"3";s:6:"bottom";s:1:"1";s:10:"sort_order";s:1:"3";s:6:"status";s:1:"1";s:11:"language_id";s:1:"1";s:5:"title";s:14:"Privacy Policy";s:11:"description";s:4994:"&lt;p&gt;Sainhall Nutrihealth Pte Ltd (&amp;ldquo;Sainhall Nutrihealth&amp;rdquo;) respects the privacy of every individual who visits this Website (&amp;quot;Vitamin.sg&amp;rdquo;). This Privacy Policy outlines the information Sainhall Nutrihealth may collect and how we may use that information.&lt;/p&gt;
+
+&lt;h2&gt;Acceptance&lt;/h2&gt;
+
+&lt;p&gt;Vitamin.sg is provided to you by Sainhall Nutrihealth on the following terms and conditions (&amp;quot;Terms and Conditions&amp;quot;). By accessing any page on Vitamin.sg, you agree to be bound by these Terms and Conditions. These Terms and Conditions may be updated by Sainhall Nutrihealth from time to time without prior notice. You should check the Terms and Conditions for updates each time you access Vitamin.sg.&lt;/p&gt;
+
+&lt;h2&gt;Scope&lt;/h2&gt;
+
+&lt;p&gt;This Statement covers all aspects of Vitamin.sg on which our privacy statement hyperlink appears.&lt;/p&gt;
+
+&lt;h2&gt;Collection of Information&lt;/h2&gt;
+
+&lt;p&gt;There are two types of Information that Sainhall Nutrihealth collects online: Website Visitorship Information and Personal Identifiable Information voluntarily provided by Vitamin.sg visitors.&lt;/p&gt;
+
+&lt;h2&gt;Website Visitorship Information&lt;/h2&gt;
+
+&lt;p&gt;Sainhall Nutrihealth gathers Information on Website activity for a variety of purposes, such as track marketing and promotional efforts, analyse Website usage, improve Website features, design and content. These efforts are necessary to help Sainhall Nutrihealth improve your online shopping experience on Vitamin.sg.&lt;/p&gt;
+
+&lt;p&gt;Website Visitorship Information is:&lt;/p&gt;
+
+&lt;ul style=&quot;list-style-type:disc&quot;&gt;
+	&lt;li&gt;Collected on anonymous aggregate basis, which means no Personal Identifiable Information is associated with this data, such as data on the number of visitors, the pages they visit, the duration of their stay, etc;&lt;/li&gt;
+	&lt;li&gt;Gathered through the use of web server logs and cookies&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Personal Identifiable Information&lt;/h2&gt;
+
+&lt;p&gt;Personal Identifiable Information is collected on certain pages of this Website and is voluntarily provided by Vitamin.sg visitors. For example, if you create an account online to make a product / membership purchase, register as a eNewsletter subscriber, contact Vitamin.sg to ask a question, post a review, or participate in voluntary online surveys / contests, you will find that those contact forms ask for certain types of Personal Identifiable Information to assist us in complying with your requests.&lt;/p&gt;
+
+&lt;h2&gt;How We Use Information&lt;/h2&gt;
+
+&lt;p&gt;We use the Information you provide about yourself to perform the service you have requested and may use that Information to contact you regarding Sainhall Nutrihealth&amp;rsquo;s products or promotions as well as other products and services, which may be requested by or otherwise be of interest to you (including those we may offer jointly with other companies). At any time, however, you may opt out of such future contact by unsubscribing from our database by following the unsubscribe instructions included in each promotional email / short messaging service or by changing your preferences at My Account -&amp;gt; Notifications section on this Website.&lt;/p&gt;
+
+&lt;p&gt;We do not sell, share or trade this information collected online with third parties.&lt;/p&gt;
+
+&lt;p&gt;Vitamin.sg may contain hyperlinks to and from other Internet websites. These websites may have different privacy practices from the ones described here. Since this Statement applies solely to this Website, please read the privacy statements of the other websites you visit.&lt;/p&gt;
+
+&lt;h2&gt;Our Commitment to Data Security&lt;/h2&gt;
+
+&lt;p&gt;The security of personal information you may submit in connection with a product / membership purchase, promotion entry, survey response, and/or product review on Vitamin.sg is of the utmost concern to us, and we strive to ensure its security on our systems. However, no data transmission over the Internet can be guaranteed to be completely secure, we cannot guarantee the security of any information you transmit to us, and you transmit such information at your own risk. We will continue to assess our systems to ensure secure protection of your Information.&lt;/p&gt;
+
+&lt;h2&gt;Changes to Privacy Policy&lt;/h2&gt;
+
+&lt;p&gt;Sainhall Nutrihealth reserves the right to amend this Statement at any time. Changes will be effective immediately upon posting on Vitamin.sg&lt;/p&gt;
+
+&lt;h2&gt;Contact Us&lt;/h2&gt;
+
+&lt;p&gt;If you have questions or concerns about this Statement, please contact us at:&lt;/p&gt;
+
+&lt;p&gt;Sainhall Nutrihealth Pte Ltd&lt;br /&gt;
+Marketing Department&lt;br /&gt;
+59 Jalan Pemimpin&lt;br /&gt;
+#02-02 L&amp;amp;Y Building&lt;br /&gt;
+Singapore 577218&lt;br /&gt;
+Tel: +65 6255 7533&lt;br /&gt;
+Fax: +65 6256 2526&lt;/p&gt;
+";}i:7;a:7:{s:14:"information_id";s:1:"5";s:6:"bottom";s:1:"1";s:10:"sort_order";s:1:"4";s:6:"status";s:1:"1";s:11:"language_id";s:1:"1";s:5:"title";s:22:"Terms &amp; Conditions";s:11:"description";s:11460:"&lt;p&gt;Sainhall Nutrihealth Pte Ltd (&amp;ldquo;we, &amp;ldquo;us&amp;rdquo;, &amp;ldquo;our&amp;rdquo;) has established these terms and conditions for each customer (&amp;ldquo;you&amp;rdquo;, &amp;ldquo;your&amp;rdquo;). Please read the following terms and conditions carefully before ordering any products, including membership (collectively referred to as &amp;ldquo;Product&amp;rdquo;) from www.vitamin.sg (hereinafter to as the &amp;ldquo;Website&amp;rdquo;). You should understand that by ordering any of our Product, you agree to be bound by these terms and conditions. If you do not agree to the Terms and Conditions below, do not access this website or any pages thereof.&lt;/p&gt;
+
+&lt;h2&gt;Member Account, Password and Security&lt;/h2&gt;
+
+&lt;ol&gt;
+	&lt;li&gt;When purchasing any Product on the Website, we require you to register an account by providing us with your current, complete, accurate and true personal information as prompted by the applicable online registration forms.&lt;/li&gt;
+	&lt;li&gt;You are entirely responsible for maintaining the confidentiality of your password and account.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;Privacy of Personal Information&lt;/h2&gt;
+
+&lt;p&gt;Please see our &lt;a href=&quot;privacy-policy&quot;&gt;Privacy Policy&lt;/a&gt;, which forms part of these Terms and Conditions.&lt;/p&gt;
+
+&lt;h2&gt;Use of Services&lt;/h2&gt;
+
+&lt;p&gt;Our Website may contain notices, chat areas, news groups, forums and/or other communication facilities. You agree to use these communication facilities only to post, send and receive content that are proper and not offending in any manner.&lt;/p&gt;
+
+&lt;p&gt;We are under no obligation to monitor the communication facilities and assume no responsibility or liability arising from any offensive actions resulting from your utilising of any communication facilities.&lt;/p&gt;
+
+&lt;p&gt;We reserve the right to edit, remove, or refuse any content, and terminate your access to any communication services in our sole discretion.&lt;/p&gt;
+
+&lt;p&gt;We also reserve the right to disclose any information we deem necessary to comply with any applicable law or legal regulation.&lt;/p&gt;
+
+&lt;h2&gt;Intellectual Property&lt;/h2&gt;
+
+&lt;p&gt;Our Website contain information, data, software, videos, text, images and other materials (collectively referred to as &amp;ldquo;Content&amp;rdquo;) that are the property of Sainhall Nutrihealth Pte Ltd. As such, they may not be reproduced, modified, republished, or displayed in any manner or stored in an information retrieval system by any means.&lt;/p&gt;
+
+&lt;h2&gt;Third Party Links&lt;/h2&gt;
+
+&lt;p&gt;The Website may contain hyperlinks to third party websites for your convenience. We are not responsible for the content availability or accuracy on these websites. You agree that any access to and/or use of such linked websites is done at your own risk. We will not be liable or responsible for any part of such transactions or promotions conducted between you and these websites.&lt;/p&gt;
+
+&lt;h2&gt;Indemnity&lt;/h2&gt;
+
+&lt;p&gt;You hereby agree to indemnify Sainhall Nutrihealth Pte Ltd and hold us harmless against all claims, losses, liabilities, damages and expenses (including legal fees and costs) arising directly or indirectly out of your access and connection to and/or use of the Website or violation of these Terms and Conditions.&lt;/p&gt;
+
+&lt;h2&gt;Limitation of Liability&lt;/h2&gt;
+
+&lt;p&gt;While we make reasonable efforts to include accurate and updated information in the Website, we make no warranties to its accuracy. We also assume no liability or responsibility for any damage, loss or expense including without limitation, direct, indirect or consequential damage or loss arising from or in connection with any inability to access the Website.&lt;/p&gt;
+
+&lt;h2&gt;Termination&lt;/h2&gt;
+
+&lt;p&gt;We reserve the right to suspend or terminate your account in our sole discretion, at any time, for any reason whatsoever, including where we have reasons to believe that you have violated any of the Terms and Conditions.&lt;/p&gt;
+
+&lt;h2&gt;Amendment to the Terms and Conditions&lt;/h2&gt;
+
+&lt;p&gt;We reserve the right to amend these Terms and Conditions without prior notice. All amendments to these Terms and Conditions will be posted on the Website. Your continued use of the Website will mean that you have agreed to the acceptance of the new Terms and Conditions.&lt;/p&gt;
+
+&lt;h2&gt;Placing an Order&lt;/h2&gt;
+
+&lt;ol&gt;
+	&lt;li&gt;It is compulsory to register for an account before placing an order.&lt;/li&gt;
+	&lt;li&gt;Your order is subject to acceptance by us and may be refused for any reason, including credit concerns, unusual volumes, or delivery addresses. For confirmed order, we will notify you of our acceptance by sending an order confirmation to the email address provided by you. For unconfirmed order, we will notify you by call or email.&lt;/li&gt;
+	&lt;li&gt;All charges, including any applicable delivery fees are denominated in Singapore currency, unless stated otherwise&lt;/li&gt;
+	&lt;li&gt;We reserve the right to obtain validation of your payment details before delivering the Product to you.&lt;/li&gt;
+	&lt;li&gt;Payment for the order can only be made via PayPal. Your credit card will be charged upon successful payment. In the event of failed payment, due to insufficient funds or technical errors, please contact our Customer Service team at +65 6255 7533 | info@vitamin.sg to process your order.&lt;/li&gt;
+	&lt;li&gt;You are responsible for reading these Terms and Conditions each time before you submit your order. By continuing with the order submission, you have agreed to the acceptance of these Terms and confitions.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;Delivery&lt;/h2&gt;
+
+&lt;ol&gt;
+	&lt;li&gt;For Singapore orders, we always aim to deliver within three (3) working days (for available Product) and within seven (7) working days (for out-of-stock Product) from the date of order confirmation.&lt;/li&gt;
+	&lt;li&gt;For overseas orders, we always aim to deliver within fourteen (14) to twenty-one (21) working days from the date of order confirmation.&lt;/li&gt;
+	&lt;li&gt;We always aim to deliver your order as close as possible within the estimated delivery dates, but we cannot guarantee any firm delivery dates or timing.&lt;/li&gt;
+	&lt;li&gt;We shall aim to let you know if we are unable to meet the estimated delivery date, and we shall not be liable to you for any losses, costs, damages, charges or expenses arising out of late delivery.&lt;/li&gt;
+	&lt;li&gt;We may not be able to deliver to some restricted zones in Singapore. We also do not deliver to P.O. Box addresses. For such cases, we will contact you and arrange for delivery to an alternative delivery address.&lt;/li&gt;
+	&lt;li&gt;We only deliver to one delivery address per order. Any redirection of address will be subjected to an additional re-routing delivery fee of S$6.00 for Singapore orders. For overseas orders, our Customer Service team will advise you on the shipping charge (depending on the quantity and weight of the Product). We are not responsible for delivery to an incorrect or non-existent delivery address provided for by you in the order.&lt;/li&gt;
+	&lt;li&gt;For Singapore orders less than S$250, we normally will ship via SingPost smartpac .Delivery of such packages will be subject to standard SingPost terms &amp;amp; conditions.&lt;/li&gt;
+	&lt;li&gt;Other Singapore orders (greater than S$250 or bulky/ over weight items) will be shipped via courier. if you are not available during point of delivery, we will leave a notice slip indicating instructions to call / email for re-delivery arrangements. If delivery of goods to you is still unsuccessful within 7 days from the date of the 1st delivery, a re-delivery fee of S$6.00 will be charged. The best way to ensure a successful delivery is to provide us with the address that you will be at during our delivery time.&lt;/li&gt;
+	&lt;li&gt;For overseas orders, we will send you a tracking number (via SingPost). For tracking details or re-delivery arrangement, please contact SingPost.&lt;/li&gt;
+	&lt;li&gt;For courier delivery (Singapore), on delivery of the Product, you are required to sign and acknowledge receipt of the delivery. You are required to check the Product immediately after delivery, and contact our Customer Service team at +65 6255 7533 | info@vitamin.sg for any damage cases, our Customer Service team will advise you accordingly on the next course of action.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;Damaged / Wrong / Expired Product&lt;/h2&gt;
+
+&lt;ol&gt;
+	&lt;li&gt;We will try our best to ensure the Product will be delivered undamaged. However, if you inform us that the Product has been delivered to you in a damaged condition, or wrong / expired Product delivered, we will need your prompt action to provide certain information regarding the Product within two (2) working days from the delivery date, including:&lt;br /&gt;
+	a. Photo of the damaged / wrong / expired Product&lt;br /&gt;
+	b. Name and order number&lt;/li&gt;
+	&lt;li&gt;If the Product has proven to be damaged / wrong / expired due to negligence on our end, we will collect the Product from you, do a one-for-one exchange, and deliver the Product to your location. There will strictly be no refund, unless the Product is not available or has been discontinued.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;Order Cancellation&lt;/h2&gt;
+
+&lt;ol&gt;
+	&lt;li&gt;We may cancel an order if the Product is unavailable or has been discontinued. We will notify you and do the necessary refund.&lt;/li&gt;
+	&lt;li&gt;For refund cases, we will return the money received from you using the same method originally used by you to pay for the Product.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;Order Cancellation by Customer&lt;/h2&gt;
+
+&lt;ol&gt;
+	&lt;li&gt;For order cancellation other than product temporary out of stock or dis-continued items, an administration fee of S$15 per order cancellation will be charged to facilitate refund. Please contact our Customer Service team at +65 255 7533 | &lt;a href=&quot;mailto:info@vitamin.sg&quot;&gt;info@vitamin.sg&lt;/a&gt;.&lt;/li&gt;
+	&lt;li&gt;Order cannot be cancelled once it has been dispatched for delivery.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;&lt;span style=&quot;font-size:18px&quot;&gt;Paid Membership &lt;/span&gt;&lt;/h2&gt;
+
+&lt;p&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; 1. There will be no refund of paid membership fees.&lt;/p&gt;
+
+&lt;h2&gt;Money Back Guarantee (for Singapore orders only)&lt;/h2&gt;
+
+&lt;ol&gt;
+	&lt;li&gt;If you are not satisfied with the Product, you can return the Product and original invoice back to us within seven (7) days from your delivery date, and we will refund the money received from you using the same method originally used by you to pay for the Product.&lt;/li&gt;
+	&lt;li&gt;For any applicable return delivery fees, it will have to be borne by you.&lt;/li&gt;
+	&lt;li&gt;Exclusions for Money Back Guarantee apply to:&lt;br /&gt;
+	-&amp;nbsp;Product bought at promotional &amp;amp; sales offer rates&lt;br /&gt;
+	-&amp;nbsp;Product purchased in the &amp;quot;Clearance &amp;amp; Virtual Warehouse Sales&amp;quot; sections&lt;br /&gt;
+	-&amp;nbsp;Vitamin.sg Membership&lt;br /&gt;
+	-&amp;nbsp;Overseas orders&lt;/li&gt;
+&lt;/ol&gt;
+";}}

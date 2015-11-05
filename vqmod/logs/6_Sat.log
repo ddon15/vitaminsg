@@ -1,0 +1,30 @@
+---------- Date: 2014-03-29 17:08:25 ~ IP : 182.55.183.85 ----------
+REQUEST URI : /admin/index.php?route=module/vqmod_manager&amp;token=08b610a282a3e040f8ed892a1b77f1e6
+MOD DETAILS:
+   modFile   : /home/vitamin1/public_html/vqmod/xml/gift_promotion.xml
+   id        : Gift Promotion
+   version   : 1.3
+   vqmver    : 2.0
+   author    : Opcrat
+VQModObject::parseMods - Could not resolve path for [catalog/view/theme/oyx/template/checkout/cart.tpl] (SKIPPED)
+
+MOD DETAILS:
+   modFile   : /home/vitamin1/public_html/vqmod/xml/sp_pp_standard_discount_dix_oc_150x.xml
+   id        : Special Promotions PayPal Standard Payment Discount Fix for OpenCart v1.5.0.x
+   version   : 1.0
+   vqmver    : 1.2.3
+   author    : Malcolm
+VQModObject::parseMods - Could not resolve path for [catalog/view/theme/oxy/template/payment/pp_standard.tpl] (SKIPPED)
+
+MOD DETAILS:
+   modFile   : /home/vitamin1/public_html/vqmod/xml/r8_ofs_report.xml
+   id        : Out of Stock Report
+   version   : 1.5.4
+   vqmver    : 2.1
+   author    : Reason8.com.au
+
+File Name    : admin/view/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <li><a href="<?php echo $report_product_purchased; ?>"><?php echo $text_report_product_purchased; ?></a></li>
+----------------------------------------------------------------------
+
+

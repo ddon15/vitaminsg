@@ -1,0 +1,230 @@
+<modification>
+	<id>Maximum Order Quantity</id>
+	<version>1.0</version>
+	<vqmver>1.2.3</vqmver>
+	<author>grgr</author>
+	
+	<file name="admin/controller/catalog/product.php">
+        <operation>
+            <search position="after"><![CDATA[
+		$this->data['entry_minimum'] = $this->language->get('entry_minimum');
+            ]]></search>
+            <add><![CDATA[
+		$this->data['entry_maximum'] = $this->language->get('entry_maximum');
+            ]]></add>
+        </operation>
+		
+		<operation>
+            <search position="before"><![CDATA[
+		if (isset($this->request->post['minimum'])) {
+            ]]></search>
+            <add><![CDATA[
+		if (isset($this->request->post['maximum'])) {
+      		$this->data['maximum'] = $this->request->post['maximum'];
+    	} elseif (isset($product_info)) {
+      		$this->data['maximum'] = $product_info['maximum'];
+    	} else {
+			$this->data['maximum'] = 0;
+		}
+            ]]></add>
+        </operation>
+	</file>
+
+	<file name="admin/language/english/catalog/product.php">
+        <operation>
+            <search position="after"><![CDATA[
+		$_['entry_minimum']          = 'Minimum Quantity:<br/><span class="help">Force a minimum ordered amount</span>';
+            ]]></search>
+            <add><![CDATA[
+		$_['entry_maximum']          = 'Maximum Quantity:<br/><span class="help">Force a maximum order amount</span>';
+            ]]></add>
+        </operation>
+	</file>
+
+	<file name="admin/model/catalog/product.php">	
+        <operation>
+            <search position="replace"><![CDATA[
+minimum = '" . (int)$data['minimum'] . "', 
+            ]]></search>
+            <add><![CDATA[
+minimum = '" . (int)$data['minimum'] . "', maximum = '" . (int)$data['maximum'] . "', 
+            ]]></add>
+        </operation>
+	</file>
+	
+	<file name="admin/view/template/catalog/product_form.tpl">
+        <operation>
+            <search position="after" offset="1"><![CDATA[
+		<td><input type="text" name="minimum" value="<?php echo $minimum; ?>" size="2" /></td>
+            ]]></search>
+            <add><![CDATA[
+            <tr>
+              <td><?php echo $entry_maximum; ?></td>
+              <td><input type="text" name="maximum" value="<?php echo $maximum; ?>" size="2" /></td>
+            </tr>
+            ]]></add>
+        </operation>
+	</file>
+	
+	<file name="catalog/controller/checkout/checkout.php">
+        <operation>
+            <search position="before"><![CDATA[
+		if ($product['minimum'] > $product_total) {
+            ]]></search>
+            <add><![CDATA[
+			if (($product['maximum']) > 0 && ($product['maximum']) < ($product_total)) {
+				$this->redirect($this->url->link('checkout/cart'));
+			}			
+            ]]></add>
+        </operation>
+	</file>
+	
+	<file name="catalog/controller/checkout/cart.php">
+	    <operation>
+            <search position="before"><![CDATA[
+if (isset($this->request->post['option'])) {
+            ]]></search>
+            <add><![CDATA[
+				$product_total = 0;
+				
+				$products = $this->cart->getProducts();
+				
+				foreach ($products as $product_2) {
+					if ($product_2['product_id'] == $this->request->post['product_id']) {
+						$product_total += $product_2['quantity'];
+					}
+				}
+			
+				if (($product_info['maximum']) > 0 && ($product_info['maximum']) < ($product_total + $quantity)) {
+					$json['error']['warning'] = sprintf($this->language->get('error_max_qty'), $product_info['name'], $product_info['maximum']);
+				}
+            ]]></add>
+        </operation>
+	
+        <operation>
+            <search position="before"><![CDATA[
+				if ($product['image']) {
+            ]]></search>
+            <add><![CDATA[
+				if (($product['maximum']) > 0 && ($product['maximum']) < ($product_total)) {
+					$this->data['error_warning'] = sprintf($this->language->get('error_max_qty'), $product['name'], $product['maximum']);
+				}
+            ]]></add>
+        </operation>
+		
+	    <operation>
+            <search position="before"><![CDATA[
+if ($product_option['required'] && empty($option[$product_option['product_option_id']])) {
+            ]]></search>
+            <add><![CDATA[
+				if (($product_info['maximum']) > 0 && ($product_info['maximum']) < ($product_total + $quantity)) {
+					$json['error']['warning'] = sprintf($this->language->get('error_max_qty'), $product_info['name'], $product_info['maximum']);
+				}
+            ]]></add>
+        </operation>
+		
+	</file>
+	
+	<file name="catalog/controller/product/product.php">
+        <operation>
+            <search position="after"><![CDATA[
+			$this->data['text_minimum'] = sprintf($this->language->get('text_minimum'), $product_info['minimum']);
+            ]]></search>
+            <add><![CDATA[
+			$this->data['text_max_qty'] = sprintf($this->language->get('text_max_qty'), $product_info['maximum']);
+            ]]></add>
+        </operation>
+        <operation>
+            <search position="before"><![CDATA[
+			$this->data['review_status'] = $this->config->get('config_review_status');
+            ]]></search>
+            <add><![CDATA[
+			if ($product_info['maximum']) {
+				$this->data['maximum'] = $product_info['maximum'];
+			} else {
+				$this->data['maximum'] = 0;
+			}
+			
+            ]]></add>
+        </operation>
+		</file>
+		
+		
+	<file name="catalog/language/english/checkout/cart.php">
+        <operation>
+            <search position="after"><![CDATA[
+'Minimum order amount for %s is %s!';	
+            ]]></search>
+            <add><![CDATA[
+$_['error_max_qty']   = '%s is limited to %s item per customer per transaction. Please re-select your quantity again.';	
+            ]]></add>
+        </operation>
+	</file>
+	
+	<file name="catalog/model/catalog/product.php">
+        <operation>
+            <search position="after"><![CDATA[
+'minimum'          => $query->row['minimum'],
+            ]]></search>
+            <add><![CDATA[
+'maximum'          => $query->row['maximum'],
+            ]]></add>
+        </operation>
+	</file>
+	
+	<file name="catalog/language/english/product/product.php">
+        <operation>
+            <search position="after"><![CDATA[
+$_['text_minimum']      = 'This product has a minimum quantity of %s';
+            ]]></search>
+            <add><![CDATA[
+$_['text_max_qty']      = 'This product has a maximum quantity of %s';
+            ]]></add>
+        </operation>
+	</file>
+	
+	<file name="system/library/cart.php">
+        <operation>
+            <search position="after"><![CDATA[
+$product_query->row['minimum'],
+            ]]></search>
+            <add><![CDATA[
+        			'maximum'         => $product_query->row['maximum'],
+            ]]></add>
+        </operation>
+	</file>
+
+	<file name="catalog/view/theme/oxy/template/product/product.tpl">
+	<!--
+        <operation>
+            <search position="before"><![CDATA[
+        <?php if ($minimum > 1) { ?>
+            ]]></search>
+            <add><![CDATA[
+        <?php if ($maximum ) { ?>
+        <div class="minimum"><?php echo $text_max_qty; ?></div>
+        <?php } ?>
+            ]]></add>
+        </operation>
+	-->
+        <operation>
+            <search position="before"><![CDATA[
+if (json['error']) {
+            ]]></search>
+            <add><![CDATA[
+			if (json['error']) {
+				if (json['error']['warning']) {
+					$('#notification').html('<div class="warning" style="display: none;">' + json['error']['warning'] + '<img src="catalog/view/theme/oxy/image/close.png" alt="" class="close" /></div>');
+				
+					$('.warning').fadeIn('slow');
+				}
+				
+				for (i in json['error']) {
+					$('#option-' + i).after('<span class="error">' + json['error'][i] + '</span>');
+				}
+			}	 
+            ]]></add>
+        </operation>
+	</file>
+	
+</modification>

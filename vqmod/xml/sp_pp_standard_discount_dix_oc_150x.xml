@@ -1,0 +1,52 @@
+<modification>
+    <id>Special Promotions PayPal Standard Payment Discount Fix for OpenCart v1.5.0.x</id>
+    <version>1.0</version>
+    <vqmver>1.2.3</vqmver>
+    <author>Malcolm</author>
+
+    <file name="catalog/controller/payment/pp_standard.php" error="abort">
+        <operation error="abort">
+            <search position="before"><![CDATA['price'    => $this->currency->format($order_info['total'] - $this->cart->getSubTotal(), $currency, false, false),]]></search>
+            <add><![CDATA[]]></add>
+        </operation>
+        <operation error="abort">
+            <search position="replace" offset="8" index="2"><![CDATA[$this->data['products'][] = array(]]></search>
+            <add><![CDATA[]]></add>
+        </operation>
+        <operation error="abort">
+            <search position="before"><![CDATA[
+                    $this->data['currency_code'] = $currency;
+                    ]]></search>
+            <add><![CDATA[
+                    $this->data['discount_amount_cart'] = 0;
+
+                    $total = $this->currency->format($order_info['total'] - $this->cart->getSubTotal(), $currency, false, false);
+
+                    if ($total > 0) {
+                        $this->data['products'][] = array(
+                            'name'     => $this->language->get('text_total'),
+                            'model'    => '',
+                            'price'    => $total,
+                            'quantity' => 1,
+                            'option'   => array(),
+                            'weight'   => 0
+                        );
+                    } else {
+                        $this->data['discount_amount_cart'] -= $total;
+                    }
+                ]]></add>
+        </operation>
+    </file>
+
+    <file name="catalog/view/theme/oxy/template/payment/pp_standard.tpl">
+        <operation error="skip">
+            <search position="before"><![CDATA[<input type="hidden" name="currency_code" value="<?php echo $currency_code; ?>" />]]></search>
+            <add><![CDATA[
+                    <?php if ($discount_amount_cart) { ?>
+                    <input type="hidden" name="discount_amount_cart" value="<?php echo $discount_amount_cart; ?>" />
+                    <?php } ?>
+                ]]></add>
+        </operation>
+    </file>
+
+</modification>

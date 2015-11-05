@@ -1,0 +1,70 @@
+<modification>
+  <id>Admin Auto SEO field (Category, Product, Information) v1</id>
+  <version>1.5.x</version>
+  <vqmver>1.2.3</vqmver>
+  <author>nqueiros - x9soft.com</author>
+
+  <file name="admin/view/template/common/header.tpl">
+    <operation>
+      <search position="before"><![CDATA[</head>]]></search>
+      <add><![CDATA[
+        <script type="text/javascript">
+          $(document).ready(function(){
+          
+          var keyword = $("input[name=keyword]");
+          if(!keyword.val())
+		  {
+            $("input[name^='product_description'],input[name^='category_description'],input[name='name'],input[name^='information_description'],input[name^='model']").keyup(function()
+			{
+              var SEOlink = $("input[name^='product_description'],input[name^='category_description'],input[name='name'],input[name^='information_description']").val();
+              
+			  // var SEOlink = $(this).val();
+                SEOlink = SEOlink.replace(/^\s+|\s+$/g, ''); 			// trim
+                SEOlink = SEOlink.toLowerCase();						// remove accents, swap, etc
+              var from = "àáäâèéëêìíïîòóöôùúüûñcçčlľštžýnrrdçõã·/_,:;";
+              var to   = "aaaaeeeeiiiioooouuuuncccllstzynrrdcoa------";
+              
+			  for (var i=0, l=from.length ; i<l ; i++)
+			  {
+                SEOlink = SEOlink.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));
+              }
+			  
+              SEOlink = SEOlink.replace(/[^a-z0-9( -]/g, '') 	// remove invalid chars
+			  .replace(/\(/g,"-")							 	// replace ( 
+              .replace(/\s+/g, '-') 							// collapse whitespace and replace by -
+              .replace(/-+/g, '-'); 							// collapse dashes
+              // return SEOlink;
+              
+              // model
+              if ($("input[name^='model']").length){
+
+                var model = $("input[name^='model']").val();
+                  model = model.replace(/^\s+|\s+$/g, ''); // trim
+                  model = model.toLowerCase();
+
+                for (var i=0, l=from.length ; i<l ; i++) 
+				{
+                  model = model.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));
+                }
+                model = model.replace(/[^a-z0-9 -]/g, '') 	// remove invalid chars
+                .replace(/\s+/g, '-') 						// collapse whitespace and replace by -
+                .replace(/-+/g, '-'); 						// collapse dashes
+                // return model;
+              }
+              // end model
+              
+              if (model) 
+			  {
+                keyword.val(SEOlink+'-'+model);
+              } else 
+			  {
+                keyword.val(SEOlink);
+              }
+            });
+          }
+        });
+          </script>
+        ]]></add>
+     </operation>
+  </file>
+</modification>

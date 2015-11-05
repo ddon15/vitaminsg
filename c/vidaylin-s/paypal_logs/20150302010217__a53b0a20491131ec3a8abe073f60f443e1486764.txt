@@ -1,0 +1,36 @@
+Array
+(
+    [mc_gross] => 5.00
+    [protection_eligibility] => Ineligible
+    [payer_id] => QR24Q4FN5NAE8
+    [tax] => 0.00
+    [payment_date] => 21:02:06 Mar 01, 2015 PST
+    [payment_status] => Completed
+    [charset] => gb2312
+    [first_name] => Gek Noi
+    [mc_fee] => 0.70
+    [notify_version] => 3.8
+    [custom] => a53b0a20491131ec3a8abe073f60f443e1486764
+    [payer_status] => unverified
+    [business] => paypal@sainhall.com
+    [quantity] => 1
+    [verify_sign] => Atq2oTRiYeVOakSpvzaljNfRIbm9A1mqeLJJGSbM77x7R6PwZ49-VSac
+    [payer_email] => lgnchris.ck@gmail.com
+    [txn_id] => 31W83725NP743103B
+    [payment_type] => instant
+    [last_name] => lim
+    [receiver_email] => paypal@sainhall.com
+    [payment_fee] => 
+    [receiver_id] => WSWNEVR37RL4C
+    [txn_type] => web_accept
+    [item_name] => Vidaylin Minibear Gummies with Garden Vegetables + 9 Vitamins, 60 Gummies
+    [mc_currency] => SGD
+    [item_number] => 
+    [residence_country] => SG
+    [receipt_id] => 3445-4405-9972-6671
+    [handling_amount] => 0.00
+    [transaction_subject] => a53b0a20491131ec3a8abe073f60f443e1486764
+    [payment_gross] => 
+    [shipping] => 0.00
+    [ipn_track_id] => bc79123af2f1a
+)

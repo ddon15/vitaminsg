@@ -1,47 +1,27 @@
-<?php
-
+<?php 
 // HTTP
-
-define('HTTP_SERVER', 'http://www.vit.sg/');
+define('HTTP_SERVER', 'http://vitamin.local/');
 
 // HTTPS
-
-define('HTTPS_SERVER', 'https://www.vit.sg/');
+define('HTTPS_SERVER', 'http://vitamin.local/');
 
 // DIR
-
-define('DIR_APPLICATION', '/home/vitsg/public_html/catalog/');
-
-define('DIR_SYSTEM', '/home/vitsg/public_html/system/');
-
-define('DIR_DATABASE', '/home/vitsg/public_html/system/database/');
-
-define('DIR_LANGUAGE', '/home/vitsg/public_html/catalog/language/');
-
-define('DIR_TEMPLATE', '/home/vitsg/public_html/catalog/view/theme/');
-
-define('DIR_CONFIG', '/home/vitsg/public_html/system/config/');
-
-define('DIR_IMAGE', '/home/vitsg/public_html/image/');
-
-define('DIR_CACHE', '/home/vitsg/public_html/system/cache/');
-
-define('DIR_DOWNLOAD', '/home/vitsg/public_html/download/');
-
-define('DIR_LOGS', '/home/vitsg/public_html/system/logs/');
+define('DIR_APPLICATION', '/var/www/html/vit/catalog/');
+define('DIR_SYSTEM', '/var/www/html/vit/system/');
+define('DIR_DATABASE', '/var/www/html/vit/system/database/');
+define('DIR_LANGUAGE', '/var/www/html/vit/catalog/language/');
+define('DIR_TEMPLATE', '/var/www/html/vit/catalog/view/theme/');
+define('DIR_CONFIG', '/var/www/html/vit/system/config/');
+define('DIR_IMAGE', '/var/www/html/vit/image/');
+define('DIR_CACHE', '/var/www/html/vit/system/cache/');
+define('DIR_DOWNLOAD', '/var/www/html/vit/download/');
+define('DIR_LOGS', '/var/www/html/vit/system/logs/');
 
 // DB
-
 define('DB_DRIVER', 'mysqli');
-
 define('DB_HOSTNAME', 'localhost');
-
-define('DB_USERNAME', 'vitsg_db2014u');
-
-define('DB_PASSWORD', '4_35$0TUblBn');
-
-define('DB_DATABASE', 'vitsg_db2014oc');
-
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', 'root');
+define('DB_DATABASE', 'vit');
 define('DB_PREFIX', 'oc_');
-
 ?>

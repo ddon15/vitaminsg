@@ -60,7 +60,7 @@ RewriteRule ^products/([a-z0-9\-]+)/?$ /Detail.php?s=$1 [L]
 ### Search Product
 RewriteRule ^search/([a-z0-9\-]+)/?$ index.php?route=product/search&search=$1 [NC,L]
 
-###Sort By in Search Product Page
+###Sort By URI in Search Product Page
 RewriteRule ^search/([a-z0-9\-]+)/(.*)-([A-Z-]+)/?$ index.php?route=product/search&search=$1&sort=$2&order=$3 [NC,L]
 
 ###Sort By in Category Page

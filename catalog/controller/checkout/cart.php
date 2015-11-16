@@ -372,31 +372,54 @@ class ControllerCheckoutCart extends Controller {
 						$price .= '<br><span class="cart-price-discount">' . sprintf($this->language->get('text_percent_discount'), $percent_discount) . '</span>';
 					}
 				}
-				
-				// //overide sale price if fixed amount coupon is applied
+
+				//overide sale price if fixed amount coupon is applied
 				// $this->load->model('checkout/coupon');
+				$coupon_info = $this->session->data['coupon_info'];
 
-				// $in_coupon_product = $this->model_checkout_coupon->getCoupon($this->session->data['coupon'])['product'];
-				
-				// $in_coupon = in_array($product['product_id'], $in_coupon_product);
-				
-				// $price_with_fa  = 0;
-				
-				// if ($is_fixed_amount_coupon && $in_coupon) {
-				// 	$coupon_fixed_amount = $this->session->data['coupon_fixed_amount'];
-				// 	$price_with_fa = $product['usual_price'] - $this->session->data['coupon_fixed_amount'];
+				if ($coupon_info) {
 
-				// 	$price = $this->currency->format($this->tax->calculate($price_with_fa));
-					
-				// 	$total = $price;
+					$coupon_fixed_amount = $coupon_info['discount'];
+					$price_with_fa  = 0;
 
-				// 	$price .= '<br><span class="cart-price-sale">Less ' . $this->currency->format($coupon_fixed_amount) . '</span>';
-				// }
-				
-				
-				// $sub_total_fixed_amount = $sub_total_fixed_amount + $product['usual_price'];
+					if($coupon_info['applied_specific'] === 'RSP' && $coupon_info['product']) {
+						$in_coupon_product = $coupon_info['product'];
+						
+						$in_coupon = in_array($product['product_id'], $in_coupon_product);
+						
+						$price_with_fa = $product['usual_price'] - $coupon_fixed_amount;
 
-				// $this->session->data['sub_total_fixed_amount'] = $sub_total_fixed_amount;
+						$price = $this->currency->format($this->tax->calculate($price_with_fa));
+						
+						$total = $price;
+
+						$sub_total_fixed_amount = $sub_total_fixed_amount + $product['usual_price'];
+
+						$price .= '<br><span class="cart-price-sale">Coupon Less ' . $this->currency->format($coupon_fixed_amount) . '</span>';
+						
+						// continue;
+					}
+
+					if($coupon_info['applied_specific'] === 'RSP' && $coupon_info['product_by_manufacturer']) {
+						$in_coupon_product = $coupon_info['product_by_manufacturer'];
+						
+						$in_coupon = in_array($product['manufacturer_id'], $in_coupon_product);
+						
+						$price = $this->currency->format($this->tax->calculate($product['usual_price']));
+						
+						$total = $price;
+
+						$sub_total_fixed_amount = ($sub_total_fixed_amount + $product['usual_price']) - $coupon_fixed_amount;
+
+						$price .= '<br><span class="cart-price-sale">In Brand Specific Coupon</span>';
+						
+						
+						// continue;
+					}
+				}
+				
+
+				$this->session->data['sub_total_fixed_amount'] = $sub_total_fixed_amount;
 				
 
 				$this->data['products'][] = array(
@@ -658,6 +681,8 @@ class ControllerCheckoutCart extends Controller {
 
 		if (!$coupon_info) {			
 			$this->error['warning'] = $this->language->get('error_coupon');
+		} else {
+			$this->session->data['coupon_info'] = $coupon_info; 
 		}
 
 		return !$this->error ? true : false; 

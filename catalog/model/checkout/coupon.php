@@ -1,5 +1,11 @@
 <?php
 class ModelCheckoutCoupon extends Model {
+
+	const FP = "F";
+	const MP = "M";
+	const PP = "P";
+	private static $couponType = array(self::FP, self::MP, self::PP);
+
 	public function getCoupon($code) {
 		$status = true;
 
@@ -12,7 +18,6 @@ class ModelCheckoutCoupon extends Model {
 			if(!$this->checkCouponCustomer($coupon_query->row['coupon_id'])) {
 				$status = false;
 			}*/
-				
 			if ($coupon_query->row['total'] >= $this->cart->getSubTotal()) {
 				$status = false;
 			}
@@ -43,6 +48,7 @@ class ModelCheckoutCoupon extends Model {
 			foreach ($coupon_product_query->rows as $product) {
 				$coupon_product_data[] = $product['product_id'];
 			}
+
 
 			// Categories
 			$coupon_category_data = array();
@@ -158,10 +164,12 @@ class ModelCheckoutCoupon extends Model {
 				'code'          => $coupon_query->row['code'],
 				'name'          => $coupon_query->row['name'],
 				'type'          => $coupon_query->row['type'],
+				'applied_specific'	=> $coupon_query->row['applied_specific'],
 				'discount'      => $coupon_query->row['discount'],
 				'shipping'      => $coupon_query->row['shipping'],
 				'total'         => $coupon_query->row['total'],
 				'product'       => $product_data,
+				'product_by_manufacturer' => $coupon_manufacturer_data,
 				'product_exclude' => $product_exclude_data, //[SB] Added Product Exclude
 				'date_start'    => $coupon_query->row['date_start'],
 				'date_end'      => $coupon_query->row['date_end'],
@@ -202,5 +210,13 @@ class ModelCheckoutCoupon extends Model {
 		
 		return false;
 	}*/
+
+	public static function getCouponType() {
+		return self::$couponType;
+	}
+
+	public static function isFixedPrice($type) {
+		return self::FP === $type;
+	}
 }
 ?>

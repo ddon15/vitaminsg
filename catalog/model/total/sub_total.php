@@ -4,6 +4,12 @@ class ModelTotalSubTotal extends Model {
 		$this->language->load('total/sub_total');
 		
 		$sub_total = $this->cart->getSubTotal();
+
+		//overide sub total
+		if (!is_null($this->session->data['coupon_info']['applied_specific'])) {
+			$sub_total = $this->session->data['sub_total_fixed_amount'];
+		}
+	
 		
 		if (isset($this->session->data['vouchers']) && $this->session->data['vouchers']) {
 			foreach ($this->session->data['vouchers'] as $voucher) {

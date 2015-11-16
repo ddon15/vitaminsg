@@ -20,6 +20,7 @@ class ModelTotalCoupon extends Model {
 			if ($coupon_info) {
 
 				$discount_total = 0;
+				$applied_to = null;
 
 				if (!$coupon_info['product']) {
 					$sub_total = $this->cart->getSubTotal();
@@ -34,7 +35,25 @@ class ModelTotalCoupon extends Model {
 				}
 
 				if ($coupon_info['type'] == 'F') {
-					$coupon_info['discount'] = min($coupon_info['discount'], $sub_total);
+					//Check applied coupon specific
+					if ("RSP" === $coupon_info['applied_specific'] || "TC" === $coupon_info['applied_specific']) {
+						$sub_total = 0;
+						foreach ($this->cart->getProducts() as $product) {
+							if (in_array($product['product_id'], $coupon_info['product'])) {
+								$sub_total += $coupon_info['discount'];
+								$applied_to = 'RSP_PRODUCT';
+								continue;
+							}
+
+							if (in_array($product['manufacturer_id'], $coupon_info['product_by_manufacturer'])) {
+								$sub_total = $coupon_info['discount'];
+								$applied_to = 'RSP_BRAND';
+								continue;
+							}
+						}		
+					} else {
+						$coupon_info['discount'] = min($coupon_info['discount'], $sub_total);	
+					}
 				}
 
 				$this->load->model('premium_member/db'); //[SB] load premium member db
@@ -69,7 +88,7 @@ class ModelTotalCoupon extends Model {
 					}
 
 					if ($status) {
-						if ($coupon_info['type'] == 'F') {
+						if ($coupon_info['type'] == 'F' && is_null($applied_to)) {
 							$discount = $coupon_info['discount'] * ($product['total'] / $sub_total);
 						} elseif ($coupon_info['type'] == 'P') { // && $product['is_on_sale'] == false) { //[SB] Skip product if it is already on sale
 
@@ -134,6 +153,11 @@ class ModelTotalCoupon extends Model {
 					$discount_total += $this->session->data['shipping_method']['cost'];
 				}
 
+				//overide if applied specific is set. TODO:
+				if (!is_null($applied_to)) {
+					$discount_total = $sub_total;
+				}
+
 				$total_data[] = array(
 					'code'       => 'coupon',
 					'title'      => sprintf($this->language->get('text_coupon'), $this->session->data['coupon']),
@@ -143,7 +167,7 @@ class ModelTotalCoupon extends Model {
 				);
 
 				$total -= $discount_total;
-				
+								
 				//[SB] Added coupon discount to session
 				$this->session->data['coupon_discount'] = $discount_total;
 			} 

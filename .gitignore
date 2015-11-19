@@ -1,9 +1,12 @@
-image/*
-system/*
-vqmod/*
-download/*
-index.php
-config.php
+.htaccess
+/config.php
 admin/config.php
-admin/index.php
 
+!index.html
+
+download/
+image/data/
+image/cache/
+system/cache/
+system/logs/
+vqmod/*

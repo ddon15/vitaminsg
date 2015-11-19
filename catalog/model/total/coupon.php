@@ -36,18 +36,17 @@ class ModelTotalCoupon extends Model {
 
 				if ($coupon_info['type'] == 'F') {
 					//Check applied coupon specific
-					if ("RSP" === $coupon_info['applied_specific'] || "TC" === $coupon_info['applied_specific']) {
-						$sub_total = 0;
+					if ("RSP" === $coupon_info['applied_specific']) {
+						$st_prod = 0;
+						$st_prod_manu = 0;
 						foreach ($this->cart->getProducts() as $product) {
-							if (in_array($product['product_id'], $coupon_info['product'])) {
-								$sub_total += $coupon_info['discount'];
-								$applied_to = 'RSP_PRODUCT';
+							if (in_array($product['product_id'], $coupon_info['products'])) {
+								$st_prod += $coupon_info['discount'];
 								continue;
 							}
 
-							if (in_array($product['manufacturer_id'], $coupon_info['product_by_manufacturer'])) {
-								$sub_total = $coupon_info['discount'];
-								$applied_to = 'RSP_BRAND';
+							if (in_array($product['manufacturer_id'], $coupon_info['product_manufacturer'])) {
+								$st_prod_manu = $coupon_info['discount'];
 								continue;
 							}
 						}		
@@ -88,7 +87,7 @@ class ModelTotalCoupon extends Model {
 					}
 
 					if ($status) {
-						if ($coupon_info['type'] == 'F' && is_null($applied_to)) {
+						if ($coupon_info['type'] == 'F') {
 							$discount = $coupon_info['discount'] * ($product['total'] / $sub_total);
 						} elseif ($coupon_info['type'] == 'P') { // && $product['is_on_sale'] == false) { //[SB] Skip product if it is already on sale
 
@@ -153,9 +152,9 @@ class ModelTotalCoupon extends Model {
 					$discount_total += $this->session->data['shipping_method']['cost'];
 				}
 
-				//overide if applied specific is set. TODO:
-				if (!is_null($applied_to)) {
-					$discount_total = $sub_total;
+				//override discount total if applied specific is set.
+				if ($st_prod !== 0 || $st_prod_manu !== 0) {
+					$discount_total = $st_prod + $st_prod_manu;
 				}
 
 				$total_data[] = array(

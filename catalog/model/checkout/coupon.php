@@ -5,6 +5,8 @@ class ModelCheckoutCoupon extends Model {
 	const MP = "M";
 	const PP = "P";
 	private static $couponType = array(self::FP, self::MP, self::PP);
+	private $currentCouponType;
+	private $currentCouponAppliedTo;
 
 	public function getCoupon($code) {
 		$status = true;
@@ -12,7 +14,9 @@ class ModelCheckoutCoupon extends Model {
 		$coupon_query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "coupon` WHERE code = '" . $this->db->escape($code) . "' AND ((date_start = '0000-00-00' OR date_start < NOW()) AND (date_end = '0000-00-00' OR date_end > NOW())) AND status = '1'");
 
 		if ($coupon_query->num_rows) {
-		
+			
+			$this->currentCouponType = $coupon_query->row['type'];
+			$this->currrentAppliedTo = $coupon_query->row['applied_specific'];
 			//[SB] Added check for Customer specific coupon
 			/*
 			if(!$this->checkCouponCustomer($coupon_query->row['coupon_id'])) {
@@ -169,8 +173,9 @@ class ModelCheckoutCoupon extends Model {
 				'shipping'      => $coupon_query->row['shipping'],
 				'total'         => $coupon_query->row['total'],
 				'product'       => $product_data,
-				'product_by_manufacturer' => $coupon_manufacturer_data,
-				'product_exclude' => $product_exclude_data, //[SB] Added Product Exclude
+				'product_exclude' => $product_exclude_data, //[SB] Added Product Exclude,
+				'product_manufacturer' => $coupon_manufacturer_data,
+				'products'		=> $coupon_product_data,
 				'date_start'    => $coupon_query->row['date_start'],
 				'date_end'      => $coupon_query->row['date_end'],
 				'uses_total'    => $coupon_query->row['uses_total'],
@@ -211,12 +216,42 @@ class ModelCheckoutCoupon extends Model {
 		return false;
 	}*/
 
-	public static function getCouponType() {
-		return self::$couponType;
+	public function getCouponType() {
+		return $this->currentCouponType;
+	}
+
+	public function getAppliedSpecific() {
+		return $this->currentCouponAppliedTo;
 	}
 
 	public static function isFixedPrice($type) {
 		return self::FP === $type;
+	}
+
+	public function getCouponManufacturers($couponId) {
+		$coupon_manufacturer_data = array();
+
+		$coupon_manufacturer_query = $this->db->query("SELECT manufacturer_id FROM `" . DB_PREFIX . "coupon_manufacturer` WHERE coupon_id = '" . (int)$couponId . "'");
+
+		foreach ($coupon_manufacturer_query->rows as $manufacturer) {
+			$coupon_manufacturer_data[] = $manufacturer['manufacturer_id'];
+		}
+
+		return $coupon_manufacturer_data;
+		
+	}
+
+	public function getCouponProducts($couponId) {
+		// Products
+		$coupon_product_data = array();
+
+		$coupon_product_query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "coupon_product` WHERE coupon_id = '" . (int)$couponId . "'");
+
+		foreach ($coupon_product_query->rows as $product) {
+			$coupon_product_data[] = $product['product_id'];
+		}
+
+		return $coupon_product_data;
 	}
 }
 ?>

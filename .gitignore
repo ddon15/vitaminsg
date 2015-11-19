@@ -1,0 +1,14 @@
+.htaccess
+config.php
+admin/config.php
+admin/.htaccess
+
+!index.html
+
+.htaccess
+download/
+image/data/
+image/cache/
+system/cache/
+system/logs/
+vqmod/*

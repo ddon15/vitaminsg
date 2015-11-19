@@ -1,0 +1,34 @@
+.data-edit {
+    display: inline-block;
+    text-decoration-style: dotted;
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: bold;
+    line-height: 24px;
+}
+
+.rule {
+    padding: 5px 5px 5px 0;
+}
+
+.sub-rules {
+    padding-left: 15px;
+    border-left: 1px dashed black;
+}
+
+ul.rules {
+    list-style-type: none;
+    padding-left: 15px;
+    border-left: 1px dashed black;
+    margin: 5px 0;
+}
+
+ul.rules li {
+    line-height: 24px;
+}
+
+.remove-rule {
+    cursor: pointer;
+    vertical-align: middle;
+    margin-left: 5px;
+}

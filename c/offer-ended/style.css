@@ -1,0 +1,21 @@
+body {
+	background-color: #fff;
+}
+
+#footer-wrapper {
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	background-color: #101010;
+	margin-top: 50px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	color: #fff;
+	font-size: 80%;
+}
+
+h1 {
+	margin-bottom: 30px;
+	margin-top: 40px;
+	font-weight: bold;
+}

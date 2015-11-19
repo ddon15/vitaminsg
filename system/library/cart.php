@@ -443,8 +443,11 @@ class Cart {
 
 		return $total;
 	}
-
-	public function getSubTotalWithFixedCoupon($couponProducts = array(), $couponProductManufacturer) {
+	/**
+	* Return Total Sub Total Product
+	* @params Array 
+	*/
+	public function getSubTotalWithFixedCoupon($couponProducts = array(), $couponProductManufacturer = array()) {
 		$totalProducts = 0;
 
 		if ($couponProducts) {

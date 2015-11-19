@@ -5,7 +5,6 @@ admin/.htaccess
 
 !index.html
 
-.htaccess
 download/
 image/data/
 image/cache/

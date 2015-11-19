@@ -1,5 +1,5 @@
 .htaccess
-/config.php
+config.php
 admin/config.php
 
 !index.html
@@ -9,4 +9,3 @@ image/data/
 image/cache/
 system/cache/
 system/logs/
-vqmod/*

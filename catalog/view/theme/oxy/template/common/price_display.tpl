@@ -2,7 +2,7 @@
 	<?php if(empty($product['redeem_only']) || !$product['redeem_only']) { ?>
 		
 		<div class="vit-usual-price">
-			<div class="vit-price vit-price-struck"><?php echo $product['price']; ?></div><div class="vit-badge"><?php echo $text_price_usual; ?></div>
+			<div class="vit-price <?php echo (!$product['special'] && !$product['is_on_promo']) ? '' : 'vit-price-struck'; ?>"><?php echo $product['price']; ?></div><div class="vit-badge"><?php echo $text_price_usual; ?></div>
 		</div>
 		
 		<?php if ($product['special']) { ?>
@@ -22,7 +22,7 @@
 		<?php } ?>
 	<?php } else { ?>
 		<div class="vit-usual-price">
-			<div class="vit-price vit-price-struck"><?php echo sprintf($text_vit_dollar, $product['points']); ?></div>
+			<div class="vit-price"><?php echo sprintf($text_vit_dollar, $product['points']); ?></div>
 		</div>
 	<?php } ?>
 </div>

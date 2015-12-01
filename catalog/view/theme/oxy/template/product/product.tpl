@@ -640,7 +640,7 @@
         <?php //[SB] Replaced price display style ?>
 		<div class="price">
 			<div class="vit-usual-price">
-				<div class="vit-price"><?php echo $product['price']; ?></div><div class="vit-badge"><?php echo $text_price_usual; ?></div>
+				<div class="vit-price <?php echo $product['special'] ? 'vit-price-struck' : ''; ?>"><?php echo $product['price']; ?></div><div class="vit-badge"><?php echo $text_price_usual; ?></div>
 			</div>
 			
 			<?php if ($product['premium_member_price']) { ?>
@@ -900,7 +900,7 @@
             <div class="price">
 			
 				<div class="vit-usual-price">
-						<div class="vit-price"><?php echo $product['price']; ?></div><div class="vit-badge"><?php echo $text_price_usual; ?></div>
+						<div class="vit-price <?php echo $product['special'] ? 'vit-price-struck' : ''; ?>"><?php echo $product['price']; ?></div><div class="vit-badge"><?php echo $text_price_usual; ?></div>
 				</div>
 
 				<?php if ($product['premium_member_price']) { ?>

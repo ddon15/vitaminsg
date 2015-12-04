@@ -214,7 +214,7 @@
 				</div>
 				<?php }?>
 			<?php } else { ?>
-				<div class="product-details-price-original-price"><?php echo $price; ?></div>
+				<div class="product-details-price-original-price vit-price-struck"><?php echo $price; ?></div>
 				<div class="product-details-price-bulk-price"><a href="<?php echo $bulkpriceurl; ?>"><?php echo $bulkprice; ?></a></div>
 				<div class="clearfix">
 				<div class="product-details-price-block">

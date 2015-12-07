@@ -294,6 +294,7 @@ class Cart {
 					$prods[$key] = array( //[SB] do not assign to data yet
 						'key'                       => $key,
 						'product_id'                => $product_query->row['product_id'],
+						'manufacturer_id'			=> $product_query->row['manufacturer_id'],
 						'name'                      => $product_query->row['name'],
 						'model'                     => $product_query->row['model'],
 						'shipping'                  => $product_query->row['shipping'],
@@ -441,6 +442,35 @@ class Cart {
 		}
 
 		return $total;
+	}
+	/**
+	* Return Total Sub Total Product
+	* @params Array 
+	*/
+	public function getSubTotalWithFixedCoupon($couponProducts = array(), $couponProductManufacturer = array()) {
+		$totalProducts = 0;
+
+		if ($couponProducts) {
+			foreach ($this->getProducts() as $product) {
+				if (in_array($product['product_id'], $couponProducts)) {
+					$totalProducts += $product['usual_price'];
+				} else {
+					$totalProducts += $product['total'];
+				}
+			}
+		} 
+
+		if ($couponProductManufacturer) {
+			foreach ($this->getProducts() as $product) {
+				if (in_array($product['manufacturer_id'], $couponProductManufacturer)) {
+					$totalProducts += $product['usual_price'];
+				} else {
+					$totalProducts += $product['total'];
+				}
+			}
+		} 
+
+		return $totalProducts;
 	}
 
 	public function getTaxes() {

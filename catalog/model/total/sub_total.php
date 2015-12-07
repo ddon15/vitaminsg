@@ -2,8 +2,15 @@
 class ModelTotalSubTotal extends Model {
 	public function getTotal(&$total_data, &$total, &$taxes) {
 		$this->language->load('total/sub_total');
-		
-		$sub_total = $this->cart->getSubTotal();
+
+		//TODO: add this to parameters
+		$current_coupon = $this->session->data['current_applied_coupon'];
+	
+		if($current_coupon && $current_coupon['type'] === 'F' && $current_coupon['applied_specific'] === 'RSP') {
+			$sub_total = $this->cart->getSubTotalWithFixedCoupon($current_coupon['products'], $current_coupon['product_manufacturer']);
+		} else {
+			$sub_total = $this->cart->getSubTotal();
+		}
 		
 		if (isset($this->session->data['vouchers']) && $this->session->data['vouchers']) {
 			foreach ($this->session->data['vouchers'] as $voucher) {

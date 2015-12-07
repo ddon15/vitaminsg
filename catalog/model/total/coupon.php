@@ -20,6 +20,7 @@ class ModelTotalCoupon extends Model {
 			if ($coupon_info) {
 
 				$discount_total = 0;
+				$applied_to = null;
 
 				if (!$coupon_info['product']) {
 					$sub_total = $this->cart->getSubTotal();
@@ -34,7 +35,24 @@ class ModelTotalCoupon extends Model {
 				}
 
 				if ($coupon_info['type'] == 'F') {
-					$coupon_info['discount'] = min($coupon_info['discount'], $sub_total);
+					//Check applied coupon specific
+					if ("RSP" === $coupon_info['applied_specific']) {
+						$st_prod = 0;
+						$st_prod_manu = 0;
+						foreach ($this->cart->getProducts() as $product) {
+							if (in_array($product['product_id'], $coupon_info['products'])) {
+								$st_prod += $coupon_info['discount'];
+								continue;
+							}
+
+							if (in_array($product['manufacturer_id'], $coupon_info['product_manufacturer'])) {
+								$st_prod_manu = $coupon_info['discount'];
+								continue;
+							}
+						}		
+					} else {
+						$coupon_info['discount'] = min($coupon_info['discount'], $sub_total);	
+					}
 				}
 
 				$this->load->model('premium_member/db'); //[SB] load premium member db
@@ -134,6 +152,11 @@ class ModelTotalCoupon extends Model {
 					$discount_total += $this->session->data['shipping_method']['cost'];
 				}
 
+				//override discount total if applied specific is set.
+				if ($st_prod !== 0 || $st_prod_manu !== 0) {
+					$discount_total = $st_prod + $st_prod_manu;
+				}
+
 				$total_data[] = array(
 					'code'       => 'coupon',
 					'title'      => sprintf($this->language->get('text_coupon'), $this->session->data['coupon']),
@@ -143,7 +166,7 @@ class ModelTotalCoupon extends Model {
 				);
 
 				$total -= $discount_total;
-				
+								
 				//[SB] Added coupon discount to session
 				$this->session->data['coupon_discount'] = $discount_total;
 			} 

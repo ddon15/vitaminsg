@@ -543,6 +543,11 @@ font-size: 50px;
 line-height: 50px;
 margin-bottom: 20px;
 }
+
+.product-details-price-original-price.vit-price-struck{
+	text-decoration: line-through;	
+}
+
 .product-details-price-bulk-price {
 float: right;
 margin-top: -67px;
@@ -601,6 +606,7 @@ font-size: 16px;
 .vit-usual-price .vit-price-struck {
 	text-decoration: line-through;
 }
+
 .vit-member-price .vit-price,
 .vit-sale-price .vit-price {
 font-size: 22px;

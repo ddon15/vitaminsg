@@ -1,2 +1,0 @@
-AuthName "Secure Area"
-AuthUserFile "/home/vitamin1/.htpasswds/public_html/admin/passwd"

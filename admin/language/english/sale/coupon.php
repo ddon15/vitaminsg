@@ -7,6 +7,8 @@ $_['text_success']        = 'Success: You have modified coupons!';
 $_['text_percent']        = 'Percentage';
 $_['text_amount']         = 'Fixed Amount';
 $_['text_member']         = 'Member Price'; //[SB] Added Member Price coupon
+$_['text_rsp']         	  = 'Retail Selling Price';
+$_['text_tc']         	  = 'Total Checkout Price';
 
 // Column
 $_['column_name']         = 'Coupon Name';
@@ -39,6 +41,7 @@ $_['entry_uses_total']    = 'Uses Per Coupon:<br /><span class="help">The maximu
 $_['entry_uses_customer'] = 'Uses Per Customer:<br /><span class="help">The maximum number of times the coupon can be used by a single customer. Leave blank for unlimited</span>';
 $_['entry_status']        = 'Status:';
 $_['entry_manufacturer']  = 'Product Brands:';
+$_['entry_fixed_price_apply']  = 'Apply to:';
 
 // Error
 $_['error_permission']    = 'Warning: You do not have permission to modify coupons!';

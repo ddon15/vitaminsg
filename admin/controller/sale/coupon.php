@@ -680,6 +680,10 @@ class ControllerSaleCoupon extends Controller {
 
 		$this->data['text_member'] = $this->language->get('text_member'); //[SB] Added Member Price coupon
 
+		$this->data['text_rsp'] = $this->language->get('text_rsp'); 
+
+		$this->data['text_tc'] = $this->language->get('text_tc');
+
 
 
 		$this->data['entry_name'] = $this->language->get('entry_name');
@@ -716,6 +720,8 @@ class ControllerSaleCoupon extends Controller {
 
 		$this->data['entry_status'] = $this->language->get('entry_status');
 
+		$this->data['entry_fixed_price_apply'] = $this->language->get('entry_fixed_price_apply');
+
 
 
 		$this->data['button_save'] = $this->language->get('button_save');
@@ -735,10 +741,6 @@ class ControllerSaleCoupon extends Controller {
 		$this->data['entry_manufacturer'] = $this->language->get('entry_manufacturer');
 
 		//.[MY]
-
-               
-
-
 
 		$this->data['token'] = $this->session->data['token'];
 
@@ -893,6 +895,9 @@ class ControllerSaleCoupon extends Controller {
 			$coupon_info = $this->model_sale_coupon->getCoupon($this->request->get['coupon_id']);
 
 		}
+
+		//css display val apply specific fixed price coupon
+		$this->data['display_fixed_coupon_apply'] = ("F" === $this->request->get['type'] || "F" === $coupon_info['type']) ? "" : "none";
 
 
 
@@ -1293,7 +1298,6 @@ class ControllerSaleCoupon extends Controller {
 		}
 
 
-
 		if (isset($this->request->post['status'])) {
 
 			$this->data['status'] = $this->request->post['status'];
@@ -1308,7 +1312,16 @@ class ControllerSaleCoupon extends Controller {
 
 		}
 
-
+		/*NOTE: For now applied specific only accomodate to all fixed price coupon*/
+		if (isset($this->request->post['fa_apply_specific'])) {
+			$this->data['applied_specific'] = $this->request->post['fa_apply_specific'];
+		} elseif (!empty($coupon_info['applied_specific'])) {
+			$this->data['applied_specific'] = $coupon_info['applied_specific'];
+		}else {
+			$this->data['applied_specific'] = '';
+		}
+		// var_dump($coupon_info);
+		// echo $this->data['applied_specific']; exit;
 
 		$this->template = 'sale/coupon_form.tpl';
 

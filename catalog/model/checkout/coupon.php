@@ -1,13 +1,6 @@
 <?php
 class ModelCheckoutCoupon extends Model {
 
-	const FP = "F";
-	const MP = "M";
-	const PP = "P";
-	private static $couponType = array(self::FP, self::MP, self::PP);
-	private $currentCouponType;
-	private $currentCouponAppliedTo;
-
 	public function getCoupon($code) {
 		$status = true;
 
@@ -15,8 +8,6 @@ class ModelCheckoutCoupon extends Model {
 
 		if ($coupon_query->num_rows) {
 			
-			$this->currentCouponType = $coupon_query->row['type'];
-			$this->currrentAppliedTo = $coupon_query->row['applied_specific'];
 			//[SB] Added check for Customer specific coupon
 			/*
 			if(!$this->checkCouponCustomer($coupon_query->row['coupon_id'])) {
@@ -168,7 +159,6 @@ class ModelCheckoutCoupon extends Model {
 				'code'          => $coupon_query->row['code'],
 				'name'          => $coupon_query->row['name'],
 				'type'          => $coupon_query->row['type'],
-				'applied_specific'	=> $coupon_query->row['applied_specific'],
 				'discount'      => $coupon_query->row['discount'],
 				'shipping'      => $coupon_query->row['shipping'],
 				'total'         => $coupon_query->row['total'],
@@ -215,18 +205,6 @@ class ModelCheckoutCoupon extends Model {
 		
 		return false;
 	}*/
-
-	public function getCouponType() {
-		return $this->currentCouponType;
-	}
-
-	public function getAppliedSpecific() {
-		return $this->currentCouponAppliedTo;
-	}
-
-	public static function isFixedPrice($type) {
-		return self::FP === $type;
-	}
 
 	public function getCouponManufacturers($couponId) {
 		$coupon_manufacturer_data = array();

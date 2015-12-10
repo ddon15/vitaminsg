@@ -114,25 +114,7 @@
 
             </tr>
             <!-- Coupon Fixed Price Applied Specification --> 
-            <?php  ?>          
-            <tr style="display: <?php echo $display_fixed_coupon_apply; ?>" id="fixed-coupon-apply-field">
-                <td><?php echo $entry_fixed_price_apply; ?></td>
-                <td>
-                    <select name="fa_apply_specific" id="select-fa-specific">
-                      <?php if("RSP" === $applied_specific): ?>
-                        <option value="RSP" selected="selected"><?php echo $text_rsp; ?></option>
-                      <?php else: ?>
-                        <option value="RSP"><?php echo $text_rsp; ?></option>
-                      <?php endif; ?>
-                      <?php if ("TC" === $applied_specific): ?>
-                      <option value="TC" selected="selected"><?php echo $text_tc; ?></option>   
-                      <?php else: ?>
-                      <option value="TC"><?php echo $text_tc; ?></option>   
-                      <?php endif ?>
-                    </select>
-                </td>
-            </tr>
-            
+            <?php  ?>           
             <tr>
               <td><?php echo $entry_discount; ?></td>
 
@@ -939,21 +921,4 @@ $('#history').load('index.php?route=sale/coupon/history&token=<?php echo $token;
 $('#tabs a').tabs(); 
 
 //--></script> 
-
-<script type="text/javascript">
-    $('select[name="type"]').bind('change', function(e) {
-        $('#select-fa-specific').val('RSP');
-        var couponType = $(this).val();
-        var fixedCouponApply = $('#fixed-coupon-apply-field');
-
-        if("F" === couponType) {
-            fixedCouponApply.css('display', '');
-        } else {
-            fixedCouponApply.css('display', 'none');
-        }
-
-        e.preventDefault();
-    });
-</script>
-
 <?php echo $footer; ?>

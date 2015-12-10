@@ -372,54 +372,7 @@ class ControllerCheckoutCart extends Controller {
 						$price .= '<br><span class="cart-price-discount">' . sprintf($this->language->get('text_percent_discount'), $percent_discount) . '</span>';
 					}
 				}
-
-				//overide sale price if fixed amount coupon is applied
-				$current_applied_coupon = $this->session->data['current_applied_coupon'];
-
-				if (isset($current_applied_coupon) && $current_applied_coupon['type'] === 'F' && $current_applied_coupon['applied_specific'] === 'RSP') {
-
-					$coupon_fixed_amount = $current_applied_coupon['discount'];
-					$price_with_fa  = 0;
-
-					$coupon_product_manufacturer = $current_applied_coupon['product_manufacturer'];
-					$coupon_products = $current_applied_coupon['products'];
-					$inBrand = false;
-
-					if(in_array($product['product_id'], $coupon_products)) {
-						
-						$price_with_fa = $product['usual_price'] - $coupon_fixed_amount;
-
-						$price = $this->currency->format($this->tax->calculate($price_with_fa));
-						
-						$total = $price;
-
-						$sub_total_fixed_amount = $sub_total_fixed_amount + $product['usual_price'];
-
-						$price .= '<br><span class="cart-price-sale">Coupon Less ' . $this->currency->format($coupon_fixed_amount) . '</span>';
-						// continue;
-					}
-					//echo $product['manufacturer_id'] . "<br>"; 
-
- 					if(in_array($product['manufacturer_id'], $coupon_product_manufacturer)) {
-						
-						$inBrand = true;
-
-						$price = $this->currency->format($this->tax->calculate($product['usual_price']));
-						
-						$total = $price;
-
-						$sub_total_fixed_amount = $product['usual_price'];
-
-						$price .= '<br><span class="cart-price-sale">In Brand Specific Coupon</span>';
-						
-						// continue;
-					}
-				}
 				
-
-				$this->session->data['sub_total_fixed_amount'] = $sub_total_fixed_amount;
-				
-
 				$this->data['products'][] = array(
 					'key'                 => $product['key'],
 					'thumb'               => $image,
@@ -427,7 +380,6 @@ class ControllerCheckoutCart extends Controller {
 					'model'               => $product['model'],
 					'option'              => $option_data,
 					'quantity'            => $product['quantity'],
-					'inBrand'			  => $inBrand,
 					'stock'               => $product['stock'] ? true : !(!$this->config->get('config_stock_checkout') || $this->config->get('config_stock_warning')),
 					//'reward'              => ($product['reward'] ? sprintf($this->language->get('text_points'), $product['reward']) : ''),
 					'reward'              => ($product['reward'] ? sprintf($this->config->get('vit_display_earn'), $product['reward']) : ''), //[SB] Changed Reward
@@ -571,8 +523,7 @@ class ControllerCheckoutCart extends Controller {
 
 					if ($this->config->get($result['code'] . '_status')) {
 						$this->load->model('total/' . $result['code']);
-
-						$this->{'model_total_' . $result['code']}->getTotal($total_data, $total, $taxes, $is_fixed_amount_coupon);
+						$this->{'model_total_' . $result['code']}->getTotal($total_data, $total, $taxes);
 					}
 
 					$sort_order = array(); 
@@ -679,10 +630,7 @@ class ControllerCheckoutCart extends Controller {
 		$coupon_info = $this->model_checkout_coupon->getCoupon($this->request->post['coupon']);			
 
 		if (!$coupon_info) {			
-			$this->session->data['current_applied_coupon'] = array();
 			$this->error['warning'] = $this->language->get('error_coupon');
-		} else {
-			$this->session->data['current_applied_coupon'] = $coupon_info; 
 		}
 
 		return !$this->error ? true : false; 

@@ -84,6 +84,17 @@ if($this->config->get('oxy_layout_l') =='3') { ?>
 DD_belatedPNG.fix('#logo img');
 </script>
 <![endif]-->
+<?php if($custom_settings_css['enabled']): ?>
+	<!-- Custom Settings Css -->
+	<style type="text/css">
+		.sale-icon {
+		   background: <?php echo $custom_settings_css['background']; ?> !important;
+		   color: <?php echo $custom_settings_css['color']; ?> !important; 
+		   border: <?php echo $custom_settings_css['border']; ?> !important;
+		}
+	</style>
+<?php endif; ?>
+
 <?php if($this->config->get('oxy_status') =='1') { ?>	
 <style type="text/css">
 /*  Body background color and pattern  */

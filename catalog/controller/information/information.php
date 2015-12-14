@@ -63,6 +63,8 @@ class ControllerInformationInformation extends Controller {
 
 			$this->document->setTitle($this->language->get('text_error'));
 
+			$this->document->addStyle('catalog/view/theme/oxy/stylesheet/know_us_page.css');
+
 			$this->data['heading_title'] = $this->language->get('text_error');
 
 			$this->data['text_error'] = $this->language->get('text_error');

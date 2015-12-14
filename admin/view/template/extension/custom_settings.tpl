@@ -26,14 +26,14 @@
         <thead>
           <tr>
             <td class="left">Name</td>
-            <td class="left">Config</td>
+            <td class="left">Configuration</td>
             <td class="left">Enabled</td>
             <td class="left">Action</td>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Sale Badge Label <input type="hidden" name="group_code" value="SALE_LABEL"></td>
+            <td><strong>Sale Badge</strong><input type="hidden" name="group_code" value="SALE_LABEL"></td>
             <td>
               <div class="config-elem">
               <label>Background:</label>

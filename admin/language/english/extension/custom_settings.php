@@ -1,6 +1,6 @@
 <?php
 // Heading
-$_['heading_title']     = 'Custom Settings';
+$_['heading_title']     = 'Vit Custom Settings';
 
 // Text
 $_['text_install']      = 'Install';

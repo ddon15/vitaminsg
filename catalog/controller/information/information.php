@@ -22,6 +22,8 @@ class ControllerInformationInformation extends Controller {
 		$information_info = $this->model_catalog_information->getInformation($information_id);
 
 		if ($information_info) {
+			$this->document->addStyle('catalog/view/theme/oxy/stylesheet/know_us_page.css');
+
 			$this->document->setTitle($information_info['title']);
 
 			$this->data['breadcrumbs'][] = array(
@@ -62,8 +64,6 @@ class ControllerInformationInformation extends Controller {
 			);
 
 			$this->document->setTitle($this->language->get('text_error'));
-
-			$this->document->addStyle('catalog/view/theme/oxy/stylesheet/know_us_page.css');
 
 			$this->data['heading_title'] = $this->language->get('text_error');
 

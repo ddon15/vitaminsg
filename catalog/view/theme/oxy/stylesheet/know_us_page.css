@@ -318,5 +318,6 @@ p > span > a {
     padding: 10px;
     border-radius: 20px;
     display: inline-block;
+    border: 5px solid #D6CCCC;
 }
 /*End of Content*/

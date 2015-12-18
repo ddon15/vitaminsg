@@ -1,6 +1,20 @@
+<<<<<<< HEAD
 image/*
 system/*
 vqmod/*
 system/*
 admin/config.php
 config.php
+=======
+.htaccess
+/config.php
+admin/config.php
+
+!index.html
+
+download/
+image/data/
+image/cache/
+system/cache/
+system/logs/
+>>>>>>> b686c1f506983037f5ce1630324bbe54da4a30db

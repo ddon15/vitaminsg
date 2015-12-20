@@ -314,7 +314,10 @@ p > span > a {
 }
 
 .feature-images {
-    padding: 10px;
-    display: inline-block;
+    padding: 40px;
+}
+
+.feature-images img {
+  margin-bottom: -5px;
 }
 /*End of Content*/

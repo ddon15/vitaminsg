@@ -21,8 +21,9 @@ class ControllerInformationInformation extends Controller {
 
 		$information_info = $this->model_catalog_information->getInformation($information_id);
 
+		$this->document->addStyle('catalog/view/theme/oxy/stylesheet/know_us_page.css');
+
 		if ($information_info) {
-			$this->document->addStyle('catalog/view/theme/oxy/stylesheet/know_us_page.css');
 
 			$this->document->setTitle($information_info['title']);
 

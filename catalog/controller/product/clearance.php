@@ -79,8 +79,8 @@ class ControllerProductClearance extends Controller {
 		
 		foreach ($products as $clearance_product) {
 			$product_info = $clearance_product;
-
-			if ($clearance_product) {
+	
+			if ($clearance_product['product_id'] && $clearance_product) {
 				if ($clearance_product['image']) {
 					$image = $this->model_tool_image->resize($clearance_product['image'], $this->config->get('config_image_product_width'), $this->config->get('config_image_product_height'));
 				} else {

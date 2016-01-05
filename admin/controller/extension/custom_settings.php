@@ -39,6 +39,7 @@ class ControllerExtensionCustomSettings extends Controller {
 			$brandsAndTop = $this->model_setting_custom->getBrands($brandsBannerRow['banner_id']);
 			$this->data['brands'] = $brandsAndTop['brands'];
 			$this->data['brands_top'] = $brandsAndTop['brands_top'];
+			$this->data['banner_id'] = $brandsBannerRow['banner_id'];
 		}
 
 

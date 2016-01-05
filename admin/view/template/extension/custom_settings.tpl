@@ -126,7 +126,7 @@ display: inline-block;
                             <select id="select-banner">
                                 <option value="">Select</option>
                                 <?php foreach ($banners as $b): ?>
-                                    <option value="<?php echo $b['banner_id']; ?>"><?php echo $b['name']; ?></option>
+                                    <option <?php echo $banner_id === $b['banner_id'] ? 'selected' : ''; ?> value="<?php echo $b['banner_id']; ?>"><?php echo $b['name']; ?></option>
                                 <?php endforeach; ?>
                             </select>
                         </td>

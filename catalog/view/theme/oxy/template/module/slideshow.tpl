@@ -21,6 +21,27 @@
 <?php if($this->config->get('oxy_homepage_banner_slider_type') ==2) { ?>
 <section id="banner-slider" class="flexslider">
    <ul class="slides">
+    <?php if ($brands_banner): ?>
+      <li>
+      <!-- <h2 style="display: table; margin: 0 auto">Top Brands</h2> -->
+      <div style="padding: 30px !important;border: 10px solid gray; display: inline-block; background-color: white;overflow:hidden">
+        <div style="clear:both;margin: 0 auto;display:table">
+          <?php foreach ($brands_top_banner as $each): ?>
+            <div style="width:200px;height:70px;float:left; text-align:center; line-height:100px;margin: 5px;">
+            <a href="<?php echo $each['name']; ?>"><img src="image/<?php echo $each['image']; ?>" alt="<?php echo $each['name']; ?>" style="vertical-align: middle !important;border:none;max-height:50px" /></a>    
+            </div>
+          <?php endforeach ?>
+        </div>
+        <div style="clear:both">
+          <?php foreach ($brands_banner as $each): ?>
+            <div style="width:100px;height:50px;float:left; text-align:center; line-height:100px;margin: 5px;">
+            <a href="<?php echo $each['name']; ?>"><img src="image/<?php echo $each['image']; ?>" alt="<?php echo $each['name']; ?>" style="vertical-align: middle !important;border:none;max-height:50px" /></a>    
+            </div>
+          <?php endforeach ?>
+        </div>
+      </div>
+      </li>
+    <?php endif ?>
    <?php foreach ($banners as $banner) { ?>
 	  <li>
       <?php if ($banner['link']) { ?>

@@ -310,7 +310,7 @@ $('#btn-add-brand').click(function(e) {
         $("#select-brands > option").each(function() {
             if (this.value !== 'all') {
                 brandDivId = this.value + '-brand-list';
-                $('#brand-list').append('<div id='+brandDivId+' class="brands" data-id='+this.value+' data-name='+this.text+'>'+this.text+'</div>');
+                $('#brand-list').append('<img src="view/image/delete.png" alt="" data-id='+this.value+' style="float:right" class="btn-remove-brand"><div id='+brandDivId+' class="brands" data-id='+this.value+' data-name='+this.text+'>'+this.text+'</div>');
             }
         });
         return;
@@ -318,7 +318,7 @@ $('#btn-add-brand').click(function(e) {
 
     if(brandId) {
         $('#' + brandDivId).remove(); 
-        $('#brand-list').append('<div id='+brandDivId+' class="brands" data-id='+brandId+' data-name='+brandName+'>'+brandName+'</div>');
+        $('#brand-list').append('<img src="view/image/delete.png" alt="" data-id='+brandId+' style="float:right" class="btn-remove-brand"><div id='+brandDivId+' class="brands" data-id='+brandId+' data-name='+brandName+'>'+brandName+'</div>');
     } else {
         alert('No brand selected.');
     }
@@ -343,7 +343,7 @@ $('#btn-add-to-top3').click(function(e) {
     if(brandId) {
         $('#' + brandsTopDivId).remove(); 
         $('#' + brandsDivId).remove(); 
-        $('#brand-list-top-three').append('<div id='+brandsTopDivId+' class="brands-top" data-id='+brandId+' data-name='+brandName+'>'+brandName+'</div>');
+        $('#brand-list-top-three').append('<img src="view/image/delete.png" alt="" data-id='+brandId+' style="float:right" class="btn-remove-brand-top"><div id='+brandsTopDivId+' class="brands-top" data-id='+brandId+' data-name='+brandName+'>'+brandName+'</div>');
     } else {
         alert('No brand selected.');
     }
@@ -416,14 +416,14 @@ $('#btn-cancel-home-banner').click(function() {
     location.reload();
 });
 
-$('.btn-remove-brand').click(function(e) {
+$('.btn-remove-brand').live('click', function(e) {
   var id = $(this).data('id') + '-brand-list';
   $('#' + id).remove(); 
   $(this).remove();
   e.preventDefault();
 });
 
-$('.btn-remove-brand-top').click(function(e) {
+$('.btn-remove-brand-top').live('click', function(e) {
   var id = $(this).data('id') + '-brand-list-top';
   $('#' + id).remove();
   $(this).remove();

@@ -93,6 +93,7 @@ display: inline-block;
                         <td>
                         <div id="brand-list" class="scrollbox">
                             <?php foreach ($brands as $each): ?>
+                                <img src="view/image/delete.png" alt="" data-id="<?php echo $each['manufacturer_id']; ?>" style="float:right" class="btn-remove-brand">
                                 <div id="<?php echo $each['manufacturer_id'] . '-brand-list'; ?>" class="brands" data-id="<?php echo $each['manufacturer_id']; ?>" data-name="<?php echo $each['name'] ?>"><?php echo $each['name']; ?></div>
                             <?php endforeach; ?>
                         </div>
@@ -115,6 +116,7 @@ display: inline-block;
                         <td>
                         <div id="brand-list-top-three" class="scrollbox">
                             <?php foreach ($brands_top as $each): ?>
+                                <img src="view/image/delete.png" alt="" style="float:right" data-id="<?php echo $each['manufacturer_id']; ?>" class="btn-remove-brand-top">
                                 <div id="<?php echo $each['manufacturer_id'] . '-brand-list-top'; ?>" class="brands-top" data-id="<?php echo $each['manufacturer_id']; ?>" data-name="<?php echo $each['name'] ?>"><?php echo $each['name']; ?></div>
                             <?php endforeach; ?>
                         </div>
@@ -124,7 +126,7 @@ display: inline-block;
                         <td><span class="required"></span> Banner:</td>
                         <td>
                             <select id="select-banner">
-                                <option value="">Select</option>
+                                <option value="">Select One</option>
                                 <?php foreach ($banners as $b): ?>
                                     <option <?php echo $banner_id === $b['banner_id'] ? 'selected' : ''; ?> value="<?php echo $b['banner_id']; ?>"><?php echo $b['name']; ?></option>
                                 <?php endforeach; ?>
@@ -299,17 +301,15 @@ $('#btn-sale-label').on('click', function(e) {
 });
 
 $('#btn-add-brand').click(function(e) {
-    e.preventDefault();
-
     var brandName = $('#select-brands option:selected').text();
     var brandId = $('#select-brands').val();
     var brandDivId = brandId + '-brand-list';
 
     if(brandId == 'all') {
+        $('.brands').remove();  
         $("#select-brands > option").each(function() {
             if (this.value !== 'all') {
                 brandDivId = this.value + '-brand-list';
-                $('#' + this.value).remove();        
                 $('#brand-list').append('<div id='+brandDivId+' class="brands" data-id='+this.value+' data-name='+this.text+'>'+this.text+'</div>');
             }
         });
@@ -322,6 +322,8 @@ $('#btn-add-brand').click(function(e) {
     } else {
         alert('No brand selected.');
     }
+
+    e.preventDefault();
 });
 
 $('#btn-clear-brand').click(function() {
@@ -333,8 +335,6 @@ $('#btn-clear-brand-top').click(function() {
 });
 
 $('#btn-add-to-top3').click(function(e) {
-    e.preventDefault();
-
     var brandName = $('#select-brands-top option:selected').text();
     var brandId = $('#select-brands-top').val();
     var brandsTopDivId = brandId + '-brand-list-top';
@@ -347,20 +347,15 @@ $('#btn-add-to-top3').click(function(e) {
     } else {
         alert('No brand selected.');
     }
+
+    e.preventDefault();
 })
 
 $('#btn-save-home-banner').click(function(e) { 
-    e.preventDefault();
-    
-    var brandSelected = $('#select-brands');
     var brands = [];
     var brandsTop = [];
-    var status = $('#select-enabled').val();
-    var groupCodeBrandsBanner = '<?php echo $group_code_brands_banner; ?>';
+    var isEnabled = $('#select-enabled').val();
     var bannerId = $('#select-banner').val();
-
-    $(this).attr('disabled', true);
-    
 
     $('.brands').each(function() {
         var elem = $(this);
@@ -384,24 +379,55 @@ $('#btn-save-home-banner').click(function(e) {
 
     });
 
+    if(!brands.length) {
+      alert('Brands list is empty.');
+      return;
+    }
+
+    if(!brandsTop.length) {
+      alert('Brands Top list is empty.');
+      return;
+    }
+
+    if(!bannerId) {
+      alert('Select where you want to add this banner.');
+      return;
+    }
+
+    $(this).attr('disabled', true);
     $.ajax({
         url: 'index.php?route=extension/custom_settings/saveBrandsBanner&token=<?php echo $token; ?>',
         type: 'post',
-        data: {banner_id:bannerId, brands: brands, brands_top: brandsTop ,is_enabled: status},
+        data: {banner_id:bannerId, brands: brands, brands_top: brandsTop ,is_enabled: isEnabled},
         dataType: 'json',
         success: function(res) {
-            console.log(res);
             if(res.save)
               alert('Brands Banner Custom settings successfully save.');
 
             $(this).attr('disabled', false);
         }
     });
+
+   e.preventDefault();
 });
 
 
 $('#btn-cancel-home-banner').click(function() {
     location.reload();
+});
+
+$('.btn-remove-brand').click(function(e) {
+  var id = $(this).data('id') + '-brand-list';
+  $('#' + id).remove(); 
+  $(this).remove();
+  e.preventDefault();
+});
+
+$('.btn-remove-brand-top').click(function(e) {
+  var id = $(this).data('id') + '-brand-list-top';
+  $('#' + id).remove();
+  $(this).remove();
+  e.preventDefault(); 
 });
 
 $('#tabs a').tabs(); 

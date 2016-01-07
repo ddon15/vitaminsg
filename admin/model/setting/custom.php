@@ -32,7 +32,7 @@ class ModelSettingCustom extends Model {
 		$brandsBanner = $this->db->query("SELECT * FROM " . DB_PREFIX . "brands_banner WHERE banner_id = '" . (int)$data['banner_id'] . "'");
 
 		if (!$brandsBanner->row) {
-			$res =  $this->db->query("INSERT INTO " . DB_PREFIX . "brands_banner (brands, brands_top, banner_id, is_enabled) VALUES('" . $this->db->escape(implode(' ,', $data['brands'])) . "', '" . $this->db->escape(implode(' ,', $data['brands'])) ."', '" . $this->db->escape($data['banner_id']) . "', '" . $this->db->escape($data['is_enabled']) . "')");				
+			$res =  $this->db->query("INSERT INTO " . DB_PREFIX . "brands_banner (brands, brands_top, banner_id, is_enabled) VALUES('" . $this->db->escape(implode(' ,', $data['brands'])) . "', '" . $this->db->escape(implode(' ,', $data['brands_top'])) ."', '" . $this->db->escape($data['banner_id']) . "', '" . $this->db->escape($data['is_enabled']) . "')");				
 		}
 		else {
 			$res = $this->db->query("UPDATE " . DB_PREFIX . "brands_banner SET brands = '" . $this->db->escape(implode(' ,', $data['brands'])) . "', brands_top = '" . $this->db->escape(implode(' ,', $data['brands_top'])) . "', banner_id = '" . $this->db->escape($data[

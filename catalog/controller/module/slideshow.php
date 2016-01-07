@@ -29,13 +29,15 @@ class ControllerModuleSlideshow extends Controller {
 			if($brandsBanner) {
 				foreach ($brandsBanner['brands_top'] as $each) {
 					$this->data['brands_top_banner'][$each['name']] = array(
-						'image' => $each['image']
+						'image' => $each['image'],
+						'href' => $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $each['manufacturer_id'])
 					);
 				}
 
 				foreach ($brandsBanner['brands'] as $each) {
 					$this->data['brands_banner'][$each['name']] = array(
-						'image' => $each['image']
+						'image' => $each['image'],
+						'href' => $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $each['manufacturer_id'])
 					);
 				}
 			}

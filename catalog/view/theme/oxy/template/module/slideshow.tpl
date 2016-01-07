@@ -16,26 +16,57 @@
 		});	
 	});
 </script>
+
 <?php }	?>
 
 <?php if($this->config->get('oxy_homepage_banner_slider_type') ==2) { ?>
+<!-- Brands Banner CSS -->
+<style type="text/css">
+  .brands-banner-wrapper {
+    padding: 20px 10px 20px 54px;
+    border: 10px solid #FF8D31;
+    background-color: white;
+    overflow: hidden;
+  }
+  .brands-banner-wrapper .brands-banner-top {
+    width: 200px;
+    height: 70px;
+    float: left;
+  }
+
+  .brands-banner-wrapper .brands-banner {
+    width: 100px;
+    height: 50px;
+    float: left;
+    margin: 5px;
+  }
+  .max-dim-top {
+    max-height: 120px;
+    max-width: 200px;
+  }
+  .max-dim-def {
+    max-height: 50px;
+    max-width: 100px;
+  }
+</style>
+
 <section id="banner-slider" class="flexslider">
    <ul class="slides">
     <?php if ($brands_banner): ?>
       <li>
       <!-- <h2 style="display: table; margin: 0 auto">Top Brands</h2> -->
-      <div style="padding: 30px !important;border: 10px solid gray; display: inline-block; background-color: white;overflow:hidden">
-        <div style="clear:both;margin: 0 auto;display:table">
+      <div class="brands-banner-wrapper">
+        <div>
           <?php foreach ($brands_top_banner as $each): ?>
-            <div style="width:200px;height:70px;float:left; text-align:center; line-height:100px;margin: 5px;">
-            <a href="<?php echo $each['name']; ?>"><img src="image/<?php echo $each['image']; ?>" alt="<?php echo $each['name']; ?>" style="vertical-align: middle !important;border:none;max-height:50px" /></a>    
+            <div class="brands-banner-top">
+            <a href="<?php echo $each['href']; ?>"><img src="image/<?php echo $each['image']; ?>" alt="<?php echo $each['name']; ?>" class="max-dim-top"/></a>    
             </div>
           <?php endforeach ?>
         </div>
-        <div style="clear:both">
+        <div>
           <?php foreach ($brands_banner as $each): ?>
-            <div style="width:100px;height:50px;float:left; text-align:center; line-height:100px;margin: 5px;">
-            <a href="<?php echo $each['name']; ?>"><img src="image/<?php echo $each['image']; ?>" alt="<?php echo $each['name']; ?>" style="vertical-align: middle !important;border:none;max-height:50px" /></a>    
+            <div class="brands-banner">
+            <a href="<?php echo $each['href']; ?>"><img src="image/<?php echo $each['image']; ?>" alt="<?php echo $each['name']; ?>" class="max-dim-def"/></a>    
             </div>
           <?php endforeach ?>
         </div>

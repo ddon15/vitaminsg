@@ -29,16 +29,19 @@ class ModelSettingCustom extends Model {
 
 	function saveBrandsBanner($data)
 	{
+
 		$brandsBanner = $this->db->query("SELECT * FROM " . DB_PREFIX . "brands_banner WHERE banner_id = '" . (int)$data['banner_id'] . "'");
 
 		if (!$brandsBanner->row) {
-			$res =  $this->db->query("INSERT INTO " . DB_PREFIX . "brands_banner (brands, brands_top, banner_id, is_enabled) VALUES('" . $this->db->escape(implode(' ,', $data['brands'])) . "', '" . $this->db->escape(implode(' ,', $data['brands_top'])) ."', '" . $this->db->escape($data['banner_id']) . "', '" . $this->db->escape($data['is_enabled']) . "')");				
+			$res =  $this->db->query("INSERT INTO " . DB_PREFIX . "brands_banner (header_label, brands, brands_top, banner_id, is_enabled) VALUES('" . $this->db->escape($data['header_label']) . "','" . $this->db->escape(implode(' ,', $data['brands'])) . "', '" . $this->db->escape(implode(' ,', $data['brands'])) ."', '" . $this->db->escape($data['banner_id']) . "', '" . $this->db->escape($data['is_enabled']) . "')");				
 		}
 		else {
-			$res = $this->db->query("UPDATE " . DB_PREFIX . "brands_banner SET brands = '" . $this->db->escape(implode(' ,', $data['brands'])) . "', brands_top = '" . $this->db->escape(implode(' ,', $data['brands_top'])) . "', banner_id = '" . $this->db->escape($data[
+			$res = $this->db->query("UPDATE " . DB_PREFIX . "brands_banner SET brands = '" . $this->db->escape(implode(' ,', $data['brands'])) . "',header_label = '" . $this->db->escape($data['header_label']) . "', brands_top = '" . $this->db->escape(implode(' ,', $data['brands_top'])) . "', banner_id = '" . $this->db->escape($data[
 				'banner_id']) . "', is_enabled = '" . $this->db->escape($data[
 				'is_enabled']) . "' WHERE banner_id = '" . $this->db->escape($data['banner_id']) . "'");
 		}
+
+		$this->updateBrandsBannerSortOrder($data['brands'], $data['brands_top']);
 
 
 		return $res;
@@ -60,14 +63,14 @@ class ModelSettingCustom extends Model {
 			$brandIds = rtrim($brandsBanner['brands'], ",");
 			$brandTopIds = rtrim($brandsBanner['brands_top'], ",");
 			
-			$brandsQry = $this->db->query("SELECT * FROM " . DB_PREFIX . "manufacturer WHERE manufacturer_id IN ($brandIds)"); 
-			$brandsTopQry = $this->db->query("SELECT * FROM " . DB_PREFIX . "manufacturer WHERE manufacturer_id IN ($brandTopIds)"); 
+			$brandsQry = $this->db->query("SELECT * FROM " . DB_PREFIX . "manufacturer WHERE manufacturer_id IN ($brandIds) ORDER BY sort_order_brands_banner;"); 
+			$brandsTopQry = $this->db->query("SELECT * FROM " . DB_PREFIX . "manufacturer WHERE manufacturer_id IN ($brandTopIds) ORDER BY sort_order_brands_banner;"); 
 			
 			$brands = $brandsQry->rows;
 			$brandsTop = $brandsTopQry->rows;
 		}
 		
-		return array('brands' => $brands, 'brands_top' => $brandsTop);	
+		return array('brands' => $brands, 'brands_top' => $brandsTop, 'header_label' => $brandsBanner['header_label']);	
 	}
 
 	function getDataConfigByGroupCode($groupCode) 
@@ -122,6 +125,15 @@ class ModelSettingCustom extends Model {
 	private function buildSaleLabelStyle($dataConfig) {
 		return 'background:' . $dataConfig->bgcolor . ';color:' . $dataConfig->texcolor . ';border:' . $dataConfig->border->width . ' ' . $dataConfig->border->style . ' ' . $dataConfig->border->color;
 	}
+	// TODO: Improve query
+	private function updateBrandsBannerSortOrder($brands, $brandsTop) {
+		foreach ($brands as $key => $value) {
+			 $this->db->query("UPDATE " . DB_PREFIX . "manufacturer SET sort_order_brands_banner = '" . $this->db->escape($key) . "' WHERE manufacturer_id = '" . $this->db->escape($value) . "'");
+		}
 
+		foreach ($brandsTop as $key => $value) {
+			 $this->db->query("UPDATE " . DB_PREFIX . "manufacturer SET sort_order_brands_banner = '" . $this->db->escape($key) . "' WHERE manufacturer_id = '" . $this->db->escape($value) . "'");
+		}
+	}	
 
 }

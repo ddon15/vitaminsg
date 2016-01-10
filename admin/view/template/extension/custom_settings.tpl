@@ -76,6 +76,10 @@ display: inline-block;
             <table class="form">
                 <tbody>
                     <tr>
+                        <td><span class="required"></span> Banner Header Label:</td>
+                        <td><input type="text" id="brands-banner-header" value="<?php echo $brands_banner_header; ?>"></td>
+                    </tr>
+                    <tr>
                         <td><span class="required"></span> Brands:</td>
                         <td>
                             <select id="select-brands">
@@ -356,6 +360,7 @@ $('#btn-save-home-banner').click(function(e) {
     var brandsTop = [];
     var isEnabled = $('#select-enabled').val();
     var bannerId = $('#select-banner').val();
+    var headerLabel = $('#brands-banner-header').val();
 
     $('.brands').each(function() {
         var elem = $(this);
@@ -398,7 +403,7 @@ $('#btn-save-home-banner').click(function(e) {
     $.ajax({
         url: 'index.php?route=extension/custom_settings/saveBrandsBanner&token=<?php echo $token; ?>',
         type: 'post',
-        data: {banner_id:bannerId, brands: brands, brands_top: brandsTop ,is_enabled: isEnabled},
+        data: {banner_id:bannerId, header_label: headerLabel, brands: brands, brands_top: brandsTop ,is_enabled: isEnabled},
         dataType: 'json',
         success: function(res) {
             if(res.save)

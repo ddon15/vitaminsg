@@ -40,6 +40,8 @@ class ControllerModuleSlideshow extends Controller {
 						'href' => $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $each['manufacturer_id'])
 					);
 				}
+
+				$this->data['brands_banner_header'] = $brandsBanner['header_label'];
 			}
 
 			foreach ($results as $result) {

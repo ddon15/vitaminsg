@@ -23,30 +23,39 @@
 <!-- Brands Banner CSS -->
 <style type="text/css">
   .brands-banner-wrapper {
-    padding: 20px 10px 20px 54px;
+    padding: 20px 10px 20px 35px;
     border: 10px solid #FF8D31;
     background-color: white;
     overflow: hidden;
   }
   .brands-banner-wrapper .brands-banner-top {
-    width: 200px;
+    width: 120px;
     height: 70px;
     float: left;
+    margin: 5px;
   }
 
   .brands-banner-wrapper .brands-banner {
-    width: 100px;
-    height: 50px;
+    width: 120px;
+    height: 70px;
     float: left;
     margin: 5px;
   }
   .max-dim-top {
-    max-height: 120px;
-    max-width: 200px;
+    max-height: 70px;
+    max-width: 120px;
   }
   .max-dim-def {
-    max-height: 50px;
-    max-width: 100px;
+    max-height: 70px;
+    max-width: 120px;
+  }
+  .brands-banner-header {
+    display: table;
+    margin: 0 auto;
+    background-color: #FF8D31;
+    color: #FFF;
+    padding: 0px 10px 0px 10px;
+    border-radius: 10px 10px 0px 0px;
   }
 </style>
 
@@ -54,7 +63,7 @@
    <ul class="slides">
     <?php if ($brands_banner): ?>
       <li>
-      <!-- <h2 style="display: table; margin: 0 auto">Top Brands</h2> -->
+      <h2 class="brands-banner-header"><?php echo $brands_banner_header; ?></h2>
       <div class="brands-banner-wrapper">
         <div>
           <?php foreach ($brands_top_banner as $each): ?>

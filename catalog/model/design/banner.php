@@ -17,15 +17,16 @@ class ModelDesignBanner extends Model {
 			
 			$brandIds = rtrim($brandsBanner['brands'], ",");
 			$brandTopIds = rtrim($brandsBanner['brands_top'], ",");
+			$headerLabel = $brandsBanner['header_label'];
 			
-			$brandsQry = $this->db->query("SELECT * FROM " . DB_PREFIX . "manufacturer WHERE manufacturer_id IN ($brandIds)"); 
-			$brandsTopQry = $this->db->query("SELECT * FROM " . DB_PREFIX . "manufacturer WHERE manufacturer_id IN ($brandTopIds)"); 
+			$brandsQry = $this->db->query("SELECT * FROM " . DB_PREFIX . "manufacturer WHERE manufacturer_id IN ($brandIds) ORDER BY sort_order_brands_banner;"); 
+			$brandsTopQry = $this->db->query("SELECT * FROM " . DB_PREFIX . "manufacturer WHERE manufacturer_id IN ($brandTopIds) ORDER BY sort_order_brands_banner;"); 
 			
 			$brands = $brandsQry->rows;
 			$brandsTop = $brandsTopQry->rows;
 		}
 		
-		return array('brands' => $brands, 'brands_top' => $brandsTop);	
+		return array('brands' => $brands, 'brands_top' => $brandsTop, 'header_label' => $headerLabel);	
 	} 
 }
 ?>

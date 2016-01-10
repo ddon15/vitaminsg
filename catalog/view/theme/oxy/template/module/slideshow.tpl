@@ -75,12 +75,12 @@
     margin: 0 auto;
     background-color: #FF8D31;
     color: #FFF;
-    padding: 0px 10px 0px 10px;
-    border-radius: 0px 0px 10px 10px;
+    padding: 5px 20px 5px 20px;
+    border-radius: 0px 0px 40px 40px;
     margin-top: -28px;
   }
-  .margin-top-35 {    
-    margin-top: 35px;
+  .margin-top-25 {    
+    margin-top: 25px;
   }
 </style>
 
@@ -90,7 +90,7 @@
       <li>
       <div class="brands-banner-wrapper">
         <h2 class="brands-banner-header"><?php echo $brands_banner_header; ?></h2>        
-        <div class="margin-top-35">
+        <div class="margin-top-25">
           <?php foreach ($brands_top_banner as $each): ?>
             <div class="brands-banner-top brand-hover">
             <a href="<?php echo $each['href']; ?>"><img src="image/<?php echo $each['image']; ?>" alt="<?php echo $each['name']; ?>" class="max-dim-top"/></a>    

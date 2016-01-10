@@ -23,7 +23,7 @@
 <!-- Brands Banner CSS -->
 <style type="text/css">
   .brands-banner-wrapper {
-    padding: 20px 10px 20px 35px;
+    padding: 20px 10px 27px 35px;
     border: 10px solid #FF8D31;
     background-color: white;
     overflow: hidden;

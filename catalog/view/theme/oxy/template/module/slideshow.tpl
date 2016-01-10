@@ -71,6 +71,7 @@
     max-width: 130px;
   }
   .brands-banner-header {
+    font-size: x-large;
     display: table;
     margin: 0 auto;
     background-color: #FF8D31;

@@ -23,7 +23,7 @@
 <!-- Brands Banner CSS -->
 <style type="text/css">
   .brands-banner-wrapper {
-    padding: 20px 10px 27px 35px;
+    padding: 20px 10px 20px 35px;
     border: 10px solid #FF8D31;
     background-color: white;
     overflow: hidden;
@@ -76,7 +76,11 @@
     background-color: #FF8D31;
     color: #FFF;
     padding: 0px 10px 0px 10px;
-    border-radius: 10px 10px 0px 0px;
+    border-radius: 0px 0px 10px 10px;
+    margin-top: -28px;
+  }
+  .margin-top-35 {    
+    margin-top: 35px;
   }
 </style>
 
@@ -84,9 +88,9 @@
    <ul class="slides">
     <?php if ($brands_banner): ?>
       <li>
-      <h2 class="brands-banner-header"><?php echo $brands_banner_header; ?></h2>
       <div class="brands-banner-wrapper">
-        <div>
+        <h2 class="brands-banner-header"><?php echo $brands_banner_header; ?></h2>        
+        <div class="margin-top-35">
           <?php foreach ($brands_top_banner as $each): ?>
             <div class="brands-banner-top brand-hover">
             <a href="<?php echo $each['href']; ?>"><img src="image/<?php echo $each['image']; ?>" alt="<?php echo $each['name']; ?>" class="max-dim-top"/></a>    

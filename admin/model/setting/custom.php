@@ -6,7 +6,7 @@ class ModelSettingCustom extends Model {
 		'BRANDS_BANNER' => 'BRANDS_BANNER'
 	);
 
-	function save($data) 
+	function saveSaleLabel($data) 
 	{
 		$groupCode = $data['group_code'];
 		$status = $data['status'];

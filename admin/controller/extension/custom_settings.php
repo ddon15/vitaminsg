@@ -12,7 +12,6 @@ class ControllerExtensionCustomSettings extends Controller {
 		$groupCode = $this->model_setting_custom->getGroupCode();
 		
 		$this->data['group_code_sale_label'] = $groupCode['SALE_LABEL'];
-		$this->data['group_code_brands_banner'] = $groupCode['BRANDS_BANNER'];
 		$this->data['banners'] = $this->model_design_banner->getBanners();
 
 		$dataConfig =  $this->model_setting_custom->getDataConfig();
@@ -73,10 +72,10 @@ class ControllerExtensionCustomSettings extends Controller {
 		$this->response->setOutput($this->render());
 	}	
 
-	function save() {	
+	function saveSaleLabel() {	
 		$data = $this->request->post;
 		$this->load->model('setting/custom');
-		$save = $this->model_setting_custom->save($data);
+		$save = $this->model_setting_custom->saveSaleLabel($data);
 
 		$this->response->setOutput(json_encode(array('save' => $save)));
 	}

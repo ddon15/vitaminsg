@@ -54,7 +54,7 @@
 
   .img-size {
     width: 120px;
-    weight: 70px;
+    height: 70px;
   }
 
   .brands-banner:hover img{

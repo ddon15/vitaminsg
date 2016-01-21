@@ -29,14 +29,14 @@
     overflow: hidden;
   }
   .brands-banner-wrapper .brands-banner-top {
-    width: 120px;
+    width: 140px;
     height: 70px;
     float: left;
     margin: 5px;
   }
 
   .brands-banner-wrapper .brands-banner {
-    width: 120px;
+    width: 140px;
     height: 70px;
     float: left;
     margin: 5px;
@@ -53,27 +53,27 @@
   }
 
   .img-size {
-    width: 120px;
+    width: 140px;
     height: 70px;
   }
 
   .brands-banner:hover img{
-    width: 130px;
+    width: 150px;
     opacity: .5;
   }
 
   .brands-banner-top:hover img{
-    width: 130px;
+    width: 150px;
     opacity: .5;
   }
 
   .max-dim-top {
     max-height: 70px;
-    max-width: 130px;
+    max-width: 140px;
   }
   .max-dim-def {
     max-height: 70px;
-    max-width: 130px;
+    max-width: 140px;
   }
   .brands-banner-header {
     font-size: x-large;

@@ -5,10 +5,10 @@
     <h2><img src="http://riglist.com/email-system/sg/images/vitamin.sg-header.jpg"></h2>
   </div>
   
-  <div class="eight columns">  
+  <div class="eight columns" id="referrals">  
     <h2>Refer your loved ones</h2>
-    <em>Note: Free shipping applies in Singapore only.</em>
-
+    <em>Note: Free shipping applies in <b>Singapore</b> only.</em>
+    <div class="info warning <?php if (!$_GET['show']) echo "hide"; ?>">You have to refer at least 3 loved ones to continue</div>
     <form action="<?php echo $_SERVER['REQUEST_URI'];?>" method="POST" name="referral">
     	<input type="hidden" name="referrer" value="<?php echo $_GET['email']?>" />
     	<input type="hidden" name="campaign" value="<?php echo $_GET['cpn']?>" />

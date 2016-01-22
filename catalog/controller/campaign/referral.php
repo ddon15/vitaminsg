@@ -8,11 +8,14 @@ class ControllerCampaignReferral extends Controller {
 
     	if (($this->request->server['REQUEST_METHOD'] == 'POST')) {
     		$request = $this->request->post;
-    		$query = 'INSERT INTO refers values("", "'.$request["referrer"].'", "'.$request["campaign"].'", "'.$request["name1"].'", "'.$request["email1"].'", "'.$request["name2"].'", "'.$request["email2"].'", "'.$request["name3"].'", "'.$request["email3"].'")';
-    		if ($request["name1"] && $request["email1"] && $request["name2"] && $request["email2"] && $request["name3"] && $request["email3"])
+    		
+    		if ($request["name1"] && $request["email1"] && $request["name2"] && $request["email2"] && $request["name3"] && $request["email3"]) {
+    			$query = 'INSERT INTO refers values("", "'.$request["referrer"].'", "'.$request["campaign"].'", "'.$request["name1"].'", "'.$request["email1"].'", "'.$request["name2"].'", "'.$request["email2"].'", "'.$request["name3"].'", "'.$request["email3"].'")';
 				$this->db->query($query);
-			else 
-				// Display error.
+				$this->redirect($this->url->link('campaign/thank_you', 'email='.$request["referrer"].'&referrer=true'));
+    		} else {
+    			$this->redirect($this->url->link('campaign/referral', 'show=true'));
+    		}
     	}
 
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/campaign/referral.tpl')) {

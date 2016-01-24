@@ -12,6 +12,8 @@ class ControllerProductProduct extends Controller {
 			'href'      => $this->url->link('common/home'),			
 			'separator' => false
 		);
+
+		$this->load->model('setting/custom');		
 		
 		$this->load->model('catalog/category');	
 		
@@ -169,6 +171,17 @@ class ControllerProductProduct extends Controller {
 		
 		$product_info = $this->model_catalog_product->getProduct($product_id);
 		
+		// Bulk Pricing
+		$this->data['brand_bulk_pricing'] = array();
+
+
+		$brandBulkPricing = $this->model_setting_custom->getBrandBulkPricing($product_info['manufacturer_id']);
+		
+		if($brandBulkPricing) {
+			$this->data['brand_bulk_pricing'] = $brandBulkPricing->rows;
+			$this->document->addStyle('catalog/view/theme/oxy/stylesheet/vit-custom-setting.css');
+		}
+
 		$this->data['product_info'] = $product_info;
 		
 		if ($product_info) {
@@ -350,6 +363,7 @@ class ControllerProductProduct extends Controller {
 			$this->data['reward'] = $product_info['reward'];
 			$this->data['points'] = $product_info['points'];
 			
+			
 			if ($product_info['quantity'] <= 0) {
 				$this->data['stock'] = $product_info['stock_status'];
 			} elseif ($this->config->get('config_stock_display')) {
@@ -397,7 +411,8 @@ class ControllerProductProduct extends Controller {
 				$this->data['price'] = false;
 			}
 			
-			$this->data['bulkpriceurl'] = "http://www.vitamin.sg/bulk-enquiry?p=" . urldecode($product_info['name']);
+
+			$this->data['bulkpriceurl'] = "/bulk-enquiry?p=" . urldecode($product_info['name']);
 			$this->data['bulkprice'] = "Bulk Pricing<br />大批购买<br />Borongan<br />15% to 70% Off";
 			if ((float)$product_info['special']) {
 				$this->data['special'] = $this->currency->format($this->tax->calculate($product_info['special'], $product_info['tax_class_id'], $this->config->get('config_tax')));

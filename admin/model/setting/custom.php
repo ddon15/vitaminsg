@@ -27,6 +27,13 @@ class ModelSettingCustom extends Model {
 		return $res;
 	}
 
+	function saveBrandBulkPricing($data) 
+	{
+		$res = $this->db->query("INSERT INTO " . DB_PREFIX . "brand_bulk_pricing (manufacturer_id, label, link, is_enabled) VALUES('" . $this->db->escape($data['brand']) . "', '" . $this->db->escape($data['label']) ."', '" . $this->db->escape($data['link']) . "', '" . $this->db->escape($data['is_enabled']) . "')");
+
+		return $res;
+	}
+
 	function saveBrandsBanner($data)
 	{
 
@@ -49,6 +56,10 @@ class ModelSettingCustom extends Model {
 
 	function getBrandsBanner() {
 		return $this->db->query("SELECT * FROM " . DB_PREFIX . "brands_banner");
+	}
+
+	function getBrandBulkPricing() {
+		return $this->db->query("SELECT * FROM " . DB_PREFIX . "brand_bulk_pricing bp LEFT JOIN oc_manufacturer m ON (bp.manufacturer_id = m.manufacturer_id);");
 	}
 
 	function getBrands($banner_id) {

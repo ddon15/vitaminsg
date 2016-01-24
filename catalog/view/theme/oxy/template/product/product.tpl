@@ -193,12 +193,12 @@
     <?php } ?>         
     <h1><?php /*[SB]Moved from above */ echo $heading_title; ?></h1>
       <?php if ($price) { ?>
-      <div class="price">
-		<?php if (empty($redeem_only) || !$redeem_only) { //[SB] Added Redemption ?>
+    <div class="price">
+		  <?php if (empty($redeem_only) || !$redeem_only) { //[SB] Added Redemption ?>
 	  
 			<?php if (!$special) { ?>
 			<div class="product-details-price-original-price"><?php echo $price; ?></div>
-			<div class="product-details-price-bulk-price"><a href="<?php echo $bulkpriceurl; ?>"><?php echo $bulkprice; ?></a></div>
+			<!-- <div class="product-details-price-bulk-price"><a href="<?php //echo $bulkpriceurl; ?>"><?php //echo $bulkprice; ?></a></div> -->
 			<?php /* [SB]Display Premium Member price */?>
 				<?php if ($premium_member_price) { ?>
 				<div class="product-details-price-block">
@@ -215,17 +215,16 @@
 				<?php }?>
 			<?php } else { ?>
 				<div class="product-details-price-original-price vit-price-struck"><?php echo $price; ?></div>
-				<div class="product-details-price-bulk-price"><a href="<?php echo $bulkpriceurl; ?>"><?php echo $bulkprice; ?></a></div>
+				<!-- <div class="product-details-price-bulk-price"><a href="<?php echo $bulkpriceurl; ?>"><?php //echo $bulkprice; ?></a></div> -->
 				<div class="clearfix">
-				<div class="product-details-price-block">
-					<div class="product-details-sale-price-tag">SALE PRICE</div>
-					<span class="product-details-sale-price"><?php echo $special; ?></span>
-					<?php if($this->config->get('oxy_product_save_percent_status') ==1) { ?>
-					<div class="product-details-sale-discount"><?php echo $percent_savings; ?>% discount</div>
-					<?php }?>
-				</div>
-			
-				<?php /* [SB]Display Premium Member price */?>
+  				<div class="product-details-price-block">
+  					<div class="product-details-sale-price-tag">SALE PRICE</div>
+  					<span class="product-details-sale-price"><?php echo $special; ?></span>
+  					<?php if($this->config->get('oxy_product_save_percent_status') ==1) { ?>
+  					<div class="product-details-sale-discount"><?php echo $percent_savings; ?>% discount</div>
+  					<?php }?>
+  			</div>
+        <?php /* [SB]Display Premium Member price */?>
 				<?php if ($premium_member_price) { ?>
 				<div class="product-details-price-block">
 					<div class="product-details-member-price-tag">MEMBER PRICE</div>
@@ -237,8 +236,15 @@
 					<?php } ?>
 					<?php }?>
 				</div>
+
 				<?php }?>
 				</div>
+        <div>
+          <?php foreach($brand_bulk_pricing as $bp): ?>
+            <div class="bbp-style-1"><a href="<?php echo $bp['link']; ?>"><?php echo $bp[
+            'label']; ?></a></div>
+          <?php endforeach; ?>
+        </div>
 			<?php }//.end else ?>
 			<?php if($this->config->get('oxy_product_tax_status') ==1) { ?>
 				<?php if ($tax) { ?>
@@ -257,7 +263,7 @@
 			
 		<?php } else { //[SB] Added Redemption ?>
 			<div class="product-details-price-original-price" style="font-size:36px;"><?php echo sprintf($text_vit_dollar, $points); ?></div>
-			<div class="product-details-price-bulk-price"><a href="<?php echo $bulkpriceurl; ?>"><?php echo $bulkprice; ?></a></div>
+			<!-- <div class="product-details-price-bulk-price"><a href="<?php echo $bulkpriceurl; ?>"><?php //echo $bulkprice; ?></a></div> -->
 		<?php } ?>
 		
       </div>
@@ -897,7 +903,7 @@
       <div class="description"><?php echo $product['description']; ?></div>
       <?php if ($product['price']) { ?>
       <?php //[SB] Replaced price display style ?>
-            <div class="price">
+      <div class="price">
 			
 				<div class="vit-usual-price">
 						<div class="vit-price <?php echo $product['special'] ? 'vit-price-struck' : ''; ?>"><?php echo $product['price']; ?></div><div class="vit-badge"><?php echo $text_price_usual; ?></div>
@@ -922,8 +928,8 @@
 			<div class="vit-usual-price">
 				<div class="vit-price"><?php echo $text_vit_dollar . $product['points']; ?></div>
 			</div>
+
 	<?php } ?>
-	  	  
       <div class="cart">
         <input type="button" value="<?php echo $button_cart; ?>" onclick="addToCart('<?php echo $product['product_id']; ?>');" class="button" />
       </div>

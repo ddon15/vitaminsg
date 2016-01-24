@@ -32,7 +32,11 @@ class ControllerExtensionCustomSettings extends Controller {
 		}
 
 		$brandsBanner = $this->model_setting_custom->getBrandsBanner();
+		$this->data['brand_bulk_pricing'] = array();
 
+		$brandBulkPricing = $this->model_setting_custom->getBrandBulkPricing();
+		if($brandBulkPricing) $this->data['brand_bulk_pricing'] = $brandBulkPricing->rows;
+		
 		if ($brandsBanner) {
 			$brandsBannerRow = $brandsBanner->row;
 			$brandsAndTop = $this->model_setting_custom->getBrands($brandsBannerRow['banner_id']);
@@ -84,6 +88,14 @@ class ControllerExtensionCustomSettings extends Controller {
 		$data = $this->request->post;
 		$this->load->model('setting/custom');
 		$save = $this->model_setting_custom->saveBrandsBanner($data);
+
+		$this->response->setOutput(json_encode(array('save' => $save)));
+	}
+
+	function saveBrandBulkPricing() {	
+		$data = $this->request->post;
+		$this->load->model('setting/custom');
+		$save = $this->model_setting_custom->saveBrandBulkPricing($data);
 
 		$this->response->setOutput(json_encode(array('save' => $save)));
 	}

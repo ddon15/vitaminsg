@@ -29,14 +29,14 @@
     overflow: hidden;
   }
   .brands-banner-wrapper .brands-banner-top {
-    width: 120px;
+    width: 140px;
     height: 70px;
     float: left;
     margin: 5px;
   }
 
   .brands-banner-wrapper .brands-banner {
-    width: 120px;
+    width: 140px;
     height: 70px;
     float: left;
     margin: 5px;
@@ -52,23 +52,28 @@
     transition: .3s ease-in-out;
   }
 
+  .img-size {
+    width: 140px;
+    height: 70px;
+  }
+
   .brands-banner:hover img{
-    width: 130px;
+    width: 150px;
     opacity: .5;
   }
 
   .brands-banner-top:hover img{
-    width: 130px;
+    width: 150px;
     opacity: .5;
   }
 
   .max-dim-top {
     max-height: 70px;
-    max-width: 130px;
+    max-width: 140px;
   }
   .max-dim-def {
     max-height: 70px;
-    max-width: 130px;
+    max-width: 140px;
   }
   .brands-banner-header {
     font-size: x-large;
@@ -94,14 +99,14 @@
         <div class="margin-top-25">
           <?php foreach ($brands_top_banner as $each): ?>
             <div class="brands-banner-top brand-hover">
-            <a href="<?php echo $each['href']; ?>"><img src="image/<?php echo $each['image']; ?>" alt="<?php echo $each['name']; ?>" class="max-dim-top"/></a>    
+            <a href="<?php echo $each['href']; ?>"><img src="image/<?php echo $each['image']; ?>" alt="<?php echo $each['name']; ?>" class="max-dim-top img-size"/></a>    
             </div>
           <?php endforeach ?>
         </div>
         <div>
           <?php foreach ($brands_banner as $each): ?>
             <div class="brands-banner brand-hover">
-            <a href="<?php echo $each['href']; ?>"><img src="image/<?php echo $each['image']; ?>" alt="<?php echo $each['name']; ?>" class="max-dim-def"/></a>    
+            <a href="<?php echo $each['href']; ?>"><img src="image/<?php echo $each['image']; ?>" alt="<?php echo $each['name']; ?>" class="max-dim-def img-size"/></a>    
             </div>
           <?php endforeach ?>
         </div>

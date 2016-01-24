@@ -1,0 +1,16 @@
+.bbp-style-1 {
+	background-color: #EB7626;
+	text-align: center;
+	height: 47px;
+	margin-bottom: 10px;
+	float: left;
+	margin: 10px 5px 10px 5px;
+	padding: 5px;
+	width: 100px;
+}
+
+.bbp-style-1 > a {
+	color: white;
+	font-size: 14px;
+	font-weight: bold;
+}

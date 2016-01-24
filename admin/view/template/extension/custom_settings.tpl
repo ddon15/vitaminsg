@@ -19,6 +19,7 @@ display: inline-block;
         <div id="tabs" class="htabs">
         <a href="#tab-badges" class="selected">Product Badges</a>
         <a href="#tab-hl">Brands Banner</a>
+        <a href="#tab-bp">Brands Bulk Pricing</a>
         </div>
         <div id="tab-badges">
             <h3>Sale</h3><hr>
@@ -222,6 +223,69 @@ display: inline-block;
                 </tbody>
             </table>
         </div>
+        <div id="tab-bp">
+            <table class="form">
+                <tbody>
+                    <tr>
+                        <td><span class="required"></span> Brand:</td>
+                        <td>
+                            <select name="bp-brand">
+                                <?php foreach ($manufacturers as $m): ?>
+                                    <option value="<?php echo $m['manufacturer_id']; ?>"><?php echo $m['name']; ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="required"></span> Label:</td>
+                        <td>
+                            <input type="text" value="" name="bp-label"> 
+                        </td>
+                    </tr>
+                     <tr>
+                        <td><span class="required"></span> Order Link:</td>
+                        <td>
+                            <input type="text" value="" name="bp-link"> 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Enabled</td>
+                        <td>
+                        <select name="bp-is-enabled">
+                            <option value="1">True</option>
+                            <option value="0">False</option>
+                        </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td align="right">
+                            <a class="button" id="btn-add-bp">Add</a>
+                            <a class="button" id="btn-bp-cancel">Cancel</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <table class="form">
+                          <tr>
+                            <td>Manufacturer</td>
+                            <td>Label</td>
+                            <td>Order Link</td>
+                            <td>Enabled</td>
+                          </tr>
+                          <?php foreach ($brand_bulk_pricing as $bp): ?>
+                          <tr>
+                                <td><?php echo $bp['name']; ?></td>
+                                <td><?php echo $bp['label']; ?></td>
+                                <td><?php echo $bp['link']; ?></td>
+                                <td><?php echo $bp['is_enabled']; ?></td>
+                                <td><a class="button btn-remove-bp" id="" data-id="<?php echo $bp['id']; ?>">Remove</a></td>
+                          </tr>
+                          <?php endforeach; ?>
+                        </table>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 </div>
@@ -261,6 +325,54 @@ $('#btn-save-sl').on('click', function(e) {
             elem.attr('disabled', false);
         }
     });
+});
+
+$('#btn-add-bp').on('click',function(e) {
+  var data = {
+    brand: $('select[name="bp-brand"]').val(),
+    label: $('input[name="bp-label"]').val(), 
+    link: $('input[name="bp-link"]').val(), 
+    is_enabled: $('select[name="bp-is-enabled"]').val()
+  };
+
+  console.log(data);
+  $.ajax({
+        type:'post',
+        url: 'index.php?route=extension/custom_settings/saveBrandBulkPricing&token=<?php echo $token; ?>',
+        data: data,
+        dataType: 'json',
+        success: function(res) {
+          console.log(res);
+            if(res.save) {
+              alert('Brand Bulk Pricing successfully save.');
+              location.reload();
+            }
+
+            elem.attr('disabled', false);
+        }
+    });
+
+  e.preventDefault();
+});
+
+$('.btn-remove-bp').on('click', function(e) {
+  var id = $(this).data('id');
+  e.preventDefault();
+  $.ajax({
+        type:'post',
+        url: 'index.php?route=extension/custom_settings/deleteBrandBulkPricing&token=<?php echo $token; ?>',
+        data: {id:id},
+        dataType: 'json',
+        success: function(res) {
+          console.log(res);
+            if(res.save) {
+              alert('Brand Bulk Pricing successfully deleted.');
+              location.reload();
+            }
+
+            elem.attr('disabled', false);
+        }
+    });  
 });
 
 $('#btn-add-brand').click(function(e) {

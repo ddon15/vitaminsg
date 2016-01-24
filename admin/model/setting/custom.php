@@ -62,6 +62,10 @@ class ModelSettingCustom extends Model {
 		return $this->db->query("SELECT * FROM " . DB_PREFIX . "brand_bulk_pricing bp LEFT JOIN oc_manufacturer m ON (bp.manufacturer_id = m.manufacturer_id);");
 	}
 
+	function deleteBrandBulkPricing($id) {
+		return $this->db->query("DELETE FROM " . DB_PREFIX . "brand_bulk_pricing WHERE id=".$id.";"); 
+	}
+
 	function getBrands($banner_id) {
 		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "brands_banner WHERE banner_id = '" . (int)$banner_id . "'"); 
 		$brandsBanner = $query->row;

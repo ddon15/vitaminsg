@@ -278,6 +278,7 @@ display: inline-block;
                                 <td><?php echo $bp['label']; ?></td>
                                 <td><?php echo $bp['link']; ?></td>
                                 <td><?php echo $bp['is_enabled']; ?></td>
+                                <td><a class="button btn-remove-bp" id="" data-id="<?php echo $bp['id']; ?>">Remove</a></td>
                           </tr>
                           <?php endforeach; ?>
                         </table>
@@ -352,6 +353,26 @@ $('#btn-add-bp').on('click',function(e) {
     });
 
   e.preventDefault();
+});
+
+$('.btn-remove-bp').on('click', function(e) {
+  var id = $(this).data('id');
+  e.preventDefault();
+  $.ajax({
+        type:'post',
+        url: 'index.php?route=extension/custom_settings/deleteBrandBulkPricing&token=<?php echo $token; ?>',
+        data: {id:id},
+        dataType: 'json',
+        success: function(res) {
+          console.log(res);
+            if(res.save) {
+              alert('Brand Bulk Pricing successfully deleted.');
+              location.reload();
+            }
+
+            elem.attr('disabled', false);
+        }
+    });  
 });
 
 $('#btn-add-brand').click(function(e) {

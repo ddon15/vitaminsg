@@ -99,4 +99,13 @@ class ControllerExtensionCustomSettings extends Controller {
 
 		$this->response->setOutput(json_encode(array('save' => $save)));
 	}
+
+	function deleteBrandBulkPricing() {
+		$data = $this->request->post;
+		$this->load->model('setting/custom');
+
+		$save = $this->model_setting_custom->deleteBrandBulkPricing($data['id']);
+
+		$this->response->setOutput(json_encode(array('save' => $save)));
+	}
 }

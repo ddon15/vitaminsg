@@ -1,5 +1,5 @@
 <?php
-require 'getresponse.php';
+// require 'getresponse.php';
 
 class ControllerCampaignThankYou extends Controller {
 	protected $paypal_email = 'paypal@sainhall.com';

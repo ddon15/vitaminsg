@@ -17,11 +17,11 @@ class ControllerCampaignThankYou extends Controller {
 				$this->db->query($query);
 				
 				// notify admin with the new referral
-				if ($_GET['referrer']) {
-					$email = new Email('ruth.penafiel@vitamin.sg');
-					$referred = $request['email'];
-					$email->send("Shipping Request", "<p>Good day!</p><p>$referred has filled in his/her shipping address.</p>");
-				}
+				// if ($_GET['referrer']) {
+				// 	$email = new Email('ruth.penafiel@vitamin.sg');
+				// 	$referred = $request['email'];
+				// 	$email->send("Shipping Request", "<p>Good day!</p><p>$referred has filled in his/her shipping address.</p>");
+				// }
 
 				$this->redirect_sucess_urls();
     		} else {
@@ -50,7 +50,6 @@ class ControllerCampaignThankYou extends Controller {
 	protected function redirect_sucess_urls() {
 		if ($_GET['referrer']) {
 			$this->redirect($this->url->link('campaign/thank_you', 'show=true&referrer=true'));
-			//send email to the referrer
 		} else {
 			if ($_GET['cpn'] == 2 || $_GET['cpn'] == 3)
 				$this->redirect('https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business='.$this->paypal_email.'&item_name=Sundown Naturals&amount=1%2e00&currency_code=USD&return=http://vitamin.sg');

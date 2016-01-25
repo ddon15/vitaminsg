@@ -31,21 +31,21 @@ class ControllerCampaignReferral extends Controller {
 					$referrer_name = $request["referrer"];
 				
 				// send to referrals
-				foreach ($name_emails as $name => $e) {
-					$email = new Email($e);
-					$name = ucfirst($name);
+				// foreach ($name_emails as $name => $e) {
+				// 	$email = new Email($e);
+				// 	$name = ucfirst($name);
 
-					$subject = "Hey, $name! $referrer_name Sends You A Gift To Claim!";
-					$email->send($subject, $this->get_email_content(2, $e, $request["referrer"]));
-				}
+				// 	$subject = "Hey, $name! $referrer_name Sends You A Gift To Claim!";
+				// 	$email->send($subject, $this->get_email_content(2, $e, $request["referrer"]));
+				// }
 
 				// send to referrer
-				$email = new Email($request["referrer"]);
-				$email->send('Share More FREE Bottles Of Sundown Naturals!', $this->get_email_content(3, $request["referrer"]));
+				// $email = new Email($request["referrer"]);
+				// $email->send('Share More FREE Bottles Of Sundown Naturals!', $this->get_email_content(3, $request["referrer"]));
 
 				// notify admin with the new referral
-				$email = new Email('ruth.penafiel@vitamin.sg');
-				$email->send("Shipping Request", "<p>Good day!</p><p>$referrer_name ( ".$request["referrer"]." ) has successfully referred three persons. </p>");
+				// $email = new Email('ruth.penafiel@vitamin.sg');
+				// $email->send("Shipping Request", "<p>Good day!</p><p>$referrer_name ( ".$request["referrer"]." ) has successfully referred three persons. </p>");
 				
 				$this->redirect($this->url->link('campaign/thank_you', 'email='.$request["referrer"].'&referrer=true&success=true&cpn='.$_GET['cpn']));
     		} else {

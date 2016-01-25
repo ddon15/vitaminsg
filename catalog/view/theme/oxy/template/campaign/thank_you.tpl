@@ -32,15 +32,12 @@
             </tr>
             <tr><td colspan="3"><b> Please enter your shipping address <i>(required)</i> *: </b></td></tr>
     		<tr>
-    			<td colspan="2">
-    				<input placeholder="Street" name="street" style="width: 460px; margin: 5px auto 5px; border-radius: 3px; padding: 10px; border: 1px solid #A8A9A9;" type="text" /> 
+    			<td colspan="3">
+    				<input placeholder="Street" name="street" style="width: 100%; margin: 5px auto 5px; border-radius: 3px; padding: 10px; border: 1px solid #A8A9A9;" type="text" /> 
     			</td>
-    			<td>
-    				<input placeholder="City" name="city" style="width: 220px; margin: 5px auto 5px; border-radius: 3px; padding: 10px; border: 1px solid #A8A9A9; float: right;" type="text" />
-    			</td>
-    		</tr>
-    		<tr>
-    			<td><input placeholder="State" name="state" style="width: 220px; margin: 5px auto 5px; border-radius: 3px; padding: 10px; border: 1px solid #A8A9A9;" type="text" /> </td>
+            </tr>
+            <tr>
+    			<td><input placeholder="City" name="city" style="width: 220px; margin: 5px auto 5px; border-radius: 3px; padding: 10px; border: 1px solid #A8A9A9; float: right;" type="text" /></td>
     			<td><input disabled value="Singapore" style="width: 220px; margin: 5px auto 5px; border-radius: 3px; padding: 10px; border: 1px solid #A8A9A9;" type="text" /> </td>
     			<td><input placeholder="Zip Code" name="zip" style="width: 220px; margin: 5px auto 5px; border-radius: 3px; padding: 10px; border: 1px solid #A8A9A9; float: right;" type="text" /></td>
     		</tr>

@@ -16,7 +16,7 @@ class ControllerCampaignThankYou extends Controller {
 				$this->db->query($query);
 				// notify admin with the new referral
 				if ($_GET['referrer']) {
-					$email = new Email($request['email']);
+					$email = new Email('ruth.penafiel@vitamin.sg');
 					$email->send("Shipping Request", "<p>Good day!</p><p>$request['email'] has filled in his/her shipping address.</p>");
 				}
 

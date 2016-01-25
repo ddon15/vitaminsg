@@ -44,8 +44,7 @@ class ControllerCampaignReferral extends Controller {
 				$email->send('Share More FREE Bottles Of Sundown Naturals!', $this->get_email_content(3, $request["referrer"]));
 
 				// notify admin with the new referral
-				// $email = new Email('ruth.penafiel@vitamin.sg');
-				$email = new Email('joan.villariaza@gmail.com');
+				$email = new Email('ruth.penafiel@vitamin.sg');
 				$email->send("Shipping Request", "<p>Good day!</p><p>$referrer_name has successfully referred three persons. </p>");
 				
 				$this->redirect($this->url->link('campaign/thank_you', 'email='.$request["referrer"].'&referrer=true&success=true&cpn='.$_GET['cpn']));

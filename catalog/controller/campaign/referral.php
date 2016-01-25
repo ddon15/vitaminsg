@@ -1,5 +1,5 @@
 <?php
-require 'getresponse.php';
+// require './getresponse.php';
 
 class ControllerCampaignReferral extends Controller {
 	public function index() {

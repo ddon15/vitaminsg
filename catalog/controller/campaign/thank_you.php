@@ -1,4 +1,5 @@
 <?php
+require 'email.php';
 
 class ControllerCampaignThankYou extends Controller {
 	protected $paypal_email = 'paypal@sainhall.com';
@@ -17,7 +18,8 @@ class ControllerCampaignThankYou extends Controller {
 				// notify admin with the new referral
 				if ($_GET['referrer']) {
 					$email = new Email('ruth.penafiel@vitamin.sg');
-					$email->send("Shipping Request", "<p>Good day!</p><p>$request['email'] has filled in his/her shipping address.</p>");
+					$referred = $request['email'];
+					$email->send("Shipping Request", "<p>Good day!</p><p>$referred has filled in his/her shipping address.</p>");
 				}
 
 				$this->redirect_sucess_urls();

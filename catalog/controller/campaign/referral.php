@@ -26,9 +26,9 @@ class ControllerCampaignReferral extends Controller {
 
 				$query = 'SELECT firstname FROM oc_customer WHERE email = "'.$request["referrer"].'"';
 				$referrer_name = $this->db->query($query);
-				$referrer_name = ucfirst($referrer_name->row['firstname']);
+				$referrer_name = ucfirst($referrer_name->row['firstname']).'( '.$request["referrer"].' )';
 				if (!$referrer_name)
-					$referrer_name = ucfirst($request["referrer"]);
+					$referrer_name = $request["referrer"];
 				
 				// send to referrals
 				foreach ($name_emails as $name => $email) {
@@ -79,7 +79,7 @@ class ControllerCampaignReferral extends Controller {
 	protected function get_email_content($template_number, $email, $referral) {
 		$cpn = $_GET['cpn'];
 		$curlSession = curl_init();
-	    curl_setopt($curlSession, CURLOPT_URL, 'http://vit.local/catalog/view/theme/oxy/template/campaign/campaigns_emails/campaign_'.$cpn.'/email_'.$template_number.'.html.php?email='.$email.'&ref='.$referral);
+	    curl_setopt($curlSession, CURLOPT_URL, 'http://vit.sg/catalog/view/theme/oxy/template/campaign/campaigns_emails/campaign_'.$cpn.'/email_'.$template_number.'.html.php?email='.$email.'&ref='.$referral);
 	    curl_setopt($curlSession, CURLOPT_BINARYTRANSFER, true);
 	    curl_setopt($curlSession, CURLOPT_RETURNTRANSFER, true);
 

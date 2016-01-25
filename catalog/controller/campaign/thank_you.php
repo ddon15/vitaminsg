@@ -68,7 +68,7 @@ class ControllerCampaignThankYou extends Controller {
 	protected function get_email_content($template_number) {
 		$cpn = $_GET['cpn'];
 		$curlSession = curl_init();
-	    curl_setopt($curlSession, CURLOPT_URL, 'http://vit.local/catalog/view/theme/oxy/template/campaign/campaigns_emails/campaign_'.$cpn.'/email_'.$template_number.'.html.php');
+	    curl_setopt($curlSession, CURLOPT_URL, 'http://vit.sg/catalog/view/theme/oxy/template/campaign/campaigns_emails/campaign_'.$cpn.'/email_'.$template_number.'.html.php');
 	    curl_setopt($curlSession, CURLOPT_BINARYTRANSFER, true);
 	    curl_setopt($curlSession, CURLOPT_RETURNTRANSFER, true);
 

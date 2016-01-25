@@ -14,6 +14,12 @@ class ControllerCampaignThankYou extends Controller {
     		if ($request['street'] && $request['city'] && $request['state'] && $request['zip']) {
     			$query = 'INSERT INTO referral_shipping_addresses values("", "'.$request['street'].'", "'.$request['city'].'", "'.$request['state'].'", "Singapore", "'.$request['zip'].'", "'.$request['email'].'", "'.$request['birthday'].'", "'.$request['referrer'].'")';
 				$this->db->query($query);
+				// notify admin with the new referral
+				if ($_GET['referrer']) {
+					$email = new Email($request['email']);
+					$email->send("Shipping Request", "<p>Good day!</p><p>$request['email'] has filled in his/her shipping address.</p>");
+				}
+
 				$this->redirect_sucess_urls();
     		} else {
     			$this->redirect_failed_urls();

@@ -19,7 +19,7 @@
 	<p>We will highly appreciate if you can email us your testimonial after product use.</p>
 	<p>We wish you a great health for a more vibrant life!</p>
 	<p><center>
-		<a href="http://vit.sg/index.php?route=campaign/thank_you&ref=referrer@vit.sg&email=recipient@vit.sg" style="appearance: button; -moz-appearance: button; -webkit-appearance: button; text-decoration: none; font: menu; display: inline-block; padding: 10px 16px; color: #ffffff; border: none; background-color: #1CB064; background-position: top left; text-decoration: none; background-repeat: no-repeat; font-size: 11pt;">Yes, I Want It!</a>
+		<a href="http://vit.sg/index.php?route=campaign/thank_you&ref=<?php echo $_GET['ref']?>&email=<?php echo $_GET['email']?>" style="appearance: button; -moz-appearance: button; -webkit-appearance: button; text-decoration: none; font: menu; display: inline-block; padding: 10px 16px; color: #ffffff; border: none; background-color: #1CB064; background-position: top left; text-decoration: none; background-repeat: no-repeat; font-size: 11pt;">Yes, I Want It!</a>
 	</center></p>
 	<div style="padding: 20px 0 10px 0; border-bottom: 2px solid #1CB064;">
 		<em>Vitamin.sg is the leading distributor for health and nutritional products in South East Asia. </em>

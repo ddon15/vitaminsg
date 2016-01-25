@@ -26,7 +26,7 @@ class ControllerCampaignReferral extends Controller {
 
 				$query = 'SELECT firstname FROM oc_customer WHERE email = "'.$request["referrer"].'"';
 				$referrer_name = $this->db->query($query);
-				$referrer_name = ucfirst($referrer_name->row['firstname']).'( '.$request["referrer"].' )';
+				$referrer_name = ucfirst($referrer_name->row['firstname']);
 				if (!$referrer_name)
 					$referrer_name = $request["referrer"];
 				
@@ -45,7 +45,7 @@ class ControllerCampaignReferral extends Controller {
 
 				// notify admin with the new referral
 				$email = new Email('ruth.penafiel@vitamin.sg');
-				$email->send("Shipping Request", "<p>Good day!</p><p>$referrer_name has successfully referred three persons. </p>");
+				$email->send("Shipping Request", "<p>Good day!</p><p>$referrer_name ( ".$request["referrer"]." ) has successfully referred three persons. </p>");
 				
 				$this->redirect($this->url->link('campaign/thank_you', 'email='.$request["referrer"].'&referrer=true&success=true&cpn='.$_GET['cpn']));
     		} else {

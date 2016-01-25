@@ -21,10 +21,10 @@
                 <tr>
                     <td colspan="3">Referred by: <b><?php echo $_GET['ref']?></b></td>
                 </tr>
+                <tr>
+                    <td colspan="3"><b> Birthdate <i>(optional)</i>: </b></td>
+                </tr>
             <?php }?>
-            <tr>
-                <td colspan="3"><b> Birthdate <i>(optional)</i>: </b></td>
-            </tr>
             <tr>
                 <td>
                     <input placeholder="YYYY-MM-DD" name="birthday" style="width: 220px; margin: 5px auto 5px; border-radius: 3px; padding: 10px; border: 1px solid #A8A9A9;" type="text" />

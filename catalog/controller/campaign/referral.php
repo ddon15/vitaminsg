@@ -31,12 +31,12 @@ class ControllerCampaignReferral extends Controller {
 					$referrer_name = $request["referrer"];
 				
 				// send to referrals
-				foreach ($name_emails as $name => $email) {
-					$email = new Email($email);
+				foreach ($name_emails as $name => $e) {
+					$email = new Email($e);
 					$name = ucfirst($name);
 
 					$subject = "Hey, $name! $referrer_name Sends You A Gift To Claim!";
-					$email->send($subject, $this->get_email_content(2, $email, $request["referrer"]));
+					$email->send($subject, $this->get_email_content(2, $e, $request["referrer"]));
 				}
 
 				// send to referrer

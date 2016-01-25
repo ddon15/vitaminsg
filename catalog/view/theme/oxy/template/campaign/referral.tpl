@@ -8,6 +8,7 @@
   <div class="eight columns" id="referrals">  
     <h2>Refer your loved ones</h2>
     <em>Note: Free shipping applies in <b>Singapore</b> only.</em>
+    <div class="info warning <?php if (!$_GET['uniq']) echo "hide"; ?>">You must refer 3 unique email addresses.</div>
     <div class="info warning <?php if (!$_GET['show']) echo "hide"; ?>">You have to refer at least 3 loved ones to continue</div>
     <form action="<?php echo $_SERVER['REQUEST_URI'];?>" method="POST" name="referral">
     	<input type="hidden" name="referrer" value="<?php echo $_GET['email']?>" />

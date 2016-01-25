@@ -1,4 +1,6 @@
 <?php
+require 'getresponse.php';
+
 class ControllerCampaignThankYou extends Controller {
 	protected $paypal_email = 'paypal@sainhall.com';
 	public function index() {
@@ -42,7 +44,7 @@ class ControllerCampaignThankYou extends Controller {
 			$this->redirect($this->url->link('campaign/thank_you', 'show=true&referrer=true'));
 			//send email to the referrer
 		} else {
-			if ($_GET['cpn'] == 2)
+			if ($_GET['cpn'] == 2 || $_GET['cpn'] == 3)
 				$this->redirect('https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business='.$this->paypal_email.'&item_name=Sundown Naturals&amount=1%2e00&currency_code=USD&return=http://vitamin.sg');
 			$this->redirect($this->url->link('campaign/thank_you', 'show=true'));
 		}

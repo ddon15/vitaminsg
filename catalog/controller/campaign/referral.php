@@ -27,6 +27,8 @@ class ControllerCampaignReferral extends Controller {
 				$query = 'SELECT firstname FROM oc_customer WHERE email = "'.$request["referrer"].'"';
 				$referrer_name = $this->db->query($query);
 				$referrer_name = ucfirst($referrer_name->row['firstname']);
+				if (!$referrer_name)
+					$referrer_name = ucfirst($request["referrer"]);
 				
 				// send to referrals
 				foreach ($name_emails as $name => $email) {
@@ -34,15 +36,16 @@ class ControllerCampaignReferral extends Controller {
 					$name = ucfirst($name);
 
 					$subject = "Hey, $name! $referrer_name Sends You A Gift To Claim!";
-					$email->send($subject, $this->get_email_content(2));
+					$email->send($subject, $this->get_email_content(2, $email, $request["referrer"]));
 				}
 
 				// send to referrer
 				$email = new Email($request["referrer"]);
-				$email->send('Share More FREE Bottles Of Sundown Naturals!', $this->get_email_content(3));
+				$email->send('Share More FREE Bottles Of Sundown Naturals!', $this->get_email_content(3, $request["referrer"]));
 
 				// notify admin with the new referral
-				$email = new Email('ruth.penafiel@vitamin.sg');
+				// $email = new Email('ruth.penafiel@vitamin.sg');
+				$email = new Email('joan.villariaza@gmail.com');
 				$email->send("Shipping Request", "<p>Good day!</p><p>$referrer_name has successfully referred three persons. </p>");
 				
 				$this->redirect($this->url->link('campaign/thank_you', 'email='.$request["referrer"].'&referrer=true&success=true&cpn='.$_GET['cpn']));
@@ -73,10 +76,10 @@ class ControllerCampaignReferral extends Controller {
 	   return count($array) === count(array_unique($array));
 	}
 
-	protected function get_email_content($template_number) {
+	protected function get_email_content($template_number, $email, $referral) {
 		$cpn = $_GET['cpn'];
 		$curlSession = curl_init();
-	    curl_setopt($curlSession, CURLOPT_URL, 'http://vit.local/catalog/view/theme/oxy/template/campaign/campaigns_emails/campaign_'.$cpn.'/email_'.$template_number.'.html');
+	    curl_setopt($curlSession, CURLOPT_URL, 'http://vit.local/catalog/view/theme/oxy/template/campaign/campaigns_emails/campaign_'.$cpn.'/email_'.$template_number.'.php?email='.$email.'&ref='.$referral);
 	    curl_setopt($curlSession, CURLOPT_BINARYTRANSFER, true);
 	    curl_setopt($curlSession, CURLOPT_RETURNTRANSFER, true);
 

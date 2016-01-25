@@ -79,7 +79,7 @@ class ControllerCampaignReferral extends Controller {
 	protected function get_email_content($template_number, $email, $referral) {
 		$cpn = $_GET['cpn'];
 		$curlSession = curl_init();
-	    curl_setopt($curlSession, CURLOPT_URL, 'http://vit.local/catalog/view/theme/oxy/template/campaign/campaigns_emails/campaign_'.$cpn.'/email_'.$template_number.'.php?email='.$email.'&ref='.$referral);
+	    curl_setopt($curlSession, CURLOPT_URL, 'http://vit.local/catalog/view/theme/oxy/template/campaign/campaigns_emails/campaign_'.$cpn.'/email_'.$template_number.'.html.php?email='.$email.'&ref='.$referral);
 	    curl_setopt($curlSession, CURLOPT_BINARYTRANSFER, true);
 	    curl_setopt($curlSession, CURLOPT_RETURNTRANSFER, true);
 

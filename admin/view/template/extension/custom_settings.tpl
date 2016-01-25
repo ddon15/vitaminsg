@@ -243,9 +243,9 @@ display: inline-block;
                         </td>
                     </tr>
                      <tr>
-                        <td><span class="required"></span> Order Link:</td>
+                        <td><span class="required"></span> Quantity</td>
                         <td>
-                            <input type="text" value="" name="bp-link"> 
+                            <input type="number" value="" name="bp-qty"> 
                         </td>
                     </tr>
                     <tr>
@@ -269,14 +269,14 @@ display: inline-block;
                           <tr>
                             <td>Manufacturer</td>
                             <td>Label</td>
-                            <td>Order Link</td>
+                            <td>Quantity</td>
                             <td>Enabled</td>
                           </tr>
                           <?php foreach ($brand_bulk_pricing as $bp): ?>
                           <tr>
                                 <td><?php echo $bp['name']; ?></td>
                                 <td><?php echo $bp['label']; ?></td>
-                                <td><?php echo $bp['link']; ?></td>
+                                <td><?php echo $bp['qty']; ?></td>
                                 <td><?php echo $bp['is_enabled']; ?></td>
                                 <td><a class="button btn-remove-bp" id="" data-id="<?php echo $bp['id']; ?>">Remove</a></td>
                           </tr>
@@ -331,7 +331,7 @@ $('#btn-add-bp').on('click',function(e) {
   var data = {
     brand: $('select[name="bp-brand"]').val(),
     label: $('input[name="bp-label"]').val(), 
-    link: $('input[name="bp-link"]').val(), 
+    qty: $('input[name="bp-qty"]').val(), 
     is_enabled: $('select[name="bp-is-enabled"]').val()
   };
 

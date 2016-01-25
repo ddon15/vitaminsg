@@ -29,7 +29,7 @@ class ModelSettingCustom extends Model {
 
 	function saveBrandBulkPricing($data) 
 	{
-		$res = $this->db->query("INSERT INTO " . DB_PREFIX . "brand_bulk_pricing (manufacturer_id, label, link, is_enabled) VALUES('" . $this->db->escape($data['brand']) . "', '" . $this->db->escape($data['label']) ."', '" . $this->db->escape($data['link']) . "', '" . $this->db->escape($data['is_enabled']) . "')");
+		$res = $this->db->query("INSERT INTO " . DB_PREFIX . "brand_bulk_pricing (manufacturer_id, label, qty, is_enabled) VALUES('" . $this->db->escape($data['brand']) . "', '" . $this->db->escape($data['label']) ."', '" . $this->db->escape($data['qty']) . "', '" . $this->db->escape($data['is_enabled']) . "')");
 
 		return $res;
 	}

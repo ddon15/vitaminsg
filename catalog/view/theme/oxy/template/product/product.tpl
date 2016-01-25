@@ -240,9 +240,8 @@
 				<?php }?>
 				</div>
         <div>
-          <?php foreach($brand_bulk_pricing as $bp): ?>
-            <div class="bbp-style-1"><a href="<?php echo $bp['link']; ?>"><?php echo $bp[
-            'label']; ?></a></div>
+          <?php foreach($brand_bulk_pricing as $bp): $label = explode('(',$bp['label']); ?>
+            <div class="bbp-style-1"><a href="<?php echo $bulkpriceurl . '&qty=' . $bp['qty']; ?>" data-product="<?php echo $heading_title; ?>"><?php echo $label[0]; ?></a><p><?php echo '(' . $label[1]; ?></p></div>
           <?php endforeach; ?>
         </div>
 			<?php }//.end else ?>

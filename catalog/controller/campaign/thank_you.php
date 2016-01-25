@@ -1,5 +1,4 @@
 <?php
-require 'getresponse.php';
 
 class ControllerCampaignThankYou extends Controller {
 	protected $paypal_email = 'paypal@sainhall.com';
@@ -55,5 +54,18 @@ class ControllerCampaignThankYou extends Controller {
 			$this->redirect($this->url->link('campaign/thank_you', 'err=true&referrer=true'));
 		} else
 			$this->redirect($this->url->link('campaign/thank_you', 'err=true'));
+	}
+
+	protected function get_email_content($template_number) {
+		$cpn = $_GET['cpn'];
+		$curlSession = curl_init();
+	    curl_setopt($curlSession, CURLOPT_URL, 'http://vit.local/catalog/view/theme/oxy/template/campaign/campaigns_emails/campaign_'.$cpn.'/email_'.$template_number.'.html');
+	    curl_setopt($curlSession, CURLOPT_BINARYTRANSFER, true);
+	    curl_setopt($curlSession, CURLOPT_RETURNTRANSFER, true);
+
+	    $data = curl_exec($curlSession);
+	    curl_close($curlSession);
+
+	    return $data;
 	}
 }

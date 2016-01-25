@@ -9,8 +9,8 @@
   <div class="eight columns">  
     <h2>Shipping Information </h2>
     <em>Note: Free shipping applies in <b>Singapore</b> only.</em>
-    
-    <div class="info warning <?php if (!$_GET['err']) echo "hide"; ?>"><b>Ops!</b> You have to let us know where we will ship your FREE Sundown Naturals</div>
+    <div class="info success <?php if (!$_GET['success']) echo "hide"; ?>">You have successfully referred your friends.</div>
+    <div class="info warning <?php if (!$_GET['err']) echo "hide"; ?>"><b>Ops!</b> You have to let us know where we will ship your FREE Sundown Naturals.</div>
     <div class="info success <?php if (!$_GET['show']) echo "hide"; ?>"><b>Congratulations!</b> Your FREE Sundown Naturals will be sent to you in a couple of days.</div>
     <form action="<?php echo $_SERVER['REQUEST_URI'];?>" method="POST" name="referral">
         <input type="hidden" name="referrer" value="<?php echo $_GET['ref']?>" />

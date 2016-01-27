@@ -2,6 +2,9 @@
 <section id="content" class="columns op"><?php echo $content_top; ?>
 <div class="row">
   <h2>Referral Report </h2>
+  <?php
+    var_dump($ref);
+  ?>
   <table>
       <thead>
           <tr>

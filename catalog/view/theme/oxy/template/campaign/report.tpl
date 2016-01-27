@@ -47,21 +47,22 @@
           tab_text=tab_text+tab.rows[j].innerHTML+"</tr>";
       }
 
-      tab_text= tab_text.replace(/<A[^>]*>|<\/A>/g, "");//remove if u want links in your table
-      tab_text= tab_text.replace(/<img[^>]*>/gi,""); // remove if u want images in your table
-      tab_text= tab_text.replace(/<input[^>]*>|<\/input>/gi, ""); // reomves input params
-      tab_text= tab_text.replace(/<th[^>]*>|<\/th>/gi, ""); // reomves input params
-      tab_text= tab_text.replace(/<tr>/gi, ""); // reomves input params
-      tab_text= tab_text.replace(/<\/tr>/gi, ""); // reomves input params
-      tab_text= tab_text.replace(/<\/tbody>/gi, ""); // reomves input params
-      tab_text= tab_text.replace(/<tbody>/gi, ""); // reomves input params
-      tab_text= tab_text.replace(/<td>/gi, ""); // reomves input params
-      tab_text= tab_text.replace(/<\/td>/gi, ""); // reomves input params
-      tab_text= tab_text.replace(/<td colspan="2">/gi, ""); // reomves input params
-      tab_text= tab_text.replace(/<th>/gi, ""); // reomves input params
-      tab_text= tab_text.replace(/<\/th>/gi, ""); // reomves input params
-      tab_text= tab_text.replace(/<\/b>/gi, ""); // reomves input params
-      tab_text= tab_text.replace(/<b>/gi, ""); // reomves input params
+      tab_text= tab_text.replace(/<A[^>]*>|<\/A>/g, "");
+      tab_text= tab_text.replace(/<img[^>]*>/gi,""); 
+      tab_text= tab_text.replace(/<input[^>]*>|<\/input>/gi, ""); 
+      tab_text= tab_text.replace(/<tr>/gi, ""); 
+      tab_text= tab_text.replace(/<\/tr>/gi, ""); 
+      tab_text= tab_text.replace(/<\/tbody>/gi, ""); 
+      tab_text= tab_text.replace(/<tbody>/gi, ""); 
+      tab_text= tab_text.replace(/<td>/gi, ""); 
+      tab_text= tab_text.replace(/<\/td>/gi, ""); 
+      tab_text= tab_text.replace(/<td colspan="2">/gi, ""); 
+      tab_text= tab_text.remove(/<th>Referrals<\/th>/gi, ""); 
+      tab_text= tab_text.remove(/<th>Shipping Address<\/th>/gi, ""); 
+      tab_text= tab_text.replace(/<\/b>/gi, ""); 
+      tab_text= tab_text.replace(/<b>/gi, ""); 
+      tab_text= tab_text.replace(/\t/gi,''); 
+      tab_text= tab_text.replace(/0/gi,'');
 
       var ua = window.navigator.userAgent;
       var msie = ua.indexOf("MSIE "); 
@@ -72,11 +73,24 @@
           txtArea1.document.write(tab_text);
           txtArea1.document.close();
           txtArea1.focus(); 
-          sa=txtArea1.document.execCommand("SaveAs",true,"Say Thanks to Sumit.xls");
+          sa=txtArea1.document.execCommand("SaveAs",true,"Reports.xls");
       }  
       else                 //other browser not tested on IE 11
           sa = window.open('data:application/vnd.ms-excel,' + encodeURIComponent(tab_text));  
 
+      deleteEmptyRows()
       return (sa);
+  }
+
+  function deleteEmptyRows(){ 
+    var sh = SpreadsheetApp.getActiveSheet();
+    var data = sh.getDataRange().getValues();
+    var targetData = new Array();
+    for(n=0;n<data.length;++n){
+      if(data[n].join().replace(/,/g,'')!=''){ targetData.push(data[n])};
+      Logger.log(data[n].join().replace(/,/g,''))
+    }
+    sh.getDataRange().clear();
+    sh.getRange(1,1,targetData.length,targetData[0].length).setValues(targetData);
   }
 </script>

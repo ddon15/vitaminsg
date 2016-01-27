@@ -8,7 +8,7 @@
 	</h2>
 	<p>
 		<div style="height: 146px;">
-			<img src="http://vit.local/image/main-banner.png">
+			<img src="http://vit.sg/image/main-banner.png">
 		</div>
 	</p>
 	

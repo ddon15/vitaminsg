@@ -1,5 +1,4 @@
 <?php
-
 class ControllerCampaignReport extends Controller {
 	public function index() {
 		$this->language->load('campaign/report');

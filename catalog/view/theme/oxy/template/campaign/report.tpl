@@ -3,7 +3,7 @@
 <div class="row">
   <h2>Referral Report </h2>
   <?php
-    var_dump($ref);
+    var_dump($refers);
   ?>
   <table>
       <thead>

@@ -12,7 +12,7 @@ class ControllerCampaignThankYou extends Controller {
     	if (($this->request->server['REQUEST_METHOD'] == 'POST')) {
     		$request = $this->request->post;
     		
-    		if ($request['street'] && $request['city'] && $request['state'] && $request['zip']) {
+    		if ($request['street'] && $request['city'] && $request['zip']) {
     			$query = 'INSERT INTO referral_shipping_addresses values("", "'.$request['street'].'", "'.$request['city'].'", "'.$request['state'].'", "Singapore", "'.$request['zip'].'", "'.$request['email'].'", "'.$request['birthday'].'", "'.$request['referrer'].'")';
 				$this->db->query($query);
 				

@@ -5,20 +5,18 @@ class ControllerCampaignReport extends Controller {
 		$this->language->load('campaign/report');
 		$title = "Report";
 
-		// referrers
-		$query = "SELECT r.referrer, r.name1 AS name, r.email1 AS ref_email, a.* FROM refers r 
-			LEFT JOIN referral_shipping_addresses a ON r.email1 = a.email
-			union all
-			SELECT r.referrer, r.name2, r.email2 AS ref_email, a.* FROM refers r 
-			LEFT JOIN referral_shipping_addresses a ON r.email2 = a.email
-			union all
-			SELECT r.referrer, r.name3, r.email3 AS ref_email, a.* FROM refers r 
-			LEFT JOIN referral_shipping_addresses a ON r.email3 = a.email";
-		$referrer = $this->db->query($query);
+		$referrers = $this->model_campaign_report->getAllReferrers();
+		$refs = json_decode(json_encode($referrers), true);
 
-		$refs = json_decode(json_encode($referrer->rows), true);
+		$all_refers = [];
+		foreach ($refs as $ref) {
+			if ($ref['referrer']) {
+				$referred = $this->model_campaign_report->getReferredByReferrer($ref['referrer']);
+				$all_refers[$ref['referrer']] = json_decode(json_encode($referred), true);
+			}
+		}
 
-		$this->data['refers'] = $refs;
+		$this->data['refers'] = $all_refers;
 
     	$this->document->setTitle($title);
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/campaign/report.tpl')) {

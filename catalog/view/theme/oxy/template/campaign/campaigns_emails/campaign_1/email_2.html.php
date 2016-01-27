@@ -24,9 +24,9 @@
 	<div style="padding: 20px 0 10px 0; border-bottom: 2px solid #1CB064;">
 		<em>Vitamin.sg is the leading distributor for health and nutritional products in South East Asia. </em>
 	</div>
-	<div style="text-align: center">
-		<p>This email was sent by:</p>
-		<p>Sainhall Nutrihealth Pte Ltd, 59 Jalan Pemimpim, #02-02 L&Y Building, Singapore 577218</p>
-		<p>Copyright © 2015 Sainhall Nutrihealth Pte Ltd. All Rights Reserved.</p>
+	<div style="text-align: center;">
+		<p style="line-height: 15%;">This email was sent by:</p>
+		<p style="line-height: 15%;">Sainhall Nutrihealth Pte Ltd, 59 Jalan Pemimpim, #02-02 L&Y Building, Singapore 577218</p>
+		<p style="line-height: 15%;">Copyright © 2015 Sainhall Nutrihealth Pte Ltd. All Rights Reserved.</p>
 	</div>
 </div>

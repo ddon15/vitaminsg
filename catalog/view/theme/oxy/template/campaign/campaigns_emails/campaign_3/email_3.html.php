@@ -22,9 +22,9 @@
 		<a href="http://vit.sg/index.php?route=campaign/referral&email=<?php echo $_GET['email']?>&cpn=3" style="appearance: button; -moz-appearance: button; -webkit-appearance: button; text-decoration: none; font: menu; display: inline-block; padding: 10px 16px; color: #ffffff; border: none; background-color: #1CB064; background-position: top left; text-decoration: none; background-repeat: no-repeat; font-size: 11pt;">Refer your loved ones</a>
 	</center></p>
 	<div style="padding: 20px 0 10px 0; border-bottom: 2px solid #1CB064;"></div>
-	<div style="text-align: center">
-		<p>This email was sent by:</p>
-		<p>Sainhall Nutrihealth Pte Ltd, 59 Jalan Pemimpim, #02-02 L&Y Building, Singapore 577218</p>
-		<p>Copyright © 2015 Sainhall Nutrihealth Pte Ltd. All Rights Reserved.</p>
+	<div style="text-align: center;">
+		<p style="line-height: 15%;">This email was sent by:</p>
+		<p style="line-height: 15%;">Sainhall Nutrihealth Pte Ltd, 59 Jalan Pemimpim, #02-02 L&Y Building, Singapore 577218</p>
+		<p style="line-height: 15%;">Copyright © 2015 Sainhall Nutrihealth Pte Ltd. All Rights Reserved.</p>
 	</div>
 </div>

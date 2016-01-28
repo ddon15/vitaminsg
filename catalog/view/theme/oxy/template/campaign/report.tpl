@@ -57,8 +57,8 @@
       tab_text= tab_text.replace(/<td>/gi, ""); 
       tab_text= tab_text.replace(/<\/td>/gi, ""); 
       tab_text= tab_text.replace(/<td colspan="2">/gi, ""); 
-      tab_text= tab_text.remove(/<th>Referrals<\/th>/gi, ""); 
-      tab_text= tab_text.remove(/<th>Shipping Address<\/th>/gi, ""); 
+      tab_text= tab_text.replace(/<th>Referrals<\/th>/gi, ""); 
+      tab_text= tab_text.replace(/<th>Shipping Address<\/th>/gi, ""); 
       tab_text= tab_text.replace(/<\/b>/gi, ""); 
       tab_text= tab_text.replace(/<b>/gi, ""); 
       tab_text= tab_text.replace(/\t/gi,''); 

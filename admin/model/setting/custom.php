@@ -27,9 +27,9 @@ class ModelSettingCustom extends Model {
 		return $res;
 	}
 
-	function saveBrandBulkPricing($data) 
+	function saveBulkPricing($data) 
 	{
-		$res = $this->db->query("INSERT INTO " . DB_PREFIX . "brand_bulk_pricing (manufacturer_id, label, qty, is_enabled) VALUES('" . $this->db->escape($data['brand']) . "', '" . $this->db->escape($data['label']) ."', '" . $this->db->escape($data['qty']) . "', '" . $this->db->escape($data['is_enabled']) . "')");
+		$res = $this->db->query("INSERT INTO " . DB_PREFIX . "bulk_pricing (product_id, twin_pack, six_pack, bulk_pricing) VALUES('" . $this->db->escape($data['product_id']) . "', '" . $this->db->escape(json_encode($data['twin_pack'])) ."', '" . $this->db->escape(json_encode($data['six_pack'])) ."', '" . $this->db->escape(json_encode($data['bulk_pricing'])) . "')");
 
 		return $res;
 	}
@@ -58,12 +58,12 @@ class ModelSettingCustom extends Model {
 		return $this->db->query("SELECT * FROM " . DB_PREFIX . "brands_banner");
 	}
 
-	function getBrandBulkPricing() {
-		return $this->db->query("SELECT * FROM " . DB_PREFIX . "brand_bulk_pricing bp LEFT JOIN oc_manufacturer m ON (bp.manufacturer_id = m.manufacturer_id);");
+	function getBulkPricing() {
+		return $this->db->query("SELECT * FROM " . DB_PREFIX . "bulk_pricing bp LEFT JOIN oc_product p ON (bp.product_id = p.product_id) LEFT JOIN oc_product_description pd ON (p.product_id = pd.product_id);");
 	}
 
-	function deleteBrandBulkPricing($id) {
-		return $this->db->query("DELETE FROM " . DB_PREFIX . "brand_bulk_pricing WHERE id=".$id.";"); 
+	function deleteBulkPricing($id) {
+		return $this->db->query("DELETE FROM " . DB_PREFIX . "bulk_pricing WHERE id=".$id.";"); 
 	}
 
 	function getBrands($banner_id) {

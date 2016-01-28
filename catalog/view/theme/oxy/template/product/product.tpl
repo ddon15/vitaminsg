@@ -240,9 +240,30 @@
 				<?php }?>
 				</div>
         <div>
-          <?php foreach($brand_bulk_pricing as $bp): $label = explode('(',$bp['label']); ?>
-            <div class="bbp-style-1"><a href="<?php echo $bulkpriceurl . '&qty=' . $bp['qty']; ?>" data-product="<?php echo $heading_title; ?>"><?php echo $label[0]; ?></a><p><?php echo '(' . $label[1]; ?></p></div>
-          <?php endforeach; ?>
+        <?php if ($twin_pack['redirect_to']): ?>
+          <a class="bbp-style-1" href="<?php echo $twin_pack['redirect_to']; ?>">
+              <span class="bp-label"><?php echo $twin_pack['label']; ?>
+            </span>
+            <br>
+            <span class="bp-sub-label"><?php echo $twin_pack['sub_label'] ?></span>
+          </a>
+        <?php endif ?>
+        <?php if ($six_pack['redirect_to']): ?>
+          <a class="bbp-style-1" href="<?php echo $six_pack['redirect_to']; ?>">
+            <span class="bp-label"><?php echo $six_pack['label']; ?>
+            </span>
+            <br>
+              <span class="bp-sub-label"><?php echo $six_pack['sub_label'] ?></span>
+          </a>
+        <?php endif ?>
+        <?php if ($bulk_price['redirect_to']): ?>
+          <a class="bbp-style-1" href="<?php echo $bulk_price['redirect_to']; ?>">
+              <span class="bp-label"><?php echo $bulk_price['label']; ?>
+            </span>
+            <br>
+              <span class="bp-sub-label"><?php echo $bulk_price['sub_label'] ?></span>
+          </a>
+        <?php endif ?>
         </div>
 			<?php }//.end else ?>
 			<?php if($this->config->get('oxy_product_tax_status') ==1) { ?>

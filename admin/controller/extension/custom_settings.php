@@ -7,6 +7,7 @@ class ControllerExtensionCustomSettings extends Controller {
 
 		$this->load->model('setting/custom');
 		$this->load->model('catalog/manufacturer');
+		$this->load->model('catalog/product');
 		$this->load->model('design/banner');
 
 		$groupCode = $this->model_setting_custom->getGroupCode();
@@ -21,6 +22,7 @@ class ControllerExtensionCustomSettings extends Controller {
 		$this->data['brands_banner'] = array();
 		$this->data['sale_label_status'] = '';
 		$this->data['manufacturers'] = $manufacturers;
+		$this->data['products'] = $this->model_catalog_product->getProducts(array('sort' => 'model'));
 
 		$saleLabelConfig = $dataConfig[$this->data['group_code_sale_label']];
 
@@ -34,8 +36,8 @@ class ControllerExtensionCustomSettings extends Controller {
 		$brandsBanner = $this->model_setting_custom->getBrandsBanner();
 		$this->data['brand_bulk_pricing'] = array();
 
-		$brandBulkPricing = $this->model_setting_custom->getBrandBulkPricing();
-		if($brandBulkPricing) $this->data['brand_bulk_pricing'] = $brandBulkPricing->rows;
+		$prodBulkPricing = $this->model_setting_custom->getBulkPricing();
+		if($prodBulkPricing) $this->data['prod_bulk_pricing'] = $prodBulkPricing->rows;
 		
 		if ($brandsBanner) {
 			$brandsBannerRow = $brandsBanner->row;
@@ -92,19 +94,19 @@ class ControllerExtensionCustomSettings extends Controller {
 		$this->response->setOutput(json_encode(array('save' => $save)));
 	}
 
-	function saveBrandBulkPricing() {	
+	function saveBulkPricing() {	
 		$data = $this->request->post;
 		$this->load->model('setting/custom');
-		$save = $this->model_setting_custom->saveBrandBulkPricing($data);
+		$save = $this->model_setting_custom->saveBulkPricing($data);
 
 		$this->response->setOutput(json_encode(array('save' => $save)));
 	}
 
-	function deleteBrandBulkPricing() {
+	function deleteBulkPricing() {
 		$data = $this->request->post;
 		$this->load->model('setting/custom');
 
-		$save = $this->model_setting_custom->deleteBrandBulkPricing($data['id']);
+		$save = $this->model_setting_custom->deleteBulkPricing($data['id']);
 
 		$this->response->setOutput(json_encode(array('save' => $save)));
 	}

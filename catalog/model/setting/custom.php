@@ -52,7 +52,7 @@ class ModelSettingCustom extends Model {
 		return $text;		
 	}
 
-	function getBrandBulkPricing($manufacturerId) {
-		return $this->db->query("SELECT * FROM " . DB_PREFIX . "brand_bulk_pricing bp LEFT JOIN oc_manufacturer m ON (bp.manufacturer_id = m.manufacturer_id) WHERE bp.manufacturer_id = ".$manufacturerId." and is_enabled=1;");
+	function getBulkPricingDiscountLabel($productId) {
+		return $this->db->query("SELECT * FROM " . DB_PREFIX . "bulk_pricing bp LEFT JOIN oc_product p ON (bp.product_id = p.product_id) WHERE bp.product_id = ".$productId." and is_enabled=1;");
 	}
 }

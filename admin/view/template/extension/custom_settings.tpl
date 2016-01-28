@@ -249,12 +249,6 @@ display: inline-block;
                         </td>
                     </tr>
                     <tr>
-                        <td><span class="required"></span> Bulk Pricing: <br><span class="help">Ex. Bulk Pricing(Label) 15% - 70% Off(Sub Label)</span></td>
-                        <td>
-                            <input type="text" placeholder="Button Label" value="" name="bp-bp-label"> <input type="text" placeholder="Discount Label" value="" name="bp-bp-sub-label"> <input type="text" placeholder="Url Link" value="" name="bp-bp-link"> 
-                        </td>
-                    </tr>
-                    <tr>
                         <td></td>
                         <td align="right">
                             <a class="button" id="btn-add-bp">Add</a>
@@ -262,19 +256,18 @@ display: inline-block;
                         </td>
                     </tr>
                     <tr>
-                        <table class="form">
+                        <table class="form" id="table-bp">
                           <tr>
                             <td>Product</td>
                             <td>Twin Pack</td>
                             <td>Six Label</td>
-                            <td>Bulk Pricing</td>
                           </tr>
                           <?php foreach ($prod_bulk_pricing as $bp): 
                             $tp = json_decode($bp['twin_pack'], true);
                             $sp = json_decode($bp['six_pack'], true);
-                            $bp = json_decode($bp['bulk_pricing'], true);
                           ?>
                           <tr>
+                                <td><?php echo $bp['name']; ?></td>
                                 <td>
                                   Label: <?php echo $tp['label']; ?> <br>
                                   Sub Label: <?php echo $tp['sub_label']; ?> <br>
@@ -284,11 +277,6 @@ display: inline-block;
                                   Label: <?php echo $sp['label']; ?> <br>
                                   Sub Label: <?php echo $sp['sub_label']; ?> <br>
                                   Redirect To: <?php echo $sp['redirect_to']; ?>
-                                </td>
-                                <td>
-                                  Label: <?php echo $bp['label']; ?> <br>
-                                  Sub Label: <?php echo $bp['sub_label']; ?> <br>
-                                  Redirect To: <?php echo $bp['redirect_to']; ?>
                                 </td>
                                 <td><a class="button btn-remove-bp" id="" data-id="<?php echo $bp['id']; ?>">Remove</a></td>
                           </tr>
@@ -340,6 +328,7 @@ $('#btn-save-sl').on('click', function(e) {
 });
 
 $('#btn-add-bp').on('click',function(e) {
+  var elem = $(this);
   var data = {
     product_id: $('select[name="bp-product"]').val(),
     twin_pack: {
@@ -359,16 +348,24 @@ $('#btn-add-bp').on('click',function(e) {
     } 
   };
 
+  elem.attr('disabled', true);
+
   $.ajax({
         type:'post',
         url: 'index.php?route=extension/custom_settings/saveBulkPricing&token=<?php echo $token; ?>',
         data: data,
         dataType: 'json',
         success: function(res) {
-          console.log(res);
             if(res.save) {
-              alert('Brand Bulk Pricing successfully save.');
-              location.reload();
+             $('#table-bp').append('<tr>' +
+                ' <td>'+$("select[name=bp-product] option:selected").text()+'</td> ' + 
+                ' <td>Label: '+ data.twin_pack.label +' <br> Sub Label: '+ data.twin_pack.label +' <br> Redirect To: '+ data.twin_pack.redirect_to +'</td> ' +
+                ' <td>Label: '+ data.twin_pack.label +' <br> Sub Label: '+ data.twin_pack.label +' <br> Redirect To: '+ data.twin_pack.redirect_to +'</td> ' +
+                ' <td><a class="button btn-remove-bp" data-id="'+res.id+'">Remove</a></td> ' +
+                ' </tr> '
+                );
+
+             alert('Successfully save.');
             }
 
             elem.attr('disabled', false);
@@ -378,7 +375,7 @@ $('#btn-add-bp').on('click',function(e) {
   e.preventDefault();
 });
 
-$('.btn-remove-bp').on('click', function(e) {
+$('.btn-remove-bp').live('click', function(e) {
   var id = $(this).data('id');
   e.preventDefault();
   $.ajax({

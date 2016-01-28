@@ -59,7 +59,7 @@ class ModelSettingCustom extends Model {
 	}
 
 	function getBulkPricing() {
-		return $this->db->query("SELECT * FROM " . DB_PREFIX . "bulk_pricing bp LEFT JOIN oc_product p ON (bp.product_id = p.product_id) LEFT JOIN oc_product_description pd ON (p.product_id = pd.product_id);");
+		return $this->db->query("SELECT * FROM " . DB_PREFIX . "bulk_pricing bp LEFT JOIN oc_product p ON (bp.product_id = p.product_id) LEFT JOIN oc_product_description pd ON (bp.product_id = pd.product_id);");
 	}
 
 	function deleteBulkPricing($id) {

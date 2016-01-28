@@ -240,7 +240,7 @@
 				<?php }?>
 				</div>
         <div>
-        <?php if ($twin_pack['redirect_to']): ?>
+        <?php if ($twin_pack['label']) && $twin_pack['redirect_to']): ?>
           <a class="bbp-style-1" href="<?php echo $twin_pack['redirect_to']; ?>">
               <span class="bp-label"><?php echo $twin_pack['label']; ?>
             </span>
@@ -248,7 +248,7 @@
             <span class="bp-sub-label"><?php echo $twin_pack['sub_label'] ?></span>
           </a>
         <?php endif ?>
-        <?php if ($six_pack['redirect_to']): ?>
+        <?php if ($six_pack['label']) && $six_pack['redirect_to']): ?>
           <a class="bbp-style-1" href="<?php echo $six_pack['redirect_to']; ?>">
             <span class="bp-label"><?php echo $six_pack['label']; ?>
             </span>
@@ -256,14 +256,14 @@
               <span class="bp-sub-label"><?php echo $six_pack['sub_label'] ?></span>
           </a>
         <?php endif ?>
-        <?php if ($bulk_price['redirect_to']): ?>
-          <a class="bbp-style-1" href="<?php echo $bulk_price['redirect_to']; ?>">
-              <span class="bp-label"><?php echo $bulk_price['label']; ?>
-            </span>
-            <br>
-              <span class="bp-sub-label"><?php echo $bulk_price['sub_label'] ?></span>
-          </a>
-        <?php endif ?>
+        
+        <a class="bbp-style-1" href="<?php echo $bulkpriceurl; ?>">
+            <span class="bp-label">Bulk Pricing
+          </span>
+          <br>
+            <span class="bp-sub-label"></span>(15 - 70% Off)
+        </a>
+       
         </div>
 			<?php }//.end else ?>
 			<?php if($this->config->get('oxy_product_tax_status') ==1) { ?>

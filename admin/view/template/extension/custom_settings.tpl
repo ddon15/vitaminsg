@@ -19,7 +19,7 @@ display: inline-block;
         <div id="tabs" class="htabs">
         <a href="#tab-badges" class="selected">Product Badges</a>
         <a href="#tab-hl">Brands Banner</a>
-        <a href="#tab-bp">Brands Bulk Pricing</a>
+        <a href="#tab-bp">Bulk Pricing Discount Label</a>
         </div>
         <div id="tab-badges">
             <h3>Sale</h3><hr>
@@ -227,34 +227,31 @@ display: inline-block;
             <table class="form">
                 <tbody>
                     <tr>
-                        <td><span class="required"></span> Brand:</td>
+                        <td><span class="required"></span> Product:</td>
                         <td>
-                            <select name="bp-brand">
-                                <?php foreach ($manufacturers as $m): ?>
-                                    <option value="<?php echo $m['manufacturer_id']; ?>"><?php echo $m['name']; ?></option>
+                            <select name="bp-product">
+                                <?php foreach ($products as $p): ?>
+                                    <option value="<?php echo $p['product_id']; ?>"><?php echo $p['name']; ?></option>
                                 <?php endforeach; ?>
                             </select>
                         </td>
                     </tr>
                     <tr>
-                        <td><span class="required"></span> Label:</td>
+                        <td><span class="required"></span> Twin Pack: <br><span class="help">Ex. Twin Pack(Label) 15% Off(Sub Label)</span></td>
                         <td>
-                            <input type="text" value="" name="bp-label"> 
-                        </td>
-                    </tr>
-                     <tr>
-                        <td><span class="required"></span> Quantity</td>
-                        <td>
-                            <input type="number" value="" name="bp-qty"> 
+                            <input type="text" placeholder="Button Label" value="" name="bp-tp-label"> <input type="text" placeholder="Discount Label" value="" name="bp-tp-sub-label"> <input type="text" placeholder="Url Link" value="" name="bp-tp-link"> 
                         </td>
                     </tr>
                     <tr>
-                        <td>Enabled</td>
+                        <td><span class="required"></span> Six Pack: <br><span class="help">Ex. Six Pack(Label) 20% Off(Sub Label)</span></td>
                         <td>
-                        <select name="bp-is-enabled">
-                            <option value="1">True</option>
-                            <option value="0">False</option>
-                        </select>
+                            <input type="text" placeholder="Button Label" value="" name="bp-sixp-label"> <input type="text" placeholder="Discount Label" value="" name="bp-sixp-sub-label"> <input type="text" placeholder="Url Link" value="" name="bp-sixp-link"> 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="required"></span> Bulk Pricing: <br><span class="help">Ex. Bulk Pricing(Label) 15% - 70% Off(Sub Label)</span></td>
+                        <td>
+                            <input type="text" placeholder="Button Label" value="" name="bp-bp-label"> <input type="text" placeholder="Discount Label" value="" name="bp-bp-sub-label"> <input type="text" placeholder="Url Link" value="" name="bp-bp-link"> 
                         </td>
                     </tr>
                     <tr>
@@ -267,17 +264,32 @@ display: inline-block;
                     <tr>
                         <table class="form">
                           <tr>
-                            <td>Manufacturer</td>
-                            <td>Label</td>
-                            <td>Quantity</td>
-                            <td>Enabled</td>
+                            <td>Product</td>
+                            <td>Twin Pack</td>
+                            <td>Six Label</td>
+                            <td>Bulk Pricing</td>
                           </tr>
-                          <?php foreach ($brand_bulk_pricing as $bp): ?>
+                          <?php foreach ($prod_bulk_pricing as $bp): 
+                            $tp = json_decode($bp['twin_pack'], true);
+                            $sp = json_decode($bp['six_pack'], true);
+                            $bp = json_decode($bp['bulk_pricing'], true);
+                          ?>
                           <tr>
-                                <td><?php echo $bp['name']; ?></td>
-                                <td><?php echo $bp['label']; ?></td>
-                                <td><?php echo $bp['qty']; ?></td>
-                                <td><?php echo $bp['is_enabled']; ?></td>
+                                <td>
+                                  Label: <?php echo $tp['label']; ?> <br>
+                                  Sub Label: <?php echo $tp['sub_label']; ?> <br>
+                                  Redirect To: <?php echo $tp['redirect_to']; ?>
+                                </td>
+                                <td>
+                                  Label: <?php echo $sp['label']; ?> <br>
+                                  Sub Label: <?php echo $sp['sub_label']; ?> <br>
+                                  Redirect To: <?php echo $sp['redirect_to']; ?>
+                                </td>
+                                <td>
+                                  Label: <?php echo $bp['label']; ?> <br>
+                                  Sub Label: <?php echo $bp['sub_label']; ?> <br>
+                                  Redirect To: <?php echo $bp['redirect_to']; ?>
+                                </td>
                                 <td><a class="button btn-remove-bp" id="" data-id="<?php echo $bp['id']; ?>">Remove</a></td>
                           </tr>
                           <?php endforeach; ?>
@@ -329,16 +341,27 @@ $('#btn-save-sl').on('click', function(e) {
 
 $('#btn-add-bp').on('click',function(e) {
   var data = {
-    brand: $('select[name="bp-brand"]').val(),
-    label: $('input[name="bp-label"]').val(), 
-    qty: $('input[name="bp-qty"]').val(), 
-    is_enabled: $('select[name="bp-is-enabled"]').val()
+    product_id: $('select[name="bp-product"]').val(),
+    twin_pack: {
+      label: $('input[name="bp-tp-label"]').val(), 
+      sub_label: $('input[name="bp-tp-sub-label"]').val(), 
+      redirect_to: $('input[name="bp-tp-link"]').val()
+    },
+    six_pack: {
+      label: $('input[name="bp-sixp-label"]').val(), 
+      sub_label: $('input[name="bp-sixp-sub-label"]').val(), 
+      redirect_to: $('input[name="bp-sixp-link"]').val()
+    },
+    bulk_pricing: {
+      label: $('input[name="bp-bp-label"]').val(), 
+      sub_label: $('input[name="bp-bp-sub-label"]').val(), 
+      redirect_to: $('input[name="bp-bp-link"]').val()
+    } 
   };
 
-  console.log(data);
   $.ajax({
         type:'post',
-        url: 'index.php?route=extension/custom_settings/saveBrandBulkPricing&token=<?php echo $token; ?>',
+        url: 'index.php?route=extension/custom_settings/saveBulkPricing&token=<?php echo $token; ?>',
         data: data,
         dataType: 'json',
         success: function(res) {
@@ -360,7 +383,7 @@ $('.btn-remove-bp').on('click', function(e) {
   e.preventDefault();
   $.ajax({
         type:'post',
-        url: 'index.php?route=extension/custom_settings/deleteBrandBulkPricing&token=<?php echo $token; ?>',
+        url: 'index.php?route=extension/custom_settings/deleteBulkPricing&token=<?php echo $token; ?>',
         data: {id:id},
         dataType: 'json',
         success: function(res) {

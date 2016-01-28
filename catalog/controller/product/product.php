@@ -172,13 +172,16 @@ class ControllerProductProduct extends Controller {
 		$product_info = $this->model_catalog_product->getProduct($product_id);
 		
 		// Bulk Pricing
-		$this->data['brand_bulk_pricing'] = array();
+		$this->data['prod_bulk_pricing'] = array();
 
 
-		$brandBulkPricing = $this->model_setting_custom->getBrandBulkPricing($product_info['manufacturer_id']);
+		$prodBulkPricing = $this->model_setting_custom->getBulkPricingDiscountLabel($product_info['product_id']);
 		
-		if($brandBulkPricing) {
-			$this->data['brand_bulk_pricing'] = $brandBulkPricing->rows;
+		if($prodBulkPricing) {
+			$bp = $prodBulkPricing->row;
+			$this->data['twin_pack'] = json_decode($bp['twin_pack'], true);
+            $this->data['six_pack'] = json_decode($bp['six_pack'], true);
+            $this->data['bulk_price'] = json_decode($bp['bulk_pricing'], true);
 			$this->document->addStyle('catalog/view/theme/oxy/stylesheet/vit-custom-setting.css');
 		}
 

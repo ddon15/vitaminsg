@@ -1,11 +1,11 @@
 .bbp-style-1 {
 	background-color: #EB7626;
 	text-align: center;
-	height: 49px;
+	height: 45px;
 	margin-bottom: 10px;
 	float: left;
 	margin: 10px 5px 10px 0px;
-	padding: 5px;
+	padding:4px;
 	width: 30%;
 	display: block;
 }
@@ -18,10 +18,14 @@
 
 .bbp-style-1 .bp-sub-label {
 	color: white;
-	font-size: 18px;
+	font-size: 15px;
 	font-weight: bold;
 }
 
 .bbp-style-1:hover {
 	background: #00a651;
+}
+
+.clear-both {
+	clear:both;
 }

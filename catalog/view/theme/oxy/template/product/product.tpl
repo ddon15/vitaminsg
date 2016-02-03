@@ -240,29 +240,23 @@
 				<?php }?>
 				</div>
         <div>
-        <?php if ($twin_pack['label']) && $twin_pack['redirect_to']): ?>
-          <a class="bbp-style-1" href="<?php echo $twin_pack['redirect_to']; ?>">
-              <span class="bp-label"><?php echo $twin_pack['label']; ?>
+        <?php //if ($twin_pack['label'] && $twin_pack['redirect_to']): ?>
+         <!--  <a class="bbp-style-1" href="<?php //echo $twin_pack['redirect_to']; ?>">
+              <span class="bp-label"><?php //echo $twin_pack['label']; ?>
             </span>
             <br>
-            <span class="bp-sub-label"><?php echo $twin_pack['sub_label'] ?></span>
-          </a>
-        <?php endif ?>
-        <?php if ($six_pack['label']) && $six_pack['redirect_to']): ?>
-          <a class="bbp-style-1" href="<?php echo $six_pack['redirect_to']; ?>">
-            <span class="bp-label"><?php echo $six_pack['label']; ?>
+            <span class="bp-sub-label"><?php //echo $twin_pack['sub_label'] ?></span>
+          </a> -->
+        <?php //endif ?>
+        <?php //if ($six_pack['label'] && $six_pack['redirect_to']): ?>
+          <!-- <a class="bbp-style-1" href="<?php// echo $six_pack['redirect_to']; ?>">
+            <span class="bp-label"><?php //echo $six_pack['label']; ?>
             </span>
             <br>
-              <span class="bp-sub-label"><?php echo $six_pack['sub_label'] ?></span>
-          </a>
-        <?php endif ?>
+              <span class="bp-sub-label"><?php //echo $six_pack['sub_label'] ?></span>
+          </a> -->
+        <?php //endif ?>
         
-        <a class="bbp-style-1" href="<?php echo $bulkpriceurl; ?>">
-            <span class="bp-label">Bulk Pricing
-          </span>
-          <br>
-            <span class="bp-sub-label"></span>(15 - 70% Off)
-        </a>
        
         </div>
 			<?php }//.end else ?>
@@ -274,10 +268,24 @@
 			
 			<?php if ($discounts) { ?>
 			<br />
-			<div class="discount">
+			<div class="discount clear-both ">
 			  <?php foreach ($discounts as $discount) { ?>
-			  <?php echo sprintf($text_discount, $discount['quantity'], $discount['price']); ?><br />
-			  <?php } ?>
+        <?php if ($discount['label']): ?>
+           <div class="bbp-style-1">
+              <span class="bp-label"><?php echo $discount['label']; ?>
+            </span>
+          </div>
+        <?php else:?>
+          <?php echo sprintf($text_discount, $discount['quantity'], $discount['price']); ?>
+        <?php endif; ?>
+        <?php } ?>
+        <a class="bbp-style-1" href="<?php echo $bulkpriceurl; ?>">
+            <span class="bp-label">Bulk Pricing
+          </span>
+          <br>
+            <span class="bp-sub-label">(15 - 70% Off)</span>
+        </a>
+        
 			</div>
 			<?php } ?>
 			

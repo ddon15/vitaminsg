@@ -453,7 +453,8 @@ class ControllerProductProduct extends Controller {
 				$this->data['discounts'][] = array(
 					'quantity' => $discount['quantity'],
 					'percent_savings' => $percent_savings,
-					'price'    => $this->currency->format($this->tax->calculate($discount['price'], $product_info['tax_class_id'], $this->config->get('config_tax')))
+					'price'    => $this->currency->format($this->tax->calculate($discount['price'], $product_info['tax_class_id'], $this->config->get('config_tax'))),
+					'label' => $discount['label']
 				);
 			}
                         

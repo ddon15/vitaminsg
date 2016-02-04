@@ -29,3 +29,7 @@
 .clear-both {
 	clear:both;
 }
+
+.disabled-link {
+  opacity: 0.5
+}

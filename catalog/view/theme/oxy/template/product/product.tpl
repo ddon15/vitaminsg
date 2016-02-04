@@ -265,20 +265,25 @@
 					<div class="tax"><span class="price-tax"><?php echo $text_tax; ?> <?php echo $tax; ?></span></div>
 				<?php } ?>
 			<?php } ?>
-			
+			<div class="discount clear-both ">
 			<?php if ($discounts) { ?>
 			<br />
-			<div class="discount clear-both ">
 			  <?php foreach ($discounts as $discount) { ?>
         <?php if ($discount['label']): ?>
-           <div class="bbp-style-1">
+           <a class="bbp-style-1 btn-discount" href="#" data-qty="<?php echo $discount['quantity']; ?>">
               <span class="bp-label"><?php echo $discount['label']; ?>
             </span>
-          </div>
+          </a>
         <?php else:?>
           <?php echo sprintf($text_discount, $discount['quantity'], $discount['price']); ?>
         <?php endif; ?>
         <?php } ?>
+      
+			<?php } ?>
+         <a class="bbp-style-1 btn-discount" href="#" data-qty="1">
+          <span class="bp-label">Test
+        </span>
+        </a>
         <a class="bbp-style-1" href="<?php echo $bulkpriceurl; ?>">
             <span class="bp-label">Bulk Pricing
           </span>
@@ -286,8 +291,7 @@
             <span class="bp-sub-label">(15 - 70% Off)</span>
         </a>
         
-			</div>
-			<?php } ?>
+      </div>
 			
 		<?php } else { //[SB] Added Redemption ?>
 			<div class="product-details-price-original-price" style="font-size:36px;"><?php echo sprintf($text_vit_dollar, $points); ?></div>
@@ -485,6 +489,7 @@
           <div id="qty-inc"><input type="button" class="inc button" value=" " /></div>
           <?php } ?> 
           <input type="hidden" name="product_id" size="2" value="<?php echo $product_id; ?>" />
+          <input type="hidden" id="discount-quantity" name="quantity" size="2" value="" />
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" value="<?php echo $button_cart; ?>" id="button-cart" class="button-exclusive" />
         </div>
         <?php function curPageURL() {
@@ -1062,6 +1067,53 @@ $('#button-cart').bind('click', function() {
 	//[KianAnn] track add to cart in GA
 	ga('sainhall_tracker.send', 'pageview', '/index.php?route=checkout/cart/add');
 
+});
+
+$('.btn-discount').bind('click', function(e) {
+  e.preventDefault();
+  var qty = $(this).data('qty');
+  var btn = $(this);
+
+  btn.addClass('disabled-link');
+
+  $('#discount-quantity').val(qty);
+
+    $.ajax({
+      url: 'index.php?route=checkout/cart/add',
+      type: 'post',
+      data: $('.product-info #discount-quantity, .product-info input[type=\'hidden\'], .product-info input[type=\'radio\']:checked, .product-info input[type=\'checkbox\']:checked, .product-info select, .product-info textarea'),
+      dataType: 'json',
+      success: function(json) {
+        $('.success, .warning, .attention, information, .error').remove();
+        
+        if (json['error']) {
+          if (json['error']['option']) {
+            for (i in json['error']['option']) {
+              $('#option-' + i).after('<span class="error">' + json['error']['option'][i] + '</span>');
+            }
+          }
+                  
+                  if (json['error']['profile']) {
+                      $('select[name="profile_id"]').after('<span class="error">' + json['error']['profile'] + '</span>');
+                  }
+        } 
+        
+        if (json['success']) {
+          $('#notification').html('<div class="success" style="display: none;">' + json['success'] + '<img src="catalog/view/theme/default/image/close.png" alt="" class="close" /></div>');
+            
+          $('.success').fadeIn('slow');
+            
+          $('#cart-total').html(json['total']);
+          
+          $('html, body').animate({ scrollTop: 0 }, 'slow');
+          
+          btn.removeClass('disabled-link'); 
+        } 
+      }
+    });
+    
+    //[KianAnn] track add to cart in GA
+    ga('sainhall_tracker.send', 'pageview', '/index.php?route=checkout/cart/add');
 });
 //--></script>
 <?php if ($options) { ?>

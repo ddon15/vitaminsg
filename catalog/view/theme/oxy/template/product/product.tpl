@@ -280,17 +280,12 @@
         <?php } ?>
       
 			<?php } ?>
-         <a class="bbp-style-1 btn-discount" href="#" data-qty="1">
-          <span class="bp-label">Test
-        </span>
-        </a>
-        <a class="bbp-style-1" href="<?php echo $bulkpriceurl; ?>">
+       <!--  <a class="bbp-style-1" href="<?php //echo $bulkpriceurl; ?>">
             <span class="bp-label">Bulk Pricing
           </span>
           <br>
             <span class="bp-sub-label">(15 - 70% Off)</span>
-        </a>
-        
+        </a> -->
       </div>
 			
 		<?php } else { //[SB] Added Redemption ?>
@@ -1106,7 +1101,7 @@ $('.btn-discount').bind('click', function(e) {
           $('#cart-total').html(json['total']);
           
           $('html, body').animate({ scrollTop: 0 }, 'slow');
-          
+
           btn.removeClass('disabled-link'); 
         } 
       }

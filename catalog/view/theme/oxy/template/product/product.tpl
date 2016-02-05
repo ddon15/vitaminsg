@@ -199,7 +199,7 @@
 			<?php if (!$special) { ?>
 			<div class="product-details-price-original-price <?php echo $margin_bottom; ?>">
       <?php if ($discount): ?>
-        <span> <?php echo $price; ?> </span>  <!-- <span id="orig-price" style="text-decoration: line-through;"><?php //echo $original_price; ?>(Original Price)</span>  -->
+        <?php echo $price; ?>
       <?php else: ?>  
         <?php echo $price; ?>
       <?php endif; ?>
@@ -234,12 +234,13 @@
 				</div>
 				<?php }?>
 			<?php } else { ?>
-				<div class="product-details-price-original-price vit-price-struck <?php echo $margin_bottom; ?>"><?php echo $price; ?></div>
+				<div class="product-details-price-original-price vit-price-struck <?php echo $margin_bottom; ?>">
         <?php if ($discount): ?>
-          <span> <?php echo $price; ?> </span>  <span id="orig-price" style="text-decoration: line-through;"><?php echo $original_price; ?>(Original Price)</span> 
+          <?php echo $price; ?>
         <?php else: ?>  
           <?php echo $price; ?>
         <?php endif; ?>
+        </div>
         <div class="clearfix margin-bottom-20px">
         <?php if ($discounts): ?>
           <?php foreach ($discounts as $discount): ?>

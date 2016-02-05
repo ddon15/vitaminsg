@@ -52,7 +52,7 @@ class ModelCatalogProduct extends Model {
 				'manufacturer_id'  => $query->row['manufacturer_id'],
 				'manufacturer'     => $query->row['manufacturer'],
 				// 'price'            => ($query->row['discount'] ? $query->row['discount'] : $query->row['price']),
-				'price'            => $query->row['price']),
+				'price'            => $query->row['price'],
 				'original_price'   => $query->row['price'],
 				'discount_price'   => $query->row['discount'],
 				'special'          => $query->row['special'],

@@ -197,7 +197,27 @@
 		  <?php if (empty($redeem_only) || !$redeem_only) { //[SB] Added Redemption ?>
 	  
 			<?php if (!$special) { ?>
-			<div class="product-details-price-original-price"><?php echo $price; ?></div>
+			<div class="product-details-price-original-price">
+      <?php if ($discount): ?>
+        <span> <?php echo $price; ?> </span>  <span id="orig-price" style="text-decoration: line-through;"><?php echo $original_price; ?>(Original Price)</span> 
+      <?php else: ?>  
+        <?php echo $price; ?>
+      <?php endif; ?>
+      </div>
+      <div class="clearfix margin-bottom-20px">
+        <?php if ($discounts): ?>
+          <?php foreach ($discounts as $discount): ?>
+            <?php if ($discount['label']): ?>
+               <a class="bbp-style-1 btn-discount" href="#" data-qty="<?php echo $discount['quantity']; ?>">
+                  <span class="bp-label"><?php echo $discount['label']; ?>
+                </span>
+              </a>
+            <?php else: ?>
+              <?php echo sprintf($text_discount, $discount['quantity'], $discount['price']); ?>
+            <?php endif; ?>
+          <?php endforeach; ?>
+        <?php endif; ?>
+      </div>
 			<!-- <div class="product-details-price-bulk-price"><a href="<?php //echo $bulkpriceurl; ?>"><?php //echo $bulkprice; ?></a></div> -->
 			<?php /* [SB]Display Premium Member price */?>
 				<?php if ($premium_member_price) { ?>
@@ -215,6 +235,25 @@
 				<?php }?>
 			<?php } else { ?>
 				<div class="product-details-price-original-price vit-price-struck"><?php echo $price; ?></div>
+        <?php if ($discount): ?>
+          <span> <?php echo $price; ?> </span>  <span id="orig-price" style="text-decoration: line-through;"><?php echo $original_price; ?>(Original Price)</span> 
+        <?php else: ?>  
+          <?php echo $price; ?>
+        <?php endif; ?>
+        <div class="clearfix margin-bottom-20px">
+        <?php if ($discounts): ?>
+          <?php foreach ($discounts as $discount): ?>
+            <?php if ($discount['label']): ?>
+               <a class="bbp-style-1 btn-discount" href="#" data-qty="<?php echo $discount['quantity']; ?>">
+                  <span class="bp-label"><?php echo $discount['label']; ?>
+                </span>
+              </a>
+            <?php else: ?>
+              <?php echo sprintf($text_discount, $discount['quantity'], $discount['price']); ?>
+            <?php endif; ?>
+          <?php endforeach; ?>
+        <?php endif; ?>
+      </div>
 				<!-- <div class="product-details-price-bulk-price"><a href="<?php echo $bulkpriceurl; ?>"><?php //echo $bulkprice; ?></a></div> -->
 				<div class="clearfix">
   				<div class="product-details-price-block">
@@ -265,28 +304,6 @@
 					<div class="tax"><span class="price-tax"><?php echo $text_tax; ?> <?php echo $tax; ?></span></div>
 				<?php } ?>
 			<?php } ?>
-			<div class="discount clear-both ">
-			<?php if ($discounts) { ?>
-			<br />
-			  <?php foreach ($discounts as $discount) { ?>
-        <?php if ($discount['label']): ?>
-           <a class="bbp-style-1 btn-discount" href="#" data-qty="<?php echo $discount['quantity']; ?>">
-              <span class="bp-label"><?php echo $discount['label']; ?>
-            </span>
-          </a>
-        <?php else:?>
-          <?php echo sprintf($text_discount, $discount['quantity'], $discount['price']); ?>
-        <?php endif; ?>
-        <?php } ?>
-      
-			<?php } ?>
-       <!--  <a class="bbp-style-1" href="<?php //echo $bulkpriceurl; ?>">
-            <span class="bp-label">Bulk Pricing
-          </span>
-          <br>
-            <span class="bp-sub-label">(15 - 70% Off)</span>
-        </a> -->
-      </div>
 			
 		<?php } else { //[SB] Added Redemption ?>
 			<div class="product-details-price-original-price" style="font-size:36px;"><?php echo sprintf($text_vit_dollar, $points); ?></div>

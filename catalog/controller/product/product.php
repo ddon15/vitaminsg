@@ -268,7 +268,7 @@ class ControllerProductProduct extends Controller {
 				$this->data['next_prod_url'] = '';
 				$this->data['next_prod_name'] = '';
 			}
-
+		
 			if($PrevProd) {
 				$this->data['prev_prod_url'] = $this->url->link('product/product', 'product_id=' . $PrevProd['product_id']);
 				$this->data['prev_prod_name'] = $PrevProd['name'];
@@ -445,6 +445,9 @@ class ControllerProductProduct extends Controller {
 			}
 			
 			$discounts = $this->model_catalog_product->getProductDiscounts($this->request->get['product_id']);
+			$discount = $this->model_catalog_product->getProductDiscount($this->request->get['product_id']);
+
+			$this->data['discount'] = $discount;
 			
 			$this->data['discounts'] = array(); 
 			
@@ -457,7 +460,9 @@ class ControllerProductProduct extends Controller {
 					'label' => $discount['label']
 				);
 			}
-                        
+            
+            $this->data['original_price'] =  $this->currency->format($this->tax->calculate($product_info['original_price'], $product_info['tax_class_id'], $this->config->get('config_tax')));
+
                         //[MY] PROMOTIONS
                         //retrieve all product related promos
                         $this->load->model("promotion/special_promotions");

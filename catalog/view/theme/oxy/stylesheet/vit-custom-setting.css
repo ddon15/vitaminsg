@@ -1,5 +1,5 @@
 .bbp-style-1 {
-	background-color: #EB7626;
+	background-color: #0AA957;
 	text-align: center;
 	height: 45px;
 	margin-bottom: 10px;
@@ -23,7 +23,7 @@
 }
 
 .bbp-style-1:hover {
-	background: #00a651;
+	background: #0D8246;
 }
 
 .clear-both {
@@ -32,4 +32,8 @@
 
 .disabled-link {
   opacity: 0.5
+}
+
+.margin-bottom-20px {
+	margin-bottom: 20px;
 }

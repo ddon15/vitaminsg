@@ -199,7 +199,7 @@
 			<?php if (!$special) { ?>
 			<div class="product-details-price-original-price <?php echo $margin_bottom; ?>">
       <?php if ($discount): ?>
-        <span> <?php echo $price; ?> </span>  <span id="orig-price" style="text-decoration: line-through;"><?php echo $original_price; ?>(Original Price)</span> 
+        <span> <?php echo $price; ?> </span>  <!-- <span id="orig-price" style="text-decoration: line-through;"><?php //echo $original_price; ?>(Original Price)</span>  -->
       <?php else: ?>  
         <?php echo $price; ?>
       <?php endif; ?>

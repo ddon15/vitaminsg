@@ -448,9 +448,11 @@ class ControllerProductProduct extends Controller {
 			$discount = $this->model_catalog_product->getProductDiscount($this->request->get['product_id']);
 
 			$this->data['discount'] = $discount;
-			
 			$this->data['discounts'] = array(); 
-			
+			$this->data['margin_bottom'] = '';
+
+			if($discounts) $this->data['margin_bottom'] = '.margin-bottom-20px';
+
 			foreach ($discounts as $discount) {
 				$percent_savings = round((($product_info['price'] - $discount['price']) / $product_info['price'] * 100));
 				$this->data['discounts'][] = array(

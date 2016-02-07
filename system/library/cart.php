@@ -215,6 +215,11 @@ class Cart {
 						$price = $product_special_query->row['price'];
 					}
 
+					// Prioritize discount pricing
+					if ($product_special_query->num_rows && $product_discount_query->num_rows) {
+						$price = $product_discount_query->row['price'];
+					}
+
 					//[SB] Check if product is on sale
 					$is_on_sale_query = $this->db->query("SELECT 1 FROM " . DB_PREFIX . "product_special WHERE product_id = '" . (int)$product_id . "' AND customer_group_id = '" . (int)$this->config->get('config_customer_group_id') . "' AND ((date_start = '0000-00-00' OR date_start < NOW()) AND (date_end = '0000-00-00' OR date_end > NOW())) LIMIT 1");
 		

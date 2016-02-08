@@ -497,12 +497,12 @@
           <?php if($this->config->get('oxy_product_i_c_status') ==1) { ?>   
           <div id="qty-dec"><input type="button" class="dec button" value=" " /></div>
           <?php } ?> 
-          <div id="qty"><input type="text" name="quantity" id="def-qty" size="3" class="i-d-quantity input-mini" value="<?php echo $minimum; ?>" /></div>
+          <div id="qty"><input type="text" name="quantity" id="def-qty" size="3" class="i-d-quantity input-mini" value="<?php echo $minimum; ?>"/></div>
           <?php if($this->config->get('oxy_product_i_c_status') ==1) { ?>   
           <div id="qty-inc"><input type="button" class="inc button" value=" " /></div>
           <?php } ?> 
           <input type="hidden" name="product_id" size="2" value="<?php echo $product_id; ?>" />
-          <input type="hidden" id="discount-quantity" name="quantity" size="2" value="" />
+          <input type="hidden" id="discount-quantity" name="quantity2" value="" />
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" value="<?php echo $button_cart; ?>" id="button-cart" class="button-exclusive" />
         </div>
         <?php function curPageURL() {
@@ -1025,11 +1025,11 @@ $(document).ready(function() {
 //--></script> 
 <script type="text/javascript"><!--
 
-$('select[name="profile_id"], input[name="quantity"]').change(function(){
+$('select[name="profile_id"], #def-qty').change(function(){
     $.ajax({
 		url: 'index.php?route=product/product/getRecurringDescription',
 		type: 'post',
-		data: $('input[name="product_id"], input[name="quantity"], select[name="profile_id"]'),
+		data: $('input[name="product_id"], #def-qty, select[name="profile_id"]'),
 		dataType: 'json',
         beforeSend: function() {
             $('#profile-description').html('');
@@ -1121,6 +1121,7 @@ $('.btn-discount').bind('click', function(e) {
           $('html, body').animate({ scrollTop: 0 }, 'slow');
 
           btn.removeClass('disabled-link'); 
+          $('#discount-quantity').val(''); 
         } 
       }
     });

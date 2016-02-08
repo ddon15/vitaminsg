@@ -497,7 +497,7 @@
           <?php if($this->config->get('oxy_product_i_c_status') ==1) { ?>   
           <div id="qty-dec"><input type="button" class="dec button" value=" " /></div>
           <?php } ?> 
-          <div id="qty"><input type="text" name="quantity" size="3" class="i-d-quantity input-mini" value="<?php echo $minimum; ?>" /></div>
+          <div id="qty"><input type="text" name="quantity" id="def-qty" size="3" class="i-d-quantity input-mini" value="<?php echo $minimum; ?>" /></div>
           <?php if($this->config->get('oxy_product_i_c_status') ==1) { ?>   
           <div id="qty-inc"><input type="button" class="inc button" value=" " /></div>
           <?php } ?> 
@@ -1048,7 +1048,7 @@ $('#button-cart').bind('click', function() {
 	$.ajax({
 		url: 'index.php?route=checkout/cart/add',
 		type: 'post',
-		data: $('.product-info input[name=\'quantity\'], .product-info input[type=\'hidden\'], .product-info input[type=\'radio\']:checked, .product-info input[type=\'checkbox\']:checked, .product-info select, .product-info textarea'),
+		data: $('.product-info #def-qty, .product-info input[type=\'hidden\'], .product-info input[type=\'radio\']:checked, .product-info input[type=\'checkbox\']:checked, .product-info select, .product-info textarea'),
 		dataType: 'json',
 		success: function(json) {
 			$('.success, .warning, .attention, information, .error').remove();

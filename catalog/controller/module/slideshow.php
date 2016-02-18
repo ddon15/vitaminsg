@@ -24,25 +24,6 @@ class ControllerModuleSlideshow extends Controller {
 		
 		if (isset($setting['banner_id'])) {
 			$results = $this->model_design_banner->getBanner($setting['banner_id']);
-			$brandsBanner = $this->model_design_banner->getBrandsBanner($setting['banner_id']);
-
-			if($brandsBanner) {
-				foreach ($brandsBanner['brands_top'] as $each) {
-					$this->data['brands_top_banner'][$each['name']] = array(
-						'image' => $each['image'],
-						'href' => $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $each['manufacturer_id'])
-					);
-				}
-
-				foreach ($brandsBanner['brands'] as $each) {
-					$this->data['brands_banner'][$each['name']] = array(
-						'image' => $each['image'],
-						'href' => $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $each['manufacturer_id'])
-					);
-				}
-
-				$this->data['brands_banner_header'] = $brandsBanner['header_label'];
-			}
 
 			foreach ($results as $result) {
 				if (file_exists(DIR_IMAGE . $result['image'])) {

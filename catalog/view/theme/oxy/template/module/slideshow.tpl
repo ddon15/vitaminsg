@@ -92,27 +92,6 @@
 
 <section id="banner-slider" class="flexslider">
    <ul class="slides">
-    <?php if ($brands_banner): ?>
-      <li>
-      <div class="brands-banner-wrapper">
-        <h2 class="brands-banner-header"><?php echo $brands_banner_header; ?></h2>        
-        <div class="margin-top-25">
-          <?php foreach ($brands_top_banner as $each): ?>
-            <div class="brands-banner-top brand-hover">
-            <a href="<?php echo $each['href']; ?>"><img src="image/<?php echo $each['image']; ?>" alt="<?php echo $each['name']; ?>" class="max-dim-top img-size"/></a>    
-            </div>
-          <?php endforeach ?>
-        </div>
-        <div>
-          <?php foreach ($brands_banner as $each): ?>
-            <div class="brands-banner brand-hover">
-            <a href="<?php echo $each['href']; ?>"><img src="image/<?php echo $each['image']; ?>" alt="<?php echo $each['name']; ?>" class="max-dim-def img-size"/></a>    
-            </div>
-          <?php endforeach ?>
-        </div>
-      </div>
-      </li>
-    <?php endif ?>
    <?php foreach ($banners as $banner) { ?>
 	  <li>
       <?php if ($banner['link']) { ?>

@@ -9,12 +9,6 @@ class ControllerCommonHeader extends Controller {
                 $this->model_checkout_special_promotions->checkTriggers();
         }//.[MY]
 
-        // Custom CSS Settings
-        $this->load->model('setting/custom');
-		
-		$this->data['custom_settings_css'] = $this->model_setting_custom->getCssVariables('SALE_LABEL');
-		// End of Custom CSS Settings 
-		
 		$this->data['title'] = $this->document->getTitle();
 		
 		if (isset($this->request->server['HTTPS']) && (($this->request->server['HTTPS'] == 'on') || ($this->request->server['HTTPS'] == '1'))) {

@@ -6,14 +6,8 @@ class ControllerModuleSpecial extends Controller {
 		$this->data['heading_title'] = sprintf($this->language->get('heading_title'), $this->url->link('product/special', '', 'SSL'));
 
 		$this->data['button_cart'] = $this->language->get('button_cart');
-		
-		// Custom CSS Settings
-        $this->load->model('setting/custom');
-		
-		$text_sale_custom = $this->model_setting_custom->getSaleText('SALE_LABEL');
-		// End of Custom CSS Settings 
-		
-		$this->data['text_sale'] = $text_sale_custom['enabled'] ? $text_sale_custom['text'] : $this->language->get('text_sale');
+	
+		$this->data['text_sale'] = $this->language->get('text_sale');
 		
 		//[SB] Added texts
 		$this->data['text_price_usual'] = $this->language->get('text_price_usual');

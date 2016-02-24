@@ -53,13 +53,7 @@ class ControllerSaleBestsellers extends Controller
 		//[SB] merge inserted products into result
 		$results = array_merge($products_insert, $results);
 
-		// Custom CSS Settings
-        $this->load->model('setting/custom');
-		
-		$text_sale_custom = $this->model_setting_custom->getSaleText('SALE_LABEL');
-		// End of Custom CSS Settings 
-		
-		$this->data['text_sale'] = $text_sale_custom['enabled'] ? $text_sale_custom['text'] : $this->language->get('text_sale');
+		$this->data['text_sale'] = $this->language->get('text_sale');
 		
 		//[SB] Added texts
 		$this->data['text_price_usual'] = $this->language->get('text_price_usual');

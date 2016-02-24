@@ -25,7 +25,7 @@ $_['column_status']          = 'Status';
 $_['column_action']          = 'Action';
 
 // Entry
-$_['entry_discount_label']   = 'Label';
+$_['entry_discount_label']   = 'Label:';
 $_['entry_name']             = 'Product Name:';
 /*CPT1 START*/$_['entry_cptitle']          = 'Custom Page Title:';/*CPT1 END*/
 $_['entry_meta_keyword'] 	 = 'Meta Tag Keywords:';

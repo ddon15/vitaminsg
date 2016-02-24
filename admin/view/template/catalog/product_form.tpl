@@ -1222,9 +1222,9 @@
 
                     <option value="<?php echo $customer_group['customer_group_id']; ?>"><?php echo $customer_group['name']; ?></option>
 
-                    <?php } ?>
+                    <?php }; ?>
 
-                    <?php } ?>
+                    <?php }; ?>
 
                   </select></td>
 
@@ -1254,7 +1254,7 @@
 
             <?php $discount_row++; ?>
 
-            <?php } ?>
+            <?php }; ?>
 
             <tfoot>
 

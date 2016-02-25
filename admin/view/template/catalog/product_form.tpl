@@ -1190,7 +1190,7 @@
 
                 <td class="right"><?php echo $entry_price; ?></td>
 
-                <td class="right"><?php echo $entry_discount_label; ?></td>
+                <td class="right">Label:</td>
 
                 <td class="left"><?php echo $entry_date_start; ?></td>
 
@@ -1222,9 +1222,9 @@
 
                     <option value="<?php echo $customer_group['customer_group_id']; ?>"><?php echo $customer_group['name']; ?></option>
 
-                    <?php }; ?>
+                    <?php } ?>
 
-                    <?php }; ?>
+                    <?php } ?>
 
                   </select></td>
 
@@ -1232,13 +1232,11 @@
 
                 <td class="right"><input type="text" name="product_discount[<?php echo $discount_row; ?>][priority]" value="<?php echo $product_discount['priority']; ?>" size="2" /></td>
 
-                <?php //[MY] show original price?>
-
                 <td class="right"><?php echo $price;?></td>
 
-                <?php //.[MY]?>
-
                 <td class="right"><input type="text" name="product_discount[<?php echo $discount_row; ?>][price]" value="<?php echo $product_discount['price']; ?>" /></td>
+
+                <input type="hidden" value="<?php echo $product_discount['label']; ?>" data-row="product_discount[<?php echo $discount_row; ?>][price]">
 
                 <td class="right"><input type="text" name="product_discount[<?php echo $discount_row; ?>][label]" value="<?php echo $product_discount['label']; ?>" /></td>
 
@@ -1260,7 +1258,7 @@
 
               <tr>
 
-                <td colspan="6"></td>
+                <td colspan="8"></td>
 
                 <td class="left"><a onclick="addDiscount();" class="button"><?php echo $button_add_discount; ?></a></td>
 

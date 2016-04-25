@@ -33,9 +33,10 @@
     <div class="twelve columns upper">
         <div>
             <p>Thank you for patronizing the <img style="vertical-align: middle" src="/image/cache/data/brands/blackmores-230x90.jpg">booth at Baby Market Fair 2016.</p>
-            <p>Your 60-Day Rewards are waiting to be claimed:</p>
+           <p>Your 60-Day Rewards are waiting to be claimed:</p>
         </div>
-        <div style="display: inline-flex;text-align: center; margin-bottom: 35px">
+        <div style="display: inline-flex;text-align: center; margin-bottom: 35px;background-color: bisque;padding: 20px;border-radius: 30px;">
+          
             <div class="six colums">
                 <p>Get your exclusive invite-only Vitamin.sgmembership for FREE (U.P. $35) and shop at 10% off storewide instantly.</p>
                 <a href="">Yes, I want to enjoy member benefits!</a>
@@ -45,6 +46,7 @@
                 <a href="">View Products</a>
                 <span>(No membership is required to enjoy discount)</span>
             </div>  
+              <div style="/* position: absolute; *//* float: left; */"><img style="/* vertical-align: middle; */ /* height: 100px */width: 200px;/* height: 200px; *//* margin-left: -38px; */" src="https://www.mediabrix.com/wp-content/uploads/2015/06/reward.png"></div>
         </div>
         <div class="offer-bottom">*Vitamin.sg is proud to partner with Blackmores and bring you these rewards offers valid for 60 days after Baby Market Fair 2016 until 30 June 2016.</div>
     </div>

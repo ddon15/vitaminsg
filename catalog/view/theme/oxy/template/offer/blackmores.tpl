@@ -5,14 +5,14 @@
         font-size: 24px;
         text-align:center
     }
-    .blackmores six {
+    .blackmores .six {
         padding: 10px;
     }
-    .blackmores six > p {
+    .blackmores .six > p {
         height: 100px;
         margin-bottom: 33px;
     }
-    .blackmores six > a {
+    .blackmores .six > a {
         background-color: #04A455;
         padding: 10px;
         font-size: 15px;
@@ -25,7 +25,7 @@
         font-size: 15px;
     }
 
-    .blackmoressix .s-red {
+    .blackmores .six .s-red {
         color:red;
     }
 </style>

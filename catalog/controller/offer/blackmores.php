@@ -2,8 +2,7 @@
 
 class ControllerOfferBlackmores extends Controller {
 	public function index() {
-		// $this->language->load('campaign/referral');
-		$title = "Offer Blackmores";
+		$title = "Vitamin.sg and Blackmores Partnership Offers";
 
     	$this->document->setTitle($title);
 

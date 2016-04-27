@@ -8,10 +8,6 @@
     .blackmores .six {
         padding: 10px;
     }
-    .blackmores .six > p {
-        height: 100px;
-        margin-bottom: 33px;
-    }
     .blackmores .six > a {
         background-color: #04A455;
         padding: 10px;
@@ -43,8 +39,8 @@
         <div style="display: inline-flex;text-align: center; margin-bottom: 35px;background-color: bisque;padding: 20px;border-radius: 30px;">
           
             <div class="six colums border-left">
-                <p>Get your exclusive invite-only Vitamin.sg membership for FREE (U.P. $35) and shop at 10% off storewide instantly.</p> <br />
-                <p>Enter BABYMARKET under claim code on the form.</p>
+                <p>Get your exclusive invite-only Vitamin.sg membership for FREE (U.P. $35) and shop at 10% off storewide instantly.</p>
+                <p>Enter <span class="s-red">BABYMARKET</span> under claim code on the form.</p>
                 <a href="https://www.vitamin.sg/index.php?route=premium_member/complimentary">Yes, I want to enjoy member benefits!</a>
             </div>
             <div class="six colums">

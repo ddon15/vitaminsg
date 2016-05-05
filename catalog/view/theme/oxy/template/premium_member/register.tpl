@@ -157,7 +157,7 @@
 						<?php } ?>
 					</td>
 				</tr>
-				<tr>
+				<tr id="region-row" class="hide">
 					<td><span class="required">*</span> <?php echo $entry_zone; ?></td>
 					<td><select name="zone_id">
 					</select>
@@ -248,7 +248,17 @@
 </section> <!-- end #content -->
 
 <script type="text/javascript"><!--
+var defaultCountryId = "<?php echo $country['country_id']; ?>";
+
 $('select[name=\'country_id\']').bind('change', function() {
+	if (defaultCountryId == this.value) {
+		$('#region-row').hide();
+		$('select[name=\'zone_id\']').html('');
+		return;
+	}
+	
+	$('#region-row').show();
+
 	$.ajax({
 		url: 'index.php?route=account/register/country&country_id=' + this.value,
 		dataType: 'json',

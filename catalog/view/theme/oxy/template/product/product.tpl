@@ -198,11 +198,10 @@
     
       <?php if (!$special) { ?>
       <div class="product-details-price-original-price"><?php echo $price; ?></div>
-      <div class="product-details-price-bulk-price"><a href="<?php echo $bulkpriceurl; ?>"><?php echo $bulkprice; ?></a></div>
       <?php /* [SB]Display Premium Member price */?>
         <?php if ($premium_member_price) { ?>
         <div class="product-details-price-block">
-          <div class="product-details-member-price-tag">MEMBER PRICE</div>
+          <div class="product-details-member-price-tag padding-5px">MEMBER PRICE</div>
           <span class="product-details-member-price"><?php echo $premium_member_price; ?></span>
           <?php if($this->config->get('oxy_product_save_percent_status') ==1) { ?>
           <div class="product-details-member-discount"><?php echo $premium_member_percent_savings; ?>% discount</div>
@@ -215,10 +214,10 @@
         <?php }?>
       <?php } else { ?>
         <div class="product-details-price-original-price vit-price-struck"><?php echo $price; ?></div>
-        <div class="product-details-price-bulk-price"><a href="<?php echo $bulkpriceurl; ?>"><?php echo $bulkprice; ?></a></div>
+        <!-- <div class="product-details-price-bulk-price"><a href="<?php echo $bulkpriceurl; ?>"><?php echo $bulkprice; ?></a></div> -->
         <div class="clearfix">
         <div class="product-details-price-block">
-          <div class="product-details-sale-price-tag">SALE PRICE</div>
+          <div class="product-details-sale-price-tag padding-5px">SALE PRICE</div>
           <span class="product-details-sale-price"><?php echo $special; ?></span>
           <?php if($this->config->get('oxy_product_save_percent_status') ==1) { ?>
           <div class="product-details-sale-discount"><?php echo $percent_savings; ?>% discount</div>
@@ -228,7 +227,7 @@
         <?php /* [SB]Display Premium Member price */?>
         <?php if ($premium_member_price) { ?>
         <div class="product-details-price-block">
-          <div class="product-details-member-price-tag">MEMBER PRICE</div>
+          <div class="product-details-member-price-tag padding-5px">MEMBER PRICE</div>
           <span class="product-details-member-price"><?php echo $premium_member_price; ?></span>
           <?php if($this->config->get('oxy_product_save_percent_status') ==1) { ?>
           <div class="product-details-member-discount"><?php echo $premium_member_percent_savings; ?>% discount</div>
@@ -239,6 +238,7 @@
         </div>
         <?php }?>
         </div>
+        <div class="product-details-price-bulk-price"><a href="<?php echo $bulkpriceurl; ?>"><?php echo $bulkprice; ?></a></div>
       <?php }//.end else ?>
       <?php if($this->config->get('oxy_product_tax_status') ==1) { ?>
         <?php if ($tax) { ?>

@@ -561,10 +561,15 @@ margin-top: -67px;
 	
 }
 .product-details-price-block {
-width: 40%;
+/*width: 40%;*/
 float: left;
 padding-right: 5px;
 }
+
+.padding-5px {
+	padding: 5px;
+}
+
 .product-details-member-price-tag {
 background-color: #ef4035;
 }

@@ -1,0 +1,39 @@
+.bbp-style-1 {
+	background-color: #0AA957;
+	text-align: center;
+	height: 45px;
+	margin-bottom: 10px;
+	float: left;
+	margin: 10px 5px 10px 0px;
+	padding:4px;
+	width: 30%;
+	display: block;
+}
+
+.bbp-style-1 > .bp-label {
+	color: white;
+	font-size: 13px;
+	font-weight: bold;
+}
+
+.bbp-style-1 .bp-sub-label {
+	color: white;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.bbp-style-1:hover {
+	background: #0D8246;
+}
+
+.clear-both {
+	clear:both;
+}
+
+.disabled-link {
+  opacity: 0.5
+}
+
+.margin-bottom-20px {
+	margin-bottom: 20px;
+}

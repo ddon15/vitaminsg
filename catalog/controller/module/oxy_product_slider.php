@@ -24,10 +24,9 @@ class ControllerModuleOxyProductSlider extends Controller {
 		}
 		
 		$products = array_slice($products, 0, (int)$setting['limit']);
-		
+
 		foreach ($products as $product_id) {
 			$product_info = $this->model_catalog_product->getProduct($product_id);
-			
 			if ($product_info) {
 				if ($product_info['image']) {
 					$image = $this->model_tool_image->resize($product_info['image'], $setting['image_width'], $setting['image_height']);

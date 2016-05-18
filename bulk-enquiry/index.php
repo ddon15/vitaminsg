@@ -94,6 +94,10 @@ else {
 	if ($_GET['p']) {
 		$formdata['pdt'] = $_GET['p'];
 	}
+
+	if ($_GET['qty']) {
+		$formdata['qty'] = $_GET['qty'];
+	}
 }
 
 

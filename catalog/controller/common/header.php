@@ -2,13 +2,13 @@
 class ControllerCommonHeader extends Controller {
 	protected function index() {
                 
-                //[MY] Special Promotions
-                if ($this->config->get('special_promotions_key') &&
-                    $this->config->get('special_promotions_status')) {
-                        $this->load->model('checkout/special_promotions');
-                        $this->model_checkout_special_promotions->checkTriggers();
-                }//.[MY]
-            
+        //[MY] Special Promotions
+        if ($this->config->get('special_promotions_key') &&
+            $this->config->get('special_promotions_status')) {
+                $this->load->model('checkout/special_promotions');
+                $this->model_checkout_special_promotions->checkTriggers();
+        }//.[MY]
+
 		$this->data['title'] = $this->document->getTitle();
 		
 		if (isset($this->request->server['HTTPS']) && (($this->request->server['HTTPS'] == 'on') || ($this->request->server['HTTPS'] == '1'))) {

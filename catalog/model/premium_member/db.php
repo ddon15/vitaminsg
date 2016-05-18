@@ -1,6 +1,8 @@
 <?php
 class ModelPremiumMemberDb extends Model
 {
+	private $completed_membership_status = 1;
+
 	public function addPremiumMember($data)
 	{
 		$customer_email = $this->db->escape($data['email']);
@@ -9,7 +11,11 @@ class ModelPremiumMemberDb extends Model
 
 		if($customer_id != 0) // Account already exists
 		{
-			return false;
+			//Check if customer has done payment
+			$pid = $this->getPremiumMemberId($customer_email);
+
+			return ($this->getPremiumMemberPaypal($pid) === 'Complete') ? false : true;
+
 		}
 		
 		// add default customer
@@ -287,6 +293,16 @@ class ModelPremiumMemberDb extends Model
 		return $result->rows[0];
 	}
 	
+	private function getPremiumMemberPaypal($pid)
+	{
+		$result = $this->db->query("SELECT capture_status" .
+			" FROM " . DB_PREFIX . "premium_member_paypal WHERE premium_member_id = '" . $this->db->escape($pid) . "'");
+		
+		$row = $result->row;
+		
+		return empty($row) ? 0 : $row['capture_status'];
+	}
+
 	private function sendOrderConfirmation($invoice, $customer_email, $member_num, $reward_used = 0) {
 		// HTML Mail
 		$this->language->load('mail/premium_member');

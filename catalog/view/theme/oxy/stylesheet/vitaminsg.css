@@ -1,4 +1,4 @@
-/*-----malcolm overrides----*/
+.product-details-price-original-price/*-----malcolm overrides----*/
 
 .product-right-sm-logo{
     border-top:0px !important;
@@ -532,16 +532,20 @@ background-color: #00a651;
 color: white;
 font-size: 16px;
 font-weight: bold;
-height: 26px;
-line-height: 26px;
+height: 25px;
 margin-bottom: 10px;
 }
+
+.product-details-price-original-price > span#orig-price {
+	font-size: 20px;
+}
+
 .product-details-price-original-price {
 color: #737373;
 font-weight: bold;
 font-size: 50px;
 line-height: 50px;
-margin-bottom: 20px;
+margin-bottom: 10px;
 }
 
 .product-details-price-original-price.vit-price-struck{
@@ -549,18 +553,23 @@ margin-bottom: 20px;
 }
 
 .product-details-price-bulk-price {
-float: right;
-margin-top: -67px;
+    margin-top: 10px;
+    text-align: center;
 }
 .product-details-price-bulk-price a {
 	color: #ef4035;
 	
 }
 .product-details-price-block {
-width: 40%;
+/*width: 40%;*/
 float: left;
 padding-right: 5px;
 }
+
+.padding-5px {
+	padding: 5px;
+}
+
 .product-details-member-price-tag {
 background-color: #ef4035;
 }
@@ -833,5 +842,34 @@ border-collapse: collapse;
 	}
 	.product-grid .name {
 	height: 70px;
+	}
+}
+
+#referrals {
+	.info, .success, .warning, .error, .validation {
+	border: 1px solid;
+	margin: 10px 0px;
+	padding:15px 10px 15px 50px;
+	background-repeat: no-repeat;
+	background-position: 10px center;
+	}
+	.info {
+	color: #00529B;
+	background-color: #BDE5F8;
+	}
+	.success {
+	color: #4F8A10;
+	background-color: #DFF2BF;
+	}
+	.warning {
+	color: #9F6000;
+	background-color: #FEEFB3;
+	}
+	.error {
+	color: #D8000C;
+	background-color: #FFBABA;
+	}
+	.hide {
+	display: none;
 	}
 }

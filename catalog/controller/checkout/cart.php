@@ -741,11 +741,16 @@ class ControllerCheckoutCart extends Controller {
 
 		$product_info = $this->model_catalog_product->getProduct($product_id);
 
+
 		if ($product_info) {			
 			if (isset($this->request->post['quantity'])) {
 				$quantity = $this->request->post['quantity'];
 			} else {
 				$quantity = 1;
+			}
+
+			if (isset($this->request->post['quantity2']) && !empty($this->request->post['quantity2'])) {
+				$quantity = $this->request->post['quantity2'];
 			}
 
 			if (isset($this->request->post['option'])) {
@@ -814,7 +819,7 @@ class ControllerCheckoutCart extends Controller {
 					foreach ($results as $result) {
 						if ($this->config->get($result['code'] . '_status')) {
 							$this->load->model('total/' . $result['code']);
-
+							
 							$this->{'model_total_' . $result['code']}->getTotal($total_data, $total, $taxes);
 						}
 

@@ -16,9 +16,80 @@
 		});	
 	});
 </script>
+
 <?php }	?>
 
 <?php if($this->config->get('oxy_homepage_banner_slider_type') ==2) { ?>
+<!-- Brands Banner CSS -->
+<style type="text/css">
+  .brands-banner-wrapper {
+    padding: 20px 10px 20px 35px;
+    border: 10px solid #FF8D31;
+    background-color: white;
+    overflow: hidden;
+  }
+  .brands-banner-wrapper .brands-banner-top {
+    width: 140px;
+    height: 70px;
+    float: left;
+    margin: 5px;
+  }
+
+  .brands-banner-wrapper .brands-banner {
+    width: 140px;
+    height: 70px;
+    float: left;
+    margin: 5px;
+  }
+
+  .brands-banner-wrapper .brands-banner img {
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+  }
+
+  .brands-banner-wrapper .brands-banner-top img {
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+  }
+
+  .img-size {
+    width: 140px;
+    height: 70px;
+  }
+
+  .brands-banner:hover img{
+    width: 150px;
+    opacity: .5;
+  }
+
+  .brands-banner-top:hover img{
+    width: 150px;
+    opacity: .5;
+  }
+
+  .max-dim-top {
+    max-height: 70px;
+    max-width: 140px;
+  }
+  .max-dim-def {
+    max-height: 70px;
+    max-width: 140px;
+  }
+  .brands-banner-header {
+    font-size: x-large;
+    display: table;
+    margin: 0 auto;
+    background-color: #FF8D31;
+    color: #FFF;
+    padding: 5px 20px 5px 20px;
+    border-radius: 0px 0px 40px 40px;
+    margin-top: -28px;
+  }
+  .margin-top-25 {    
+    margin-top: 25px;
+  }
+</style>
+
 <section id="banner-slider" class="flexslider">
    <ul class="slides">
    <?php foreach ($banners as $banner) { ?>

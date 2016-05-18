@@ -12,6 +12,8 @@ class ControllerProductProduct extends Controller {
 			'href'      => $this->url->link('common/home'),			
 			'separator' => false
 		);
+
+		$this->load->model('setting/custom');		
 		
 		$this->load->model('catalog/category');	
 		
@@ -169,6 +171,20 @@ class ControllerProductProduct extends Controller {
 		
 		$product_info = $this->model_catalog_product->getProduct($product_id);
 		
+		// Bulk Pricing
+		$this->data['prod_bulk_pricing'] = array();
+
+
+		$prodBulkPricing = $this->model_setting_custom->getBulkPricingDiscountLabel($product_info['product_id']);
+		
+		if($prodBulkPricing) {
+			$bp = $prodBulkPricing->row;
+			$this->data['twin_pack'] = json_decode($bp['twin_pack'], true);
+            $this->data['six_pack'] = json_decode($bp['six_pack'], true);
+            $this->data['bulk_price'] = json_decode($bp['bulk_pricing'], true);
+			$this->document->addStyle('catalog/view/theme/oxy/stylesheet/vit-custom-setting.css');
+		}
+
 		$this->data['product_info'] = $product_info;
 		
 		if ($product_info) {
@@ -252,7 +268,7 @@ class ControllerProductProduct extends Controller {
 				$this->data['next_prod_url'] = '';
 				$this->data['next_prod_name'] = '';
 			}
-
+		
 			if($PrevProd) {
 				$this->data['prev_prod_url'] = $this->url->link('product/product', 'product_id=' . $PrevProd['product_id']);
 				$this->data['prev_prod_name'] = $PrevProd['name'];
@@ -350,6 +366,7 @@ class ControllerProductProduct extends Controller {
 			$this->data['reward'] = $product_info['reward'];
 			$this->data['points'] = $product_info['points'];
 			
+			
 			if ($product_info['quantity'] <= 0) {
 				$this->data['stock'] = $product_info['stock_status'];
 			} elseif ($this->config->get('config_stock_display')) {
@@ -397,7 +414,8 @@ class ControllerProductProduct extends Controller {
 				$this->data['price'] = false;
 			}
 			
-			$this->data['bulkpriceurl'] = "http://www.vitamin.sg/bulk-enquiry?p=" . urldecode($product_info['name']);
+
+			$this->data['bulkpriceurl'] = "/bulk-enquiry?p=" . urldecode($product_info['name']);
 			$this->data['bulkprice'] = "Bulk Pricing<br />大批购买<br />Borongan<br />15% to 70% Off";
 			if ((float)$product_info['special']) {
 				$this->data['special'] = $this->currency->format($this->tax->calculate($product_info['special'], $product_info['tax_class_id'], $this->config->get('config_tax')));
@@ -427,18 +445,26 @@ class ControllerProductProduct extends Controller {
 			}
 			
 			$discounts = $this->model_catalog_product->getProductDiscounts($this->request->get['product_id']);
-			
+			$discount = $this->model_catalog_product->getProductDiscount($this->request->get['product_id']);
+
+			$this->data['discount'] = $discount;
 			$this->data['discounts'] = array(); 
-			
+			$this->data['margin_bottom'] = '';
+
+			if($discounts) $this->data['margin_bottom'] = '.margin-bottom-20px';
+
 			foreach ($discounts as $discount) {
 				$percent_savings = round((($product_info['price'] - $discount['price']) / $product_info['price'] * 100));
 				$this->data['discounts'][] = array(
 					'quantity' => $discount['quantity'],
 					'percent_savings' => $percent_savings,
-					'price'    => $this->currency->format($this->tax->calculate($discount['price'], $product_info['tax_class_id'], $this->config->get('config_tax')))
+					'price'    => $this->currency->format($this->tax->calculate($discount['price'], $product_info['tax_class_id'], $this->config->get('config_tax'))),
+					'label' => $discount['label']
 				);
 			}
-                        
+            
+            $this->data['original_price'] =  $this->currency->format($this->tax->calculate($product_info['original_price'], $product_info['tax_class_id'], $this->config->get('config_tax')));
+
                         //[MY] PROMOTIONS
                         //retrieve all product related promos
                         $this->load->model("promotion/special_promotions");

@@ -29,15 +29,15 @@
   
   <div class="three mobile-one columns">
     <div class="prev-next">
-	  <?php if ($prev_prod_name) { ?>
-		  <a href="<?php echo $prev_prod_url; ?>" class="product-prev">&nbsp;</a>
+    <?php if ($prev_prod_name) { ?>
+      <a href="<?php echo $prev_prod_url; ?>" class="product-prev">&nbsp;</a>
           <a href="<?php echo $prev_prod_url; ?>" class="product-prev-tip"><?php echo $prev_prod_name;?></a>
       <?php } ?>
-	  <?php if ($next_prod_name) { ?>
-		<a href="<?php echo $next_prod_url; ?>" class="product-next">&nbsp;</a>
+    <?php if ($next_prod_name) { ?>
+    <a href="<?php echo $next_prod_url; ?>" class="product-next">&nbsp;</a>
         <a href="<?php echo $next_prod_url; ?>" class="product-next-tip"><?php echo $next_prod_name;?></a>
       <?php } ?>
-	</div>  
+  </div>  
   </div>
   
   </div>
@@ -133,7 +133,7 @@
       <span class="sale-icon"><?php echo $text_sale; ?></span>
       <?php } ?>        
       <a href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" class="cloud-zoom" id='zoom1' rel="position:'inside', adjustX: 0, adjustY: 0, tint:'#ffffff', tintOpacity:0.1, smoothMove:3, showTitle:false">
-	  <img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" id="image" /></a>
+    <img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" id="image" /></a>
       <div class="zoom-b">
         <a id="zoom-cb" title="<?php echo $heading_title; ?>" class="swipebox" href="<?php echo $popup; ?>">Zoom</a>        
       </div>
@@ -194,72 +194,72 @@
     <h1><?php /*[SB]Moved from above */ echo $heading_title; ?></h1>
       <?php if ($price) { ?>
       <div class="price">
-		<?php if (empty($redeem_only) || !$redeem_only) { //[SB] Added Redemption ?>
-	  
-			<?php if (!$special) { ?>
-			<div class="product-details-price-original-price"><?php echo $price; ?></div>
-			<div class="product-details-price-bulk-price"><a href="<?php echo $bulkpriceurl; ?>"><?php echo $bulkprice; ?></a></div>
-			<?php /* [SB]Display Premium Member price */?>
-				<?php if ($premium_member_price) { ?>
-				<div class="product-details-price-block">
-					<div class="product-details-member-price-tag">MEMBER PRICE</div>
-					<span class="product-details-member-price"><?php echo $premium_member_price; ?></span>
-					<?php if($this->config->get('oxy_product_save_percent_status') ==1) { ?>
-					<div class="product-details-member-discount"><?php echo $premium_member_percent_savings; ?>% discount</div>
-					
-					<?php if ($reward) { //[SB] Changed to display rewards instead of points?>
-						<div style='display:block;float:left;color:#dc911b;font-weight:bold;padding-left:5px;'><?php //echo $text_reward; ?> <?php //echo $reward; ?>+ <?php echo sprintf($text_reward, $reward); //[SB] Changed Vit$ Reward ?></div><br />
-					<?php } ?>
-					<?php }?>
-				</div>
-				<?php }?>
-			<?php } else { ?>
-				<div class="product-details-price-original-price vit-price-struck"><?php echo $price; ?></div>
-				<div class="product-details-price-bulk-price"><a href="<?php echo $bulkpriceurl; ?>"><?php echo $bulkprice; ?></a></div>
-				<div class="clearfix">
-				<div class="product-details-price-block">
-					<div class="product-details-sale-price-tag">SALE PRICE</div>
-					<span class="product-details-sale-price"><?php echo $special; ?></span>
-					<?php if($this->config->get('oxy_product_save_percent_status') ==1) { ?>
-					<div class="product-details-sale-discount"><?php echo $percent_savings; ?>% discount</div>
-					<?php }?>
-				</div>
-			
-				<?php /* [SB]Display Premium Member price */?>
-				<?php if ($premium_member_price) { ?>
-				<div class="product-details-price-block">
-					<div class="product-details-member-price-tag">MEMBER PRICE</div>
-					<span class="product-details-member-price"><?php echo $premium_member_price; ?></span>
-					<?php if($this->config->get('oxy_product_save_percent_status') ==1) { ?>
-					<div class="product-details-member-discount"><?php echo $premium_member_percent_savings; ?>% discount</div>
-					<?php if ($reward) { //[SB] Changed to display rewards instead of points?>
-						<div style='display:block;float:left;color:#dc911b;font-weight:bold;padding-left:5px;'><?php //echo $text_reward; ?> <?php //echo $reward; ?>+ <?php echo sprintf($text_reward, $reward); //[SB] Changed Vit$ Reward ?></div><br />
-					<?php } ?>
-					<?php }?>
-				</div>
-				<?php }?>
-				</div>
-			<?php }//.end else ?>
-			<?php if($this->config->get('oxy_product_tax_status') ==1) { ?>
-				<?php if ($tax) { ?>
-					<div class="tax"><span class="price-tax"><?php echo $text_tax; ?> <?php echo $tax; ?></span></div>
-				<?php } ?>
-			<?php } ?>
-			
-			<?php if ($discounts) { ?>
-			<br />
-			<div class="discount">
-			  <?php foreach ($discounts as $discount) { ?>
-			  <?php echo sprintf($text_discount, $discount['quantity'], $discount['price']); ?><br />
-			  <?php } ?>
-			</div>
-			<?php } ?>
-			
-		<?php } else { //[SB] Added Redemption ?>
-			<div class="product-details-price-original-price" style="font-size:36px;"><?php echo sprintf($text_vit_dollar, $points); ?></div>
-			<div class="product-details-price-bulk-price"><a href="<?php echo $bulkpriceurl; ?>"><?php echo $bulkprice; ?></a></div>
-		<?php } ?>
-		
+    <?php if (empty($redeem_only) || !$redeem_only) { //[SB] Added Redemption ?>
+    
+      <?php if (!$special) { ?>
+      <div class="product-details-price-original-price"><?php echo $price; ?></div>
+      <?php /* [SB]Display Premium Member price */?>
+        <?php if ($premium_member_price) { ?>
+        <div class="product-details-price-block">
+          <div class="product-details-member-price-tag padding-5px">MEMBER PRICE</div>
+          <span class="product-details-member-price"><?php echo $premium_member_price; ?></span>
+          <?php if($this->config->get('oxy_product_save_percent_status') ==1) { ?>
+          <div class="product-details-member-discount"><?php echo $premium_member_percent_savings; ?>% discount</div>
+          
+          <?php if ($reward) { //[SB] Changed to display rewards instead of points?>
+            <div style='display:block;float:left;color:#dc911b;font-weight:bold;padding-left:5px;'><?php //echo $text_reward; ?> <?php //echo $reward; ?>+ <?php echo sprintf($text_reward, $reward); //[SB] Changed Vit$ Reward ?></div><br />
+          <?php } ?>
+          <?php }?>
+        </div>
+        <?php }?>
+      <?php } else { ?>
+        <div class="product-details-price-original-price vit-price-struck"><?php echo $price; ?></div>
+        <!-- <div class="product-details-price-bulk-price"><a href="<?php echo $bulkpriceurl; ?>"><?php echo $bulkprice; ?></a></div> -->
+        <div class="clearfix">
+        <div class="product-details-price-block">
+          <div class="product-details-sale-price-tag padding-5px">SALE PRICE</div>
+          <span class="product-details-sale-price"><?php echo $special; ?></span>
+          <?php if($this->config->get('oxy_product_save_percent_status') ==1) { ?>
+          <div class="product-details-sale-discount"><?php echo $percent_savings; ?>% discount</div>
+          <?php }?>
+        </div>
+      
+        <?php /* [SB]Display Premium Member price */?>
+        <?php if ($premium_member_price) { ?>
+        <div class="product-details-price-block">
+          <div class="product-details-member-price-tag padding-5px">MEMBER PRICE</div>
+          <span class="product-details-member-price"><?php echo $premium_member_price; ?></span>
+          <?php if($this->config->get('oxy_product_save_percent_status') ==1) { ?>
+          <div class="product-details-member-discount"><?php echo $premium_member_percent_savings; ?>% discount</div>
+          <?php if ($reward) { //[SB] Changed to display rewards instead of points?>
+            <div style='display:block;float:left;color:#dc911b;font-weight:bold;padding-left:5px;'><?php //echo $text_reward; ?> <?php //echo $reward; ?>+ <?php echo sprintf($text_reward, $reward); //[SB] Changed Vit$ Reward ?></div><br />
+          <?php } ?>
+          <?php }?>
+        </div>
+        <?php }?>
+        </div>
+        <div class="product-details-price-bulk-price"><a href="<?php echo $bulkpriceurl; ?>"><?php echo $bulkprice; ?></a></div>
+      <?php }//.end else ?>
+      <?php if($this->config->get('oxy_product_tax_status') ==1) { ?>
+        <?php if ($tax) { ?>
+          <div class="tax"><span class="price-tax"><?php echo $text_tax; ?> <?php echo $tax; ?></span></div>
+        <?php } ?>
+      <?php } ?>
+      
+      <?php if ($discounts) { ?>
+      <br />
+      <div class="discount">
+        <?php foreach ($discounts as $discount) { ?>
+        <?php echo sprintf($text_discount, $discount['quantity'], $discount['price']); ?><br />
+        <?php } ?>
+      </div>
+      <?php } ?>
+      
+    <?php } else { //[SB] Added Redemption ?>
+      <div class="product-details-price-original-price" style="font-size:36px;"><?php echo sprintf($text_vit_dollar, $points); ?></div>
+      <div class="product-details-price-bulk-price"><a href="<?php echo $bulkpriceurl; ?>"><?php echo $bulkprice; ?></a></div>
+    <?php } ?>
+    
       </div>
       <?php } ?>  
       
@@ -267,13 +267,13 @@
       <div class="review">
         <div class="review-stars"><img src="catalog/view/theme/oxy/image/stars/stars<?php echo $this->config->get('oxy_mid_prod_stars_color'); ?>-<?php echo $rating; ?>.png" alt="<?php echo $reviews; ?>" /></div>
         <div><a onclick="$('a[href=\'#tab-review\']').trigger('click');"><?php echo $reviews; ?></a>
-		
-		<?php if($can_write_review) { //[SB] Added write review filter ?>
-			&nbsp;&nbsp;|&nbsp;
-			<a onclick="$('a[href=\'#tab-review\']').trigger('click');"><?php echo $text_write; ?></a>
-		<?php } ?>
-		
-		</div>
+    
+    <?php if($can_write_review) { //[SB] Added write review filter ?>
+      &nbsp;&nbsp;|&nbsp;
+      <a onclick="$('a[href=\'#tab-review\']').trigger('click');"><?php echo $text_write; ?></a>
+    <?php } ?>
+    
+    </div>
       </div>
       <?php } ?>   
       
@@ -493,48 +493,48 @@
 
     <?php if(($this->config->get('oxy_layout_product_page')== 5) || ($this->config->get('oxy_layout_product_page')== 6) || ($this->config->get('oxy_layout_product_page')== 7) || ($this->config->get('oxy_layout_product_page')== 10)) { ?>
 
-	<?php //[SB] Display only when there is something to display
-	if(!empty($manufacturer) || !empty($promotions) || !empty($clearance) || !empty($additional_info)) { ?>
-	
-		<div class="product-right-sm three columns"><?php //[SB] Removed hide-for-small ?>
-			<?php //[MY]?>
-			<?php if(!empty($promotions) || !empty($clearance)){?>
-			<h3 style='border-bottom:1px solid #EAEAEA;'><?php echo $heading_promotions;?></h3>
-			<?php }?>
-			<?php if (!empty($promotions)) { ?>
-				<div class="discount" style='margin-bottom:30px;'>
-				  <?php foreach ($promotions as $promo) {?>
-					<div class='float:left;'>
-						<img src="<?php echo 'image/data/badge_promo.jpg'; ?>" alt="+" title="+" style='float:left;display:block;padding-right:5px;'>
-						<div style='font-size:18px;font-weight:600;text-transform: uppercase;padding-top:10px;'><?php echo $promo['label']; ?></div>
-						<div style='font-size:12px;font-weight:600;color:#dd8f1a;'><?php echo $text_limited;?></div>
-					</div>
-				  <?php } ?>
-				</div>
-				<?php if($clearance){?>
-					 <img src="<?php echo 'image/data/badge_discount.jpg'; ?>" alt="+" title="+" style='float:left;display:block;padding-right:5px;'>
-					 <div style='font-size:18px;font-weight:600;text-transform: uppercase;padding-top:10px;'><?php echo $text_clearance; ?></div>   
-					 <div style='font-size:12px;font-weight:600;color:#dd8f1a;'><?php echo $text_limited;?></div>
-				<?php }?>
-			<?php } ?>
-		<?php if ($manufacturer) { ?>    
-			<h3 style='border-bottom:1px solid #EAEAEA;'><?php echo $heading_brand;?></h3>
-			<?php if ($manufacturers_img) { ?>       
-				<?php if($this->config->get('oxy_product_manufacturer_logo_status') ==1) { ?>
-				<div class="product-right-sm-logo">
-				<a href="<?php echo $manufacturers; ?>"><?php echo ($manufacturers_img) ? '<img src="'.$manufacturers_img.'" title="'.$manufacturers.'" />' : $manufacturers ;?></a>
-				</div> 
-			<?php } ?> 
-		<?php }//.end manufacturer ?> 
-		<?php } ?> 
-		
-		<?php //[SB] Add Additional Info
-		if($additional_info) { ?>
-			<div class="product-right-sm-additional_info"><?php echo $additional_info; ?></div> 
-		<?php } ?>
-		
+  <?php //[SB] Display only when there is something to display
+  if(!empty($manufacturer) || !empty($promotions) || !empty($clearance) || !empty($additional_info)) { ?>
+  
+    <div class="product-right-sm three columns"><?php //[SB] Removed hide-for-small ?>
+      <?php //[MY]?>
+      <?php if(!empty($promotions) || !empty($clearance)){?>
+      <h3 style='border-bottom:1px solid #EAEAEA;'><?php echo $heading_promotions;?></h3>
+      <?php }?>
+      <?php if (!empty($promotions)) { ?>
+        <div class="discount" style='margin-bottom:30px;'>
+          <?php foreach ($promotions as $promo) {?>
+          <div class='float:left;'>
+            <img src="<?php echo 'image/data/badge_promo.jpg'; ?>" alt="+" title="+" style='float:left;display:block;padding-right:5px;'>
+            <div style='font-size:18px;font-weight:600;text-transform: uppercase;padding-top:10px;'><?php echo $promo['label']; ?></div>
+            <div style='font-size:12px;font-weight:600;color:#dd8f1a;'><?php echo $text_limited;?></div>
+          </div>
+          <?php } ?>
+        </div>
+        <?php if($clearance){?>
+           <img src="<?php echo 'image/data/badge_discount.jpg'; ?>" alt="+" title="+" style='float:left;display:block;padding-right:5px;'>
+           <div style='font-size:18px;font-weight:600;text-transform: uppercase;padding-top:10px;'><?php echo $text_clearance; ?></div>   
+           <div style='font-size:12px;font-weight:600;color:#dd8f1a;'><?php echo $text_limited;?></div>
+        <?php }?>
+      <?php } ?>
+    <?php if ($manufacturer) { ?>    
+      <h3 style='border-bottom:1px solid #EAEAEA;'><?php echo $heading_brand;?></h3>
+      <?php if ($manufacturers_img) { ?>       
+        <?php if($this->config->get('oxy_product_manufacturer_logo_status') ==1) { ?>
+        <div class="product-right-sm-logo">
+        <a href="<?php echo $manufacturers; ?>"><?php echo ($manufacturers_img) ? '<img src="'.$manufacturers_img.'" title="'.$manufacturers.'" />' : $manufacturers ;?></a>
+        </div> 
+      <?php } ?> 
+    <?php }//.end manufacturer ?> 
+    <?php } ?> 
+    
+    <?php //[SB] Add Additional Info
+    if($additional_info) { ?>
+      <div class="product-right-sm-additional_info"><?php echo $additional_info; ?></div> 
     <?php } ?>
-	
+    
+    <?php } ?>
+  
     <?php if($this->config->get('oxy_product_custom_status')== 1) { ?> 
     <?php if($oxy_product_custom_content) { ?>
     <div class="product-right-sm-custom">
@@ -550,15 +550,15 @@
     <div class="product-right-sm-info-content">
       <span class="p_icon">
         <?php if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') {
-	        $path_image = $this->config->get('config_ssl') . 'image/';
+          $path_image = $this->config->get('config_ssl') . 'image/';
         } else {
-        	$path_image = $this->config->get('config_url') . 'image/';
+          $path_image = $this->config->get('config_url') . 'image/';
         }
         if ($this->config->get('oxy_product_fb1_icon') != ''){ ?>   
-		<img src="<?php echo $path_image . $this->config->get('oxy_product_fb1_icon') ?>" alt="+" title="+">
+    <img src="<?php echo $path_image . $this->config->get('oxy_product_fb1_icon') ?>" alt="+" title="+">
         <?php } else { ?>
         <img src="catalog/view/theme/oxy/image/icons_feature_box/fbs_icon_1.png" alt="+" title="+">
-		<?php } ?>
+    <?php } ?>
       </span>
     <span class="p_title"><a href="#" data-reveal-id="oxyprodModal1"><?php echo $oxy_product_fb1_title; ?></a></span>
     <?php if($oxy_product_fb1_subtitle) { ?>
@@ -571,15 +571,15 @@
     <div class="product-right-sm-info-content">
       <span class="p_icon">
         <?php if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') {
-	        $path_image = $this->config->get('config_ssl') . 'image/';
+          $path_image = $this->config->get('config_ssl') . 'image/';
         } else {
-        	$path_image = $this->config->get('config_url') . 'image/';
+          $path_image = $this->config->get('config_url') . 'image/';
         }
         if ($this->config->get('oxy_product_fb2_icon') != ''){ ?>   
-		<img src="<?php echo $path_image . $this->config->get('oxy_product_fb2_icon') ?>" alt="+" title="+">
+    <img src="<?php echo $path_image . $this->config->get('oxy_product_fb2_icon') ?>" alt="+" title="+">
         <?php } else { ?>
         <img src="catalog/view/theme/oxy/image/icons_feature_box/fbs_icon_1.png" alt="+" title="+">
-		<?php } ?>
+    <?php } ?>
       </span>
     <span class="p_title"><a href="#" data-reveal-id="oxyprodModal2"><?php echo $oxy_product_fb2_title; ?></a></span>
     <?php if($oxy_product_fb2_subtitle) { ?>
@@ -592,15 +592,15 @@
     <div class="product-right-sm-info-content">
       <span class="p_icon">
         <?php if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') {
-	        $path_image = $this->config->get('config_ssl') . 'image/';
+          $path_image = $this->config->get('config_ssl') . 'image/';
         } else {
-        	$path_image = $this->config->get('config_url') . 'image/';
+          $path_image = $this->config->get('config_url') . 'image/';
         }
         if ($this->config->get('oxy_product_fb3_icon') != ''){ ?>   
-		<img src="<?php echo $path_image . $this->config->get('oxy_product_fb3_icon') ?>" alt="+" title="+">
+    <img src="<?php echo $path_image . $this->config->get('oxy_product_fb3_icon') ?>" alt="+" title="+">
         <?php } else { ?>
         <img src="catalog/view/theme/oxy/image/icons_feature_box/fbs_icon_1.png" alt="+" title="+">
-		<?php } ?>
+    <?php } ?>
       </span>
     <span class="p_title"><a href="#" data-reveal-id="oxyprodModal3"><?php echo $oxy_product_fb3_title; ?></a></span>
     <?php if($oxy_product_fb3_subtitle) { ?>
@@ -618,13 +618,13 @@
 <div class="product-right-sm-related">
 <h5><?php echo $tab_related; ?></h5>   
 <script type="text/javascript">
-	jQuery(function($) {
+  jQuery(function($) {
       $('.product-right-sm-related-flexslider').flexslider({
         animation: "slide",
         animationLoop: false,
-		controlNav: false
-       }); 	
-	});
+    controlNav: false
+       });  
+  });
 </script>
 <div class="product-right-sm-related-flexslider carousel">       
    <ul class="slides">
@@ -638,25 +638,25 @@
         <div class="description-r"><?php echo $product['description']; ?></div>
         <?php if ($product['price']) { ?>
         <?php //[SB] Replaced price display style ?>
-		<div class="price">
-			<div class="vit-usual-price">
-				<div class="vit-price <?php echo $product['special'] ? 'vit-price-struck' : ''; ?>"><?php echo $product['price']; ?></div><div class="vit-badge"><?php echo $text_price_usual; ?></div>
-			</div>
-			
-			<?php if ($product['premium_member_price']) { ?>
-				<div class="vit-member-price">
-					<div class="vit-price"><?php echo $product['premium_member_price']; ?></div><div class="vit-badge"><?php echo $text_price_member; ?></div>
-				</div>
-			<?php } ?>
-			
-			<?php if ($product['special']) { ?>
-			<div class="vit-sale-price">
-				<div class="vit-price"><?php echo $product['special']; ?></div><div class="vit-badge"><?php echo $text_sale; ?></div>
-			</div>
-			<?php } else { ?>
-				<div class="vit-sale-empty"> </div>
-			<?php } ?> 
-		</div>
+    <div class="price">
+      <div class="vit-usual-price">
+        <div class="vit-price <?php echo $product['special'] ? 'vit-price-struck' : ''; ?>"><?php echo $product['price']; ?></div><div class="vit-badge"><?php echo $text_price_usual; ?></div>
+      </div>
+      
+      <?php if ($product['premium_member_price']) { ?>
+        <div class="vit-member-price">
+          <div class="vit-price"><?php echo $product['premium_member_price']; ?></div><div class="vit-badge"><?php echo $text_price_member; ?></div>
+        </div>
+      <?php } ?>
+      
+      <?php if ($product['special']) { ?>
+      <div class="vit-sale-price">
+        <div class="vit-price"><?php echo $product['special']; ?></div><div class="vit-badge"><?php echo $text_sale; ?></div>
+      </div>
+      <?php } else { ?>
+        <div class="vit-sale-empty"> </div>
+      <?php } ?> 
+    </div>
         <?php } ?>
     </li>
     <?php } ?>
@@ -692,10 +692,10 @@
     <?php if ($review_status && !$redeem_only) { //[SB] Do not display reviews on Redemption ?>
     <a href="#tab-review"><?php echo $tab_review; ?></a>
     <?php } ?>
-	
-	<?php //[SB]Add Ask a Question ?>
-	<a href="#tab-ask-a-question"><?php echo $tab_ask_a_question; ?></a>
-	
+  
+  <?php //[SB]Add Ask a Question ?>
+  <a href="#tab-ask-a-question"><?php echo $tab_ask_a_question; ?></a>
+  
     <?php if($this->config->get('oxy_product_custom_tab_1_status')== 1) { ?>
     <?php if ($oxy_product_custom_tab_1_content) { ?>   
     <a href="#tab-custom"><?php echo $oxy_product_custom_tab_1_title; ?></a>
@@ -737,50 +737,50 @@
   <?php if ($review_status && !$redeem_only) { //[SB] Do not display reviews on Redemption ?>
   <div id="tab-review" class="tab-content">
     <div id="review"></div>
-	
-	<?php if($can_write_review) { //[SB] Added write review filter ?>
-		<h2 id="review-title"><?php echo $text_write; ?></h2>
-		<b><?php echo $entry_name; ?></b><br />
-		<input type="text" name="name" value="" />
-		<br />
+  
+  <?php if($can_write_review) { //[SB] Added write review filter ?>
+    <h2 id="review-title"><?php echo $text_write; ?></h2>
+    <b><?php echo $entry_name; ?></b><br />
+    <input type="text" name="name" value="" />
+    <br />
 
-		<b><?php echo $entry_review; ?></b>
-		<textarea name="text" cols="40" rows="8" style="width: 98%;"></textarea>
-		<span style="font-size: 11px;"><?php echo $text_note; ?></span><br />
-		<br />
-		<b><?php echo $entry_rating; ?></b> <span><?php echo $entry_bad; ?></span>&nbsp;
-		<input type="radio" name="rating" value="1" />
-		&nbsp;
-		<input type="radio" name="rating" value="2" />
-		&nbsp;
-		<input type="radio" name="rating" value="3" />
-		&nbsp;
-		<input type="radio" name="rating" value="4" />
-		&nbsp;
-		<input type="radio" name="rating" value="5" />
-		&nbsp;<span><?php echo $entry_good; ?></span><br />
-		<br />
-		<b><?php echo $entry_captcha; ?></b><br />
-		<input type="text" name="captcha" value="" />
-		<br />
-		<img src="index.php?route=product/product/captcha" alt="" id="captcha" /><br />
-		<br />
-		<div class="buttons">
-		  <div class="right"><a id="button-review" class="button"><?php echo $button_continue; ?></a></div>
-		</div>
-	<?php } ?>
+    <b><?php echo $entry_review; ?></b>
+    <textarea name="text" cols="40" rows="8" style="width: 98%;"></textarea>
+    <span style="font-size: 11px;"><?php echo $text_note; ?></span><br />
+    <br />
+    <b><?php echo $entry_rating; ?></b> <span><?php echo $entry_bad; ?></span>&nbsp;
+    <input type="radio" name="rating" value="1" />
+    &nbsp;
+    <input type="radio" name="rating" value="2" />
+    &nbsp;
+    <input type="radio" name="rating" value="3" />
+    &nbsp;
+    <input type="radio" name="rating" value="4" />
+    &nbsp;
+    <input type="radio" name="rating" value="5" />
+    &nbsp;<span><?php echo $entry_good; ?></span><br />
+    <br />
+    <b><?php echo $entry_captcha; ?></b><br />
+    <input type="text" name="captcha" value="" />
+    <br />
+    <img src="index.php?route=product/product/captcha" alt="" id="captcha" /><br />
+    <br />
+    <div class="buttons">
+      <div class="right"><a id="button-review" class="button"><?php echo $button_continue; ?></a></div>
+    </div>
+  <?php } ?>
   </div>
   <?php } ?>
   
   <?php //[SB] Add Ask a Question ?>
   <div id="tab-ask-a-question" class="tab-content">
     <h2 id="ask-a-question-title"><?php echo $text_ask_a_question_title; ?></h2>
-	<div id="ask-a-question-description"><?php echo $text_ask_a_question_description; ?></div>
-	<br />
+  <div id="ask-a-question-description"><?php echo $text_ask_a_question_description; ?></div>
+  <br />
     <b><?php echo $entry_name; ?></b><br />
     <input type="text" name="ask-name" value="" />
     <br />
-	<b><?php echo $entry_email; ?></b><br />
+  <b><?php echo $entry_email; ?></b><br />
     <input type="text" name="ask-email" value="" />
     <br />
 
@@ -826,17 +826,17 @@
 <div class="product-bottom-related">
 <h2><?php echo $tab_related; ?></h2>   
 <script type="text/javascript">
-	jQuery(function($) {
+  jQuery(function($) {
       $('.product-bottom-related-flexslider').flexslider({
         animation: "slide",
         animationLoop: false,
-		slideshow: false,  
-		controlNav: false,
-		itemWidth: 188,
-		maxItems: 6,
-		minItems: 1
-       }); 	
-	});
+    slideshow: false,  
+    controlNav: false,
+    itemWidth: 188,
+    maxItems: 6,
+    minItems: 1
+       });  
+  });
 </script>
 <div class="products-slider">       
 <div class="product-bottom-related-flexslider carousel products-slider-slides">       
@@ -898,32 +898,32 @@
       <?php if ($product['price']) { ?>
       <?php //[SB] Replaced price display style ?>
             <div class="price">
-			
-				<div class="vit-usual-price">
-						<div class="vit-price <?php echo $product['special'] ? 'vit-price-struck' : ''; ?>"><?php echo $product['price']; ?></div><div class="vit-badge"><?php echo $text_price_usual; ?></div>
-				</div>
+      
+        <div class="vit-usual-price">
+            <div class="vit-price <?php echo $product['special'] ? 'vit-price-struck' : ''; ?>"><?php echo $product['price']; ?></div><div class="vit-badge"><?php echo $text_price_usual; ?></div>
+        </div>
 
-				<?php if ($product['premium_member_price']) { ?>
-						<div class="vit-member-price">
-								<div class="vit-price"><?php echo $product['premium_member_price']; ?></div><div class="vit-badge"><?php echo $text_price_member; ?></div>
-						</div>
-				<?php } ?>
+        <?php if ($product['premium_member_price']) { ?>
+            <div class="vit-member-price">
+                <div class="vit-price"><?php echo $product['premium_member_price']; ?></div><div class="vit-badge"><?php echo $text_price_member; ?></div>
+            </div>
+        <?php } ?>
 
-				<?php if ($product['special']) { ?>
-				<div class="vit-sale-price">
-						<div class="vit-price"><?php echo $product['special']; ?></div><div class="vit-badge"><?php echo $text_sale; ?></div>
-				</div>
-				<?php } else { ?>
-						<div class="vit-sale-empty"> </div>
-				<?php } ?>
-				
+        <?php if ($product['special']) { ?>
+        <div class="vit-sale-price">
+            <div class="vit-price"><?php echo $product['special']; ?></div><div class="vit-badge"><?php echo $text_sale; ?></div>
+        </div>
+        <?php } else { ?>
+            <div class="vit-sale-empty"> </div>
+        <?php } ?>
+        
             </div>
       <?php } else if (empty($product['redeem_only']) || !$product['redeem_only']) { //[SB] Added Redemption ?>
-			<div class="vit-usual-price">
-				<div class="vit-price"><?php echo $text_vit_dollar . $product['points']; ?></div>
-			</div>
-	<?php } ?>
-	  	  
+      <div class="vit-usual-price">
+        <div class="vit-price"><?php echo $text_vit_dollar . $product['points']; ?></div>
+      </div>
+  <?php } ?>
+        
       <div class="cart">
         <input type="button" value="<?php echo $button_cart; ?>" onclick="addToCart('<?php echo $product['product_id']; ?>');" class="button" />
       </div>
@@ -964,69 +964,69 @@
   <?php echo $content_bottom; ?></section>
 <script type="text/javascript"><!--
 $(document).ready(function() {
-	$('.colorbox').colorbox({
-		overlayClose: true,
-		opacity: 0.5,
-		rel: "colorbox"
-	});
+  $('.colorbox').colorbox({
+    overlayClose: true,
+    opacity: 0.5,
+    rel: "colorbox"
+  });
 });
 //--></script> 
 <script type="text/javascript"><!--
 
 $('select[name="profile_id"], input[name="quantity"]').change(function(){
     $.ajax({
-		url: 'index.php?route=product/product/getRecurringDescription',
-		type: 'post',
-		data: $('input[name="product_id"], input[name="quantity"], select[name="profile_id"]'),
-		dataType: 'json',
+    url: 'index.php?route=product/product/getRecurringDescription',
+    type: 'post',
+    data: $('input[name="product_id"], input[name="quantity"], select[name="profile_id"]'),
+    dataType: 'json',
         beforeSend: function() {
             $('#profile-description').html('');
         },
-		success: function(json) {
-			$('.success, .warning, .attention, information, .error').remove();
+    success: function(json) {
+      $('.success, .warning, .attention, information, .error').remove();
             
-			if (json['success']) {
+      if (json['success']) {
                 $('#profile-description').html(json['success']);
-			}	
-		}
-	});
+      } 
+    }
+  });
 });
     
 $('#button-cart').bind('click', function() {
-	$.ajax({
-		url: 'index.php?route=checkout/cart/add',
-		type: 'post',
-		data: $('.product-info input[type=\'text\'], .product-info input[type=\'hidden\'], .product-info input[type=\'radio\']:checked, .product-info input[type=\'checkbox\']:checked, .product-info select, .product-info textarea'),
-		dataType: 'json',
-		success: function(json) {
-			$('.success, .warning, .attention, information, .error').remove();
-			
-			if (json['error']) {
-				if (json['error']['option']) {
-					for (i in json['error']['option']) {
-						$('#option-' + i).after('<span class="error">' + json['error']['option'][i] + '</span>');
-					}
-				}
+  $.ajax({
+    url: 'index.php?route=checkout/cart/add',
+    type: 'post',
+    data: $('.product-info input[type=\'text\'], .product-info input[type=\'hidden\'], .product-info input[type=\'radio\']:checked, .product-info input[type=\'checkbox\']:checked, .product-info select, .product-info textarea'),
+    dataType: 'json',
+    success: function(json) {
+      $('.success, .warning, .attention, information, .error').remove();
+      
+      if (json['error']) {
+        if (json['error']['option']) {
+          for (i in json['error']['option']) {
+            $('#option-' + i).after('<span class="error">' + json['error']['option'][i] + '</span>');
+          }
+        }
                 
                 if (json['error']['profile']) {
                     $('select[name="profile_id"]').after('<span class="error">' + json['error']['profile'] + '</span>');
                 }
-			} 
-			
-			if (json['success']) {
-				$('#notification').html('<div class="success" style="display: none;">' + json['success'] + '<img src="catalog/view/theme/default/image/close.png" alt="" class="close" /></div>');
-					
-				$('.success').fadeIn('slow');
-					
-				$('#cart-total').html(json['total']);
-				
-				$('html, body').animate({ scrollTop: 0 }, 'slow'); 
-			}	
-		}
-	});
-	
-	//[KianAnn] track add to cart in GA
-	ga('sainhall_tracker.send', 'pageview', '/index.php?route=checkout/cart/add');
+      } 
+      
+      if (json['success']) {
+        $('#notification').html('<div class="success" style="display: none;">' + json['success'] + '<img src="catalog/view/theme/default/image/close.png" alt="" class="close" /></div>');
+          
+        $('.success').fadeIn('slow');
+          
+        $('#cart-total').html(json['total']);
+        
+        $('html, body').animate({ scrollTop: 0 }, 'slow'); 
+      } 
+    }
+  });
+  
+  //[KianAnn] track add to cart in GA
+  ga('sainhall_tracker.send', 'pageview', '/index.php?route=checkout/cart/add');
 
 });
 //--></script>
@@ -1036,31 +1036,31 @@ $('#button-cart').bind('click', function() {
 <?php if ($option['type'] == 'file') { ?>
 <script type="text/javascript"><!--
 new AjaxUpload('#button-option-<?php echo $option['product_option_id']; ?>', {
-	action: 'index.php?route=product/product/upload',
-	name: 'file',
-	autoSubmit: true,
-	responseType: 'json',
-	onSubmit: function(file, extension) {
-		$('#button-option-<?php echo $option['product_option_id']; ?>').after('<img src="catalog/view/theme/default/image/loading.gif" class="loading" style="padding-left: 5px;" />');
-		$('#button-option-<?php echo $option['product_option_id']; ?>').attr('disabled', true);
-	},
-	onComplete: function(file, json) {
-		$('#button-option-<?php echo $option['product_option_id']; ?>').attr('disabled', false);
-		
-		$('.error').remove();
-		
-		if (json['success']) {
-			alert(json['success']);
-			
-			$('input[name=\'option[<?php echo $option['product_option_id']; ?>]\']').attr('value', json['file']);
-		}
-		
-		if (json['error']) {
-			$('#option-<?php echo $option['product_option_id']; ?>').after('<span class="error">' + json['error'] + '</span>');
-		}
-		
-		$('.loading').remove();	
-	}
+  action: 'index.php?route=product/product/upload',
+  name: 'file',
+  autoSubmit: true,
+  responseType: 'json',
+  onSubmit: function(file, extension) {
+    $('#button-option-<?php echo $option['product_option_id']; ?>').after('<img src="catalog/view/theme/default/image/loading.gif" class="loading" style="padding-left: 5px;" />');
+    $('#button-option-<?php echo $option['product_option_id']; ?>').attr('disabled', true);
+  },
+  onComplete: function(file, json) {
+    $('#button-option-<?php echo $option['product_option_id']; ?>').attr('disabled', false);
+    
+    $('.error').remove();
+    
+    if (json['success']) {
+      alert(json['success']);
+      
+      $('input[name=\'option[<?php echo $option['product_option_id']; ?>]\']').attr('value', json['file']);
+    }
+    
+    if (json['error']) {
+      $('#option-<?php echo $option['product_option_id']; ?>').after('<span class="error">' + json['error'] + '</span>');
+    }
+    
+    $('.loading').remove(); 
+  }
 });
 //--></script>
 <?php } ?>
@@ -1068,81 +1068,81 @@ new AjaxUpload('#button-option-<?php echo $option['product_option_id']; ?>', {
 <?php } ?>
 <script type="text/javascript"><!--
 $('#review .pagination a').live('click', function() {
-	$('#review').fadeOut('slow');
-		
-	$('#review').load(this.href);
-	
-	$('#review').fadeIn('slow');
-	
-	return false;
-});			
+  $('#review').fadeOut('slow');
+    
+  $('#review').load(this.href);
+  
+  $('#review').fadeIn('slow');
+  
+  return false;
+});     
 
 $('#review').load('index.php?route=product/product/review&product_id=<?php echo $product_id; ?>');
 
 $('#button-review').bind('click', function() {
-	$.ajax({
-		url: 'index.php?route=product/product/write&product_id=<?php echo $product_id; ?>',
-		type: 'post',
-		dataType: 'json',
-		data: 'name=' + encodeURIComponent($('input[name=\'name\']').val()) + '&text=' + encodeURIComponent($('textarea[name=\'text\']').val()) + '&rating=' + encodeURIComponent($('input[name=\'rating\']:checked').val() ? $('input[name=\'rating\']:checked').val() : '') + '&captcha=' + encodeURIComponent($('input[name=\'captcha\']').val()),
-		beforeSend: function() {
-			$('.success, .warning').remove();
-			$('#button-review').attr('disabled', true);
-			$('#review-title').after('<div class="attention"><img src="catalog/view/theme/default/image/loading.gif" alt="" /> <?php echo $text_wait; ?></div>');
-		},
-		complete: function() {
-			$('#button-review').attr('disabled', false);
-			$('.attention').remove();
-		},
-		success: function(data) {
-			if (data['error']) {
-				$('#review-title').after('<div class="warning">' + data['error'] + '</div>');
-			}
-			
-			if (data['success']) {
-				$('#review-title').after('<div class="success">' + data['success'] + '</div>');
-								
-				$('input[name=\'name\']').val('');
-				$('textarea[name=\'text\']').val('');
-				$('input[name=\'rating\']:checked').attr('checked', '');
-				$('input[name=\'captcha\']').val('');
-			}
-		}
-	});
+  $.ajax({
+    url: 'index.php?route=product/product/write&product_id=<?php echo $product_id; ?>',
+    type: 'post',
+    dataType: 'json',
+    data: 'name=' + encodeURIComponent($('input[name=\'name\']').val()) + '&text=' + encodeURIComponent($('textarea[name=\'text\']').val()) + '&rating=' + encodeURIComponent($('input[name=\'rating\']:checked').val() ? $('input[name=\'rating\']:checked').val() : '') + '&captcha=' + encodeURIComponent($('input[name=\'captcha\']').val()),
+    beforeSend: function() {
+      $('.success, .warning').remove();
+      $('#button-review').attr('disabled', true);
+      $('#review-title').after('<div class="attention"><img src="catalog/view/theme/default/image/loading.gif" alt="" /> <?php echo $text_wait; ?></div>');
+    },
+    complete: function() {
+      $('#button-review').attr('disabled', false);
+      $('.attention').remove();
+    },
+    success: function(data) {
+      if (data['error']) {
+        $('#review-title').after('<div class="warning">' + data['error'] + '</div>');
+      }
+      
+      if (data['success']) {
+        $('#review-title').after('<div class="success">' + data['success'] + '</div>');
+                
+        $('input[name=\'name\']').val('');
+        $('textarea[name=\'text\']').val('');
+        $('input[name=\'rating\']:checked').attr('checked', '');
+        $('input[name=\'captcha\']').val('');
+      }
+    }
+  });
 });
 //--></script> 
 <script type="text/javascript"><!--
 //[SB] Added Ask a Question
 $('#button-ask-a-question').bind('click', function() {
-	$.ajax({
-		url: 'index.php?route=product/product/ask&product_id=<?php echo $product_id; ?>',
-		type: 'post',
-		dataType: 'json',
-		data: 'ask-name=' + encodeURIComponent($('input[name=\'ask-name\']').val()) + '&ask-text=' + encodeURIComponent($('textarea[name=\'ask-text\']').val()) + '&ask-email=' + encodeURIComponent($('input[name=\'ask-email\']').val()) + '&ask-captcha=' + encodeURIComponent($('input[name=\'ask-captcha\']').val()),
-		beforeSend: function() {
-			$('.success, .warning').remove();
-			$('#button-ask-a-question').attr('disabled', true);
-			$('#ask-a-question-title').after('<div class="attention"><img src="catalog/view/theme/default/image/loading.gif" alt="" /> <?php echo $text_wait; ?></div>');
-		},
-		complete: function() {
-			$('#button-ask-a-question').attr('disabled', false);
-			$('.attention').remove();
-		},
-		success: function(data) {
-			if (data['error']) {
-				$('#ask-a-question-title').after('<div class="warning">' + data['error'] + '</div>');
-			}
-			
-			if (data['success']) {
-				$('#ask-a-question-title').after('<div class="success">' + data['success'] + '</div>');
-								
-				$('input[name=\'ask-name\']').val('');
-				$('textarea[name=\'ask-text\']').val('');
-				$('input[name=\'ask-email\']').val('');
-				$('input[name=\'ask-captcha\']').val('');
-			}
-		}
-	});
+  $.ajax({
+    url: 'index.php?route=product/product/ask&product_id=<?php echo $product_id; ?>',
+    type: 'post',
+    dataType: 'json',
+    data: 'ask-name=' + encodeURIComponent($('input[name=\'ask-name\']').val()) + '&ask-text=' + encodeURIComponent($('textarea[name=\'ask-text\']').val()) + '&ask-email=' + encodeURIComponent($('input[name=\'ask-email\']').val()) + '&ask-captcha=' + encodeURIComponent($('input[name=\'ask-captcha\']').val()),
+    beforeSend: function() {
+      $('.success, .warning').remove();
+      $('#button-ask-a-question').attr('disabled', true);
+      $('#ask-a-question-title').after('<div class="attention"><img src="catalog/view/theme/default/image/loading.gif" alt="" /> <?php echo $text_wait; ?></div>');
+    },
+    complete: function() {
+      $('#button-ask-a-question').attr('disabled', false);
+      $('.attention').remove();
+    },
+    success: function(data) {
+      if (data['error']) {
+        $('#ask-a-question-title').after('<div class="warning">' + data['error'] + '</div>');
+      }
+      
+      if (data['success']) {
+        $('#ask-a-question-title').after('<div class="success">' + data['success'] + '</div>');
+                
+        $('input[name=\'ask-name\']').val('');
+        $('textarea[name=\'ask-text\']').val('');
+        $('input[name=\'ask-email\']').val('');
+        $('input[name=\'ask-captcha\']').val('');
+      }
+    }
+  });
 });
 //--></script> 
 <script type="text/javascript"><!--
@@ -1151,16 +1151,16 @@ $('#tabs a').tabs();
 <script type="text/javascript" src="catalog/view/javascript/jquery/ui/jquery-ui-timepicker-addon.js"></script> 
 <script type="text/javascript"><!--
 $(document).ready(function() {
-	if ($.browser.msie && $.browser.version == 6) {
-		$('.date, .datetime, .time').bgIframe();
-	}
+  if ($.browser.msie && $.browser.version == 6) {
+    $('.date, .datetime, .time').bgIframe();
+  }
 
-	$('.date').datepicker({dateFormat: 'yy-mm-dd'});
-	$('.datetime').datetimepicker({
-		dateFormat: 'yy-mm-dd',
-		timeFormat: 'h:m'
-	});
-	$('.time').timepicker({timeFormat: 'h:m'});
+  $('.date').datepicker({dateFormat: 'yy-mm-dd'});
+  $('.datetime').datetimepicker({
+    dateFormat: 'yy-mm-dd',
+    timeFormat: 'h:m'
+  });
+  $('.time').timepicker({timeFormat: 'h:m'});
 });
 //--></script> 
 <?php echo $footer; ?>

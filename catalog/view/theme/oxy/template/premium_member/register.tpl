@@ -252,10 +252,11 @@
 $('select[name=\'country_id\']').bind('change', function() {
 	if ($(this).find("option:selected").text() == 'Singapore') {
 		$('#region-row').hide();
+		$('input[name="city"]').val('Singapore');
 		$('select[name=\'zone_id\']').html('');
 		return;
 	}
-	
+	$('input[name="city"]').val('');
 	$('#region-row').show();
 
 	$.ajax({

@@ -157,7 +157,7 @@
 						<?php } ?>
 					</td>
 				</tr>
-				<tr>
+				<tr id="region-row" style="display:none">
 					<td><span class="required">*</span> <?php echo $entry_zone; ?></td>
 					<td><select name="zone_id">
 					</select>
@@ -248,7 +248,17 @@
 </section> <!-- end #content -->
 
 <script type="text/javascript"><!--
+
 $('select[name=\'country_id\']').bind('change', function() {
+	if ($(this).find("option:selected").text() == 'Singapore') {
+		$('#region-row').hide();
+		$('input[name="city"]').val('Singapore');
+		$('select[name=\'zone_id\']').html('');
+		return;
+	}
+	$('input[name="city"]').val('');
+	$('#region-row').show();
+
 	$.ajax({
 		url: 'index.php?route=account/register/country&country_id=' + this.value,
 		dataType: 'json',

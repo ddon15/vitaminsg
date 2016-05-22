@@ -125,7 +125,9 @@
 				</tr>
 				<tr>
 					<td><?php echo $entry_address_2; ?></td>
-					<td><input type="text" name="address_2" value="<?php echo $address_2; ?>" /></td>
+					<td><input type="text" name="address_2" value="<?php echo $address_2; ?>" />
+					<span class="input_instructions"><?php echo $text_address2_instructions; ?></span>
+					</td>
 				</tr>
 				<tr>
 					<td><?php echo $entry_city; ?></td>
@@ -181,6 +183,7 @@
 				<tr>
 					<td><span class="required">*</span> <?php echo $entry_confirm; ?></td>
 					<td><input type="password" name="confirm" value="<?php echo $confirm; ?>" />
+					<span class="input_instructions"><?php echo $text_password_instructions; ?></span>
 					<?php if ($error_confirm) { ?>
 						<span class="error"><?php echo $error_confirm; ?></span>
 					<?php } ?></td>

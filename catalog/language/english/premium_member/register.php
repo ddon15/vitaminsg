@@ -39,7 +39,8 @@ $_['text_notifications']      = 'Notifications';
 $_['text_signup']      = 'I want to subscribe to the following:';
 $_['text_your_password']   = 'Your Password';
 $_['text_agree']           = 'You must agree to the <a class="colorbox" href="%s" alt="%s"><b>%s</b> to continue.</a>';
-$_['text_address_instructions'] = 'Block/House Number, Street Name, Unit Number';
+$_['text_address_instructions'] = 'Block/House Number and Street Name';
+$_['text_address2_instructions'] = 'Unit Number - if applicable';
 
 $_['text_male']    = 'Male';
 $_['text_female']    = 'Female';

@@ -42,7 +42,7 @@ $_['text_agree']           = 'You must agree to the <a class="colorbox" href="%s
 $_['text_address_instructions'] = 'Block/House Number and Street Name';
 $_['text_address2_instructions'] = 'Unit Number - if applicable';
 
-$_['text_password_instructions'] = 'Password must be between 8-20 character length.';
+$_['text_password_instructions'] = 'Password must be between 8-20 character length';
 
 $_['text_male']    = 'Male';
 $_['text_female']    = 'Female';

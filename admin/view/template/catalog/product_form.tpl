@@ -1190,6 +1190,8 @@
 
                 <td class="right"><?php echo $entry_price; ?></td>
 
+                <td class="right">Label:</td>
+
                 <td class="left"><?php echo $entry_date_start; ?></td>
 
                 <td class="left"><?php echo $entry_date_end; ?></td>
@@ -1230,13 +1232,13 @@
 
                 <td class="right"><input type="text" name="product_discount[<?php echo $discount_row; ?>][priority]" value="<?php echo $product_discount['priority']; ?>" size="2" /></td>
 
-                <?php //[MY] show original price?>
-
                 <td class="right"><?php echo $price;?></td>
 
-                <?php //.[MY]?>
-
                 <td class="right"><input type="text" name="product_discount[<?php echo $discount_row; ?>][price]" value="<?php echo $product_discount['price']; ?>" /></td>
+
+                <input type="hidden" value="<?php echo $product_discount['label']; ?>" data-row="product_discount[<?php echo $discount_row; ?>][price]">
+
+                <td class="right"><input type="text" name="product_discount[<?php echo $discount_row; ?>][label]" value="<?php echo $product_discount['label']; ?>" /></td>
 
                 <td class="left"><input type="text" name="product_discount[<?php echo $discount_row; ?>][date_start]" value="<?php echo $product_discount['date_start']; ?>" class="date" /></td>
 
@@ -1250,13 +1252,13 @@
 
             <?php $discount_row++; ?>
 
-            <?php } ?>
+            <?php }; ?>
 
             <tfoot>
 
               <tr>
 
-                <td colspan="6"></td>
+                <td colspan="8"></td>
 
                 <td class="left"><a onclick="addDiscount();" class="button"><?php echo $button_add_discount; ?></a></td>
 
@@ -2519,6 +2521,8 @@ function addDiscount() {
     html += '    <td class="right"><?php echo $price;?></td>';
 
 	html += '    <td class="right"><input type="text" name="product_discount[' + discount_row + '][price]" value="" /></td>';
+
+  html += '    <td class="right"><input type="text" name="product_discount[' + discount_row + '][label]" value="" /></td>';
 
     html += '    <td class="left"><input type="text" name="product_discount[' + discount_row + '][date_start]" value="" class="date" /></td>';
 

@@ -228,6 +228,11 @@ class Cart {
          
 					$is_on_special_promo = ($is_on_special_promo_query->num_rows > 0);
 
+					if ($product_discount_query->num_rows) {
+						$price = $product_discount_query->row['price'];
+						$is_on_sale = false;
+					}
+
 					// Reward Points
 					$reward = 0;
 					//[SB] No rewards if Vit$ redemption being used
@@ -375,7 +380,7 @@ class Cart {
 		return $recurring_products;
 	}
 
-	public function add($product_id, $qty = 1, $option, $profile_id = '') {
+	public function add($product_id, $qty = 1, $option, $profile_id = '', $is_bulk_discount) {
 		$key = (int)$product_id . ':';
 
 		if ($option) {

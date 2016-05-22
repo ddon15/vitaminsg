@@ -5,5 +5,28 @@ class ModelDesignBanner extends Model {
 		
 		return $query->rows;
 	}
+
+	public function getBrandsBanner($banner_id) {
+		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "brands_banner WHERE banner_id = '" . (int)$banner_id . "'"); 
+		$brandsBanner = $query->row;
+		$brands = array();
+		$brandsTop = array();
+
+
+		if ($brandsBanner && $brandsBanner['is_enabled'] == 1) {
+			
+			$brandIds = rtrim($brandsBanner['brands'], ",");
+			$brandTopIds = rtrim($brandsBanner['brands_top'], ",");
+			$headerLabel = $brandsBanner['header_label'];
+			
+			$brandsQry = $this->db->query("SELECT * FROM " . DB_PREFIX . "manufacturer WHERE manufacturer_id IN ($brandIds) ORDER BY sort_order_brands_banner;"); 
+			$brandsTopQry = $this->db->query("SELECT * FROM " . DB_PREFIX . "manufacturer WHERE manufacturer_id IN ($brandTopIds) ORDER BY sort_order_brands_banner;"); 
+			
+			$brands = $brandsQry->rows;
+			$brandsTop = $brandsTopQry->rows;
+		}
+		
+		return array('brands' => $brands, 'brands_top' => $brandsTop, 'header_label' => $headerLabel);	
+	} 
 }
 ?>

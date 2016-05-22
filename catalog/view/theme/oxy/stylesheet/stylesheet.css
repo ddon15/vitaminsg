@@ -2293,7 +2293,7 @@ span.sale-icon {
     overflow: visible!important;
 }
 .product-info .price {
-	overflow: auto;
+	overflow: hidden;
 	padding: 20px 0;
 	font-size: 28px;
 }

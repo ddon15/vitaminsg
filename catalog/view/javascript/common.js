@@ -1,57 +1,38 @@
 $(document).ready(function() {
-	/* Search old implementation*/
-	// $('.button-search').bind('click', function() {
-	// 	url = $('base').attr('href') + 'index.php?route=product/search';
-				 
-	// 	var search = $('input[name=\'search\']').attr('value');
-		
-	// 	if (search) {
-	// 		url += '&search=' + encodeURIComponent(search);
-	// 	}
-		
-	// 	location = url;
-	// });
+	/* Search */
+	$('.button-search').bind('click', function() {
+		url = $('base').attr('href') + 'index.php?route=product/search';
 
-	/*
-		Search Product Keyword
-		This will redirect to new url search/$keyword
-	*/
-        var search = function(keyword) {
-		var url = $('base').attr('href') + 'search/';
 
-		location = search ? url.concat(encodeURIComponent(keyword)) : url;
 
-                return;
-	};
+		var search = $('.search-bar:visible').attr('value');
 
-	$('.button-search').bind('click', function(e) {
-		var keyword = $('input[name=\'search\']').attr('value');
-		
-                search(keyword);
+		if (search) {
+			url += '&search=' + encodeURIComponent(search);
+		}
 
-		e.preventDefault();
+		location = url;
+
+
+
 	});
 	
 	$('.search-bar').bind('keydown', function(e) {
 		if (e.keyCode == 13) {
-			//url = $('base').attr('href') + 'index.php?route=product/search';
-                        var keyword = null;
+			url = $('base').attr('href') + 'index.php?route=product/search';
+
 			$('.search-bar').each(function(){
 				if(($(this).is(":visible"))&&($(this).parent().get(0).tagName=="DIV")) {
-					keyword = $(this).attr('value');
-                                        if (keyword) { 
-                                                search(keyword);
-                                                return;
-                                        }
-					//if (search) {
-						//url += '&search=' + encodeURIComponent(search);
-						//location = url;
-                                                //search(keyword);
-						//return;
-					//}
+					var search = $(this).attr('value');
+					if (search) {
+						url += '&search=' + encodeURIComponent(search);
+						location = url;
+						return
+					}
 				}
 			});
-			search(keyword);
+			
+			location = url;
 		}
 	});
 	

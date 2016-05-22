@@ -1505,7 +1505,7 @@ class ControllerCatalogProduct extends Controller {
 		}
 		public function deleteSkin() {
 			
-			  $issaveoption =  $this->config->get('color_schema');
+		$issaveoption =  $this->config->get('color_schema');
          		
 		 $this->load->model('setting/setting');
              

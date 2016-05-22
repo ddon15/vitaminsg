@@ -78,12 +78,12 @@
       </select>
     </div>
     <div class="sort"><?php echo $text_sort; ?>
-      <select id="select-sort-category" data-path="<?php echo $_SERVER['REQUEST_URI']; ?>">
+      <select onchange="location = this.value;">
         <?php foreach ($sorts as $sorts) { ?>
         <?php if ($sorts['value'] == $sort . '-' . $order) { ?>
-        <option data-uri="<?php echo $sorts['value']; ?>" selected="selected"><?php echo $sorts['text']; ?></option>
+        <option value="<?php echo $sorts['href']; ?>" selected="selected"><?php echo $sorts['text']; ?></option>
         <?php } else { ?>
-        <option data-uri="<?php echo $sorts['value']; ?>"><?php echo $sorts['text']; ?></option>
+        <option value="<?php echo $sorts['href']; ?>"><?php echo $sorts['text']; ?></option>
         <?php } ?>
         <?php } ?>
       </select>
@@ -251,24 +251,5 @@ if (view) {
 } else {
 	display('<?php echo $this->config->get('oxy_category_prod_display'); ?>');
 }
-
-/*
-  Category Sort By Page Redirection
-*/
-$('#select-sort-category').bind('change', function(e) {
-  console.log(window.location.pathname);
-
-  var select = $(this);
-  var uri = select.find('option:selected').data('uri')
-      url = $('base').attr('href')
-      path = select.data('path').split('/');
-  
-  var categoryUri = path[1].concat('/' + path[2]);
-  
-  location = url + categoryUri  + '/' + uri;
- 
-  e.preventDefault();
-
-});
 //--></script> 
 <?php echo $footer; ?>

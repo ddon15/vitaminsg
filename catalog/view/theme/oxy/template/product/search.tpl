@@ -74,13 +74,13 @@
       </select>
     </div>
     <div class="sort"><?php echo $text_sort; ?>
-      <select id="select-sort-product" data-search="<?php echo $search; ?>">
+      <select onchange="location = this.value;">
         <?php foreach ($sorts as $sorts) { ?>
-	        <?php if ($sorts['value'] == $sort . '-' . $order) : ?>
-		        <option data-uri="<?php echo $sorts['value']; ?>" data-sort="<?php echo $sorts['value']; ?>" selected="selected"><?php echo $sorts['text']; ?></option>
-		        <?php else: ?>
-		        <option data-uri="<?php echo $sorts['value']; ?>" data-sort="<?php echo $sorts['value']; ?>"><?php echo $sorts['text']; ?></option>
-	        <?php endif;?>
+        <?php if ($sorts['value'] == $sort . '-' . $order) { ?>
+        <option value="<?php echo $sorts['href']; ?>" selected="selected"><?php echo $sorts['text']; ?></option>
+        <?php } else { ?>
+        <option value="<?php echo $sorts['href']; ?>"><?php echo $sorts['text']; ?></option>
+        <?php } ?>
         <?php } ?>
       </select>
     </div>
@@ -266,20 +266,5 @@ if (view) {
 } else {
 	display('<?php echo $this->config->get('oxy_category_prod_display'); ?>');
 }
-
-/*Sort By Product properties custom redirection*/
-
-$('#select-sort-product').bind('change', function(e) {
-	var uri = $(this).find('option:selected').data('uri');
-	
-	var url = $('base').attr('href') + 'search/';
-	var search = $(this).data('search');
-	
-	location = url + encodeURIComponent(search) + '/' + uri;
-	
-	e.preventDefault();
-
-});
-
 //--></script> 
 <?php echo $footer; ?>

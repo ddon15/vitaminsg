@@ -4,6 +4,7 @@ class ControllerModuleSlideshow extends Controller {
 		static $module = 0;
 		
 		$this->load->model('design/banner');
+		$this->load->model('catalog/manufacturer');
 		$this->load->model('tool/image');
 		
 		$this->document->addScript('catalog/view/javascript/jquery/nivo-slider/jquery.nivo.slider.pack.js');
@@ -18,6 +19,8 @@ class ControllerModuleSlideshow extends Controller {
 		$this->data['height'] = $setting['height'];
 		
 		$this->data['banners'] = array();
+		$this->data['brands_banner'] = array();
+		$this->data['brands_top_banner'] = array();
 		
 		if (isset($setting['banner_id'])) {
 			$results = $this->model_design_banner->getBanner($setting['banner_id']);

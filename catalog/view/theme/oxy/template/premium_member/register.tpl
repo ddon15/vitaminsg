@@ -68,7 +68,7 @@
 				</tr>
 				<tr>
 					<td><span class="required">*</span> <?php echo $entry_email; ?></td>
-					<td><input type="text" name="email" value="<?php echo $email; ?>" />
+					<td><input type="email" name="email" class="width-100-per" value="<?php echo $email; ?>" />
 					<?php if ($error_email) { ?>
 						<span class="error"><?php echo $error_email; ?></span>
 					<?php } ?></td>

@@ -3899,3 +3899,10 @@ span.wishlist, span.compare, span.friend {
     z-index: 99990;
 	padding: 10px;
 }
+
+
+/*CUSTOM CSS*/
+
+.width-100-per {
+	width: 100%;
+}

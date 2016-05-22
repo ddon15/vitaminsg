@@ -3904,5 +3904,5 @@ span.wishlist, span.compare, span.friend {
 /*CUSTOM CSS*/
 
 .width-100-per {
-	width: 100%;
+	width: 100% !important;
 }

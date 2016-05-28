@@ -527,13 +527,13 @@ font-size: 24px;
 }
 .product-details-member-price-tag,
 .product-details-sale-price-tag {
-	text-align: center;
-	background-color: #00a651;
-	color: white;
-	font-size: 16px;
-	font-weight: bold;
-	height: 25px;
-	margin-bottom: 10px;
+text-align: center;
+background-color: #00a651;
+color: white;
+font-size: 16px;
+font-weight: bold;
+height: 25px;
+margin-bottom: 10px;
 }
 
 .product-details-price-original-price > span#orig-price {
@@ -541,11 +541,11 @@ font-size: 24px;
 }
 
 .product-details-price-original-price {
-	color: #737373;
-	font-weight: bold;
-	font-size: 50px;
-	line-height: 50px;
-	margin-bottom: 10px;
+color: #737373;
+font-weight: bold;
+font-size: 50px;
+line-height: 50px;
+margin-bottom: 10px;
 }
 
 .product-details-price-original-price.vit-price-struck{
@@ -577,7 +577,7 @@ background-color: #00a651;
 }
 .product-details-member-price,
 .product-details-sale-price {
-font-size: 34px;
+font-size: 36px;
 font-weight: bold;
 padding-left: 5px;
 line-height: 100%;
@@ -592,8 +592,7 @@ color: #00a651;
 .product-details-sale-discount {
 color: #dc911b;
 font-weight: bold;
-padding-left: 5px;
-padding-top: 3px;
+margin-top: 3px;
 }
 span.sale-icon {
 left: inherit;
@@ -695,6 +694,14 @@ padding-left: 15px;
 border: 1px solid #424242;
 border-collapse: collapse;
 }
+
+/*Fixes by: Diovannie*/
+.btn-add-cart-product-page {
+	margin: 7px 0px 0px 5px;
+}
+
+
+/*Media Screen Size queries*/
 @media only screen and (max-width: 1009px)
 {
 	div.premium-member-perks {
@@ -813,7 +820,6 @@ border-collapse: collapse;
 	}
 	.product-details-price-block {
 	width: 35%;
-	width: 35%;
 	text-align: center;
 	}
 	span.sale-icon {
@@ -837,38 +843,10 @@ border-collapse: collapse;
 	margin-right: 15%!important;
 	}
 	.product-details-price-block {
-	width: 45%;
+	width: 100%;
 	}
 	.product-grid .name {
 	height: 70px;
 	}
 }
 
-#referrals {
-	.info, .success, .warning, .error, .validation {
-	border: 1px solid;
-	margin: 10px 0px;
-	padding:15px 10px 15px 50px;
-	background-repeat: no-repeat;
-	background-position: 10px center;
-	}
-	.info {
-	color: #00529B;
-	background-color: #BDE5F8;
-	}
-	.success {
-	color: #4F8A10;
-	background-color: #DFF2BF;
-	}
-	.warning {
-	color: #9F6000;
-	background-color: #FEEFB3;
-	}
-	.error {
-	color: #D8000C;
-	background-color: #FFBABA;
-	}
-	.hide {
-	display: none;
-	}
-}

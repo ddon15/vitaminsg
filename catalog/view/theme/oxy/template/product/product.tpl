@@ -214,7 +214,6 @@
         <?php }?>
       <?php } else { ?>
         <div class="product-details-price-original-price vit-price-struck"><?php echo $price; ?></div>
-        <!-- <div class="product-details-price-bulk-price"><a href="<?php echo $bulkpriceurl; ?>"><?php echo $bulkprice; ?></a></div> -->
         <div class="clearfix">
         <div class="product-details-price-block">
           <div class="product-details-sale-price-tag padding-5px">SALE PRICE</div>
@@ -232,7 +231,7 @@
           <?php if($this->config->get('oxy_product_save_percent_status') ==1) { ?>
           <div class="product-details-member-discount"><?php echo $premium_member_percent_savings; ?>% discount</div>
           <?php if ($reward) { //[SB] Changed to display rewards instead of points?>
-            <div style='display:block;float:left;color:#dc911b;font-weight:bold;padding-left:5px;'><?php //echo $text_reward; ?> <?php //echo $reward; ?>+ <?php echo sprintf($text_reward, $reward); //[SB] Changed Vit$ Reward ?></div><br />
+            <div class="product-details-member-discount"><?php //echo $text_reward; ?> <?php //echo $reward; ?>+ <?php echo sprintf($text_reward, $reward); //[SB] Changed Vit$ Reward ?></div><br />
           <?php } ?>
           <?php }?>
         </div>
@@ -451,7 +450,7 @@
           <div id="qty-inc"><input type="button" class="inc button" value=" " /></div>
           <?php } ?> 
           <input type="hidden" name="product_id" size="2" value="<?php echo $product_id; ?>" />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" value="<?php echo $button_cart; ?>" id="button-cart" class="button-exclusive" />
+          <input type="button" value="<?php echo $button_cart; ?>" id="button-cart" class="button-exclusive btn-add-cart-product-page" />
         </div>
         <?php function curPageURL() {
           if (!empty($_SERVER['HTTPS'])) {

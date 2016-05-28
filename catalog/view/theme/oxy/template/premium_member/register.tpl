@@ -176,6 +176,7 @@
 				<tr>
 					<td><span class="required">*</span> <?php echo $entry_password; ?></td>
 					<td><input type="password" name="password" value="<?php echo $password; ?>" />
+					<span class="input_instructions"><?php echo $text_password_instructions; ?></span>
 					<?php if ($error_password) { ?>
 						<span class="error"><?php echo $error_password; ?></span>
 					<?php } ?></td>
@@ -183,7 +184,6 @@
 				<tr>
 					<td><span class="required">*</span> <?php echo $entry_confirm; ?></td>
 					<td><input type="password" name="confirm" value="<?php echo $confirm; ?>" />
-					<span class="input_instructions"><?php echo $text_password_instructions; ?></span>
 					<?php if ($error_confirm) { ?>
 						<span class="error"><?php echo $error_confirm; ?></span>
 					<?php } ?></td>
@@ -300,6 +300,16 @@ $('select[name=\'country_id\']').bind('change', function() {
 			alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
+});
+
+$('input[name="email"]').on({
+  keydown: function(e) {
+    if (e.which === 32)
+      return false;
+  },
+  change: function() {
+    this.value = this.value.replace(/\s/g, "");
+  }
 });
 
 $('select[name=\'country_id\']').trigger('change');

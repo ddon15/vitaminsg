@@ -68,7 +68,7 @@
 				</tr>
 				<tr>
 					<td><span class="required">*</span> <?php echo $entry_email; ?></td>
-					<td><input type="text" name="email" value="<?php echo $email; ?>" />
+					<td><input type="email" name="email" class="width-100-per" value="<?php echo $email; ?>" />
 					<?php if ($error_email) { ?>
 						<span class="error"><?php echo $error_email; ?></span>
 					<?php } ?></td>
@@ -125,7 +125,9 @@
 				</tr>
 				<tr>
 					<td><?php echo $entry_address_2; ?></td>
-					<td><input type="text" name="address_2" value="<?php echo $address_2; ?>" /></td>
+					<td><input type="text" name="address_2" value="<?php echo $address_2; ?>" />
+					<span class="input_instructions"><?php echo $text_address2_instructions; ?></span>
+					</td>
 				</tr>
 				<tr>
 					<td><?php echo $entry_city; ?></td>
@@ -157,7 +159,7 @@
 						<?php } ?>
 					</td>
 				</tr>
-				<tr>
+				<tr id="region-row" style="display:none">
 					<td><span class="required">*</span> <?php echo $entry_zone; ?></td>
 					<td><select name="zone_id">
 					</select>
@@ -174,6 +176,7 @@
 				<tr>
 					<td><span class="required">*</span> <?php echo $entry_password; ?></td>
 					<td><input type="password" name="password" value="<?php echo $password; ?>" />
+					<span class="input_instructions"><?php echo $text_password_instructions; ?></span>
 					<?php if ($error_password) { ?>
 						<span class="error"><?php echo $error_password; ?></span>
 					<?php } ?></td>
@@ -248,7 +251,17 @@
 </section> <!-- end #content -->
 
 <script type="text/javascript"><!--
+
 $('select[name=\'country_id\']').bind('change', function() {
+	if ($(this).find("option:selected").text() == 'Singapore') {
+		$('#region-row').hide();
+		$('input[name="city"]').val('Singapore');
+		$('select[name=\'zone_id\']').html('');
+		return;
+	}
+	$('input[name="city"]').val('');
+	$('#region-row').show();
+
 	$.ajax({
 		url: 'index.php?route=account/register/country&country_id=' + this.value,
 		dataType: 'json',
@@ -287,6 +300,16 @@ $('select[name=\'country_id\']').bind('change', function() {
 			alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
+});
+
+$('input[name="email"]').on({
+  keydown: function(e) {
+    if (e.which === 32)
+      return false;
+  },
+  change: function() {
+    this.value = this.value.replace(/\s/g, "");
+  }
 });
 
 $('select[name=\'country_id\']').trigger('change');

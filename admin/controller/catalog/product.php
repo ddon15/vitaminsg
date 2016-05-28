@@ -542,7 +542,6 @@ class ControllerCatalogProduct extends Controller {
 		$this->data['text_amount'] = $this->language->get('text_amount');
 
 		$this->data['entry_name'] = $this->language->get('entry_name');
-		$this->data['entry_discount_label'] = $this->language->get('entry_discount_label');
 		/*CPT1 START*/$this->data['entry_cptitle'] = $this->language->get('entry_cptitle');/*CPT1 END*/
 		$this->data['entry_meta_description'] = $this->language->get('entry_meta_description');
 		$this->data['entry_meta_keyword'] = $this->language->get('entry_meta_keyword');
@@ -1506,7 +1505,7 @@ class ControllerCatalogProduct extends Controller {
 		}
 		public function deleteSkin() {
 			
-			  $issaveoption =  $this->config->get('color_schema');
+		$issaveoption =  $this->config->get('color_schema');
          		
 		 $this->load->model('setting/setting');
              

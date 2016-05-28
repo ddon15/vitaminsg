@@ -527,14 +527,13 @@ font-size: 24px;
 }
 .product-details-member-price-tag,
 .product-details-sale-price-tag {
-text-align: center;
-background-color: #00a651;
-color: white;
-font-size: 16px;
-font-weight: bold;
-height: 26px;
-line-height: 26px;
-margin-bottom: 10px;
+	text-align: center;
+	background-color: #00a651;
+	color: white;
+	font-size: 16px;
+	font-weight: bold;
+	height: 25px;
+	margin-bottom: 10px;
 }
 
 .product-details-price-original-price > span#orig-price {
@@ -542,10 +541,11 @@ margin-bottom: 10px;
 }
 
 .product-details-price-original-price {
-color: #737373;
-font-weight: bold;
-font-size: 50px;
-line-height: 50px;
+	color: #737373;
+	font-weight: bold;
+	font-size: 50px;
+	line-height: 50px;
+	margin-bottom: 10px;
 }
 
 .product-details-price-original-price.vit-price-struck{
@@ -553,18 +553,22 @@ line-height: 50px;
 }
 
 .product-details-price-bulk-price {
-float: right;
-margin-top: -67px;
+    margin-top: 10px;
+    text-align: center;
 }
 .product-details-price-bulk-price a {
 	color: #ef4035;
 	
 }
 .product-details-price-block {
-width: 40%;
-float: left;
-padding-right: 5px;
+	float: left;
+	padding-right: 5px;
 }
+
+.padding-5px {
+	padding: 5px;
+}
+
 .product-details-member-price-tag {
 background-color: #ef4035;
 }
@@ -573,7 +577,7 @@ background-color: #00a651;
 }
 .product-details-member-price,
 .product-details-sale-price {
-font-size: 36px;
+font-size: 34px;
 font-weight: bold;
 padding-left: 5px;
 line-height: 100%;
@@ -613,7 +617,7 @@ font-size: 16px;
 
 .vit-member-price .vit-price,
 .vit-sale-price .vit-price {
-font-size: 22px;
+font-size: 20px;
 font-weight: bold;
 line-height: 120%;
 }

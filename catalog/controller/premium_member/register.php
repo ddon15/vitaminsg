@@ -74,6 +74,8 @@ class ControllerPremiumMemberRegister extends Controller
 		$this->data['text_your_details'] = $this->language->get('text_your_details');
 		$this->data['text_your_address'] = $this->language->get('text_your_address');
 		$this->data['text_address_instructions'] = $this->language->get('text_address_instructions');
+		$this->data['text_address2_instructions'] = $this->language->get('text_address2_instructions');
+		$this->data['text_password_instructions'] = $this->language->get('text_password_instructions');
 		$this->data['text_your_password'] = $this->language->get('text_your_password');
 		$this->data['text_notifications'] = $this->language->get('text_notifications');
 		$this->data['text_signup'] = $this->language->get('text_signup');

@@ -1,6 +1,4 @@
 <?php
-
-ini_set("display_errors", 1);
 // Version
 define('VERSION', '1.5.6.1');
 

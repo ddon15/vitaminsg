@@ -246,6 +246,7 @@
         </div>
         <?php } ?>  
         
+		<!--
         <?php if(($oxy_contact_email1) || ($oxy_contact_email2)) { ?>   
         <div class="mc">    
         <span class="mm_icon"><img src="catalog/view/theme/oxy/image/icons_contact/icon-contact-email-38.png" alt="E-mail" title="E-mail"></span>     
@@ -257,6 +258,7 @@
 		<?php } ?>
         </div>
         <?php } ?>  
+		-->
         
         <?php if(($oxy_contact_skype1) || ($oxy_contact_skype2)) { ?>   
         <div class="mc">    

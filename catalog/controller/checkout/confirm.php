@@ -139,7 +139,7 @@ class ControllerCheckoutConfirm extends Controller {
 
 				$payment_address = $this->model_account_address->getAddress($this->session->data['payment_address_id']);
 			} elseif (isset($this->session->data['guest'])) {
-				$data['customer_id'] = 0;
+				$data['customer_id'] = isset($this->customer->getId()) ? $this->customer->getId() : 0;
 				$data['customer_group_id'] = $this->session->data['guest']['customer_group_id'];
 				$data['firstname'] = $this->session->data['guest']['firstname'];
 				$data['lastname'] = $this->session->data['guest']['lastname'];

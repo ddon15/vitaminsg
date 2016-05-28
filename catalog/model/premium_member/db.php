@@ -2,19 +2,27 @@
 class ModelPremiumMemberDb extends Model
 {
 	private $completed_membership_status = 1;
+	private $customer_group_id = 1;
+	private $premium_group_id = 1;
 
 	public function addPremiumMember($data)
 	{
 		$customer_email = $this->db->escape($data['email']);
 		$customer_info = $this->getCustomerInfo($customer_email);
 		$customer_id = $customer_info['customer_id'];
+		$customer_group_id = $customer_group_id['customer_group_id'];
 
-		if($customer_id != 0) // Account already exists
+		if ($customer_group_id == $this->customer_group_id) // Account already exists as Customer
 		{
-			//Check if customer has done payment
+			return false;
+		}
+
+		if($customer_id != 0 && $customer_group_id == $this->premium_group_id) 
+		{
+			//Check if customer is premium member and has done payment 
 			$pid = $this->getPremiumMemberId($customer_email);
 
-			return ($this->getPremiumMemberPaypal($pid) === 'Complete') ? false : true;
+			return !$this->isPremiumMemberAndPaid($pid); //false account exist
 
 		}
 		
@@ -293,14 +301,14 @@ class ModelPremiumMemberDb extends Model
 		return $result->rows[0];
 	}
 	
-	private function getPremiumMemberPaypal($pid)
+	private function isPremiumMemberAndPaid($pid)
 	{
-		$result = $this->db->query("SELECT capture_status" .
+		$result = $this->db->query("SELECT payment_status" .
 			" FROM " . DB_PREFIX . "premium_member_paypal WHERE premium_member_id = '" . $this->db->escape($pid) . "'");
 		
 		$row = $result->row;
 		
-		return empty($row) ? 0 : $row['capture_status'];
+		return (isset($row['payment_status']) && $row['payment_status'] === 'Completed');
 	}
 
 	private function sendOrderConfirmation($invoice, $customer_email, $member_num, $reward_used = 0) {
@@ -470,13 +478,13 @@ class ModelPremiumMemberDb extends Model
 	
 	private function getCustomerInfo($customer_email)
 	{
-		$result = $this->db->query("SELECT c.customer_id, c.firstname, c.lastname, p.member_num FROM " . DB_PREFIX . "customer c, " . DB_PREFIX . "premium_member p WHERE c.email = '" . $this->db->escape($customer_email) . "' AND p.email = '" . $this->db->escape($customer_email) . "'");
+		$result = $this->db->query("SELECT c.customer_id, c.customer_group_id, c.firstname, c.lastname, p.member_num FROM " . DB_PREFIX . "customer c, " . DB_PREFIX . "premium_member p WHERE c.email = '" . $this->db->escape($customer_email) . "' AND p.email = '" . $this->db->escape($customer_email) . "'");
 
 		$row = $result->row;
 		
 		return empty($row) ?
 			array('customer_id' => 0, 'firstname' => '', 'lastname' => '', 'member_num' => '') :
-			array('customer_id' => $row['customer_id'], 'firstname' => $row['firstname'], 'lastname' => $row['lastname'], 'member_num' => $row['member_num']);
+			array('customer_id' => $row['customer_id'], 'firstname' => $row['firstname'], 'lastname' => $row['lastname'], 'member_num' => $row['member_num'], 'customer_group_id' => $row['customer_group_id']);
 	}
 	
 	private function getCustomerName($customer_id)

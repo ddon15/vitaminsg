@@ -231,7 +231,7 @@
           <?php if($this->config->get('oxy_product_save_percent_status') ==1) { ?>
           <div class="product-details-member-discount"><?php echo $premium_member_percent_savings; ?>% discount</div>
           <?php if ($reward) { //[SB] Changed to display rewards instead of points?>
-            <div style='display:block;float:left;color:#dc911b;font-weight:bold;padding-left:5px;'><?php //echo $text_reward; ?> <?php //echo $reward; ?>+ <?php echo sprintf($text_reward, $reward); //[SB] Changed Vit$ Reward ?></div><br />
+            <div class="product-details-member-discount"><?php //echo $text_reward; ?> <?php //echo $reward; ?>+ <?php echo sprintf($text_reward, $reward); //[SB] Changed Vit$ Reward ?></div><br />
           <?php } ?>
           <?php }?>
         </div>

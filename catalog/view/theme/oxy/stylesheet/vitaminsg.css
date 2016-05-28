@@ -695,10 +695,11 @@ border: 1px solid #424242;
 border-collapse: collapse;
 }
 
-/*Custom Fixes*/
+/*Fixes by: Diovannie*/
 .btn-add-cart-product-page {
 	margin: 7px 0px 0px 5px;
 }
+
 
 /*Media Screen Size queries*/
 @media only screen and (max-width: 1009px)

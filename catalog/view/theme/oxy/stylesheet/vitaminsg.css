@@ -525,6 +525,14 @@ height: 22px;
 line-height: 120% !important;
 font-size: 24px;
 }
+
+.product-buy .product-page-price 
+.product-details-price-original-price, 
+.product-details-price-bulk-price{
+	display: inline-block;
+	margin-bottom: 10px;
+}
+
 .product-details-member-price-tag,
 .product-details-sale-price-tag {
 text-align: center;
@@ -533,7 +541,6 @@ color: white;
 font-size: 16px;
 font-weight: bold;
 height: 25px;
-margin-bottom: 10px;
 }
 
 .product-details-price-original-price > span#orig-price {
@@ -543,7 +550,7 @@ margin-bottom: 10px;
 .product-details-price-original-price {
 color: #737373;
 font-weight: bold;
-font-size: 50px;
+font-size: 45px;
 line-height: 50px;
 margin-bottom: 10px;
 }
@@ -554,15 +561,15 @@ margin-bottom: 10px;
 
 .product-details-price-bulk-price {
     margin-top: 10px;
-    text-align: left;
+    float: right;
 }
 .product-details-price-bulk-price a {
 	color: #ef4035;
 	
 }
 .product-details-price-block {
-	float: left;
 	padding-right: 5px;
+	float: left;
 }
 
 .padding-5px {
@@ -577,9 +584,8 @@ background-color: #00a651;
 }
 .product-details-member-price,
 .product-details-sale-price {
-font-size: 36px;
+font-size: 34px;
 font-weight: bold;
-padding-left: 5px;
 line-height: 100%;
 }
 .product-details-member-price {
@@ -720,6 +726,15 @@ border-collapse: collapse;
 	width: 30% !important;
 	}
 }
+
+@media only screen and (max-width: 1200px)
+{
+	div.product-details-price-block {
+		width: 100% !important;
+		margin-bottom: 10px;
+	}
+}
+
 @media (max-width: 979px) and (min-width: 768px)
 {
 	#t-header {
@@ -738,9 +753,6 @@ border-collapse: collapse;
 	}
 	.product-buy h1 {
 	font-size: 20px;
-	}
-	.product-details-price-block {
-	width: 100%;
 	}
 	.product-grid .name {
 	height: 70px;
@@ -818,10 +830,7 @@ border-collapse: collapse;
 	.product-right-sm {
 	border: 0;
 	}
-	.product-details-price-block {
-	width: 35%;
-	text-align: center;
-	}
+	
 	span.sale-icon {
 	left: 10px;
 	}
@@ -841,9 +850,6 @@ border-collapse: collapse;
 	width: 70% !important;
 	margin-left: 15%!important;
 	margin-right: 15%!important;
-	}
-	.product-details-price-block {
-	width: 100%;
 	}
 	.product-grid .name {
 	height: 70px;

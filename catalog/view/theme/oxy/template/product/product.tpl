@@ -193,14 +193,17 @@
     <?php } ?>         
     <h1><?php /*[SB]Moved from above */ echo $heading_title; ?></h1>
       <?php if ($price) { ?>
-      <div class="price">
+      <div class="price product-page-price">
     <?php if (empty($redeem_only) || !$redeem_only) { //[SB] Added Redemption ?>
     
       <?php if (!$special) { ?>
+      <div class="clearfix">
       <div class="product-details-price-original-price"><?php echo $price; ?></div>
+       <div class="product-details-price-bulk-price"><a href="<?php echo $bulkpriceurl; ?>"><?php echo $bulkprice; ?></a></div>
+      </div>
       <?php /* [SB]Display Premium Member price */?>
         <?php if ($premium_member_price) { ?>
-        <div class="product-details-price-block">
+        <div class="product-details-price-block six">
           <div class="product-details-member-price-tag padding-5px">MEMBER PRICE</div>
           <span class="product-details-member-price"><?php echo $premium_member_price; ?></span>
           <?php if($this->config->get('oxy_product_save_percent_status') ==1) { ?>
@@ -213,9 +216,12 @@
         </div>
         <?php }?>
       <?php } else { ?>
-        <div class="product-details-price-original-price vit-price-struck"><?php echo $price; ?></div>
         <div class="clearfix">
-        <div class="product-details-price-block">
+        <div class="product-details-price-original-price vit-price-struck"><?php echo $price; ?></div>
+        <div class="product-details-price-bulk-price"><a href="<?php echo $bulkpriceurl; ?>"><?php echo $bulkprice; ?></a></div>
+        </div>
+        <div class="clearfix">
+        <div class="product-details-price-block six">
           <div class="product-details-sale-price-tag padding-5px">SALE PRICE</div>
           <span class="product-details-sale-price"><?php echo $special; ?></span>
           <?php if($this->config->get('oxy_product_save_percent_status') ==1) { ?>
@@ -225,7 +231,7 @@
       
         <?php /* [SB]Display Premium Member price */?>
         <?php if ($premium_member_price) { ?>
-        <div class="product-details-price-block">
+        <div class="product-details-price-block six">
           <div class="product-details-member-price-tag padding-5px">MEMBER PRICE</div>
           <span class="product-details-member-price"><?php echo $premium_member_price; ?></span>
           <?php if($this->config->get('oxy_product_save_percent_status') ==1) { ?>
@@ -238,7 +244,6 @@
         <?php }?>
         </div>
       <?php }//.end else ?>
-      <div class="product-details-price-bulk-price"><a href="<?php echo $bulkpriceurl; ?>"><?php echo $bulkprice; ?></a></div>
       <?php if($this->config->get('oxy_product_tax_status') ==1) { ?>
         <?php if ($tax) { ?>
           <div class="tax"><span class="price-tax"><?php echo $text_tax; ?> <?php echo $tax; ?></span></div>
@@ -255,8 +260,10 @@
       <?php } ?>
       
     <?php } else { //[SB] Added Redemption ?>
-      <div class="product-details-price-original-price" style="font-size:36px;"><?php echo sprintf($text_vit_dollar, $points); ?></div>
+    <div class="clearfix">
+      <div class="product-details-price-original-price"><?php echo sprintf($text_vit_dollar, $points); ?></div>
       <div class="product-details-price-bulk-price"><a href="<?php echo $bulkpriceurl; ?>"><?php echo $bulkprice; ?></a></div>
+    </div>
     <?php } ?>
     
       </div>
@@ -452,7 +459,7 @@
           <input type="hidden" name="product_id" size="2" value="<?php echo $product_id; ?>" />
 
           <input type="button" value="<?php echo $button_cart; ?>" id="button-cart" class="button-exclusive btn-add-cart-product-page"/>
-          
+
         </div>
         <?php function curPageURL() {
           if (!empty($_SERVER['HTTPS'])) {

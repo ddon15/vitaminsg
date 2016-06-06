@@ -6,6 +6,7 @@ class ModelShippingPickup extends Model {
 		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "zone_to_geo_zone WHERE geo_zone_id = '" . (int)$this->config->get('pickup_geo_zone_id') . "' AND country_id = '" . (int)$address['country_id'] . "' AND (zone_id = '" . (int)$address['zone_id'] . "' OR zone_id = '0')");
 
 		if (!$this->config->get('pickup_geo_zone_id')) {
+			$cost = 0.00;
 			$status = true;
 		} elseif ($query->num_rows) {
 			$status = true;
@@ -14,14 +15,14 @@ class ModelShippingPickup extends Model {
 		}
 
 		if ($this->cart->getSubTotal() < $this->config->get('pickup_total')) {
-			$status = false;
+			$cost = $this->config->get('pickup_cost');
 		}
 
 		$method_data = array();
 
 		if ($status) {
 			$quote_data = array();
-			$cost = $this->config->get('pickup_cost');
+		
 
 			$quote_data['pickup'] = array(
 				'code'         => 'pickup.pickup',

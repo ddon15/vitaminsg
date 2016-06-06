@@ -450,7 +450,9 @@
           <div id="qty-inc"><input type="button" class="inc button" value=" " /></div>
           <?php } ?> 
           <input type="hidden" name="product_id" size="2" value="<?php echo $product_id; ?>" />
+
           <input type="button" value="<?php echo $button_cart; ?>" id="button-cart" class="button-exclusive btn-add-cart-product-page"/>
+          
         </div>
         <?php function curPageURL() {
           if (!empty($_SERVER['HTTPS'])) {

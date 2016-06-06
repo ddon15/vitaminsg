@@ -24,6 +24,8 @@ class ControllerShippingPickup extends Controller {
 		$this->data['text_all_zones'] = $this->language->get('text_all_zones');
 		$this->data['text_none'] = $this->language->get('text_none');
 
+		$this->data['entry_total'] = $this->language->get('entry_total');
+		$this->data['entry_cost'] = $this->language->get('entry_cost');
 		$this->data['entry_geo_zone'] = $this->language->get('entry_geo_zone');
 		$this->data['entry_status'] = $this->language->get('entry_status');
 		$this->data['entry_sort_order'] = $this->language->get('entry_sort_order');
@@ -60,6 +62,18 @@ class ControllerShippingPickup extends Controller {
 		$this->data['action'] = $this->url->link('shipping/pickup', 'token=' . $this->session->data['token'], 'SSL');
 
 		$this->data['cancel'] = $this->url->link('extension/shipping', 'token=' . $this->session->data['token'], 'SSL');
+
+		if (isset($this->request->post['pickup_total'])) {
+			$this->data['pickup_total'] = $this->request->post['pickup_total'];
+		} else {
+			$this->data['pickup_total'] = $this->config->get('pickup_total');
+		}
+
+		if (isset($this->request->post['pickup_cost'])) {
+			$this->data['pickup_cost'] = $this->request->post['pickup_cost'];
+		} else {
+			$this->data['pickup_cost'] = $this->config->get('pickup_cost');
+		}
 
 		if (isset($this->request->post['pickup_geo_zone_id'])) {
 			$this->data['pickup_geo_zone_id'] = $this->request->post['pickup_geo_zone_id'];

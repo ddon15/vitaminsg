@@ -13,17 +13,22 @@ class ModelShippingPickup extends Model {
 			$status = false;
 		}
 
+		if ($this->cart->getSubTotal() < $this->config->get('pickup_total')) {
+			$status = false;
+		}
+
 		$method_data = array();
 
 		if ($status) {
 			$quote_data = array();
+			$cost = $this->config->get('pickup_cost');
 
 			$quote_data['pickup'] = array(
 				'code'         => 'pickup.pickup',
 				'title'        => $this->language->get('text_description'),
-				'cost'         => 0.00,
+				'cost'         => $cost,
 				'tax_class_id' => 0,
-				'text'         => $this->currency->format(0.00)
+				'text'         => $this->currency->format($cost)
 			);
 
 			$method_data = array(

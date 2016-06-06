@@ -856,3 +856,9 @@ border-collapse: collapse;
 	}
 }
 
+@media screen and (max-width:320px)
+{
+	.products-slider .box-content {
+		margin-top: 50px;
+	}
+}

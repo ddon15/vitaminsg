@@ -54,28 +54,28 @@
 			<table class="form">
 				<tr>
 					<td><span class="required">*</span> <?php echo $entry_firstname; ?></td>
-					<td><input type="text" name="firstname" value="<?php echo $firstname; ?>" />
+					<td><input type="text" pattern="[A-Za-z]" name="firstname" value="<?php echo $firstname; ?>" required  oninvalid="this.setCustomValidity('Please enter your firstname')"/>
 					<?php if ($error_firstname) { ?>
 						<span class="error"><?php echo $error_firstname; ?></span>
 					<?php } ?></td>
 				</tr>
 				<tr>
 					<td><span class="required">*</span> <?php echo $entry_lastname; ?></td>
-					<td><input type="text" name="lastname" value="<?php echo $lastname; ?>" />
+					<td><input type="text" pattern="[A-Za-z]" name="lastname" value="<?php echo $lastname; ?>" required oninvalid="this.setCustomValidity('Please enter your lastname')"/>
 					<?php if ($error_lastname) { ?>
 						<span class="error"><?php echo $error_lastname; ?></span>
 					<?php } ?></td>
 				</tr>
 				<tr>
 					<td><span class="required">*</span> <?php echo $entry_email; ?></td>
-					<td><input type="email" name="email" class="width-100-per" value="<?php echo $email; ?>" />
+					<td><input type="email" name="email" class="width-100-per" value="<?php echo $email; ?>" required oninvalid="this.setCustomValidity('Please enter your email address')"/>
 					<?php if ($error_email) { ?>
 						<span class="error"><?php echo $error_email; ?></span>
 					<?php } ?></td>
 				</tr>
 				<tr>
 					<td><span class="required">*</span> <?php echo $entry_id_number; ?></td>
-					<td><input type="text" name="id_number" value="<?php echo $id_number; ?>" />
+					<td><input type="text" name="id_number" value="<?php echo $id_number; ?>" required/>
                                             <span class="input_instructions"><?php echo $text_id_number_help; ?></span>
 					<?php if ($error_id_number) { ?>
 						<span class="error"><?php echo $error_id_number; ?></span>
@@ -83,14 +83,14 @@
 				</tr>
 				<tr>
 					<td><span class="required">*</span> <?php echo $entry_telephone; ?></td>
-					<td><input type="text" name="telephone" value="<?php echo $telephone; ?>" />
+					<td><input type="text" name="telephone" value="<?php echo $telephone; ?>" required/>
 					<?php if ($error_telephone) { ?>
 						<span class="error"><?php echo $error_telephone; ?></span>
 					<?php } ?></td>
 				</tr>
 				<tr>
 					<td><span class="required">*</span> <?php echo $entry_dob; ?></td>
-					<td><input type="text" class="date" name="dob" value="<?php echo $dob; ?>" style="width:12em;" />
+					<td><input type="text" class="date" name="dob" value="<?php echo $dob; ?>" style="width:12em;" required/>
 					<?php if ($error_dob) { ?>
 						<span class="error"><?php echo $error_dob; ?></span>
 					<?php } ?></td>
@@ -98,12 +98,12 @@
 				<tr>
 					<td><span class="required">*</span> <?php echo $entry_gender; ?></td>
 					<td><?php if ($gender == 1) { ?>
-						<input type="radio" name="gender" value="0" />
+						<input type="radio" name="gender" value="0" required/>
 						<?php echo $text_female; ?>
 						<input type="radio" name="gender" value="1" checked="checked" />
 						<?php echo $text_male; ?>
 					<?php } else { ?>
-						<input type="radio" name="gender" value="0" checked="checked" />
+						<input type="radio" name="gender" value="0" checked="checked" required/>
 						<?php echo $text_female; ?>
 						<input type="radio" name="gender" value="1" />
 						<?php echo $text_male; ?>
@@ -117,7 +117,7 @@
 			<table class="form">
 				<tr>
 					<td class="input_instructions"><span class="required">*</span> <?php echo $entry_address_1; ?></td>
-					<td><input type="text" name="address_1" value="<?php echo $address_1; ?>" />
+					<td><input type="text" required name="address_1" value="<?php echo $address_1; ?>" />
 					<span class="input_instructions"><?php echo $text_address_instructions; ?></span>
 					<?php if ($error_address_1) { ?>
 						<span class="error"><?php echo $error_address_1; ?></span>
@@ -136,7 +136,7 @@
 				<tr>
 				<?php //[SB] Changed span id from postcode-required to required ?>
 					<td><span id="required" class="required">*</span> <?php echo $entry_postcode; ?></td>
-					<td><input type="text" name="postcode" value="<?php echo $postcode; ?>" />
+					<td><input type="number" name="postcode" required value="<?php echo $postcode; ?>" />
 					<?php if ($error_postcode) { ?>
 						<span class="error"><?php echo $error_postcode; ?></span>
 					<?php } ?></td>
@@ -144,7 +144,7 @@
 				<tr>
 					<td><span class="required">*</span> <?php echo $entry_country; ?></td>
 					<td>
-						<select name="country_id">
+						<select name="country_id" required>
 							<option value=""><?php echo $text_select; ?></option>
 							<?php foreach ($countries as $country) { ?>
 								<?php if ($country['country_id'] == $country_id) { ?>
@@ -175,7 +175,7 @@
 			<table class="form">
 				<tr>
 					<td><span class="required">*</span> <?php echo $entry_password; ?></td>
-					<td><input type="password" name="password" value="<?php echo $password; ?>" />
+					<td><input type="password" name="password" value="<?php echo $password; ?>" required/>
 					<span class="input_instructions"><?php echo $text_password_instructions; ?></span>
 					<?php if ($error_password) { ?>
 						<span class="error"><?php echo $error_password; ?></span>
@@ -183,7 +183,7 @@
 				</tr>
 				<tr>
 					<td><span class="required">*</span> <?php echo $entry_confirm; ?></td>
-					<td><input type="password" name="confirm" value="<?php echo $confirm; ?>" />
+					<td><input required type="password" name="confirm" value="<?php echo $confirm; ?>" />
 					<?php if ($error_confirm) { ?>
 						<span class="error"><?php echo $error_confirm; ?></span>
 					<?php } ?></td>
@@ -230,9 +230,9 @@
 			<div class="buttons">
 				<div class="right"><?php echo $text_agree; ?>
 					<?php if ($agree) { ?>
-						<input type="checkbox" name="agree" value="1" checked="checked" />
+						<input required type="checkbox" name="agree" value="1" checked="checked" />
 					<?php } else { ?>
-						<input type="checkbox" name="agree" value="1" />
+						<input required type="checkbox" name="agree" value="1" />
 					<?php } ?>
 					<input type="submit" value="<?php echo $button_continue; ?>" class="button" />
 				</div>
@@ -310,6 +310,17 @@ $('input[name="email"]').on({
   change: function() {
     this.value = this.value.replace(/\s/g, "");
   }
+});
+
+ $('input[name="firstname"], input[name="lastname"]').keydown(function(e) {
+	if (e.ctrlKey || e.altKey) {
+		e.preventDefault();
+	} else {
+		var key = e.keyCode;
+		if (!((key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
+		  e.preventDefault();
+		}
+	}
 });
 
 $('select[name=\'country_id\']').trigger('change');

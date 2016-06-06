@@ -472,7 +472,7 @@ color:#00a651;
 height: 70px;
 }
 .products-slider .price {
-margin: 8px 5% 20px;
+margin: 8px 5% 5px;
 }
 .product-grid span.sale-icon, .box-product span.sale-icon,
 .product-box-slider span.sale-icon {
@@ -554,7 +554,7 @@ margin-bottom: 10px;
 
 .product-details-price-bulk-price {
     margin-top: 10px;
-    text-align: center;
+    text-align: left;
 }
 .product-details-price-bulk-price a {
 	color: #ef4035;
@@ -616,7 +616,7 @@ font-size: 16px;
 
 .vit-member-price .vit-price,
 .vit-sale-price .vit-price {
-font-size: 20px;
+font-size: 18px;
 font-weight: bold;
 line-height: 120%;
 }
@@ -810,7 +810,7 @@ border-collapse: collapse;
 	position: relative;
 	}
 	.ei-slider {
-	height: 500px;
+	height: 520px;
 	}
 	.ei-title h4 a.button {
 	min-width: 150px;

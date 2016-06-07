@@ -10,7 +10,7 @@ class ModelPremiumMemberDb extends Model
 		$customer_email = $this->db->escape($data['email']);
 		$customer_info = $this->getCustomerInfo($customer_email);
 		$customer_id = $customer_info['customer_id'];
-		$customer_group_id = $customer_group_id['customer_group_id'];
+		$customer_group_id = $customer_info['customer_group_id'];
 
 		if ($customer_group_id == $this->customer_group_id) // Account already exists as Customer
 		{
@@ -483,7 +483,7 @@ class ModelPremiumMemberDb extends Model
 		$row = $result->row;
 		
 		return empty($row) ?
-			array('customer_id' => 0, 'firstname' => '', 'lastname' => '', 'member_num' => '') :
+			array('customer_id' => 0, 'firstname' => '', 'lastname' => '', 'member_num' => '', 'customer_group_id' => '') :
 			array('customer_id' => $row['customer_id'], 'firstname' => $row['firstname'], 'lastname' => $row['lastname'], 'member_num' => $row['member_num'], 'customer_group_id' => $row['customer_group_id']);
 	}
 	

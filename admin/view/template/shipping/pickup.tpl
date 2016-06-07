@@ -17,6 +17,14 @@
       <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" id="form">
         <table class="form">
           <tr>
+            <td><?php echo $entry_total; ?></td>
+            <td><input type="text" name="pickup_total" value="<?php echo $pickup_total; ?>" /></td>
+          </tr>
+          <tr>
+            <td><?php echo $entry_cost; ?></td>
+            <td><input type="text" name="pickup_cost" value="<?php echo $pickup_cost; ?>" /> ($)</td>
+          </tr>
+          <tr>
             <td><?php echo $entry_geo_zone; ?></td>
             <td><select name="pickup_geo_zone_id">
                 <option value="0"><?php echo $text_all_zones; ?></option>

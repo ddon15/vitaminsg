@@ -420,7 +420,7 @@ class ControllerPremiumMemberRegister extends Controller
 		if ($this->request->post['country_id'] == '') {
 			$this->error['country'] = $this->language->get('error_country');
 		} else {
-			if ($country_info !== 'Singapore' && (!isset($this->request->post['zone_id']) || $this->request->post['zone_id'] == '') {
+			if ($country_info !== 'Singapore' && (!isset($this->request->post['zone_id']) || $this->request->post['zone_id'] == '')) {
 				$this->error['zone'] = $this->language->get('error_zone');
 			}
 		}

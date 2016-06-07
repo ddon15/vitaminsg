@@ -1,29 +1,17 @@
 <?php
 class ModelPremiumMemberDb extends Model
 {
-	private $completed_membership_status = 1;
-	private $customer_group_id = 1;
-	private $premium_group_id = 1;
-
 	public function addPremiumMember($data)
 	{
 		$customer_email = $this->db->escape($data['email']);
 		$customer_info = $this->getCustomerInfo($customer_email);
 		$customer_id = $customer_info['customer_id'];
-		$customer_group_id = $customer_info['customer_group_id'];
+		
+		$pid = $this->getPremiumMemberId($customer_email);
 
-		if ($customer_group_id == $this->customer_group_id) // Account already exists as Customer Group
+		if ($customer_id && $pid) // Account already exist
 		{
-			return false;
-		}
-
-		if($customer_id != 0 && $customer_group_id == $this->premium_group_id) 
-		{
-			//Check if customer is premium member and has done payment 
-			$pid = $this->getPremiumMemberId($customer_email);
-
-			return !$this->isPremiumMemberAndPaid($pid); //false account exist
-
+			return !$this->isPremiumMemberAndPaid($pid);
 		}
 		
 		// add default customer
@@ -308,7 +296,7 @@ class ModelPremiumMemberDb extends Model
 		
 		$row = $result->row;
 		
-		return (isset($row['payment_status']) && $row['payment_status'] === 'Completed');
+		return $row && $row['payment_status'] == 'Completed';
 	}
 
 	private function sendOrderConfirmation($invoice, $customer_email, $member_num, $reward_used = 0) {

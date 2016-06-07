@@ -54,14 +54,14 @@
 			<table class="form">
 				<tr>
 					<td><span class="required">*</span> <?php echo $entry_firstname; ?></td>
-					<td><input type="text" pattern="[A-Za-z]" name="firstname" value="<?php echo $firstname; ?>" required  oninvalid="this.setCustomValidity('Please enter your firstname')"/>
+					<td><input type="text" name="firstname" value="<?php echo $firstname; ?>" required 	 oninvalid="this.setCustomValidity('Please enter your firstname')"/>
 					<?php if ($error_firstname) { ?>
 						<span class="error"><?php echo $error_firstname; ?></span>
 					<?php } ?></td>
 				</tr>
 				<tr>
 					<td><span class="required">*</span> <?php echo $entry_lastname; ?></td>
-					<td><input type="text" pattern="[A-Za-z]" name="lastname" value="<?php echo $lastname; ?>" required oninvalid="this.setCustomValidity('Please enter your lastname')"/>
+					<td><input type="text" name="lastname" value="<?php echo $lastname; ?>" required oninvalid="this.setCustomValidity('Please enter your lastname')"/>
 					<?php if ($error_lastname) { ?>
 						<span class="error"><?php echo $error_lastname; ?></span>
 					<?php } ?></td>

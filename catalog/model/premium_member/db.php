@@ -12,7 +12,7 @@ class ModelPremiumMemberDb extends Model
 		$customer_id = $customer_info['customer_id'];
 		$customer_group_id = $customer_info['customer_group_id'];
 
-		if ($customer_group_id == $this->customer_group_id) // Account already exists as Customer
+		if ($customer_group_id == $this->customer_group_id) // Account already exists as Customer Group
 		{
 			return false;
 		}

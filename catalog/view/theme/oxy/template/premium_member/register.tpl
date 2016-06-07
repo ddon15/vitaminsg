@@ -54,21 +54,21 @@
 			<table class="form">
 				<tr>
 					<td><span class="required">*</span> <?php echo $entry_firstname; ?></td>
-					<td><input type="text" name="firstname" value="<?php echo $firstname; ?>" required 	 oninvalid="this.setCustomValidity('Please enter your firstname')"/>
+					<td><input type="text" name="firstname" value="<?php echo $firstname; ?>" required />
 					<?php if ($error_firstname) { ?>
 						<span class="error"><?php echo $error_firstname; ?></span>
 					<?php } ?></td>
 				</tr>
 				<tr>
 					<td><span class="required">*</span> <?php echo $entry_lastname; ?></td>
-					<td><input type="text" name="lastname" value="<?php echo $lastname; ?>" required oninvalid="this.setCustomValidity('Please enter your lastname')"/>
+					<td><input type="text" name="lastname" value="<?php echo $lastname; ?>" required/>
 					<?php if ($error_lastname) { ?>
 						<span class="error"><?php echo $error_lastname; ?></span>
 					<?php } ?></td>
 				</tr>
 				<tr>
 					<td><span class="required">*</span> <?php echo $entry_email; ?></td>
-					<td><input type="email" name="email" class="width-100-per" value="<?php echo $email; ?>" required oninvalid="this.setCustomValidity('Please enter your email address')"/>
+					<td><input type="email" name="email" class="width-100-per" value="<?php echo $email; ?>" required/>
 					<?php if ($error_email) { ?>
 						<span class="error"><?php echo $error_email; ?></span>
 					<?php } ?></td>
@@ -76,7 +76,7 @@
 				<tr>
 					<td><span class="required">*</span> <?php echo $entry_id_number; ?></td>
 					<td><input type="text" name="id_number" value="<?php echo $id_number; ?>" required/>
-                                            <span class="input_instructions"><?php echo $text_id_number_help; ?></span>
+                    	<span class="input_instructions"><?php echo $text_id_number_help; ?></span>
 					<?php if ($error_id_number) { ?>
 						<span class="error"><?php echo $error_id_number; ?></span>
 					<?php } ?></td>

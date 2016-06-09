@@ -419,12 +419,11 @@ class ControllerPremiumMemberRegister extends Controller
 
 		if ($this->request->post['country_id'] == '') {
 			$this->error['country'] = $this->language->get('error_country');
+		} else {
+			if ($country_info['name'] !== 'Singapore' && (!isset($this->request->post['zone_id']) || $this->request->post['zone_id'] == '')) {
+				$this->error['zone'] = $this->language->get('error_zone');
+			}
 		}
-
-		if (!isset($this->request->post['zone_id']) || $this->request->post['zone_id'] == '') {
-			$this->error['zone'] = $this->language->get('error_zone');
-		}
-
                 
 		if (empty($this->request->post['password']) || (utf8_strlen($this->request->post['password']) < 8) || (utf8_strlen($this->request->post['password']) > 20)) {
 			$this->error['password'] = $this->language->get('error_password');

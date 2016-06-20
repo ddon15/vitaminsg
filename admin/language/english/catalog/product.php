@@ -26,7 +26,9 @@ $_['column_action']          = 'Action';
 
 // Entry
 $_['entry_name']             = 'Product Name:';
-/*CPT1 START*/$_['entry_cptitle']          = 'Custom Page Title:';/*CPT1 END*/
+/*CPT1 START*/
+$_['entry_cptitle']          = 'Custom Page Title:';
+/*CPT1 END*/
 $_['entry_meta_keyword'] 	 = 'Meta Tag Keywords:';
 $_['entry_meta_description'] = 'Meta Tag Description:';
 $_['entry_description']      = 'Description:';

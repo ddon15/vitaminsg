@@ -199,7 +199,7 @@
       <?php if (!$special) { ?>
       <div class="clearfix">
       <div class="product-details-price-original-price"><?php echo $price; ?></div>
-       <div class="product-details-price-bulk-price"><a href="<?php echo $bulkpriceurl; ?>"><?php echo $bulkprice; ?></a></div>
+      
       </div>
       <?php /* [SB]Display Premium Member price */?>
         <?php if ($premium_member_price) { ?>
@@ -218,7 +218,7 @@
       <?php } else { ?>
         <div class="clearfix">
         <div class="product-details-price-original-price vit-price-struck"><?php echo $price; ?></div>
-        <div class="product-details-price-bulk-price"><a href="<?php echo $bulkpriceurl; ?>"><?php echo $bulkprice; ?></a></div>
+        <!-- <div class="product-details-price-bulk-price"><a href="<?php echo $bulkpriceurl; ?>"><?php echo $bulkprice; ?></a></div> -->
         </div>
         <div class="clearfix">
         <div class="product-details-price-block six">
@@ -243,6 +243,7 @@
         </div>
         <?php }?>
         </div>
+         <div class="product-details-price-bulk-price"><a href="<?php echo $bulkpriceurl; ?>"><?php echo $bulkprice; ?></a></div>
       <?php }//.end else ?>
       <?php if($this->config->get('oxy_product_tax_status') ==1) { ?>
         <?php if ($tax) { ?>

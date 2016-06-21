@@ -561,7 +561,7 @@ margin-bottom: 10px;
 
 .product-details-price-bulk-price {
     margin-top: 10px;
-    float: right;
+    float: left;
 }
 .product-details-price-bulk-price a {
 	color: #ef4035;

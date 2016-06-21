@@ -416,7 +416,7 @@ class ControllerProductProduct extends Controller {
 			
 
 			$this->data['bulkpriceurl'] = "/bulk-enquiry?p=" . urldecode($product_info['name']);
-			$this->data['bulkprice'] = "Bulk Pricing<br />大批购买<br />Borongan<br />15% to 70% Off";
+			$this->data['bulkprice'] = "Request for bulk pricing<br />大批购买, Borongan<br />15% to 70% off";
 			if ((float)$product_info['special']) {
 				$this->data['special'] = $this->currency->format($this->tax->calculate($product_info['special'], $product_info['tax_class_id'], $this->config->get('config_tax')));
 			    $this->data['percent_savings'] = round((($product_info['price'] - $product_info['special']) / $product_info['price'] * 100));

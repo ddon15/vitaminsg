@@ -706,6 +706,98 @@ border-collapse: collapse;
 	margin: 7px 0px 0px 5px;
 }
 
+@font-face {
+    font-family: gotham-font;
+    src: url(font/GothamRnd-Bold.otf);
+    font-weight: bold;
+}
+
+.packed-icon {
+	font-family: gotham-font;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 10px;
+	position: absolute;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
+	text-transform: uppercase;
+	z-index: 5;
+	background-color: #F67203;
+	display: block;
+	width: 100%;
+}
+
+/*Ribbon Tag Label for Pack Product*/
+.ribbon-wrapper {
+  /*border-radius: 10px;*/
+  -webkit-box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+  box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 90;
+  min-height: 100px;
+  text-align: center;
+}
+
+.ribbon-wrapper-green {
+  width: 130px;
+  height: 106px;
+  position: absolute;
+  top: -7px;
+  right: -35px;
+  z-index: 999;
+}
+
+.ribbon-save-text {
+	font-size: 18px;
+    color: #F69520;
+}
+
+.ribbon-green {
+	font: bold 15px gotham-font;
+	color: #FD7500;
+	text-align: center;
+	text-shadow: rgba(255,255,255,0.5) 0px 1px 0px;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	position: relative;
+	padding: 5px 0;
+	left: 1px;
+	top: 9px;
+    width: 137px;
+	background-color: #BFDC7A;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#BFDC7A), to(#8EBF45));
+	background-image: -webkit-linear-gradient(top, #BFDC7A, #8EBF45);
+	background-image: -moz-linear-gradient(top, #BFDC7A, #8EBF45);
+	background-image: -ms-linear-gradient(top, #BFDC7A, #8EBF45);
+	background-image: -o-linear-gradient(top, #BFDC7A, #8EBF45);
+	color: #6a6340;
+	-webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+	-moz-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+	box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+}
+
+.ribbon-green:before, .ribbon-green:after {
+  content: "";
+  border-top:   3px solid #6e8900;   
+  border-left:  3px solid transparent;
+  border-right: 3px solid transparent;
+  position:absolute;
+  bottom: -3px;
+}
+
+.overflow-hidden {
+	overflow: hidden !important;
+}
+
+.ribbon-green:before {
+  left: 0;
+}
+.ribbon-green:after {
+  right: 0;
+}​
 
 /*Media Screen Size queries*/
 @media only screen and (max-width: 1009px)

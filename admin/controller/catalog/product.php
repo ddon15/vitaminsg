@@ -597,6 +597,7 @@ class ControllerCatalogProduct extends Controller {
 		$this->data['entry_reward'] = $this->language->get('entry_reward');
 		$this->data['entry_layout'] = $this->language->get('entry_layout');
 		$this->data['entry_profile'] = $this->language->get('entry_profile');
+		$this->data['entry_no_bottles'] = $this->language->get('entry_no_bottles');
 
 		$this->data['text_recurring_help'] = $this->language->get('text_recurring_help');
 		$this->data['text_recurring_title'] = $this->language->get('text_recurring_title');
@@ -908,6 +909,15 @@ class ControllerCatalogProduct extends Controller {
       		$this->data['quantity'] = $product_info['quantity'];
     	} else {
 			$this->data['quantity'] = 1;
+		}
+
+		if (isset($this->request->post['quantity'])) {
+      		$this->data['no_bottles'] = $this->request->post['no_bottles'];
+    	} elseif (!empty($product_info)) {
+    		$noOfBottles = $product_info['no_bottles'];
+      		$this->data['no_bottles'] = $noOfBottles < 1 ? 1 : $noOfBottles;
+    	} else {
+			$this->data['no_bottles'] = 1;
 		}
 		
 		if (isset($this->request->post['minimum'])) {

@@ -61,6 +61,7 @@ class ControllerCommonHeader extends Controller {
 		$this->data['text_error_log'] = $this->language->get('text_error_log');
 		$this->data['text_extension'] = $this->language->get('text_extension');
 		$this->data['text_feed'] = $this->language->get('text_feed');
+		$this->data['text_brand_promotion'] = $this->language->get('text_brand_promotion');
 		$this->data['text_filter'] = $this->language->get('text_filter');
 		$this->data['text_front'] = $this->language->get('text_front');
 		$this->data['text_geo_zone'] = $this->language->get('text_geo_zone');
@@ -166,6 +167,7 @@ class ControllerCommonHeader extends Controller {
 			$this->data['download'] = $this->url->link('catalog/download', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['error_log'] = $this->url->link('tool/error_log', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['feed'] = $this->url->link('extension/feed', 'token=' . $this->session->data['token'], 'SSL');
+			$this->data['brand_promotions'] = $this->url->link('sale/brand_promotions', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['filter'] = $this->url->link('catalog/filter', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['geo_zone'] = $this->url->link('localisation/geo_zone', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['information'] = $this->url->link('catalog/information', 'token=' . $this->session->data['token'], 'SSL');

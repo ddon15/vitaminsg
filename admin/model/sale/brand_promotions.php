@@ -49,7 +49,7 @@ class ModelSaleBrandPromotions extends Model {
 
 			$discountedPrice = round($p['price'] * ((100-$bp['discount_value']) / 100), 2);
 		
-			$this->db->query("INSERT INTO " . DB_PREFIX . "product_special SET product_id = '" . (int)$p['id'] . "', customer_group_id = '" . (int)$bp['customer_group_id'] . "', priority = '" . (int)$bp['priority'] . "', price = '" . (float)$discountedPrice . "', date_start = '" . $this->db->escape($bp['date_start']) . "', date_end = '" . $this->db->escape($bp['date_end']) . "'");
+			$this->db->query("INSERT INTO " . DB_PREFIX . "product_special SET product_id = '" . (int)$p['product_id'] . "', customer_group_id = '" . (int)$bp['customer_group_id'] . "', priority = '" . (int)$bp['priority'] . "', price = '" . (float)$discountedPrice . "', date_start = '" . $this->db->escape($bp['date_start']) . "', date_end = '" . $this->db->escape($bp['date_end']) . "'");
 		}
 
 		if (count($productIds) > 0) {

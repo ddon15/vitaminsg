@@ -250,6 +250,14 @@
 
             <tr>
 
+              <td><?php echo $entry_no_bottles; ?></td>
+
+              <td><input type="number" name="no_bottles" value="<?php echo $no_bottles; ?>" size="2" /> (For Pack of X Label if value is more than one)</td>
+
+            </tr>
+
+            <tr>
+
               <td><?php echo $entry_minimum; ?></td>
 
               <td><input type="text" name="minimum" value="<?php echo $minimum; ?>" size="2" /></td>

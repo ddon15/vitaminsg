@@ -47,6 +47,7 @@ class ModelCatalogProduct extends Model {
 				'mpn'              => $query->row['mpn'],
 				'location'         => $query->row['location'],
 				'quantity'         => $query->row['quantity'],
+				'no_bottles'       => $query->row['no_bottles'],
 				'stock_status'     => $query->row['stock_status'],
 				'image'            => $query->row['image'],
 				'manufacturer_id'  => $query->row['manufacturer_id'],

@@ -99,6 +99,8 @@ class ControllerModuleBestSeller extends Controller {
 				'product_id' => $result['product_id'],
 				'thumb'   	 => $image,
 				'thumb_swap' => $swapimage,
+				'is_packed'   => $result['no_bottles'] > 1 ? 1 : 0,
+				'no_bottles'  => $result['no_bottles'],
 				//'name'    	 => $result['name'],
 				'name'    	 => strlen($result['name']) > 70 ? substr($result['name'],0,70)." ..." : $result['name'],
 				'price'   	 => $price,

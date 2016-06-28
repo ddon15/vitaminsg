@@ -102,7 +102,7 @@ function display(view) {
 			var image = $(element).find('.image').html();
 			
 			if (image != null) { 
-				html += '<div class="image">' + image + '</div>';
+				html += '<div class="image ribbon-wrapper">' + image + '</div>';
 			}
 			
 			html += '<div class="six columns">';
@@ -148,7 +148,7 @@ function display(view) {
 			var image = $(element).find('.image').html();
 			
 			if (image != null) {
-				html += '<div class="image">' + image + '</div>';
+				html += '<div class="image ribbon-wrapper">' + image + '</div>';
 			}
 			
 			html += '<div class="name">' + $(element).find('.name').html() + '</div>';

@@ -737,7 +737,7 @@ border-collapse: collapse;
   z-index: 90;
   min-height: 100px;
   text-align: center;
-  overflow: initial;
+  overflow: initial !important;
 }
 
 .ribbon-wrapper-green {

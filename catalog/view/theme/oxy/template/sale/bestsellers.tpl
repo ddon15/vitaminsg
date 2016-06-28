@@ -11,7 +11,7 @@
   
   <div class="product-grid clearfix">
     <?php foreach ($products as $product) { ?>
-    <div class="<?php echo $this->config->get('oxy_layout_pb_noc'); ?> mobile-two columns">
+    <div class="overflow-hidden <?php echo $this->config->get('oxy_layout_pb_noc'); ?> mobile-two columns">
       <?php if ($product['thumb']) { ?>
       <div class="image ribbon-wrapper">
         <?php if (!$product['is_packed']): ?>

@@ -712,27 +712,11 @@ border-collapse: collapse;
     font-weight: bold;
 }
 
-.packed-icon {
-	font-family: gotham-font;
-	color: #FFFFFF;
-	font-size: 16px;
-	font-weight: bold;
-	padding: 10px;
-	position: absolute;
-	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
-	text-transform: uppercase;
-	z-index: 5;
-	background-color: #F67203;
-	letter-spacing: 2px;
-	display: block;
-	width: 100%;
-}
-
 .sale-packed-icon {
 	position: absolute;
 	color: #F03F35;
     top: 0;
-    font-size: 14px;
+    font-size: 16px;
     padding: 3px 15px;
 	font-family: gotham-font;
 	width: 100%;
@@ -744,6 +728,7 @@ border-collapse: collapse;
 	background-image: -moz-linear-gradient(top, #BFDC7A, #8EBF45);
 	background-image: -ms-linear-gradient(top, #BFDC7A, #8EBF45);
 	background-image: -o-linear-gradient(top, #BFDC7A, #8EBF45);
+	letter-spacing: 2px;
 	left: 0;
 }
 /*Ribbon Tag Label for Pack Product*/

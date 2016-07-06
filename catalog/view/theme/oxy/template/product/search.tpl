@@ -233,7 +233,7 @@ function display(view) {
 			var image = $(element).find('.image').html();
 			
 			if (image != null) {
-				html += '<div class="">' + image + '</div>';
+				html += '<div class="image">' + image + '</div>';
 			}
 			
 			html += '<div class="name">' + $(element).find('.name').html() + '</div>';

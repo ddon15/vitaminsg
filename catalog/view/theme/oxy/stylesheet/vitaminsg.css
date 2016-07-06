@@ -730,6 +730,7 @@ border-collapse: collapse;
 	background-image: -o-linear-gradient(top, #BFDC7A, #8EBF45);
 	letter-spacing: 2px;
 	left: 0;
+	z-index: 10;
 }
 
 .sale-packed-icon.in-banner {

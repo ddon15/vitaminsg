@@ -111,7 +111,7 @@
 
 </div>
 
-// <script type="text/javascript">
+<script type="text/javascript">
 
 // $.widget('custom.catcomplete', $.ui.autocomplete, {
 

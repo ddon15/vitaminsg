@@ -34,7 +34,7 @@
 
                                 <td class="right"><?php echo $entry_brands; ?></td>
                               
-                                <td class="right"><?php echo $entry_priority; ?></td>
+                                <td class="right"><?php echo $entry_priority; ?> (0 means high in priority)</td>
 
                                 <td class="right"><?php echo $entry_discount; ?></td>
 
@@ -211,7 +211,7 @@ function addBrandPromotion() {
 
         html += '    </select></td>';   
 
-    html += '    <td class="right"><input type="number" name="bp[' + bp_row + '][priority]" value="" size="2" required/></td>';
+    html += '    <td class="right"><input type="number" name="bp[' + bp_row + '][priority]" value="" size="2" value="0" required/></td>';
 
     html += '    <td class="right"><input type="number" name="bp[' + bp_row + '][discount_value]" value="" required/></td>';
 

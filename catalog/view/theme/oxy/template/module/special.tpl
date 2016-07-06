@@ -7,7 +7,7 @@
       <div class="<?php echo $this->config->get('oxy_layout_pb_noc'); ?> mobile-two columns">
         <?php if ($product['thumb_swap']) { ?>
         <div class="image">
-		<?php if ((!$product['is_packed']&&$product['special']&&($this->config->get('oxy_category_sale_badge_status') == 1)) { ?><span class="sale-icon"><?php echo $text_sale; ?></span><?php } ?>
+		<?php if ((!$product['is_packed']&&$product['special'])&&($this->config->get('oxy_category_sale_badge_status') == 1)) { ?><span class="sale-icon"><?php echo $text_sale; ?></span><?php } ?>
         <?php if ($product['is_packed']): ?>
           <span class="sale-packed-icon in-banner">PACK OF <?php echo $product['no_bottles'] . ', SAVE $';?></span>
         <?php endif; ?>

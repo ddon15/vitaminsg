@@ -219,7 +219,7 @@ function addBrandPromotion() {
 
     html += '    <td class="left"><input type="text" name="bp[' + bp_row + '][date_end]" value="" class="date" required/></td>';
 
-    html += '    <td class="left"><button class="btn-delete button" data-new="1"><?php echo $button_remove; ?></button></td>';
+    html += '    <td class="left"><button class="btn-delete button" data-new="1" data-rowid="'+bp_row+'"><?php echo $button_remove; ?></button></td>';
 
     html += '  </tr>';
 
@@ -355,8 +355,9 @@ $('.time').timepicker({timeFormat: 'h:m'});
             });
         }
         
+        console.log(rowId);
         $('#bp-row' + rowId).remove();
-        e.preventDefault();
+
     });
 </script>
 <?php echo $footer; ?>

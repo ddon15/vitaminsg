@@ -85,8 +85,6 @@
                             <td class="left"><input type="text" name="bp[<?php echo $bp_row; ?>][date_start]" value="<?php echo $bp['date_start']; ?>" class="date" required/></td>
 
                             <td class="left"><input type="text" name="bp[<?php echo $bp_row; ?>][date_end]" value="<?php echo $bp['date_end']; ?>" class="date" required/></td>
-                         
-                       <!--      <td><input type="checkbox" name="bp[<?php echo $bp_row; ?>][status]" <?php echo $bp['status'] ? 'checked' : ''; ?> ></td> -->
                            
                             <td class="left"><button data-new="0" class="btn-delete button" data-productids="<?php echo $bp['product_ids'] ?>" data-url="<?php echo $action_delete; ?>" data-id="<?php echo $bp['id'] ?>" data-rowid="<?php echo $bp_row; ?>"><?php echo $button_remove; ?></button></td>
 
@@ -96,7 +94,7 @@
                         <?php } ?>
                         <tfoot>
                             <tr>
-                            <td colspan="7"></td><?php //[SB] Increased colspan ?>
+                            <td colspan="6"></td><?php //[SB] Increased colspan ?>
                             <td class="left"><a onclick="addBrandPromotion();" class="button"><?php echo $button_add_bp; ?></a></td>
                             </tr>
                         </tfoot>
@@ -221,8 +219,6 @@ function addBrandPromotion() {
 
     html += '    <td class="left"><input type="text" name="bp[' + bp_row + '][date_end]" value="" class="date" required/></td>';
 
-    html += '    <td class="left"><input type="checkbox" name="bp[' + bp_row + '][status]" checked required/></td>';
-
     html += '    <td class="left"><a href="#" class="btn-delete button" data-new="1"><?php echo $button_remove; ?></a></td>';
 
     html += '  </tr>';
@@ -346,7 +342,7 @@ $('.time').timepicker({timeFormat: 'h:m'});
         
         if (!isNew) {
             console.log('Not is new');
-            
+
             $.ajax({
                 url: url.replace(/&amp;/g, '&'),
                 type: 'POST',

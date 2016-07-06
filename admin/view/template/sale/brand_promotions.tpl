@@ -331,33 +331,34 @@ $('.time').timepicker({timeFormat: 'h:m'});
     // });
 
     $('body').on('click', '.btn-delete', function (e) {
-        console.log('trigger delete');
-        var elem = $(this);
-        var rowId = elem.data('rowid');
-        var productids = elem.data('productids');
-        var url = elem.data('url');
-        var isNew = elem.data('new');
-        var id = elem.data('id');
-        
-        elem.attr('disabled', true);
-        elem.html('Removing..');
-        if (!isNew) {
-            console.log('Not is new');
+        var r = confirm("Continue delete?.");
 
-            $.ajax({
-                url: url.replace(/&amp;/g, '&'),
-                type: 'POST',
-                dataType: 'json',
-                data: {id: id, productids: productids},
-                success: function(response) {
-                    console.log(response);
-                }
-            });
+        if (r == true) {
+            var elem = $(this);
+            var rowId = elem.data('rowid');
+            var productids = elem.data('productids');
+            var url = elem.data('url');
+            var isNew = elem.data('new');
+            var id = elem.data('id');
+            
+            elem.attr('disabled', true);
+            elem.html('Removing..');
+            if (!isNew) {
+                console.log('Not is new');
+
+                $.ajax({
+                    url: url.replace(/&amp;/g, '&'),
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {id: id, productids: productids},
+                    success: function(response) {
+                        console.log(response);
+                    }
+                });
+            }
+            
+            $('#bp-row' + rowId).remove();
         }
-        
-        console.log(rowId);
-        $('#bp-row' + rowId).remove();
-
     });
 </script>
 <?php echo $footer; ?>

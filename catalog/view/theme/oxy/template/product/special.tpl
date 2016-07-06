@@ -53,7 +53,7 @@
         <?php endif; ?>
          <!-- PACKED ICON -->
         <?php if ($product['is_packed']): ?>
-          <span class="sale-packed-icon">PACK OF <?php echo $product['no_bottles'] . 'SAVE $';?></span>
+            <span class="sale-packed-icon">PACK OF <?php echo $product['no_bottles'] . ', SAVE $';?></span>
         <?php endif; ?>
       <div class="flybar">     
       <a onclick="addToWishList('<?php echo $product['product_id']; ?>');" class="wishlist"><div><?php echo $button_wishlist; ?></div></a>

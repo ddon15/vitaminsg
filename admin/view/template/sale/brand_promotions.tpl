@@ -219,7 +219,7 @@ function addBrandPromotion() {
 
     html += '    <td class="left"><input type="text" name="bp[' + bp_row + '][date_end]" value="" class="date" required/></td>';
 
-    html += '    <td class="left"><a href="#" class="btn-delete button" data-new="1"><?php echo $button_remove; ?></a></td>';
+    html += '    <td class="left"><button class="btn-delete button" data-new="1"><?php echo $button_remove; ?></button></td>';
 
     html += '  </tr>';
 
@@ -330,7 +330,8 @@ $('.time').timepicker({timeFormat: 'h:m'});
     //     e.preventDefault();
     // });
 
-    $('body').on('click', '.btn-delete', function () {
+    $('body').on('click', '.btn-delete', function (e) {
+        console.log('trigger delete');
         var elem = $(this);
         var rowId = elem.data('rowid');
         var productids = elem.data('productids');
@@ -339,7 +340,7 @@ $('.time').timepicker({timeFormat: 'h:m'});
         var id = elem.data('id');
         
         elem.attr('disabled', true);
-        
+        elem.html('Removing..');
         if (!isNew) {
             console.log('Not is new');
 
@@ -350,12 +351,12 @@ $('.time').timepicker({timeFormat: 'h:m'});
                 data: {id: id, productids: productids},
                 success: function(response) {
                     console.log(response);
-                    elem.attr('disabled', false);
                 }
             });
         }
         
         $('#bp-row' + rowId).remove();
+        e.preventDefault();
     });
 </script>
 <?php echo $footer; ?>

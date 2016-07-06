@@ -108,10 +108,16 @@
       <a href="<?php echo $product['href']; ?>"><img oversrc="<?php echo $product['thumb_swap']; ?>" src="<?php echo $product['thumb']; ?>" title="<?php echo $product['name']; ?>" alt="<?php echo $product['name']; ?>" /></a>
       </div>
       <?php } else {?>
-      <div class="image">
-      <?php if (($product['special'])&&($this->config->get('oxy_category_sale_badge_status') == 1)) { ?><span class="sale-icon"><?php echo $text_sale; ?></span><?php } ?>
-	  <?php //[SB] Added promo icon
-	  if (($product['is_on_promo'])&&($this->config->get('oxy_category_sale_badge_status') == 1)) { ?><span class="promo-icon"><?php echo $text_promo; ?></span><?php } ?>
+       <div class="image">
+        <?php if (!$product['is_packed']): ?>
+          <?php if (($product['special'])&&($this->config->get('oxy_category_sale_badge_status') == 1)) { ?><span class="sale-icon"><?php echo $text_sale; ?></span><?php } ?> 
+          <?php //[SB] Added promo icon
+          if (($product['is_on_promo'])&&($this->config->get('oxy_category_sale_badge_status') == 1)) { ?><span class="promo-icon"><?php echo $text_promo; ?></span><?php } ?>
+        <?php endif; ?>
+         <!-- PACKED ICON -->
+        <?php if ($product['is_packed']): ?>
+          <span class="sale-packed-icon">PACK OF <?php echo $product['no_bottles'] . 'SAVE $';?></span>
+        <?php endif; ?>
       <div class="flybar">     
       <a onclick="addToWishList('<?php echo $product['product_id']; ?>');" class="wishlist"><div><?php echo $button_wishlist; ?></div></a>
       <a onclick="addToWishList('<?php echo $product['product_id']; ?>');" class="wishlist-tip" title="<?php echo $button_wishlist; ?>"><div><?php echo $button_wishlist; ?></div></a>

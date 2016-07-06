@@ -13,20 +13,16 @@
     <?php foreach ($products as $product) { ?>
     <div class="overflow-hidden <?php echo $this->config->get('oxy_layout_pb_noc'); ?> mobile-two columns">
       <?php if ($product['thumb']) { ?>
-      <div class="image ribbon-wrapper">
+      <div class="image">
         <?php if (!$product['is_packed']): ?>
           <?php if (($product['special'])&&($this->config->get('oxy_category_sale_badge_status') == 1)) { ?><span class="sale-icon"><?php echo $text_sale; ?></span><?php } ?> 
           <?php //[SB] Added promo icon
           if (($product['is_on_promo'])&&($this->config->get('oxy_category_sale_badge_status') == 1)) { ?><span class="promo-icon"><?php echo $text_promo; ?></span><?php } ?>
         <?php endif; ?>
+        <!-- PACKED ICON -->
         <?php if ($product['is_packed']): ?>
-          <div class="ribbon-wrapper-green">
-            <div class="ribbon-green">
-              <span class="ribbon-save-text">SAVE $</span>  </br>
-              <?php echo $product['no_bottles']. ' Pack'; ?> 
-            </div>
-          </div>
-      <?php endif; ?>
+          <span class="sale-packed-icon">PACK OF <?php echo $product['no_bottles'] . 'SAVE $';?></span>
+        <?php endif; ?>
       <div class="flybar">     
       <a onclick="addToWishList('<?php echo $product['product_id']; ?>');" class="wishlist"><div><?php echo $button_wishlist; ?></div></a>
       <a onclick="addToWishList('<?php echo $product['product_id']; ?>');" class="wishlist-tip" title="<?php echo $button_wishlist; ?>"><div><?php echo $button_wishlist; ?></div></a>

@@ -889,7 +889,15 @@
     <div>
       <?php if ($product['thumb']) { ?>
       <div class="image">
-      <?php if (($product['special'])&&($this->config->get('oxy_category_sale_badge_status') == 1)) { ?><span class="sale-icon"><?php echo $text_sale; ?></span><?php } ?> 
+        <?php if (!$product['is_packed']): ?>
+          <?php if (($product['special'])&&($this->config->get('oxy_category_sale_badge_status') == 1)) { ?><span class="sale-icon"><?php echo $text_sale; ?></span><?php } ?> 
+          <?php //[SB] Added promo icon
+          if (($product['is_on_promo'])&&($this->config->get('oxy_category_sale_badge_status') == 1)) { ?><span class="promo-icon"><?php echo $text_promo; ?></span><?php } ?>
+        <?php endif; ?>
+         <!-- PACKED ICON -->
+        <?php if ($product['is_packed']): ?>
+          <span class="sale-packed-icon">PACK OF <?php echo $product['no_bottles'] . 'SAVE $';?></span>
+        <?php endif; ?>
       <div class="flybar"> 
       <?php if ($product['rating']) { ?>
       <div class="rating"><img src="catalog/view/theme/oxy/image/stars/stars<?php echo $this->config->get('oxy_mid_prod_stars_color'); ?>-<?php echo $product['rating']; ?>.png" alt="<?php echo $product['reviews']; ?>" /></div>

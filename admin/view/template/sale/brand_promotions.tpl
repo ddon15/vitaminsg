@@ -42,7 +42,7 @@
 
                                 <td class="left"><?php echo $entry_date_end; ?></td>
 
-                                <td class="left">Enabled</td>
+                                <!-- <td class="left">Enabled</td> -->
 
                                 <td></td>
                             </tr>
@@ -86,9 +86,9 @@
 
                             <td class="left"><input type="text" name="bp[<?php echo $bp_row; ?>][date_end]" value="<?php echo $bp['date_end']; ?>" class="date" required/></td>
                          
-                            <td><input type="checkbox" name="bp[<?php echo $bp_row; ?>][status]" <?php echo $bp['status'] ? 'checked' : ''; ?> ></td>
+                       <!--      <td><input type="checkbox" name="bp[<?php echo $bp_row; ?>][status]" <?php echo $bp['status'] ? 'checked' : ''; ?> ></td> -->
                            
-                            <td class="left"><a onclick="$('#bp-row<?php echo $bp_row; ?>').remove();" class="button"><?php echo $button_remove; ?></a></td>
+                            <td class="left"><button data-new="0" class="btn-delete button" data-productids="<?php echo $bp['product_ids'] ?>" data-url="<?php echo $action_delete; ?>" data-id="<?php echo $bp['id'] ?>" data-rowid="<?php echo $bp_row; ?>"><?php echo $button_remove; ?></button></td>
 
                             </tr>
                         </tbody>
@@ -223,7 +223,7 @@ function addBrandPromotion() {
 
     html += '    <td class="left"><input type="checkbox" name="bp[' + bp_row + '][status]" checked required/></td>';
 
-    html += '    <td class="left"><a onclick="$(\'#bp-row' + bp_row + '\').remove();" class="button"><?php echo $button_remove; ?></a></td>';
+    html += '    <td class="left"><a href="#" class="btn-delete button" data-new="1"><?php echo $button_remove; ?></a></td>';
 
     html += '  </tr>';
 
@@ -327,5 +327,39 @@ $('.time').timepicker({timeFormat: 'h:m'});
 
     //     e.preventDefault();
     // });
+
+    // $('.btn-delete').on('click', function(e) {
+    //     var rowId = $(this).data('id');
+    //     $('#bp-row' + rowId).remove();
+    //     e.preventDefault();
+    // });
+
+    $('body').on('click', '.btn-delete', function () {
+        var elem = $(this);
+        var rowId = elem.data('rowid');
+        var productids = elem.data('productids');
+        var url = elem.data('url');
+        var isNew = elem.data('new');
+        var id = elem.data('id');
+        
+        elem.attr('disabled', true);
+        
+        if (!isNew) {
+            console.log('Not is new');
+            
+            $.ajax({
+                url: url.replace(/&amp;/g, '&'),
+                type: 'POST',
+                dataType: 'json',
+                data: {id: id, productids: productids},
+                success: function(response) {
+                    console.log(response);
+                    elem.attr('disabled', false);
+                }
+            });
+        }
+        
+        $('#bp-row' + rowId).remove();
+    });
 </script>
 <?php echo $footer; ?>

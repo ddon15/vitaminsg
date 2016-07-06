@@ -60,6 +60,7 @@ class ControllerSaleBrandPromotions extends Controller {
 		$this->data['entry_date_start'] = $this->language->get('entry_date_start');
 		$this->data['entry_date_end'] = $this->language->get('entry_date_end');
 		$this->data['action'] = $this->url->link('sale/brand_promotions/insert', 'token=' . $this->session->data['token'], 'SSL');
+		$this->data['action_delete'] = $this->url->link('sale/brand_promotions/delete', 'token=' . $this->session->data['token'], 'SSL');
 
 		$this->data['token'] = $this->session->data['token'];
 
@@ -87,6 +88,28 @@ class ControllerSaleBrandPromotions extends Controller {
 		}
 
 		$save = $this->model_sale_brand_promotions->saveBrandProductPromotions($data['bp']);
+
+		$this->data['message'] = 'Success.';
+		// return json_decode($this->data);
+
+		$this->redirect($this->url->link('sale/brand_promotions', 'token=' . $this->session->data['token'] . $url, 'SSL'));
+	}
+
+	public function delete()
+	{
+		$this->load->model('sale/brand_promotions');
+		
+		$data = $this->request->post;
+
+		$this->data['error'] = 0;
+
+		// if (!isset($data['product_ids']) || count($data['product_ids']) == 0) {
+		// 	$this->data['error'] = 1;
+		// 	$this->data['message'] = 'No data submitted.';
+		// 	return json_encode($this->data);
+		// }
+
+		$save = $this->model_sale_brand_promotions->delete($data);
 
 		$this->data['message'] = 'Success.';
 		// return json_decode($this->data);

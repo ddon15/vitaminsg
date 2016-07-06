@@ -89,6 +89,8 @@ class ControllerModuleSpecial extends Controller {
 				//'name'    	 => $result['name'], [SB] Truncate name if too long
 				'name'    	 => strlen($result['name']) > 70 ? substr($result['name'],0,70)." ..." : $result['name'],
 				'price'   	 => $price,
+				'is_packed'   => $result['no_bottles'] > 1 ? 1 : 0,
+				'no_bottles'  => $result['no_bottles'],
 				'special' 	 => $special,
 				'premium_member_price' 	 => $premium_member_price, //[SB]Add member price
 				'is_on_promo' => $isOnPromo, //[SB]Add is on promo

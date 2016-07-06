@@ -103,6 +103,8 @@ class ControllerModuleBestSeller extends Controller {
 				'no_bottles'  => $result['no_bottles'],
 				//'name'    	 => $result['name'],
 				'name'    	 => strlen($result['name']) > 70 ? substr($result['name'],0,70)." ..." : $result['name'],
+				'is_packed'   => $result['no_bottles'] > 1 ? 1 : 0,
+				'no_bottles'  => $result['no_bottles'],
 				'price'   	 => $price,
 				'special' 	 => $special,
 				'premium_member_price' 	 => $premium_member_price, //[SB]Add member price

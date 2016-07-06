@@ -731,6 +731,11 @@ border-collapse: collapse;
 	letter-spacing: 2px;
 	left: 0;
 }
+
+.sale-packed-icon.in-banner {
+	font-size: 13px;
+	letter-spacing: 1px;
+}
 /*Ribbon Tag Label for Pack Product*/
 .ribbon-wrapper {
   /*border-radius: 10px;*/

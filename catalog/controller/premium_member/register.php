@@ -335,7 +335,7 @@ class ControllerPremiumMemberRegister extends Controller
 		if($free_prod) {
 			$this->data['text_subscribe_price'] = '<strong>$'.number_format($free_prod['discount_price'], 2).'</strong> <span style="font-size:18px;text-decoration:line-through;">U.P. $'.number_format($free_prod['price'], 2).'</span><br><span style="font-size:16px">2 YEARS SUBSCRIPTION</span>';
 			
-			$this->data['text_freegift']        = '<span>NEW MEMBERS GET A</span><br/><strong>'.$free_prod['name'].'<br />(Worth $'.number_format($free_prod['discount_price'], 2).')</strong><br /><span><em>Limited Qty: ' . $free_prod['quantity'] . '  Bottles Left!</em></span>';
+			$this->data['text_freegift']        = '<span>NEW MEMBERS GET A</span><br/><strong>'.$free_prod['model'].'<br />(Worth $'.number_format($free_prod['discount_price'], 2).')</strong><br /><span><em>Limited Qty: ' . $free_prod['quantity'] . '  Bottles Left!</em></span>';
 
 		}
 		

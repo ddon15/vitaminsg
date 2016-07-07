@@ -888,7 +888,7 @@
     <div>
       <?php if ($product['thumb']) { ?>
       <div class="image">
-        <?php if (isset($product['is_packed'])&&!$product['is_packed']): ?>
+        <?php if (!isset($product['is_packed'])): ?>
           <?php if (($product['special'])&&($this->config->get('oxy_category_sale_badge_status') == 1)) { ?><span class="sale-icon"><?php echo $text_sale; ?></span><?php } ?> 
           <?php //[SB] Added promo icon
           if (($product['is_on_promo'])&&($this->config->get('oxy_category_sale_badge_status') == 1)) { ?><span class="promo-icon"><?php echo $text_promo; ?></span><?php } ?>

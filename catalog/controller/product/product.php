@@ -445,9 +445,9 @@ class ControllerProductProduct extends Controller {
 			}
 			
 			$discounts = $this->model_catalog_product->getProductDiscounts($this->request->get['product_id']);
-			$discount = $this->model_catalog_product->getProductDiscount($this->request->get['product_id']);
+			// $discount = $this->model_catalog_product->getProductDiscount($this->request->get['product_id']);
 
-			$this->data['discount'] = $discount;
+			// $this->data['discount'] = $discount;
 			$this->data['discounts'] = array(); 
 			$this->data['margin_bottom'] = '';
 

@@ -171,19 +171,19 @@ class ControllerProductProduct extends Controller {
 		
 		$product_info = $this->model_catalog_product->getProduct($product_id);
 		
-		// Bulk Pricing
-		$this->data['prod_bulk_pricing'] = array();
+		// // Bulk Pricing
+		// $this->data['prod_bulk_pricing'] = array();
 
 
-		$prodBulkPricing = $this->model_setting_custom->getBulkPricingDiscountLabel($product_info['product_id']);
+		// $prodBulkPricing = $this->model_setting_custom->getBulkPricingDiscountLabel($product_info['product_id']);
 		
-		if($prodBulkPricing) {
-			$bp = $prodBulkPricing->row;
-			$this->data['twin_pack'] = json_decode($bp['twin_pack'], true);
-            $this->data['six_pack'] = json_decode($bp['six_pack'], true);
-            $this->data['bulk_price'] = json_decode($bp['bulk_pricing'], true);
-			$this->document->addStyle('catalog/view/theme/oxy/stylesheet/vit-custom-setting.css');
-		}
+		// if($prodBulkPricing) {
+		// 	$bp = $prodBulkPricing->row;
+		// 	$this->data['twin_pack'] = json_decode($bp['twin_pack'], true);
+  //           $this->data['six_pack'] = json_decode($bp['six_pack'], true);
+  //           $this->data['bulk_price'] = json_decode($bp['bulk_pricing'], true);
+		// 	$this->document->addStyle('catalog/view/theme/oxy/stylesheet/vit-custom-setting.css');
+		// }
 
 		$this->data['product_info'] = $product_info;
 		
@@ -416,7 +416,7 @@ class ControllerProductProduct extends Controller {
 			
 
 			$this->data['bulkpriceurl'] = "/bulk-enquiry?p=" . urldecode($product_info['name']);
-			$this->data['bulkprice'] = "Bulk Pricing<br />大批购买<br />Borongan<br />15% to 70% Off";
+			$this->data['bulkprice'] = "Request for bulk pricing<br />大批购买, Borongan<br />15% to 70% off";
 			if ((float)$product_info['special']) {
 				$this->data['special'] = $this->currency->format($this->tax->calculate($product_info['special'], $product_info['tax_class_id'], $this->config->get('config_tax')));
 			    $this->data['percent_savings'] = round((($product_info['price'] - $product_info['special']) / $product_info['price'] * 100));

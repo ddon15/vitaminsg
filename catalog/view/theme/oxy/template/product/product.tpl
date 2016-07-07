@@ -193,30 +193,34 @@
     <?php } ?>         
     <h1><?php /*[SB]Moved from above */ echo $heading_title; ?></h1>
       <?php if ($price) { ?>
-      <div class="price">
+      <div class="price product-page-price">
     <?php if (empty($redeem_only) || !$redeem_only) { //[SB] Added Redemption ?>
     
       <?php if (!$special) { ?>
+      <div class="clearfix">
       <div class="product-details-price-original-price"><?php echo $price; ?></div>
+      
+      </div>
       <?php /* [SB]Display Premium Member price */?>
         <?php if ($premium_member_price) { ?>
-        <div class="product-details-price-block">
+        <div class="product-details-price-block six">
           <div class="product-details-member-price-tag padding-5px">MEMBER PRICE</div>
           <span class="product-details-member-price"><?php echo $premium_member_price; ?></span>
           <?php if($this->config->get('oxy_product_save_percent_status') ==1) { ?>
           <div class="product-details-member-discount"><?php echo $premium_member_percent_savings; ?>% discount</div>
           
           <?php if ($reward) { //[SB] Changed to display rewards instead of points?>
-            <div style='display:block;float:left;color:#dc911b;font-weight:bold;padding-left:5px;'><?php //echo $text_reward; ?> <?php //echo $reward; ?>+ <?php echo sprintf($text_reward, $reward); //[SB] Changed Vit$ Reward ?></div><br />
+            <div class="product-details-member-discount"><?php //echo $text_reward; ?> <?php //echo $reward; ?>+ <?php echo sprintf($text_reward, $reward); //[SB] Changed Vit$ Reward ?></div><br />
           <?php } ?>
           <?php }?>
         </div>
         <?php }?>
       <?php } else { ?>
-        <div class="product-details-price-original-price vit-price-struck"><?php echo $price; ?></div>
-        <!-- <div class="product-details-price-bulk-price"><a href="<?php echo $bulkpriceurl; ?>"><?php echo $bulkprice; ?></a></div> -->
         <div class="clearfix">
-        <div class="product-details-price-block">
+        <div class="product-details-price-original-price vit-price-struck"><?php echo $price; ?></div>
+        </div>
+        <div class="clearfix">
+        <div class="product-details-price-block six">
           <div class="product-details-sale-price-tag padding-5px">SALE PRICE</div>
           <span class="product-details-sale-price"><?php echo $special; ?></span>
           <?php if($this->config->get('oxy_product_save_percent_status') ==1) { ?>
@@ -226,19 +230,19 @@
       
         <?php /* [SB]Display Premium Member price */?>
         <?php if ($premium_member_price) { ?>
-        <div class="product-details-price-block">
+        <div class="product-details-price-block six">
           <div class="product-details-member-price-tag padding-5px">MEMBER PRICE</div>
           <span class="product-details-member-price"><?php echo $premium_member_price; ?></span>
           <?php if($this->config->get('oxy_product_save_percent_status') ==1) { ?>
           <div class="product-details-member-discount"><?php echo $premium_member_percent_savings; ?>% discount</div>
           <?php if ($reward) { //[SB] Changed to display rewards instead of points?>
-            <div style='display:block;float:left;color:#dc911b;font-weight:bold;padding-left:5px;'><?php //echo $text_reward; ?> <?php //echo $reward; ?>+ <?php echo sprintf($text_reward, $reward); //[SB] Changed Vit$ Reward ?></div><br />
+            <div class="product-details-member-discount"><?php //echo $text_reward; ?> <?php //echo $reward; ?>+ <?php echo sprintf($text_reward, $reward); //[SB] Changed Vit$ Reward ?></div><br />
           <?php } ?>
           <?php }?>
         </div>
         <?php }?>
         </div>
-        <div class="product-details-price-bulk-price"><a href="<?php echo $bulkpriceurl; ?>"><?php echo $bulkprice; ?></a></div>
+         <div class="product-details-price-bulk-price"><a href="<?php echo $bulkpriceurl; ?>"><?php echo $bulkprice; ?></a></div>
       <?php }//.end else ?>
       <?php if($this->config->get('oxy_product_tax_status') ==1) { ?>
         <?php if ($tax) { ?>
@@ -256,8 +260,10 @@
       <?php } ?>
       
     <?php } else { //[SB] Added Redemption ?>
-      <div class="product-details-price-original-price" style="font-size:36px;"><?php echo sprintf($text_vit_dollar, $points); ?></div>
+    <div class="clearfix">
+      <div class="product-details-price-original-price"><?php echo sprintf($text_vit_dollar, $points); ?></div>
       <div class="product-details-price-bulk-price"><a href="<?php echo $bulkpriceurl; ?>"><?php echo $bulkprice; ?></a></div>
+    </div>
     <?php } ?>
     
       </div>
@@ -451,7 +457,9 @@
           <div id="qty-inc"><input type="button" class="inc button" value=" " /></div>
           <?php } ?> 
           <input type="hidden" name="product_id" size="2" value="<?php echo $product_id; ?>" />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" value="<?php echo $button_cart; ?>" id="button-cart" class="button-exclusive" />
+
+          <input type="button" value="<?php echo $button_cart; ?>" id="button-cart" class="button-exclusive btn-add-cart-product-page"/>
+
         </div>
         <?php function curPageURL() {
           if (!empty($_SERVER['HTTPS'])) {
@@ -880,7 +888,15 @@
     <div>
       <?php if ($product['thumb']) { ?>
       <div class="image">
-      <?php if (($product['special'])&&($this->config->get('oxy_category_sale_badge_status') == 1)) { ?><span class="sale-icon"><?php echo $text_sale; ?></span><?php } ?> 
+        <?php if (isset($product['is_packed'])&&!$product['is_packed']): ?>
+          <?php if (($product['special'])&&($this->config->get('oxy_category_sale_badge_status') == 1)) { ?><span class="sale-icon"><?php echo $text_sale; ?></span><?php } ?> 
+          <?php //[SB] Added promo icon
+          if (($product['is_on_promo'])&&($this->config->get('oxy_category_sale_badge_status') == 1)) { ?><span class="promo-icon"><?php echo $text_promo; ?></span><?php } ?>
+        <?php endif; ?>
+         <!-- PACKED ICON -->
+        <?php if (isset($product['is_packed'])&&$product['is_packed']): ?>
+           <span class="sale-packed-icon">PACK OF <?php echo $product['no_bottles'] . ', SAVE $';?></span>
+        <?php endif; ?>
       <div class="flybar"> 
       <?php if ($product['rating']) { ?>
       <div class="rating"><img src="catalog/view/theme/oxy/image/stars/stars<?php echo $this->config->get('oxy_mid_prod_stars_color'); ?>-<?php echo $product['rating']; ?>.png" alt="<?php echo $product['reviews']; ?>" /></div>

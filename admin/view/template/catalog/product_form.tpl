@@ -1039,7 +1039,9 @@
               </tfoot>
 
             </table>
-
+            
+            <?php } ?>
+          
             <select id="option-values<?php echo $option_row; ?>" style="display: none;">
 
               <?php if (isset($option_values[$product_option['option_id']])) { ?>

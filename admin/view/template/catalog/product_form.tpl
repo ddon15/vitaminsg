@@ -1060,8 +1060,6 @@
 
           <?php $option_row++; ?>
 
-          <?php } ?>
-
         </div>
 
         <div id="tab-profile">

@@ -2514,7 +2514,6 @@ function addDiscount() {
 
 	html += '    <td class="right"><input type="text" name="product_discount[' + discount_row + '][price]" value="" /></td>';
 
-  html += '    <td class="right"><input type="text" name="product_discount[' + discount_row + '][label]" value="" /></td>';
 
     html += '    <td class="left"><input type="text" name="product_discount[' + discount_row + '][date_start]" value="" class="date" /></td>';
 

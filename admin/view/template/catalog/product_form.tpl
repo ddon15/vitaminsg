@@ -1039,9 +1039,7 @@
               </tfoot>
 
             </table>
-            
-            <?php } ?>
-          
+
             <select id="option-values<?php echo $option_row; ?>" style="display: none;">
 
               <?php if (isset($option_values[$product_option['option_id']])) { ?>
@@ -1056,13 +1054,13 @@
 
             </select>
 
-            <?php //} ?>
+            <?php } ?>
 
           </div>
 
           <?php $option_row++; ?>
 
-          <?php //} ?>
+          <?php } ?>
 
         </div>
 
@@ -1628,7 +1626,7 @@ CKEDITOR.replace('additional_info<?php echo $language['language_id']; ?>', {
 
 <?php } ?>
 
---></script> 
+//--></script> 
 
 <script type="text/javascript"><!--
 
@@ -2030,7 +2028,7 @@ $('#product-related div img').live('click', function() {
 
 });
 
---></script> 
+//--></script> 
 
 <script type="text/javascript"><!--
 
@@ -2144,7 +2142,7 @@ $('#attribute tbody').each(function(index, element) {
 
 });
 
---></script> 
+//--></script> 
 
 <script type="text/javascript"><!-- 
 
@@ -2416,7 +2414,7 @@ $('input[name=\'option\']').catcomplete({
 
 });
 
---></script> 
+//--></script> 
 
 <script type="text/javascript"><!--   
 
@@ -2492,7 +2490,7 @@ function addOptionValue(option_row) {
 
 }
 
---></script> 
+//--></script> 
 
 <script type="text/javascript"><!--
 
@@ -2524,6 +2522,8 @@ function addDiscount() {
 
   html += '    <td class="right"><input type="text" name="product_discount[' + discount_row + '][price]" value="" /></td>';
 
+  html += '    <td class="right"><input type="text" name="product_discount[' + discount_row + '][label]" value="" /></td>';
+
     html += '    <td class="left"><input type="text" name="product_discount[' + discount_row + '][date_start]" value="" class="date" /></td>';
 
   html += '    <td class="left"><input type="text" name="product_discount[' + discount_row + '][date_end]" value="" class="date" /></td>';
@@ -2548,7 +2548,7 @@ function addDiscount() {
 
 }
 
---></script> 
+//--></script> 
 
 <script type="text/javascript"><!--
 
@@ -2602,7 +2602,7 @@ function addSpecial() {
 
 }
 
---></script> 
+//--></script> 
 
 <script type="text/javascript"><!--
 
@@ -2656,7 +2656,7 @@ function image_upload(field, thumb) {
 
 };
 
---></script> 
+//--></script> 
 
 <script type="text/javascript"><!--
 
@@ -2690,7 +2690,7 @@ function addImage() {
 
 }
 
---></script> 
+//--></script> 
 
 <script type="text/javascript" src="view/javascript/jquery/ui/jquery-ui-timepicker-addon.js"></script> 
 
@@ -2708,7 +2708,7 @@ $('.datetime').datetimepicker({
 
 $('.time').timepicker({timeFormat: 'h:m'});
 
---></script> 
+//--></script> 
 
 <script type="text/javascript"><!--
 
@@ -2845,7 +2845,9 @@ function addProfile() {
 <?php } ?>
 
 
---></script>
+
+//--></script>
+
 
 
 <?php echo $footer; ?>

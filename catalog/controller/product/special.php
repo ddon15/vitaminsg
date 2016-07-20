@@ -164,6 +164,8 @@ class ControllerProductSpecial extends Controller {
 				'description' => utf8_substr(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8')), 0, 100) . '..',
 				'price'       => $price,
 				'special'     => $special,
+				'is_packed'   => $result['no_bottles'] > 1 ? 1 : 0,
+				'no_bottles'  => $result['no_bottles'],
 				'premium_member_price' 	 => $premium_member_price, //[SB]Add member price
 				'is_on_promo' => $isOnPromo, //[SB]Add is on promo
 				'tax'         => $tax,

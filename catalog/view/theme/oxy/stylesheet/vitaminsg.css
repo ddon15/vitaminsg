@@ -706,6 +706,30 @@ border-collapse: collapse;
 	margin: 7px 0px 0px 5px;
 }
 
+.sale-packed-icon {
+	position: absolute;
+	color: white;
+  top: 0;
+  font-size: 14px;
+  padding: 3px 15px;
+	font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+	width: 100%;
+	text-align: center;
+	background-color: #018E01;
+	left: 0;
+	z-index: 10;
+}
+
+.overflow-hidden {
+	overflow: hidden !important;
+}
+
+.ribbon-green:before {
+  left: 0;
+}
+.ribbon-green:after {
+  right: 0;
+}​
 
 /*Media Screen Size queries*/
 @media only screen and (max-width: 1009px)

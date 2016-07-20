@@ -287,6 +287,8 @@ class ControllerProductSearch extends Controller {
 					'special'     => $special,
 					'premium_member_price' 	 => $premium_member_price, //[SB]Add member price
 					'is_on_promo' => $isOnPromo, //[SB]Add is on promo
+					'is_packed'   => $result['no_bottles'] > 1 ? 1 : 0,
+					'no_bottles'  => $result['no_bottles'],
 					'tax'         => $tax,
 					'rating'      => $result['rating'],
 					'reviews'     => sprintf($this->language->get('text_reviews'), (int)$result['reviews']),

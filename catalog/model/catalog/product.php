@@ -47,6 +47,7 @@ class ModelCatalogProduct extends Model {
 				'mpn'              => $query->row['mpn'],
 				'location'         => $query->row['location'],
 				'quantity'         => $query->row['quantity'],
+				'no_bottles'       => $query->row['no_bottles'],
 				'stock_status'     => $query->row['stock_status'],
 				'image'            => $query->row['image'],
 				'manufacturer_id'  => $query->row['manufacturer_id'],
@@ -877,11 +878,17 @@ class ModelCatalogProduct extends Model {
 	}
         
         
-        //[MY]
-        public function getProductPromotions($product_id) {
+    //[MY]
+    public function getProductPromotions($product_id) {
 		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "product_discount WHERE product_id = '" . (int)$product_id . "' AND customer_group_id = '" . (int)$customer_group_id . "' AND quantity > 1 AND ((date_start = '0000-00-00' OR date_start < NOW()) AND (date_end = '0000-00-00' OR date_end > NOW())) ORDER BY quantity ASC, priority ASC, price ASC");
 
 		return $query->rows;		
 	}
+
+	public function getProductFreeForMembership($sku = 'FFM2k16')
+	{
+		$query = $this->db->query("SELECT p.*, pd.name, ps.price as discount_price FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_special ps ON (p.product_id = ps.product_id) LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id) WHERE p.sku = '" . $sku . "'");
+	
+		return $query->row;	
+	}
 }
-?>

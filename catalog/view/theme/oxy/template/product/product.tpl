@@ -895,7 +895,7 @@
         <?php endif; ?>
          <!-- PACKED ICON -->
         <?php if (isset($product['is_packed'])&&$product['is_packed']): ?>
-           <span class="sale-packed-icon">PACK OF <?php echo $product['no_bottles'] . ', SAVE $';?></span>
+           <span class="sale-packed-icon">PACK OF <?php echo $product['no_bottles'];?></span>
         <?php endif; ?>
       <div class="flybar"> 
       <?php if ($product['rating']) { ?>

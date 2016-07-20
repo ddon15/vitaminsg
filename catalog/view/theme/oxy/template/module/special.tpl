@@ -9,7 +9,7 @@
         <div class="image">
 		<?php if ((!$product['is_packed']&&$product['special'])&&($this->config->get('oxy_category_sale_badge_status') == 1)) { ?><span class="sale-icon"><?php echo $text_sale; ?></span><?php } ?>
         <?php if ($product['is_packed']): ?>
-          <span class="sale-packed-icon in-banner">PACK OF <?php echo $product['no_bottles'] . ', SAVE $';?></span>
+          <span class="sale-packed-icon in-banner">PACK OF <?php echo $product['no_bottles'];?></span>
         <?php endif; ?>
 		<?php //[SB] Added promo icon
 		if (($product['is_on_promo'])&&($this->config->get('oxy_category_sale_badge_status') == 1)) { ?><span class="promo-icon"><?php echo $text_promo; ?></span><?php } ?>
@@ -19,7 +19,7 @@
         <div class="image">
 		<?php if ((!$product['is_packed']&&$product['special'])&&($this->config->get('oxy_category_sale_badge_status') == 1)) { ?><span class="sale-icon"><?php echo $text_sale; ?></span><?php } ?>
         <?php if ($product['is_packed']): ?>
-          <span class="sale-packed-icon in-banner">PACK OF <?php echo $product['no_bottles'] . ', SAVE $';?></span>
+          <span class="sale-packed-icon in-banner">PACK OF <?php echo $product['no_bottles'];?></span>
         <?php endif; ?>
 		<?php //[SB] Added promo icon
 		if (($product['is_on_promo'])&&($this->config->get('oxy_category_sale_badge_status') == 1)) { ?><span class="promo-icon"><?php echo $text_promo; ?></span><?php } ?>
@@ -76,7 +76,7 @@
         <div class="image">
 		<?php if ((!$product['is_packed']&&$product['special'])&&($this->config->get('oxy_category_sale_badge_status') == 1)) { ?><span class="sale-icon"><?php echo $text_sale; ?></span><?php } ?>
 		<?php if ($product['is_packed']): ?>
-          <span class="sale-packed-icon in-banner">PACK OF <?php echo $product['no_bottles'] . ', SAVE $';?></span>
+          <span class="sale-packed-icon in-banner">PACK OF <?php echo $product['no_bottles'];?></span>
         <?php endif; ?>
         <?php //[SB] Added promo icon
 		if (($product['is_on_promo'])&&($this->config->get('oxy_category_sale_badge_status') == 1)) { ?><span class="promo-icon"><?php echo $text_promo; ?></span><?php } ?>
@@ -86,7 +86,7 @@
         <div class="image">
 		<?php if ((!$product['is_packed']&&$product['special'])&&($this->config->get('oxy_category_sale_badge_status') == 1)) { ?><span class="sale-icon"><?php echo $text_sale; ?></span><?php } ?>
         <?php if ($product['is_packed']): ?>
-          <span class="sale-packed-icon in-banner">PACK OF <?php echo $product['no_bottles'] . ', SAVE $';?></span>
+          <span class="sale-packed-icon in-banner">PACK OF <?php echo $product['no_bottles'];?></span>
         <?php endif; ?>
 		<?php //[SB] Added promo icon
 		if (($product['is_on_promo'])&&($this->config->get('oxy_category_sale_badge_status') == 1)) { ?><span class="promo-icon"><?php echo $text_promo; ?></span><?php } ?>

@@ -718,9 +718,7 @@ border-collapse: collapse;
     top: 0;
     font-size: 16px;
     padding: 3px 15px;
-  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-weight: bold;
-  letter-spacing: 2px;
+	font-family: gotham-font;
 	width: 100%;
 	text-align: center;
 	text-shadow: #DAE4E1 0px 1px 0px;
@@ -736,8 +734,10 @@ border-collapse: collapse;
 }
 
 .sale-packed-icon.in-banner {
-	font-size: 13px;
-	letter-spacing: 1px;
+	font-size: 13px !important;
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
+  font-weight: bold !important;
+  letter-spacing: 2px !important;
 }
 /*Ribbon Tag Label for Pack Product*/
 .ribbon-wrapper {

@@ -887,7 +887,7 @@ class ModelCatalogProduct extends Model {
 
 	public function getProductFreeForMembership($sku = 'FFM2k16')
 	{
-		$query = $this->db->query("SELECT p.*, pd.name, ps.price as discount_price FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_special ps ON (p.product_id = ps.product_id) LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id) WHERE p.sku = '" . $sku . "'");
+		$query = $this->db->query("SELECT p.*, pd.name, ps.price as discount_price FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_special ps ON (p.product_id = ps.product_id) LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id) WHERE p.sku = '" . $sku . "'"); 
 	
 		return $query->row;	
 	}

@@ -32,7 +32,7 @@
 			</div>
 			<div class="premium-member-perks premium-member-perk-2">
 				<img class="premium-member-perks-coming-soon" src="<?php echo $img_perks_coming_soon; ?>" />
-				<img class="premium-member-perks-img" src="<?php echo $img_perks_product_offer; ?>" />
+				<img class="premium-member-perks-img" src="<?php echo $img_perks_product_offer; ?>" /> 
 				<br /><?php echo $text_perks_product_offer; ?>
 			</div>
 			<div class="premium-member-perks premium-member-perk-3">

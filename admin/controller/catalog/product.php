@@ -911,7 +911,7 @@ class ControllerCatalogProduct extends Controller {
 			$this->data['quantity'] = 1;
 		}
 
-		if (isset($this->request->post['quantity'])) {
+		if (isset($this->request->post['no_bottles'])) {
       		$this->data['no_bottles'] = $this->request->post['no_bottles'];
     	} elseif (!empty($product_info)) {
     		$noOfBottles = $product_info['no_bottles'];

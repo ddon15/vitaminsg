@@ -328,7 +328,16 @@ class ModelPremiumMemberDb extends Model
 		$template->data['text_price'] = $this->language->get('text_price');
 		$template->data['text_total'] = $this->language->get('text_total');
 		$template->data['text_footer'] = $this->language->get('text_footer');
+		$template->data['text_billing_address'] = $this->language->get('text_billing_address');
+		$template->data['text_shipping_address'] = $this->language->get('text_shipping_address');
 		
+		$customer_info = $this->getCustomerInfo($customer_email);
+		$customer_address = $this->getCustomerAddress($customer_info['customer_id']);
+
+		$template->data['customer'] = $customer_info;
+		$template->data['customer_address'] = $customer_address;
+		$template->data['customer_address_country'] = $this->getCustomerCountry($customer_address['country_id']);
+
 		$template->data['logo'] = $store_url . 'image/' . $this->config->get('config_logo');		
 		$template->data['store_name'] = $store_name;
 		$template->data['store_url'] = $store_url;
@@ -473,6 +482,20 @@ class ModelPremiumMemberDb extends Model
 		return empty($row) ?
 			array('customer_id' => 0, 'firstname' => '', 'lastname' => '', 'member_num' => '', 'customer_group_id' => '') :
 			array('customer_id' => $row['customer_id'], 'firstname' => $row['firstname'], 'lastname' => $row['lastname'], 'member_num' => $row['member_num'], 'customer_group_id' => $row['customer_group_id']);
+	}
+
+	private function getCustomerAddress($customer_id)
+	{
+		$result = $this->db->query("SELECT * FROM " . DB_PREFIX . "address customer_id = '" . $this->db->escape($customer_id) . "'");
+
+		return $result->row;
+	}
+
+	private function getCustomerCountry($country_id)
+	{
+		$result = $this->db->query("SELECT * FROM " . DB_PREFIX . "country country_id = '" . $this->db->escape($country_id) . "'");
+
+		return $result->row;
 	}
 	
 	private function getCustomerName($customer_id)

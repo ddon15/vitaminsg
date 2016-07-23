@@ -207,7 +207,7 @@ ENDDOC;
 								<h1>Get Your Free Gift (Worth $23.80) Today!</h1>	
 								
 								<div class="aboutvidaylin clearfix">
-									<div id="exTab1" class="container">	
+									<div id="exTab1" class="row">	
 										<ul  class="nav nav-pills">
 											<li class="active">
 												<a  href="#1a" data-toggle="tab">English</a>

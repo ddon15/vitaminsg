@@ -18,8 +18,15 @@ if (hasRemainingBottles()) {
 }
 
 
-	$status = ""; 
-	if ($_POST['frm_submitted'] == "1") {
+	<?php
+	$status = "";
+	$mname = "";
+	$memail = "";
+	$mmobile = "";
+	$maddress = "";
+	$mcode = "";
+
+	if (isset($_POST['frm_submitted']) && $_POST['frm_submitted'] == "1") {
 				
 		//retrieve
 		$mname = $_POST['mname'];
@@ -46,7 +53,6 @@ if (hasRemainingBottles()) {
 			$errors[] = "Please enter your claim code";
 		}
 		
-		
 		//validate claim code
 		$mcode = strtoupper($mcode);
 		$claimcodes = file_get_contents('claimcodes.txt');
@@ -54,8 +60,6 @@ if (hasRemainingBottles()) {
 		if (array_search($mcode, $claimcodes) === false) {
 			$errors[] = "Invalid claim code";
 		}
-
-		
 						
 		//process
 		if (sizeof($errors)) {
@@ -77,10 +81,10 @@ if (hasRemainingBottles()) {
 			//admin email
 			$to = "info@vitamin.sg";
 			//$to = "kianann@vitamin.sg";
-			$subject = "Submission: Free Abbott Vidaylin Minibear Gummies";
+			$subject = "Submission: Free Abbott Surbex Natopherol Vegicaps";
 			$from = "Vitamin.sg <info@vitamin.sg>";
 			$message = <<<ENDDOC
-A submission has been made for a free bottle of Vidaylin Gummies.<br /><br />
+A submission has been made for a free bottle of Surbex Natopherol Vegicaps.<br /><br />
 ===========================================================<br /><br />
 <strong>Name:</strong> {mem_name}<br/><br />
 <strong>Email:</strong> {mem_email}<br/><br />
@@ -108,10 +112,10 @@ ENDDOC;
 
 			//sender email
 			$to = $memail;
-			$subject = "Submission Received: Free Abbott Vidaylin Minibear Gummies";
+			$subject = "Submission Received: Free Abbott Surbex Natopherol Vegicaps";
 			$from = "Vitamin.sg <info@vitamin.sg>";
 			$message = <<<ENDDOC
-Thank you for your submission for your free bottle of Abbott Vidaylin Minibear Gummies.<br /><br />
+Thank you for your submission for your free bottle of Abbott Surbex Natopherol Vegicaps.<br /><br />
 You will be hearing from us shortly.<br /><br />
 Here is a copy of the information you sent to us:<br /><br />
 ===========================================================<br /><br />
@@ -158,7 +162,7 @@ ENDDOC;
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
-	<title>Get a Free Bottle of Vidaylin Minibear Gummies!</title>
+	<title>Get a Free Bottle of Surbex Natopherol Vegicaps!</title>
 
    	<?php //CDN scripts last checked - 21 May 2014 ?>
 
@@ -185,14 +189,22 @@ ENDDOC;
 	  ga('send', 'pageview');
 	
 	</script>
-	
+	<style type="text/css">
+		#exTab1 .tab-content {
+		  color : white;
+		  background-color: #428bca;
+		  padding : 5px 15px;
+		}
+		/* remove border radius for the tab */
+		#exTab1 .nav-pills > li > a {
+		  border-radius: 0;
+		}
+	</style>
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
-
-	
 </head>
 
 <body>
@@ -211,10 +223,66 @@ ENDDOC;
 								<img src="logo.png" id="logo" class="img-responsive" />
 								<h1>Get Your Free Gift (Worth $23.80) Today!</h1>	
 								
-								<p>Thank you for your interest in children’s multivitamins by Abbott. </p>
-								<p>Due to an overwhelming response, we have given out all of Abbott’s Vidaylin Minibear Gummies. We are looking for possibilities to increase our stock, and are doing our best to deliver this essential multivitamin for your children into your hands.</p>
-								<p>Sign up, leave your contact, and we will keep you updated. </p>
-								<h3 style="text-align: center"><strong>Sign up to make sure that you are among the first to get it if/when we have additional supply. Don’t miss out on your free gift!</strong></h3>
+								<div class="aboutvidaylin clearfix">
+									<div id="exTab1" class="row">	
+										<ul  class="nav nav-pills">
+											<li class="active">
+												<a  href="#1a" data-toggle="tab">English</a>
+											</li>
+											<li>
+												<a href="#2a" data-toggle="tab">华语/華語</a>
+											</li>
+											<li>
+												<a href="#3a" data-toggle="tab">Bahasa</a>
+											</li>
+										</ul>
+
+										<div class="tab-content clearfix">
+											<img id="heroimg" src="surbex.png" class="pull-right" />
+											<div class="tab-pane active" id="1a">
+												<h3>Protection from free-radical damage with a Natural Source of Vitamin E from Abbott</h3>
+												<p>Abbott’s Surbex Natopherol ® Vegicaps capsules are a Vitamin E supplement for adults.</p>
+												<p>Features:</p>
+												<ul>
+													<li>Derived from plant based active ingredient</li>
+													<li>Contains the active source of natural Vitamin E d-alpha tocopherol</li>
+													<li><b>400 I.U. Vitamin E</b> acts as an antioxidant to fight off free radical generation</li>
+													<li>Uses plant based capsule</li>
+													<li>Soft and easy to swallow</li>
+													<li>Convenient once-a-day dosage</li>
+													<li>To be taken after a proper meal</li>
+													<li>Suitable for vegetarian</li>
+												</ul>
+											</div>
+											<div class="tab-pane" id="2a">
+												<p>
+													天然维他命E d-alpha tocopherol(生育酚)
+													400 I.U.维他命E作为抗氧化剂以防御自由基的伤害
+													由海藻制成的胶囊，不含任何动物成分
+													柔软且容易吞服
+													每天只需一粒，方便食用
+													需在进餐后服用
+													适合素食者
+												</p>
+											</div>
+											<div class="tab-pane" id="3a">
+												<p>
+													Vitamin E semula jadi yang aktif d-alfa tokoferol
+													400 I.U. Vitamin E bertindak sebagai antioksidan untuk melawan serangan radikal bebas
+													Kapsul yang diperbuat daripada bahan yang berasal daripada rumpai laut
+													Lembut dan senang ditelan
+													Pengambilan satu kapsul sehari
+													Diambil selepas sajian seimbang
+													Sesuai untuk vegetarian
+												</p>
+											</div>
+										</div>
+									  </div>
+								</div>
+																
+								<p>Here's how:</p>
+
+								<p>1. Complete the registration form below and we will send you your gift absolutely FREE.</p>
 
 								<div class='your-details'>
 									<h3 id='theform'>Your Details</h3>
@@ -244,27 +312,13 @@ ENDDOC;
 								</div>
 								<div class="col-sm-12 tncs">
 									<p><input type="checkbox" id="tnc" name="tnc" value="agree" required="required">&nbsp;&nbsp;&nbsp;I agree to the <a href="#" class='tncswal'>Terms and Conditions</a></p>
-									<p><input type="submit" class="btn btn-lg btn-danger" value="Keep Me Updated! &raquo;" />
+									<p><input type="submit" class="btn btn-lg btn-danger" value="Get a Free Bottle of Surbex Natopherol Vegicaps! &raquo;" />
 									<input type="hidden" name="frm_submitted" value="1" /></p>
 								</div>
-								<p>We will send your gift to you—absolutely FREE.</p>
-								<p>This offer is available on a "first come first serve" basis while stock lasts.</p>
 
-
-
+								<p>2. Share this offer with your friends, and they too will receive a free bottle of Surbex Natopherol Vegicaps when they complete the registration form.</p>
 								
-								<div class="aboutvidaylin clearfix">
-									<img id="heroimg" src="vidaylin.png" class="pull-right" />
-									<h3>Nourish your children for optimal growth and development with Abbott!</h3>
-									<p>Abbott's Vidaylin Minibear Gummies are berry-flavoured chewable gummies that your children are sure to love. </p>
-									<p>Every delicious gummy nourishes your children with the nutrients of 5 garden vegetables and 9 vitamins.</p>
-									<p>Your children will be chewing on the goodness of tomatoes, spinach, carrots, beetroot and artichoke. They will also be benefitting from a healthy dose of Vitamin A, Vitamin D3, Vitamin E, Vitamin C, Vitamin B6, Vitamin B12, Niacin, Biotin, and Folic Acid. It is everything that is essential for a healthy child’s growth and development.</p>
-									<p>Keep your children healthy today with Vidaylin Minibear Gummies!</p>
-								</div>
-																
-
-
-
+								<p>3. This offer is available on a "first come first serve" basis while stock lasts.</p>
 							</div>
 						</div>
 																		

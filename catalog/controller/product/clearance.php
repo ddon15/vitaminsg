@@ -129,8 +129,8 @@ class ControllerProductClearance extends Controller {
 					'name'    	 => strlen($clearance_product['name']) > 70 ? substr($clearance_product['name'],0,70)." ..." : $clearance_product['name'],
 					'description' => utf8_substr(strip_tags(html_entity_decode($clearance_product['description'], ENT_QUOTES, 'UTF-8')), 0, 250) . '..',
 					'price'   	 => $price,
-					'is_packed'   => $result['no_bottles'] > 1 ? 1 : 0,
-					'no_bottles'  => $result['no_bottles'],
+					'is_packed'   => $clearance_product['no_bottles'] > 1 ? 1 : 0,
+					'no_bottles'  => $clearance_product['no_bottles'],
 					'special' 	 => $special,
 					'premium_member_price' 	 => $premium_member_price, //[SB]Add member price
 					'rating'     => $rating,

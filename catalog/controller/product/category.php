@@ -302,6 +302,8 @@ class ControllerProductCategory extends Controller {
 						'premium_member_price' 	 => $premium_member_price, //[SB]Add member price
 						'is_on_promo' => $isOnPromo, //[SB]Add is on promo
 						'tax'         => $tax,
+						'is_packed'   => $result['no_bottles'] > 1 ? 1 : 0,
+						'no_bottles'  => $result['no_bottles'],
 						'rating'      => $result['rating'],
 						'reviews'     => sprintf($this->language->get('text_reviews'), (int)$result['reviews']),
 						'href'        => $this->url->link('product/product', 'path=' . $this->request->get['path'] . '&product_id=' . $result['product_id'] . $url),
@@ -309,7 +311,7 @@ class ControllerProductCategory extends Controller {
 						'brand_url'   => $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $result['manufacturer_id']),
 						'points'		=> $result['points'], //[SB] Added Redemption
 						'redeem_only'	=> $result['redeem_only'] //[SB] Added Redemption
-					);
+					);		
 				}
 			}
 			

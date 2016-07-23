@@ -221,8 +221,8 @@ ENDDOC;
 										</ul>
 
 										<div class="tab-content clearfix">
+											<img id="heroimg" src="surbex.png" class="pull-right" />
 											<div class="tab-pane active" id="1a">
-												<img id="heroimg" src="surbex.png" class="pull-right" />
 												<h3>Protection from free-radical damage with a Natural Source of Vitamin E from Abbott</h3>
 												<p>Abbott’s Surbex Natopherol ® Vegicaps capsules are a Vitamin E supplement for adults.</p>
 												<p>Features:</p>

@@ -1,6 +1,12 @@
 <?php
-	$status = ""; 
-	if ($_POST['frm_submitted'] == "1") {
+	$status = "";
+	$mname = "";
+	$memail = "";
+	$mmobile = "";
+	$maddress = "";
+	$mcode = "";
+
+	if (isset($_POST['frm_submitted']) && $_POST['frm_submitted'] == "1") {
 				
 		//retrieve
 		$mname = $_POST['mname'];

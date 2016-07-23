@@ -63,7 +63,7 @@ class ModelSaleBrandPromotions extends Model {
 		//remove product promotions
 		if (isset($bp['productids']) && $bp['productIds']) {
 			$productIds  = rtrim($bp['productIds'], ",");
-			$this->db->query("DELETE FROM " . DB_PREFIX . "brand_promotions WHERE id '" .  (int)$bp['id']  . "'");
+			$this->db->query("DELETE FROM " . DB_PREFIX . "brand_promotions WHERE id = '" .  (int)$bp['id']  . "'");
 			$this->db->query("DELETE FROM " . DB_PREFIX . "product_special WHERE product_id IN($productIds)");
 		}
 

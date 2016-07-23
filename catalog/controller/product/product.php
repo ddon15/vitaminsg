@@ -609,6 +609,8 @@ class ControllerProductProduct extends Controller {
 					'name'    	 => $result['name'],
 					'description' => utf8_substr(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8')), 0, 60) . '..',	
 					'price'   	 => $price,
+					'is_packed'   => $result['no_bottles'] > 1 ? 1 : 0,
+					'no_bottles'  => $result['no_bottles'],
 					'special' 	 => $special,
 					'premium_member_price' => $premium_member_price,
 					'rating'     => $rating,

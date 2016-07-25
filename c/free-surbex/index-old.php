@@ -264,7 +264,7 @@ ENDDOC;
 											</div>
 											<div class="tab-pane" id="3a">
 												<h3>Sumber Vitamin E Semulajadi.</h3>
-												<p>KEGUNAAN: Supplemen Vitamin E untuk orang dewasa.</p>
+												<p><b>KEGUNAAN:</b>  Supplemen Vitamin E untuk orang dewasa.</p>
 												<p><b>CIRI-CIRI: </b></p>
 												<ul>
 													<li>Diekstrak daripada bahan aktif daripada tumbuhan semula jadi</li>

@@ -214,6 +214,8 @@ ENDDOC;
 		.font-size-22px {
 			font-size: 22px;
 		}
+
+
 	</style>
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -337,7 +339,7 @@ ENDDOC;
 								</div>
 								<div class="col-sm-12 tncs">
 									<p><input type="checkbox" id="tnc" name="tnc" value="agree" required="required">&nbsp;&nbsp;&nbsp;I agree to the <a href="#" class='tncswal'>Terms and Conditions</a></p>
-									<p><input type="submit" class="btn btn-lg btn-danger" value="Get a Free Bottle of Surbex Natopherol Vegicaps! &raquo;" />
+									<p><input type="submit" class="btn btn-lg btn-danger font-size-22px" value="Get a Free Bottle of Surbex Natopherol Vegicaps! &raquo;" />
 									<input type="hidden" name="frm_submitted" value="1" /></p>
 								</div>
 

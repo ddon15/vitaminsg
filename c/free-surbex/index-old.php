@@ -145,7 +145,7 @@ ENDDOC;
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
-	<title>Get a Free Bottle of Surbex Natopherol Vegicaps!</title>
+	<title>Get Your Free Gift (Worth $37.20) Today!</title>
 
    	<?php //CDN scripts last checked - 21 May 2014 ?>
 
@@ -174,8 +174,8 @@ ENDDOC;
 	</script>
 	<style type="text/css">
 		#exTab1 .tab-content {
-		  color : white;
-		  background-color: #428bca;
+		  color : #1D1818;
+		  background-color: #E8F9FF;
 		  padding : 5px 15px;
 		}
 		/* remove border radius for the tab */
@@ -238,26 +238,36 @@ ENDDOC;
 												</ul>
 											</div>
 											<div class="tab-pane" id="2a">
-												<p>
-													天然维他命E d-alpha tocopherol(生育酚)
-													400 I.U.维他命E作为抗氧化剂以防御自由基的伤害
-													由海藻制成的胶囊，不含任何动物成分
-													柔软且容易吞服
-													每天只需一粒，方便食用
-													需在进餐后服用
-													适合素食者
-												</p>
+												<div class="tab-pane active" id="1a">
+												<h3>天然维他命E</h3>
+												<p>用处: 适合成人服用的维他命E补剂品。</p>
+												<p>特点:</p>
+												<ul>
+													<li>提炼自有效植物成份</li>
+													<li>富含活性的天然维他命E d-alpha tocopherol(生育酚)</li>
+													<li><b>400 I.U.维他命E</b>作为抗氧化剂以防御自由基的伤害</li>
+													<li>由海藻制成的胶囊，不含任何动物成分</li>
+													<li>柔软且容易吞服</li>
+													<li>每天只需一粒，方便食用</li>
+													<li>需在进餐后服用</li>
+													<li>适合素食者</li>
+												</ul>
+											</div>
 											</div>
 											<div class="tab-pane" id="3a">
-												<p>
-													Vitamin E semula jadi yang aktif d-alfa tokoferol
-													400 I.U. Vitamin E bertindak sebagai antioksidan untuk melawan serangan radikal bebas
-													Kapsul yang diperbuat daripada bahan yang berasal daripada rumpai laut
-													Lembut dan senang ditelan
-													Pengambilan satu kapsul sehari
-													Diambil selepas sajian seimbang
-													Sesuai untuk vegetarian
-												</p>
+												<h3>Sumber Vitamin E Semulajadi.</h3>
+												<p>KEGUNAAN: Supplemen Vitamin E untuk orang dewasa.</p>
+												<p>特点:</p>
+												<ul>
+													<li>Diekstrak daripada bahan aktif daripada tumbuhan semula jadi</li>
+													<li>Mengandungi sumber Vitamin E semula jadi yang aktif d-alfa tokoferol</li>
+													<li><b>400 I.U. Vitamin E</b> bertindak sebagai antioksidan untuk melawan serangan radikal bebas</li>
+													<li>Kapsul yang diperbuat daripada bahan yang berasal daripada rumpai laut</li>
+													<li>Lembut dan senang ditelan</li>
+													<li>Pengambilan satu kapsul sehari</li>
+													<li>Diambil selepas sajian seimbang</li>
+													<li>Sesuai untuk vegetarian</li>
+												</ul>
 											</div>
 										</div>
 									  </div>

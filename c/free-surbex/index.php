@@ -17,8 +17,6 @@ if (hasRemainingBottles()) {
 	exit;
 }
 
-
-	<?php
 	$status = "";
 	$mname = "";
 	$memail = "";

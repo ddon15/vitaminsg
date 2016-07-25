@@ -205,6 +205,15 @@ ENDDOC;
 		.features {
 			font-weight: bolder;
 		}
+
+		.font-size-30px {
+			font-size: 30px;
+		}
+
+
+		.font-size-22px {
+			font-size: 22px;
+		}
 	</style>
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -296,9 +305,9 @@ ENDDOC;
 									  </div>
 								</div>
 																
-								<p>Here's how:</p>
+								<p class="font-size-30px">Here's how:</p>
 
-								<p>1. Complete the registration form below and we will send you your gift absolutely FREE.</p>
+								<p class="font-size-22px">1. Complete the registration form below and we will send you your gift absolutely FREE.</p>
 
 								<div class='your-details'>
 									<h3 id='theform'>Your Details</h3>
@@ -332,9 +341,9 @@ ENDDOC;
 									<input type="hidden" name="frm_submitted" value="1" /></p>
 								</div>
 
-								<p>2. Share this offer with your friends, and they too will receive a free bottle of Surbex Natopherol Vegicaps when they complete the registration form.</p>
+								<p class="font-size-22px">2. Share this offer with your friends, and they too will receive a free bottle of Surbex Natopherol Vegicaps when they complete the registration form.</p>
 								
-								<p>3. This offer is available on a "first come first serve" basis while stock lasts.</p>
+								<p class="font-size-22px">3. This offer is available on a "first come first serve" basis while stock lasts.</p>
 							</div>
 						</div>
 																		

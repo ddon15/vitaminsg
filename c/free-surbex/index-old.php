@@ -337,7 +337,7 @@ ENDDOC;
 			<footer id="footer" class="row">
 				
 				<div class="col-sm-12 text-center">
-					Copyright &copy; 2015 Sainhall Nutrihealth Pte Ltd
+					Copyright &copy; 2016 Sainhall Nutrihealth Pte Ltd
 				</div>
 				
 			</footer><!-- /#footer -->

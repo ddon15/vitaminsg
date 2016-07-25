@@ -199,6 +199,11 @@ ENDDOC;
 		.font-size-22px {
 			font-size: 22px;
 		}
+
+		.social-media-box {
+			text-align: center;
+			margin: 30px 77px 0px;
+		}
 	</style>
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -320,8 +325,8 @@ ENDDOC;
 										</div> -->
 									</div>
 								</div>
-								<div class="row">
-									<div class="col-sm-12">
+								<div class="row ">
+									<div class="col-sm-12 social-media-box">
 										<div class="fb-like" data-href="https://www.facebook.com/vitaminsg/?fref=ts" data-layout="standard" data-action="like" data-size="large" data-show-faces="false" data-share="true"></div>
 									</div>
 								</div>

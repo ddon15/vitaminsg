@@ -314,11 +314,14 @@ ENDDOC;
 											<label for="mobile" class="control-label">Mailing Address (Singapore Only)</label>
 											<div><textarea class="form-control" id="maddress" name="maddress" required="required"><?php echo htmlentities($maddress); ?></textarea></div>
 										</div>
-										<div class="form-group">
+									<!-- 	<div class="form-group">
 											<label for="code" class="control-label">Claim Code</label>
 											<div><input type="text" class="form-control" id="mcode" name="mcode" value="<?php echo htmlentities($mcode); ?>"required="required"></div>
-										</div>
+										</div> -->
 									</div>
+								</div>
+								<div class="col-sm-12">
+									<div class="fb-like" data-href="https://www.facebook.com/vitaminsg/?fref=ts" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
 								</div>
 								<div class="col-sm-12 tncs">
 									<p><input type="checkbox" id="tnc" name="tnc" value="agree" required="required">&nbsp;&nbsp;&nbsp;I agree to the <a href="#" class='tncswal'>Terms and Conditions</a></p>
@@ -366,6 +369,14 @@ ENDDOC;
 	</div>
 </div>	
 
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 </body>
 

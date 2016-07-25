@@ -212,7 +212,7 @@ ENDDOC;
 							<div class='col-sm-12'>
 								<?php echo $status;  ?>
 								<img src="logo.png" id="logo" class="img-responsive" />
-								<h1>Get Your Free Gift (Worth $23.80) Today!</h1>	
+								<h1>Get Your Free Gift (Worth $37.20) Today!</h1>	
 								
 								<div class="aboutvidaylin clearfix">
 									<div id="exTab1" class="row">	

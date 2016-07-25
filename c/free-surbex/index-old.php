@@ -182,6 +182,14 @@ ENDDOC;
 		#exTab1 .nav-pills > li > a {
 		  border-radius: 0;
 		}
+
+		.tab-pane {
+			padding: 10px;
+		}
+
+		.features {
+			font-weight: bolder;
+		}
 	</style>
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -225,7 +233,7 @@ ENDDOC;
 											<div class="tab-pane active" id="1a">
 												<h3>Protection from free-radical damage with a Natural Source of Vitamin E from Abbott</h3>
 												<p>Abbott’s Surbex Natopherol ® Vegicaps capsules are a Vitamin E supplement for adults.</p>
-												<p>Features:</p>
+												<p><b>Features:</b></p>
 												<ul>
 													<li>Derived from plant based active ingredient</li>
 													<li>Contains the active source of natural Vitamin E d-alpha tocopherol</li>
@@ -240,8 +248,8 @@ ENDDOC;
 											<div class="tab-pane" id="2a">
 												<div class="tab-pane active" id="1a">
 												<h3>天然维他命E</h3>
-												<p>用处: 适合成人服用的维他命E补剂品。</p>
-												<p>特点:</p>
+												<p><b>用处: </b>  适合成人服用的维他命E补剂品。</p>
+												<p><b>特点: </b></p>
 												<ul>
 													<li>提炼自有效植物成份</li>
 													<li>富含活性的天然维他命E d-alpha tocopherol(生育酚)</li>
@@ -257,7 +265,7 @@ ENDDOC;
 											<div class="tab-pane" id="3a">
 												<h3>Sumber Vitamin E Semulajadi.</h3>
 												<p>KEGUNAAN: Supplemen Vitamin E untuk orang dewasa.</p>
-												<p>特点:</p>
+												<p><b>CIRI-CIRI: </b></p>
 												<ul>
 													<li>Diekstrak daripada bahan aktif daripada tumbuhan semula jadi</li>
 													<li>Mengandungi sumber Vitamin E semula jadi yang aktif d-alfa tokoferol</li>

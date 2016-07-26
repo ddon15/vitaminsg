@@ -356,13 +356,13 @@ ENDDOC;
 								   </div>
 								   
 								   <div class = "col-sm-8 col-md-4">
-								      <a href = "#" class = "thumbnail">
+								      <a href = "https://www.facebook.com/vitaminsg/posts/1003350073112542" class = "thumbnail" id="share-btn">
 								         <img src = "share_offer.png" alt = "Share Post">
 								      </a>
 								   </div>
 								   
 								   <div class = "col-sm-8 col-md-4">
-								      <a href = "#" class = "thumbnail">
+								      <a href="mailto:johndoe@test.com" class = "thumbnail">
 								         <img src = "icon_invite_friends.png.jpeg" alt = "Invite Friends">
 								      </a>
 								   </div>
@@ -428,6 +428,15 @@ ENDDOC;
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
+<script type="text/javascript">
+	document.getElementById('share-btn').onclick = function() {
+	  FB.ui({
+	    method: 'share',
+	    display: 'popup',
+	    href: 'https://developers.facebook.com/docs/',
+	  }, function(response){});
+	}
+</script>
 </body>
 
 </html>

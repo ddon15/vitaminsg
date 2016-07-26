@@ -352,8 +352,9 @@ ENDDOC;
 								   <div class = "col-sm-8 col-md-4">
 								      <a href = "#" class = "thumbnail" id="fb-like">
 								         <img src = "like-us-on-facebook.png" alt = "Like Us on Facebook">
-								         <fb:like href="https://www.facebook.com/vitaminsg/?fref=ts" layout="standard"  width="400" action="like" font="segoe ui" colorscheme="light" id="facebook" />
+
 								      </a>
+								      <fb:like href="https://www.facebook.com/vitaminsg/?fref=ts" layout="standard"  width="400" action="like" font="segoe ui" colorscheme="light" id="facebook" />
 								   </div>
 								   
 								   <div class = "col-sm-8 col-md-4">

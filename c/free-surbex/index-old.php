@@ -366,8 +366,9 @@ ENDDOC;
 								         <img src = "icon_invite_friends.png.jpeg" alt = "Invite Friends">
 								      </a>
 								   </div>
-								   <div class="hidden"><fb:like href="https://www.facebook.com/vitaminsg/?fref=ts" layout="standard" show_faces="true" width="400" action="like" font="segoe ui" colorscheme="light" id="facebook" /></div>
+								
 								</div>
+								   <fb:like href="https://www.facebook.com/vitaminsg/?fref=ts" layout="standard" show_faces="true" width="400" action="like" font="segoe ui" colorscheme="light" id="facebook" />
 								<div class="col-sm-12 tncs">
 									<p><input type="checkbox" id="tnc" name="tnc" value="agree" required="required">&nbsp;&nbsp;&nbsp;<span class="">I agree to the</span> <a href="#" class='tncswal'>Terms and Conditions</a></p>
 									<p><input type="submit" class="btn btn-lg btn-danger font-size-22px" value="Get a Free Bottle of Surbex Natopherol Vegicaps! &raquo;" />
@@ -470,6 +471,7 @@ ENDDOC;
 	}
 
 	document.getElementById('fb-like').onclick = function() {
+		console.log('test');
 		$('fb:like').trigger('click');
 	}
 </script>

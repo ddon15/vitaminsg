@@ -204,6 +204,11 @@ ENDDOC;
 			text-align: center;
 			margin: 30px 77px 0px;
 		}
+
+		.image-size {
+			height: 330px;
+			width: 191px;
+		}
 	</style>
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -243,7 +248,7 @@ ENDDOC;
 										</ul>
 
 										<div class="tab-content clearfix">
-											<img id="heroimg" src="surbex.png" class="pull-right" />
+											<img id="heroimg" src="surbex.png" class="pull-right image-size " />
 											<div class="tab-pane active" id="1a">
 												<h3>Protection from free-radical damage with a Natural Source of Vitamin E from Abbott</h3>
 												<p>Abbott’s Surbex Natopherol ® Vegicaps capsules are a Vitamin E supplement for adults.</p>

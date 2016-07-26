@@ -344,7 +344,7 @@ ENDDOC;
 									</div>
 								</div>
 								<div class="col-sm-12 tncs">
-									<p><input type="checkbox" id="tnc" name="tnc" value="agree" required="required">&nbsp;&nbsp;&nbsp;I agree to the <a href="#" class='tncswal font-size-12px'>Terms and Conditions</a></p>
+									<p><input type="checkbox" id="tnc" name="tnc" value="agree" required="required">&nbsp;&nbsp;&nbsp;<span class="font-size-12px">I agree to the</span> <a href="#" class='tncswal font-size-12px'>Terms and Conditions</a></p>
 									<p><input type="submit" class="btn btn-lg btn-danger font-size-22px" value="Get a Free Bottle of Surbex Natopherol Vegicaps! &raquo;" />
 									<input type="hidden" name="frm_submitted" value="1" /></p>
 								</div>

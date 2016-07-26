@@ -297,7 +297,7 @@ ENDDOC;
 																
 								<p class="font-size-30px">Here's how:</p>
 
-								<p class="font-size-22px">Step 1. Complete the registration form below for us to mail you your gift absolutly FREE.</p>
+								<p class="font-size-22px"><b>Step 1</b>. Complete the registration form below for us to mail you your gift absolutly FREE.</p>
 
 								<div class='your-details'>
 									<h3 id='theform'>Your Details</h3>
@@ -322,7 +322,7 @@ ENDDOC;
 									</div>
 								</div>
 
-								<p class="font-size-22px">Step 2. Share this offer with your friends, and they too will recieve a free bottle of Surbex Natopherol Vegicaps when they complete the registration form.</p>
+								<p class="font-size-22px"><b>Step 2</b>. Share this offer with your friends, and they too will recieve a free bottle of Surbex Natopherol Vegicaps when they complete the registration form.</p>
 								<div class="row ">
 									<div class="col-sm-12 social-media-box">
 										<div class="fb-like" data-href="https://www.facebook.com/vitaminsg/?fref=ts" data-layout="standard" data-action="like" data-size="large" data-show-faces="false" data-share="false"></div>

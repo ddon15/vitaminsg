@@ -200,6 +200,11 @@ ENDDOC;
 			font-size: 22px;
 		}
 
+
+		.font-size-12px {
+			font-size: 12px;
+		}
+
 		.social-media-box {
 			text-align: center;
 			margin: 30px 77px 0px;
@@ -326,7 +331,7 @@ ENDDOC;
 										</div>
 									</div>
 								</div>
-
+								<br>
 								<p class="font-size-22px"><b>Step 2</b>. Share this offer with your friends, and they too will recieve a free bottle of Surbex Natopherol Vegicaps when they complete the registration form.</p>
 								<div class="row text-center">
 									<div class="fb-post" data-href="https://www.facebook.com/vitaminsg/posts/1003350073112542" data-width="500" data-show-text="true"><blockquote cite="https://www.facebook.com/vitaminsg/posts/1003350073112542" class="fb-xfbml-parse-ignore"><p>Did you know: Good things come in bundles... and now that applies to vitamins too!
@@ -339,7 +344,7 @@ ENDDOC;
 									</div>
 								</div>
 								<div class="col-sm-12 tncs">
-									<p><input type="checkbox" id="tnc" name="tnc" value="agree" required="required">&nbsp;&nbsp;&nbsp;I agree to the <a href="#" class='tncswal'>Terms and Conditions</a></p>
+									<p><input type="checkbox" id="tnc" name="tnc" value="agree" required="required">&nbsp;&nbsp;&nbsp;I agree to the <a href="#" class='tncswal font-size-12px'>Terms and Conditions</a></p>
 									<p><input type="submit" class="btn btn-lg btn-danger font-size-22px" value="Get a Free Bottle of Surbex Natopherol Vegicaps! &raquo;" />
 									<input type="hidden" name="frm_submitted" value="1" /></p>
 								</div>

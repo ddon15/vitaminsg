@@ -323,7 +323,7 @@ ENDDOC;
 								</div>
 
 								<p class="font-size-22px"><b>Step 2</b>. Share this offer with your friends, and they too will recieve a free bottle of Surbex Natopherol Vegicaps when they complete the registration form.</p>
-								<div class="row">
+								<div class="row text-center">
 									<div class="fb-post" data-href="https://www.facebook.com/vitaminsg/posts/1003350073112542" data-width="500" data-show-text="true"><blockquote cite="https://www.facebook.com/vitaminsg/posts/1003350073112542" class="fb-xfbml-parse-ignore"><p>Did you know: Good things come in bundles... and now that applies to vitamins too!
 
 									Launching our Sundown Naturals...</p>Posted by <a href="https://www.facebook.com/vitaminsg/">Vitamin.SG</a> on&nbsp;<a href="https://www.facebook.com/vitaminsg/posts/1003350073112542">Thursday, July 21, 2016</a></blockquote></div>

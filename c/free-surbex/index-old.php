@@ -214,6 +214,11 @@ ENDDOC;
 			height: 330px !important;
 			width: 191px !important;
 		}
+
+		.social-media img{
+			height: 90px !important;
+		}
+
 	</style>
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -343,20 +348,20 @@ ENDDOC;
 										<div class="fb-like" data-href="https://www.facebook.com/vitaminsg/?fref=ts" data-layout="standard" data-action="like" data-size="large" data-show-faces="false" data-share="false"></div>
 									</div>
 								</div> -->
-								<div class = "row">
-								   <div class = "col-sm-6 col-md-3">
+								<div class = "row social-media">
+								   <div class = "col-sm-8 col-md-4">
 								      <a href = "#" class = "thumbnail">
 								         <img src = "like-us-on-facebook.png" alt = "Like Us on Facebook">
 								      </a>
 								   </div>
 								   
-								   <div class = "col-sm-6 col-md-3">
+								   <div class = "col-sm-8 col-md-4">
 								      <a href = "#" class = "thumbnail">
 								         <img src = "share_offer.png" alt = "Share Post">
 								      </a>
 								   </div>
 								   
-								   <div class = "col-sm-6 col-md-3">
+								   <div class = "col-sm-8 col-md-4">
 								      <a href = "#" class = "thumbnail">
 								         <img src = "icon_invite_friends.png.jpeg" alt = "Invite Friends">
 								      </a>

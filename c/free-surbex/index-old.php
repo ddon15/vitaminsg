@@ -355,8 +355,9 @@ ENDDOC;
 
 							</div>
 						</div>
-
-						<div>
+						<br/>
+						<br/>
+						<div class="row">
 						<p class="text-center">This offer is available on a "first come first serve" basis while stock lasts.</p>
 						</div>
 																		

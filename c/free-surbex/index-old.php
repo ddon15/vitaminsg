@@ -243,7 +243,7 @@ ENDDOC;
 										</ul>
 
 										<div class="tab-content clearfix">
-											<img id="heroimg" src="surbex.png" class="pull-right" />
+											<img id="heroimg" src="surbex.jpg" class="pull-right" />
 											<div class="tab-pane active" id="1a">
 												<h3>Protection from free-radical damage with a Natural Source of Vitamin E from Abbott</h3>
 												<p>Abbott’s Surbex Natopherol ® Vegicaps capsules are a Vitamin E supplement for adults.</p>
@@ -297,7 +297,7 @@ ENDDOC;
 																
 								<p class="font-size-30px">Here's how:</p>
 
-								<p class="font-size-22px">1. Complete the registration form below and we will send you your gift absolutely FREE.</p>
+								<p class="font-size-22px">Step 1. Complete the registration form below for us to mail you your gift absolutly FREE.</p>
 
 								<div class='your-details'>
 									<h3 id='theform'>Your Details</h3>
@@ -319,15 +319,13 @@ ENDDOC;
 											<label for="mobile" class="control-label">Mailing Address (Singapore Only)</label>
 											<div><textarea class="form-control" id="maddress" name="maddress" required="required"><?php echo htmlentities($maddress); ?></textarea></div>
 										</div>
-									<!-- 	<div class="form-group">
-											<label for="code" class="control-label">Claim Code</label>
-											<div><input type="text" class="form-control" id="mcode" name="mcode" value="<?php echo htmlentities($mcode); ?>"required="required"></div>
-										</div> -->
 									</div>
 								</div>
+
+								<p class="font-size-22px">Step 2. Share this offer with your friends, and they too will recieve a free bottle of Surbex Natopherol Vegicaps when they complete the registration form.</p>
 								<div class="row ">
 									<div class="col-sm-12 social-media-box">
-										<div class="fb-like" data-href="https://www.facebook.com/vitaminsg/?fref=ts" data-layout="standard" data-action="like" data-size="large" data-show-faces="false" data-share="true"></div>
+										<div class="fb-like" data-href="https://www.facebook.com/vitaminsg/?fref=ts" data-layout="standard" data-action="like" data-size="large" data-show-faces="false" data-share="false"></div>
 									</div>
 								</div>
 								<div class="col-sm-12 tncs">
@@ -336,7 +334,7 @@ ENDDOC;
 									<input type="hidden" name="frm_submitted" value="1" /></p>
 								</div>
 
-								<p class="font-size-22px">2. Share this offer with your friends, and they too will receive a free bottle of Surbex Natopherol Vegicaps when they complete the registration form.</p>
+							
 								
 								<p class="font-size-22px">3. This offer is available on a "first come first serve" basis while stock lasts.</p>
 							</div>

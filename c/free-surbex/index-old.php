@@ -348,6 +348,10 @@ ENDDOC;
 									<p><input type="submit" class="btn btn-lg btn-danger font-size-22px" value="Get a Free Bottle of Surbex Natopherol Vegicaps! &raquo;" />
 									<input type="hidden" name="frm_submitted" value="1" /></p>
 								</div>
+
+								<br>
+
+								<p class="font-size-22px">This offer is available on a "first come first serve" basis while stock lasts.</p>
 							</div>
 						</div>
 																		

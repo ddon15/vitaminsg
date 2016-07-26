@@ -356,7 +356,7 @@ ENDDOC;
 								   </div>
 								   
 								   <div class = "col-sm-8 col-md-4">
-								      <a href = "https://www.facebook.com/vitaminsg/posts/1003350073112542" class = "thumbnail" id="share-btn">
+								      <a href = "#" class = "thumbnail" id="share-btn">
 								         <img src = "share_offer.png" alt = "Share Post">
 								      </a>
 								   </div>
@@ -452,11 +452,11 @@ ENDDOC;
 	FB.ui(
 	{
 	  method: 'feed',
-	  name: 'Facebook Dialogs',
-	  link: 'https://developers.facebook.com/docs/dialogs/',
-	  picture: 'http://fbrell.com/f8.jpg',
-	  caption: 'Reference Documentation',
-	  description: 'Dialogs provide a simple, consistent interface for applications to interface with users.'
+	  name: 'Offer',
+	  link: 'https://www.facebook.com/vitaminsg/posts/1003350073112542',
+	  // picture: 'http://fbrell.com/f8.jpg',
+	  // caption: 'Reference Documentation',
+	  // description: 'Dialogs provide a simple, consistent interface for applications to interface with users.'
 	},
 	function(response) {
 	  if (response && response.post_id) {

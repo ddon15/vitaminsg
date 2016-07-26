@@ -350,7 +350,7 @@ ENDDOC;
 								</div> -->
 								<div class = "row social-media">
 								   <div class = "col-sm-8 col-md-4">
-								      <a href = "#" class = "thumbnail">
+								      <a href = "#" class = "thumbnail" id="fb-like">
 								         <img src = "like-us-on-facebook.png" alt = "Like Us on Facebook">
 								      </a>
 								   </div>
@@ -366,6 +366,7 @@ ENDDOC;
 								         <img src = "icon_invite_friends.png.jpeg" alt = "Invite Friends">
 								      </a>
 								   </div>
+								   <div class="hidden"><fb:like href="https://www.facebook.com/vitaminsg/?fref=ts" layout="standard" show_faces="true" width="400" action="like" font="segoe ui" colorscheme="light" id="facebook" /></div>
 								</div>
 								<div class="col-sm-12 tncs">
 									<p><input type="checkbox" id="tnc" name="tnc" value="agree" required="required">&nbsp;&nbsp;&nbsp;<span class="">I agree to the</span> <a href="#" class='tncswal'>Terms and Conditions</a></p>
@@ -449,23 +450,27 @@ ENDDOC;
 
 <script type="text/javascript">
 	document.getElementById('share-btn').onclick = function() {
-	FB.ui(
-	{
-	  method: 'feed',
-	  name: 'Offer',
-	  link: 'http://www.vit.sg/c/free-surbex/',
-	  // picture: 'http://fbrell.com/f8.jpg',
-	  // caption: 'Reference Documentation',
-	  // description: 'Dialogs provide a simple, consistent interface for applications to interface with users.'
-	},
-	function(response) {
-	  if (response && response.post_id) {
-	   	console.log('Post was published')
-	  } else {
-	    	console.log('Post was not published')
-	  }
+		FB.ui(
+		{
+		  method: 'feed',
+		  name: 'Offer',
+		  link: 'http://www.vit.sg/c/free-surbex/',
+		  href: 'http://www.vit.sg/c/free-surbex/',
+		  // picture: 'http://fbrell.com/f8.jpg',
+		  // caption: 'Reference Documentation',
+		  // description: 'Dialogs provide a simple, consistent interface for applications to interface with users.'
+		},
+		function(response) {
+		  if (response && response.post_id) {
+		   	console.log('Post was published')
+		  } else {
+		    console.log('Post was not published')
+		  }
+		});
 	}
-	);
+
+	document.getElementById('fb-like').onclick = function() {
+		$('fb:like').trigger('click');
 	}
 </script>
 </body>

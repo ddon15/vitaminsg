@@ -350,8 +350,10 @@ ENDDOC;
 								</div>
 
 								<br>
-
-								<p class="">This offer is available on a "first come first serve" basis while stock lasts.</p>
+								<br>
+								<br>
+								
+								<p class="text-center">This offer is available on a "first come first serve" basis while stock lasts.</p>
 							</div>
 						</div>
 																		

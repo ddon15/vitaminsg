@@ -352,6 +352,7 @@ ENDDOC;
 								   <div class = "col-sm-8 col-md-4">
 								      <a href = "#" class = "thumbnail" id="fb-like">
 								         <img src = "like-us-on-facebook.png" alt = "Like Us on Facebook">
+								         <fb:like href="https://www.facebook.com/vitaminsg/?fref=ts" layout="standard" show_faces="true" width="400" action="like" font="segoe ui" colorscheme="light" id="facebook" />
 								      </a>
 								   </div>
 								   
@@ -366,9 +367,8 @@ ENDDOC;
 								         <img src = "icon_invite_friends.png.jpeg" alt = "Invite Friends">
 								      </a>
 								   </div>
-								
+									
 								</div>
-								   <fb:like href="https://www.facebook.com/vitaminsg/?fref=ts" layout="standard" show_faces="true" width="400" action="like" font="segoe ui" colorscheme="light" id="facebook" />
 								<div class="col-sm-12 tncs">
 									<p><input type="checkbox" id="tnc" name="tnc" value="agree" required="required">&nbsp;&nbsp;&nbsp;<span class="">I agree to the</span> <a href="#" class='tncswal'>Terms and Conditions</a></p>
 									<p><input type="submit" class="btn btn-lg btn-danger font-size-22px" value="Get a Free Bottle of Surbex Natopherol Vegicaps! &raquo;" />

@@ -206,8 +206,8 @@ ENDDOC;
 		}
 
 		.image-size {
-			height: 330px;
-			width: 191px;
+			height: 330px !important;
+			width: 191px !important;
 		}
 	</style>
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

@@ -453,16 +453,16 @@ ENDDOC;
 	{
 	  method: 'feed',
 	  name: 'Offer',
-	  link: 'https://www.facebook.com/vitaminsg/posts/1003350073112542',
+	  link: 'http://www.vit.sg/c/free-surbex/',
 	  // picture: 'http://fbrell.com/f8.jpg',
 	  // caption: 'Reference Documentation',
 	  // description: 'Dialogs provide a simple, consistent interface for applications to interface with users.'
 	},
 	function(response) {
 	  if (response && response.post_id) {
-	    alert('Post was published.');
+	   	console.log('Post was published')
 	  } else {
-	    alert('Post was not published.');
+	    	console.log('Post was not published')
 	  }
 	}
 	);

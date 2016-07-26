@@ -358,7 +358,7 @@ ENDDOC;
 								   
 								   <div class = "col-sm-6 col-md-3">
 								      <a href = "#" class = "thumbnail">
-								         <img src = "icon_invite_friends.png.jpg" alt = "Invite Friends">
+								         <img src = "icon_invite_friends.png.jpeg" alt = "Invite Friends">
 								      </a>
 								   </div>
 								</div>

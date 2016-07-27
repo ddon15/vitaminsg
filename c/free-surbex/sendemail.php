@@ -1,7 +1,7 @@
 <?php 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-	$emails = json_decode($_POST['emails']);
+	$emails = $_POST['emails'];
 
 	foreach ($emails as $each) {
 		sendMail($each);

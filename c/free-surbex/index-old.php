@@ -528,7 +528,7 @@ ENDDOC;
 			var elemIcon = elem.find('i');
 		
 			elemIcon
-				.removeClass('fa fa-paper-plane')
+				.removeAttr('class')
 				.addClass('fa fa-circle-o-notch fa-spin fa-3x fa-fw')
 				.text(' Sending..');
 
@@ -542,12 +542,12 @@ ENDDOC;
 					if (response.success) {
 				
 						elemIcon
-							.removeClass('fa fa-circle-o-notch fa-spin fa-3x fa-fw')
+							.removeAttr('class')
 							.addClass('fa fa-paper-plane')
 							.text(' Send');
 						
 						$('select#tg').val('');
-						
+
 						alert('You have successfully shared this free offer to your friends.');
 						$('.bs-example-modal-sm').modal('hide');
 					} else {

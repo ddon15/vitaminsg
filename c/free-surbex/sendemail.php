@@ -15,14 +15,16 @@ function sendMail($to) {
 	$from = "Vitamin.sg <info@vitamin.sg>";
 	$message = <<<ENDDOC
 
-	Hi Friend, 
+	<p>Hi Friend, </p> <br /> <br /> 
 
+	<p>
 	I just got a free bottle of Abbott’s Surbex Natopherol ® Vegicaps from Vitamin.sg in less than 5 minutes. Thought you 
 	might want one too. Surbex is a Natural Vitamin E supplement for adults and is sold at $37.20 usually. Now you can try 
 	it at no cost so just try lah! Remember to help like/share their Facebook page as a form of thanks and don't forget to 
 	thank me later too!
+	</p> </br> <br/>
 
-	Get a bottle of Abbott’s Surbex Natopherol ® Vegicaps <a href="http://www.vit.sg/c/free-surbex/">here</a>
+	<p>Get a bottle of Abbott’s Surbex Natopherol ® Vegicaps <a href="http://www.vit.sg/c/free-surbex/">here</a> </p>
 
 ENDDOC;
 

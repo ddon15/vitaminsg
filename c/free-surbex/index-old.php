@@ -151,7 +151,6 @@ ENDDOC;
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
 	<link rel="stylesheet" href="lib/sweet-alert.css" />
 	<link rel="stylesheet" href="style.css" />
-	<link rel="stylesheet" href="taggle.min.css" />
 		
 	<!-- Javascript -->	
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -160,7 +159,7 @@ ENDDOC;
 	<script src="//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 	<script src="lib/sweet-alert.js"></script>
 	<script src="scripts.js"></script>
-	<script src="taggle.js"></script>
+	<script src="bs3.js"></script>
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -401,14 +400,14 @@ ENDDOC;
 	    <div class="modal-content">
 	      <div class="modal-header">
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	        <h4 class="modal-title" id="myModalLabel">Email Friends</h4>
+	        <h4 class="modal-title" id="myModalLabel">Send To:</h4>
 	      </div>
 	      <div class="modal-body">
-	         <div id="taggle-email"></div>
+	         <input type="text" data-role="tagsinput" class="form-control" placeholder="Type email then press enter to add">
 	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	        <button type="button" class="btn btn-primary">Send</button>
+	        <button type="button" class="btn btn-primary"></button>
 	      </div>
 	    </div>
 	  </div>
@@ -507,11 +506,6 @@ ENDDOC;
 			$(this).submit();
 
 			e.preventDefault();
-		});
-
-		var taggle = new Taggle('taggle-email', {
-		    placeholder: 'Type email and press enter to add',
-		    allowDuplicates: true
 		});
 	});
 </script>

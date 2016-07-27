@@ -161,7 +161,7 @@ ENDDOC;
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
-	<script src="lib/angular.min.js"></script>
+	<!-- <script src="lib/angular.min.js"></script> -->
 	<script src="lib/sweet-alert.js"></script>
 	<script src="lib/bs3/bootstrap-tagsinput.js"></script>
 	<script src="lib/bs3/bootstrap-tagsinput-angular.js"></script>

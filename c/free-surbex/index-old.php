@@ -410,7 +410,7 @@ ENDDOC;
 	      </div>
 	      <div class="modal-body">
 	      	<div class="row">
-	      		<input type="text" class="col-md-12" data-role="tagsinput">
+	      		<input type="text" class="col-md-12" id="tg" data-role="tagsinput">
 	      	</div>
 	      </div>
 	      <div class="modal-footer">
@@ -516,7 +516,7 @@ ENDDOC;
 			e.preventDefault();
 		});
 
-		$('input').tagsinput({
+		$('input#tg').tagsinput({
 		  allowDuplicates: false
 		});
 	});

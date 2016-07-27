@@ -416,7 +416,7 @@ ENDDOC;
 	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-	        <button type="button" class="btn btn-success" id="btn-send"><i class="fa fa-paper-plane" aria-hidden="true"></i> Send</button>
+	        <button type="button" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Sending.." class="btn btn-success" id="btn-send"><i class="fa fa-paper-plane" aria-hidden="true"></i> Send</button>
 	      </div>
 	    </div>
 	  </div>
@@ -525,12 +525,8 @@ ENDDOC;
 		$('#btn-send').on('click', function(e) {
 			var emails = $('select#tg').val();
 			var elem = $(this);
-			var elemIcon = elem.next('i');
 		
-			elemIcon
-				.removeAttr('class')
-				.addClass('fa fa-circle-o-notch fa-spin fa-3x fa-fw')
-				.text(' Sending..');
+			elem.button('loading');
 
 			$.ajax({
 				url: 'sendemail.php',
@@ -540,16 +536,12 @@ ENDDOC;
 				dataType: 'json',
 				success: function(response) {
 					if (response.success) {
-				
-						elemIcon
-							.removeAttr('class')
-							.addClass('fa fa-paper-plane')
-							.text(' Send');
-						
-						$('select#tg').val('');
-
-						alert('You have successfully shared this free offer to your friends.');
-						$('.bs-example-modal-sm').modal('hide');
+						setTimeout(function() {
+					       elem.button('reset');
+					       $('select#tg').removeAll();
+					       alert('You have successfully shared this free offer to your friends.');
+					       $('.bs-example-modal-sm').modal('hide');
+					   	}, 8000);
 					} else {
 						console.log(response.message);
 					}

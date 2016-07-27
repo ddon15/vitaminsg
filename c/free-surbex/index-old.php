@@ -406,14 +406,13 @@ ENDDOC;
 	        <h4 class="modal-title" id="myModalLabel">Send To:</h4>
 	      </div>
 	      <div class="modal-body">
-	      	<div class="col-md-12">
-	      		<input type="text" data-role="tagsinput">
+	      	<div class="row">
+	      		<input type="text" class="col-md-12" data-role="tagsinput">
 	      	</div>
-	      	
 	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	        <button type="button" class="btn btn-primary"></button>
+	        <button type="button" class="btn btn-primary">Send</button>
 	      </div>
 	    </div>
 	  </div>
@@ -512,6 +511,10 @@ ENDDOC;
 			$(this).submit();
 
 			e.preventDefault();
+		});
+
+		$('input').tagsinput({
+		  allowDuplicates: false
 		});
 	});
 </script>

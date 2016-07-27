@@ -527,9 +527,8 @@ ENDDOC;
 			var elem = $(this);
 			var elemIcon = elem.find('i');
 
-
+			elem.html('');
 			elemIcon
-				.html('')
 				.removeClass('fa fa-paper-plane')
 				.addClass('fa fa-circle-o-notch fa-spin fa-3x fa-fw');
 
@@ -541,10 +540,10 @@ ENDDOC;
 				dataType: 'json',
 				success: function(response) {
 					if (response.success) {
+						elem.html(' Send');
 						elemIcon
 							.removeClass('fa fa-circle-o-notch fa-spin fa-3x fa-fw')
-							.addClass('fa fa-paper-plane')
-							.html(' Send');
+							.addClass('fa fa-paper-plane');
 						
 						$('select#tg').val('');
 

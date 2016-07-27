@@ -536,7 +536,7 @@ ENDDOC;
 				type: 'post',
 				data: {emails: emails},
 				async: false,
-				dataType: 'json'
+				dataType: 'json',
 				success: function(response) {
 					if (response.success) {
 						elemIcon

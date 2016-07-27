@@ -4,16 +4,15 @@
 	$memail = "";
 	$mmobile = "";
 	$maddress = "";
-	$mcode = "";
 
-	if (isset($_POST['frm_submitted']) && $_POST['frm_submitted'] == "1") {
+	if (($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['frm_submitted']) && $_POST['frm_submitted'] == "1") {
 				
 		//retrieve
 		$mname = $_POST['mname'];
 		$memail = $_POST['memail'];
 		$mmobile = $_POST['mmobile'];
 		$maddress = $_POST['maddress'];
-		$mcode = $_POST['mcode'];
+		// $mcode = $_POST['mcode'];
 		
 		//validate
 		$errors = array();
@@ -29,18 +28,18 @@
 		if ($maddress == "") {
 			$errors[] = "Please enter your address";
 		}
-		if (trim($mcode) == "") {
-			$errors[] = "Please enter your claim code";
-		}
+		// if (trim($mcode) == "") {
+		// 	$errors[] = "Please enter your claim code";
+		// }
 		
 		
-		//validate claim code
-		$mcode = strtoupper($mcode);
-		$claimcodes = file_get_contents('claimcodes.txt');
-		$claimcodes = unserialize($claimcodes);
-		if (array_search($mcode, $claimcodes) === false) {
-			$errors[] = "Invalid claim code";
-		}
+		// //validate claim code
+		// $mcode = strtoupper($mcode);
+		// $claimcodes = file_get_contents('claimcodes.txt');
+		// $claimcodes = unserialize($claimcodes);
+		// if (array_search($mcode, $claimcodes) === false) {
+		// 	$errors[] = "Invalid claim code";
+		// }
 
 		
 						
@@ -59,7 +58,7 @@
 			$member['memail'] = $memail;
 			$member['mmobile'] = $mmobile;
 			$member['maddress'] = $maddress;
-			$member['mcode'] = $mcode;
+			// $member['mcode'] = $mcode;
 			
 			//admin email
 			$to = "info@vitamin.sg";
@@ -106,7 +105,6 @@ Here is a copy of the information you sent to us:<br /><br />
 <strong>Email:</strong> {mem_email}<br/><br />
 <strong>Mobile:</strong> {mem_mobile}<br/><br />
 <strong>Address:</strong> {mem_address}<br /><br />
-<strong>Claim Code:</strong> {mem_code}<br/><br />
 ===========================================================<br /><br />
 Vitamin.sg
 ENDDOC;
@@ -114,7 +112,6 @@ ENDDOC;
 			$message = str_replace("{mem_email}", $memail, $message);
 			$message = str_replace("{mem_mobile}", $mmobile, $message);
 			$message = str_replace("{mem_address}", $maddress, $message);
-			$message = str_replace("{mem_code}", $mcode, $message);
 			
 			$headers = "MIME-Version: 1.0" . "\r\n";
 			$headers .= "Content-type: text/html; charset=iso-8859-1" . "\r\n";
@@ -162,6 +159,7 @@ ENDDOC;
 	<script src="//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 	<script src="lib/sweet-alert.js"></script>
 	<script src="scripts.js"></script>
+	<script src="taggle.js"></script>
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -363,11 +361,8 @@ ENDDOC;
 								   </div>
 								   
 								   <div class = "col-sm-8 col-md-4">
-								      <a href="mailto:johndoe@test.com?
-								      subject=Do you want a free bottle of Vitamin E from Abbott & Vitamin.sg too
-								      &body=
+								      <a href="mailto:johndoe@test.com?subject=Do you want a free bottle of Vitamin E from Abbott and Vitamin.sg too&body=
 								      Hi Friend,
-
 								      I just got a free bottle of Abbott’s Surbex Natopherol ® Vegicaps from Vitamin.sg in less than 5 minutes. Thought you might want one too. Surbex is a Natural Vitamin E supplement for adults and is sold at $37.20 usually. Now you can try it at no cost so just try lah! Remember to help like/share their Facebook page as a form of thanks and don't forget to thank me later too!
 
 								      Get a bottle of Abbott’s Surbex Natopherol ® Vegicaps http://www.vit.sg/c/free-surbex/
@@ -404,6 +399,17 @@ ENDDOC;
 		</div><!-- /.container -->
 	</div><!-- /#content-wrapper -->
 	
+	<!-- Modals -->
+	<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+	  <div class="modal-dialog modal-sm" role="document">
+	    <div class="modal-content">
+	      <div class="form-group">
+	        <label for="comment">Enter Email of your friends:</label>
+	        <div id="taggle-email"></div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
 
 	<div id="footer-wrapper">
 		<div class="container">
@@ -499,6 +505,8 @@ ENDDOC;
 
 			e.preventDefault();
 		});
+
+		new Taggle('taggle-email');
 	});
 </script>
 </body>

@@ -24,7 +24,7 @@
 			<td><?php echo $member->memail; ?></td>
 			<td><?php echo $member->mmobile; ?></td>
 			<td><?php echo nl2br($member->maddress); ?></td>
-			<td><?php echo $member->mcode; ?></td>
+			<td><?php //echo $member->mcode; ?></td>
 		</tr>
 		<?php 
 				endif;

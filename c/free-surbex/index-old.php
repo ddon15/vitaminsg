@@ -406,7 +406,10 @@ ENDDOC;
 	        <h4 class="modal-title" id="myModalLabel">Send To:</h4>
 	      </div>
 	      <div class="modal-body">
-	         <input type="text" data-role="tagsinput" class="form-control" placeholder="Type email then press enter to add">
+	      	<div class="col-md-12">
+	      		<input type="text" data-role="tagsinput">
+	      	</div>
+	      	
 	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

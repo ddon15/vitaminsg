@@ -546,7 +546,7 @@ ENDDOC;
 							.addClass('fa fa-paper-plane')
 							.html(' Send');
 						
-						emails.val('');
+						$('select#tg').val('');
 
 						alert('You have successfully shared this free offer to your friends.');
 						$('.bs-example-modal-sm').modal('hide');

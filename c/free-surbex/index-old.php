@@ -543,8 +543,8 @@ ENDDOC;
 					if (response.success) {
 						elemIcon
 							.removeClass('fa fa-circle-o-notch fa-spin fa-3x fa-fw')
-							.addClass('fa fa-paper-plane');
-							.html(' Send')
+							.addClass('fa fa-paper-plane')
+							.html(' Send');
 						
 						emails.val('');
 

@@ -525,10 +525,9 @@ ENDDOC;
 		$('#btn-send').on('click', function(e) {
 			var emails = $('select#tg').val();
 			var elem = $(this);
-			var elemIcon = elem.next('i');
+			var elemIcon = elem.find('i');
 
-			console.log(emails);
-			
+
 			elemIcon
 				.removeClass('fa fa-paper-plane')
 				.addClass('fa fa-circle-o-notch fa-spin fa-3x fa-fw');

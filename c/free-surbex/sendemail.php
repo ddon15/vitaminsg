@@ -26,10 +26,10 @@ function sendMail($to) {
 
 ENDDOC;
 
-	$message = str_replace("{mem_name}", $mname, $message);
-	$message = str_replace("{mem_email}", $memail, $message);
-	$message = str_replace("{mem_mobile}", $mmobile, $message);
-	$message = str_replace("{mem_address}", $maddress, $message);
+	// $message = str_replace("{mem_name}", $mname, $message);
+	// $message = str_replace("{mem_email}", $memail, $message);
+	// $message = str_replace("{mem_mobile}", $mmobile, $message);
+	// $message = str_replace("{mem_address}", $maddress, $message);
 	
 	$headers = "MIME-Version: 1.0" . "\r\n";
 	$headers .= "Content-type: text/html; charset=iso-8859-1" . "\r\n";

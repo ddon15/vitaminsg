@@ -502,7 +502,7 @@ ENDDOC;
 
 		new Taggle('taggle-email', {
 	    	placeholder: 'Type email and press enter to add.',
-	    	allowDuplicates: false,
+	    	allowDuplicates: false
 		});
 </script>
 </body>

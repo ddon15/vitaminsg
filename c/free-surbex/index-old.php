@@ -396,13 +396,9 @@ ENDDOC;
 	
 	<!-- Modals -->
 	<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-	  <div class="modal-dialog modal-sm" role="document">
+	  <div class="modal-dialog modal-lg" role="document">
 	    <div class="modal-content">
-		    <div class="row">
-		      <div class="form-group">
-		        <label for="comment">Enter Email of your friends:</label>
 		        <div id="taggle-email"></div>
-		      </div>
 		    </div>
 	    </div>
 	  </div>

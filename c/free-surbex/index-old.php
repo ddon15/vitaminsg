@@ -409,13 +409,14 @@ ENDDOC;
 	        <h4 class="modal-title" id="myModalLabel">Send To:</h4>
 	      </div>
 	      <div class="modal-body">
+	      	<span>Type email and press enter to add.</span>
 	      	<div class="">
-	      		<input type="text" class="col-md-12" id="tg" data-role="tagsinput">
+	      		<select multiple data-role="tagsinput" id="tg"></select>
 	      	</div>
 	      </div>
 	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	        <button type="button" class="btn btn-primary">Send</button>
+	        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+	        <button type="button" class="btn btn-success" id="btn-send"><i class="fa fa-paper-plane" aria-hidden="true"></i>Send</button>
 	      </div>
 	    </div>
 	  </div>
@@ -516,8 +517,41 @@ ENDDOC;
 			e.preventDefault();
 		});
 
-		$('input#tg').tagsinput({
+		$('select#tg').tagsinput({
 		  allowDuplicates: false
+		});
+
+
+		$('#btn-send').on('click', function(e) {
+			var emails = $('select#tg').val();
+			var elem = $(this);
+			var elemIcon = elem.next('i');
+
+			elemIcon
+				.removeClass('fa fa-paper-plane')
+				.addClass('fa fa-circle-o-notch fa-spin fa-3x fa-fw');
+
+			$.ajax({
+				url: 'sendemail.php',
+				type: 'post',
+				data: {emails: emails},
+				async: false,
+				dataType: 'json'
+				success: function(response) {
+					if (response.success) {
+						elemIcon
+							.remove('fa fa-circle-o-notch fa-spin fa-3x fa-fw')
+							.addClass('fa fa-paper-plane');
+						
+						emails.val('');
+
+						alert('You have successfully shared this free offer to your friends.');
+						$('.bs-example-modal-sm').modal('hide');
+					} else {
+						console.log(response.message);
+					}
+				}
+			});
 		});
 	});
 </script>

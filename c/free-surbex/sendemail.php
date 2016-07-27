@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		sendMail($each);
 	}
 
-	echo json_encode(['error' => 0, 'message' => 'Successfully sent to emails.']);
+	echo json_encode(['success' => 1, 'message' => 'Successfully sent to emails.']);
 }
 
 function sendMail($to) {

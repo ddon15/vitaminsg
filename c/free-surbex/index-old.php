@@ -538,10 +538,10 @@ ENDDOC;
 					if (response.success) {
 						setTimeout(function() {
 					       elem.button('reset');
-					       $('select#tg').removeAll();
+					       $('select#tg').tagsinput('removeAll');
 					       alert('You have successfully shared this free offer to your friends.');
 					       $('.bs-example-modal-sm').modal('hide');
-					   	}, 8000);
+					   	}, 3000);
 					} else {
 						console.log(response.message);
 					}

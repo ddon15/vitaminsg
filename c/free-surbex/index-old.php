@@ -5,7 +5,7 @@
 	$mmobile = "";
 	$maddress = "";
 
-	if (($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['frm_submitted']) && $_POST['frm_submitted'] == "1") {
+	if (($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['frm_submitted']) && $_POST['frm_submitted'] == "1")) {
 				
 		//retrieve
 		$mname = $_POST['mname'];

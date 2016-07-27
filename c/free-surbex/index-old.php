@@ -235,7 +235,7 @@ ENDDOC;
 			<div id="content" class="row">	
 				<div class="col-sm-12">
 					
-					<form role="form" method="POST">
+					<form role="form" id="form-reg" method="POST">
 						
 						<div class="row">
 							<div class='col-sm-12'>
@@ -350,11 +350,10 @@ ENDDOC;
 								</div> -->
 								<div class = "row social-media">
 								   <div class = "col-sm-8 col-md-4">
-								      <a href = "#" class = "thumbnail" id="fb-like">
+								      <a href = "https://www.facebook.com/vitaminsg/" class = "thumbnail" id="fb-like">
 								         <img src = "like-us-on-facebook.png" alt = "Like Us on Facebook">
-
 								      </a>
-								      <fb:like href="https://www.facebook.com/vitaminsg/?fref=ts" layout="standard"  width="400" action="like" font="segoe ui" colorscheme="light" id="facebook" />
+								      <div class="fb-like" data-href="https://www.facebook.com/vitaminsg/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
 								   </div>
 								   
 								   <div class = "col-sm-8 col-md-4">
@@ -364,7 +363,7 @@ ENDDOC;
 								   </div>
 								   
 								   <div class = "col-sm-8 col-md-4">
-								      <a href="mailto:johndoe@test.com" class = "thumbnail">
+								      <a href="mailto:johndoe@test.com?subject=Do you want a free bottle of Vitamin E from Abbott & Vitamin.sg too&body=" class = "thumbnail">
 								         <img src = "icon_invite_friends.png.jpeg" alt = "Invite Friends">
 								      </a>
 								   </div>
@@ -451,7 +450,8 @@ ENDDOC;
 }(document, 'script', 'facebook-jssdk'));</script>
 
 <script type="text/javascript">
-	document.getElementById('share-btn').onclick = function() {
+	var isShared = 0;
+	document.getElementById('share-btn').onclick = function(e) {
 		FB.ui(
 		{
 		  method: 'feed',
@@ -463,18 +463,34 @@ ENDDOC;
 		  // description: 'Dialogs provide a simple, consistent interface for applications to interface with users.'
 		},
 		function(response) {
-		  if (response && response.post_id) {
-		   	console.log('Post was published')
+		 	if (response && response.post_id) {
+		  		isShared = 1;
+		   		console.log('Post was published');
 		  } else {
-		    console.log('Post was not published')
+		  		console.log('Post was not published');
 		  }
 		});
+
+		e.preventDefault();
 	}
 
 	document.getElementById('fb-like').onclick = function() {
 		console.log('test');
 		$('fb:like').trigger('click');
 	}
+
+	$(document).ready(function(e) {
+		$('#form-reg').on('submit', function(e) {
+			if (!isShared) {
+				alert('Share this information to your friends so they too can avail this Free Gift we are giving away.');
+				return;
+			}
+
+			$(this).submit();
+
+			e.preventDefault();
+		});
+	});
 </script>
 </body>
 

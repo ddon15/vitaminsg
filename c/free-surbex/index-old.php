@@ -500,10 +500,11 @@ ENDDOC;
 			e.preventDefault();
 		});
 
-		new Taggle('taggle-email', {
-	    	placeholder: 'Type email and press enter to add.',
-	    	allowDuplicates: false
+		var taggle = new Taggle('taggle-email', {
+		    placeholder: 'Type email and press enter to add',
+		    allowDuplicates: true
 		});
+		
 </script>
 </body>
 

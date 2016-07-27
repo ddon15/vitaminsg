@@ -504,7 +504,7 @@ ENDDOC;
 		    placeholder: 'Type email and press enter to add',
 		    allowDuplicates: true
 		});
-		
+	});
 </script>
 </body>
 

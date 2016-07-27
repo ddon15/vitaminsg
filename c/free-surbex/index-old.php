@@ -526,11 +526,11 @@ ENDDOC;
 			var emails = $('select#tg').val();
 			var elem = $(this);
 			var elemIcon = elem.find('i');
-
-			elem.html('');
+		
 			elemIcon
 				.removeClass('fa fa-paper-plane')
-				.addClass('fa fa-circle-o-notch fa-spin fa-3x fa-fw');
+				.addClass('fa fa-circle-o-notch fa-spin fa-3x fa-fw')
+				.text(' Sending..');
 
 			$.ajax({
 				url: 'sendemail.php',
@@ -540,13 +540,14 @@ ENDDOC;
 				dataType: 'json',
 				success: function(response) {
 					if (response.success) {
-						elem.html(' Send');
+				
 						elemIcon
 							.removeClass('fa fa-circle-o-notch fa-spin fa-3x fa-fw')
-							.addClass('fa fa-paper-plane');
+							.addClass('fa fa-paper-plane')
+							.text(' Send');
 						
 						$('select#tg').val('');
-
+						
 						alert('You have successfully shared this free offer to your friends.');
 						$('.bs-example-modal-sm').modal('hide');
 					} else {

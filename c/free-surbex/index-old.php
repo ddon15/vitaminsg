@@ -359,7 +359,7 @@ ENDDOC;
 								   
 								   <div class = "col-sm-8 col-md-4">
 								      <a href = "#" class = "thumbnail" id="share-btn">
-								         <img src = "share_offer.png" alt = "Share Post">
+								         <img src = "FB_share.png" alt = "Share Post">
 								      </a>
 								   </div>
 								   

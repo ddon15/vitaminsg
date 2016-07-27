@@ -416,7 +416,7 @@ ENDDOC;
 	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-	        <button type="button" class="btn btn-success" id="btn-send"><i class="fa fa-paper-plane" aria-hidden="true"></i>Send</button>
+	        <button type="button" class="btn btn-success" id="btn-send"><i class="fa fa-paper-plane" aria-hidden="true"></i> Send</button>
 	      </div>
 	    </div>
 	  </div>
@@ -527,6 +527,8 @@ ENDDOC;
 			var elem = $(this);
 			var elemIcon = elem.next('i');
 
+			console.log(emails);
+			
 			elemIcon
 				.removeClass('fa fa-paper-plane')
 				.addClass('fa fa-circle-o-notch fa-spin fa-3x fa-fw');

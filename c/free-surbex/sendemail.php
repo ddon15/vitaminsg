@@ -2,7 +2,7 @@
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$emails = json_decode($_POST['emails'], true);
-
+	
 	foreach ($emails as $each) {
 		sendMail($each);
 	}
@@ -30,7 +30,6 @@ ENDDOC;
 	$message = str_replace("{mem_email}", $memail, $message);
 	$message = str_replace("{mem_mobile}", $mmobile, $message);
 	$message = str_replace("{mem_address}", $maddress, $message);
-	$message = str_replace("{mem_code}", $mcode, $message);
 	
 	$headers = "MIME-Version: 1.0" . "\r\n";
 	$headers .= "Content-type: text/html; charset=iso-8859-1" . "\r\n";

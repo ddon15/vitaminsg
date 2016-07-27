@@ -529,6 +529,7 @@ ENDDOC;
 
 
 			elemIcon
+				.html('')
 				.removeClass('fa fa-paper-plane')
 				.addClass('fa fa-circle-o-notch fa-spin fa-3x fa-fw');
 
@@ -541,8 +542,9 @@ ENDDOC;
 				success: function(response) {
 					if (response.success) {
 						elemIcon
-							.remove('fa fa-circle-o-notch fa-spin fa-3x fa-fw')
+							.removeClass('fa fa-circle-o-notch fa-spin fa-3x fa-fw')
 							.addClass('fa fa-paper-plane');
+							.html(' Send')
 						
 						emails.val('');
 

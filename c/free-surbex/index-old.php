@@ -363,7 +363,16 @@ ENDDOC;
 								   </div>
 								   
 								   <div class = "col-sm-8 col-md-4">
-								      <a href="mailto:johndoe@test.com?subject=Do you want a free bottle of Vitamin E from Abbott & Vitamin.sg too&body=" class = "thumbnail">
+								      <a href="mailto:johndoe@test.com?
+								      subject=Do you want a free bottle of Vitamin E from Abbott & Vitamin.sg too
+								      &body=
+								      Hi Friend,
+
+								      I just got a free bottle of Abbott’s Surbex Natopherol ® Vegicaps from Vitamin.sg in less than 5 minutes. Thought you might want one too. Surbex is a Natural Vitamin E supplement for adults and is sold at $37.20 usually. Now you can try it at no cost so just try lah! Remember to help like/share their Facebook page as a form of thanks and don't forget to thank me later too!
+
+								      Get a bottle of Abbott’s Surbex Natopherol ® Vegicaps http://www.vit.sg/c/free-surbex/
+								      " 
+								      class = "thumbnail">
 								         <img src = "icon_invite_friends.png.jpeg" alt = "Invite Friends">
 								      </a>
 								   </div>

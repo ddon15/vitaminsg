@@ -525,7 +525,7 @@ ENDDOC;
 		$('#btn-send').on('click', function(e) {
 			var emails = $('select#tg').val();
 			var elem = $(this);
-			var elemIcon = elem.find('i');
+			var elemIcon = elem.next('i');
 		
 			elemIcon
 				.removeAttr('class')

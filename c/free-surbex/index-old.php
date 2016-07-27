@@ -150,6 +150,7 @@ ENDDOC;
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
 	<link rel="stylesheet" href="lib/sweet-alert.css" />
+	<link rel="stylesheet" href="lib/bs3/bootstrap-tagsinput.css" />
 	<link rel="stylesheet" href="style.css" />
 		
 	<!-- Javascript -->	
@@ -158,8 +159,9 @@ ENDDOC;
 	<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 	<script src="lib/sweet-alert.js"></script>
+	<script src="lib/bs3/bootstrap-tagsinput.js"></script>
+	<script src="lib/bs3/bootstrap-tagsinput-angular.js"></script>
 	<script src="scripts.js"></script>
-	<script src="bs3.js"></script>
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

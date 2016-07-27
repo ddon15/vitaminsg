@@ -409,7 +409,7 @@ ENDDOC;
 	        <h4 class="modal-title" id="myModalLabel">Send To:</h4>
 	      </div>
 	      <div class="modal-body">
-	      	<div class="row">
+	      	<div class="">
 	      		<input type="text" class="col-md-12" id="tg" data-role="tagsinput">
 	      	</div>
 	      </div>

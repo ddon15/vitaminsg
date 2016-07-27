@@ -151,6 +151,7 @@ ENDDOC;
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
 	<link rel="stylesheet" href="lib/sweet-alert.css" />
 	<link rel="stylesheet" href="style.css" />
+	<link rel="stylesheet" href="taggle.min.css" />
 		
 	<!-- Javascript -->	
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -397,10 +398,12 @@ ENDDOC;
 	<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
 	  <div class="modal-dialog modal-sm" role="document">
 	    <div class="modal-content">
-	      <div class="form-group">
-	        <label for="comment">Enter Email of your friends:</label>
-	        <div id="taggle-email"></div>
-	      </div>
+		    <div class="row">
+		      <div class="form-group">
+		        <label for="comment">Enter Email of your friends:</label>
+		        <div id="taggle-email"></div>
+		      </div>
+		    </div>
 	    </div>
 	  </div>
 	</div>

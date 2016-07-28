@@ -126,6 +126,7 @@ ENDDOC;
 
 		mail($to, $subject, $message, $headers);
 
+		return true;
 	}
 
 	public static function getLeads()

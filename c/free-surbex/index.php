@@ -8,7 +8,6 @@
 	$mmobile = "";
 	$maddress = "";
 	$errors = [];
-	$formSubmit = 0;
 
 	if (Helper::isFormSubmitted()) {
 		$errors = Helper::validateFormData($_POST);
@@ -24,16 +23,8 @@
 			
 			Helper::sendEmail($member);
 			
-			$status = '<div class="alert alert-success alert-dismissible" role="alert">
-					  		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					  		<strong>Success!</strong> Thank you! You will hear from us shortly!
-						</div>';
-		
-			$mname = "";
-			$memail = "";
-			$mmobile = "";
-			$maddress = "";
-			$formSubmit = 1;
+			header('Location: success.html');
+			exit();
 		}	
 	}
 ?>
@@ -411,14 +402,6 @@
 	}
 
 	$(document).ready(function(e) {
-		var formSubmitted = '<?php $formSubmit; ?>';
-
-		console.log(formSubmitted);
-
-		if (formSubmitted) {
-			console.log('Form Submitted');
-			$('#form-reg')[0].reset();
-		}
 
 		$('#form-reg').on('submit', function(e) {
 			if (!isShared) {
@@ -464,7 +447,7 @@
 		});
 	});
 </script>
-</body><body>
+</body>
 
 
 </html>

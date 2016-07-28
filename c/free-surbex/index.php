@@ -23,7 +23,7 @@
 			
 			Helper::sendEmail($member);
 			
-			header('Location:success.php');
+			header('Location:success.html');
 			exit();
 		}	
 	}

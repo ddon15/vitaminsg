@@ -378,8 +378,8 @@
 		{
 		  method: 'feed',
 		  name: 'Offer',
-		  link: 'http://www.vit.sg/c/free-surbex/',
-		  href: 'http://www.vit.sg/c/free-surbex/',
+		  link: 'https://www.facebook.com/vitaminsg/posts/1002221906558692',
+		  href: 'https://www.facebook.com/vitaminsg/posts/1002221906558692',
 		  // picture: 'http://fbrell.com/f8.jpg',
 		  // caption: 'Reference Documentation',
 		  // description: 'Dialogs provide a simple, consistent interface for applications to interface with users.'

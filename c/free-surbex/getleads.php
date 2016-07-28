@@ -67,6 +67,7 @@
       	<table class="display" cellspacing="0" width="100%">
       	        <thead>
       	            <tr>
+      	                <th>No.</th>
       	                <th>Name</th>
       	                <th>Email</th>
       	                <th>Mobile</th>
@@ -75,6 +76,7 @@
       	        </thead>
       	        <tfoot>
       	            <tr>
+      	                <th>No.</th>
       	                <th>Name</th>
       	                <th>Email</th>
       	                <th>Mobile</th>
@@ -82,8 +84,9 @@
       	            </tr>
       	        </tfoot>
       	        <tbody>
-      	        	<?php foreach ($leads as $each): ?>
+      	        	<?php foreach ($leads as $key => $each): ?>
       	        		<tr>
+      	        		    <td><?php echo $key; ?></td>
       	        		    <td><?php echo $each->mname; ?></td>
       	        		    <td><?php echo $each->memail; ?></td>
       	        		    <td><?php echo $each->mmobile; ?></td>

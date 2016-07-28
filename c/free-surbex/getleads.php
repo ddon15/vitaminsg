@@ -31,6 +31,12 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <style type="text/css">
+    	div.container > div.row {
+    		margin-top: 72px;
+    	}
+    </style>
   </head>
 
   <body>
@@ -57,8 +63,7 @@
     </nav>
 
     <div class="container">
-
-      <div class="row">
+      <div class="row col-md-12">
       	<table class="display" cellspacing="0" width="100%">
       	        <thead>
       	            <tr>
@@ -88,9 +93,7 @@
       	        </tbody>
       	    </table>
       </div>
-
     </div><!-- /.container -->
-
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

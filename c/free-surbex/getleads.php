@@ -64,6 +64,7 @@
 
     <div class="container">
       <div class="row col-md-12">
+      	<h3>Current List of Registration Entries</h3>
       	<table class="display" cellspacing="0" width="100%">
       	        <thead>
       	            <tr>
@@ -72,6 +73,7 @@
       	                <th>Email</th>
       	                <th>Mobile</th>
       	                <th>Address</th>
+      	                <th>Created At</th>
       	            </tr>
       	        </thead>
       	        <tfoot>
@@ -81,6 +83,7 @@
       	                <th>Email</th>
       	                <th>Mobile</th>
       	                <th>Address</th>
+      	                <th>Created At</th>
       	            </tr>
       	        </tfoot>
       	        <tbody>
@@ -91,6 +94,7 @@
       	        		    <td><?php echo $each->memail; ?></td>
       	        		    <td><?php echo $each->mmobile; ?></td>
       	        		    <td><?php echo nl2br($each->maddress); ?></td>
+      	        		    <td><?php echo $each->created_at; ?></td>
       	        		</tr>
       	        	<?php endforeach; ?>
       	        </tbody>

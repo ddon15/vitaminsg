@@ -93,6 +93,8 @@ ENDDOC;
 		
 		mail($to, $subject, $message, $headers);
 
+		$data['created_at'] = date("Y-m-d H:i:s");
+
 		$fileentry = json_encode($data) . "\n";
 		$fp = fopen("entries.txt", 'a');
 		fputs($fp, $fileentry);

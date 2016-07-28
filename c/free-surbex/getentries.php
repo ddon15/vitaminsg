@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Claim Entries</title>
+		<title>Leads</title>
 		<style>
 			* { font-family: Arial; }
 			body { padding: 20px; }
@@ -9,7 +9,8 @@
 		</style>		
 	</head>
 	<body>
-		<h1>Successful Claim Entries</h1>
+	di
+		<h1>List o</h1>
 		<table>
 		<?php 
 			$fp = fopen("entries.txt", 'r');
@@ -19,12 +20,10 @@
 					$member = json_decode($line);
 		?>
 		<tr>
-			<td><?php echo ++$i; ?></td>
 			<td><?php echo $member->mname; ?></td>
 			<td><?php echo $member->memail; ?></td>
 			<td><?php echo $member->mmobile; ?></td>
 			<td><?php echo nl2br($member->maddress); ?></td>
-			<td><?php //echo $member->mcode; ?></td>
 		</tr>
 		<?php 
 				endif;

@@ -39,6 +39,10 @@ class Helper
 			$errors[] = "Please enter a valid email address";
 		}
 
+		if (static::isRegistered($memail)) {
+			$errors[] = "You have already avail this offer.";
+		}
+
 		if ($mmobile == "") {
 			$errors[] = "Please enter your mobile number";
 		}
@@ -48,6 +52,19 @@ class Helper
 		}		
 		
 		return $errors;
+	}
+
+	private static function isRegistered($email)
+	{
+		$leads = static::getLeads();
+
+		foreach ($leads as $each) {
+			if ($each->memail === $email) {
+				return true; break;
+			}
+		}
+
+		return false;
 	}
 
 	public static function sendEmail($data)

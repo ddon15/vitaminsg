@@ -49,7 +49,7 @@
           <?php echo $customer['firstname']; ?><br />
           <?php echo $customer_address['address_1']; ?><br />
           <?php echo $customer_address['address_2']; ?><br />
-          <?php echo $customer_address['city']; . ' ' . $customer_address['postcode']; ?><br />
+          <?php echo $customer_address['city'] . ' ' . $customer_address['postcode']; ?><br />
           <?php echo $customer_address_country; ?><br />
         </td>
         <td style="font-size: 12px; border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; text-align: left; padding: 7px;">
@@ -57,7 +57,7 @@
           <?php echo $customer['firstname']; ?><br />
           <?php echo $customer_address['address_1']; ?><br />
           <?php echo $customer_address['address_2']; ?><br />
-          <?php echo $customer_address['city']; . ' ' . $customer_address['postcode']; ?><br />
+          <?php echo $customer_address['city'] . ' ' . $customer_address['postcode']; ?><br />
           <?php echo $customer_address_country; ?><br />
         </td>
       </tr>

@@ -2,7 +2,7 @@
 <?php  
 	include 'helper.php';
 	
-	if (!Helper::hasPageAccess($_GET['access_token'])) {
+	if (!Helper::hasPageAccess(@$_GET['access_token'])) {
 		header('HTTP/1.0 403 Forbidden');
 		echo 'You are forbidden to access this page!. Page access key is invalid.'; exit;
 	}

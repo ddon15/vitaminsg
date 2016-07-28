@@ -17,9 +17,7 @@ class Helper
 
 	public static function isFormSubmitted()
 	{
-		$requestMethod = $_SERVER['REQUEST_METHOD'];
-
-		return ('POST' === $requestMethod && isset($_POST['frm_submitted']) && $_POST['frm_submitted']);
+		return ('POST' === $_SERVER['REQUEST_METHOD']);
 	}
 
 	public static function validateFormData($data)

@@ -1,1 +1,1 @@
-{"mname":"Francis Low","memail":"francisx.low@gmail.com","mmobile":"91009220","maddress":"Blk 144 Lorong 2 Toa Payoh\r\n#08-208 Singapore 310144","mcode":"FRANCISLOW"}
+{"mname":"Francis Lows","memail":"francisx.low@gmail.com","mmobile":"91009220","maddress":"Blk 144 Lorong 2 Toa Payoh\r\n#08-208 Singapore 310144","mcode":"FRANCISLOW"}

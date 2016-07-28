@@ -386,7 +386,7 @@
 		},
 		function(response) {
 		 	if (response && response.post_id) {
-		  		isShared = 1;
+		  		isShared++;
 		   		console.log('Post was published');
 		  } else {
 		  		console.log('Post was not published');
@@ -404,7 +404,7 @@
 	$(document).ready(function(e) {
 
 		$('#form-reg').on('submit', function(e) {
-			if (!isShared) {
+			if (isShared < 2) {
 				alert('Share this information to your friends so they too can avail this Free Gift we are giving away.');
 				return false;
 			}
@@ -438,6 +438,7 @@
 					       $('select#tg').tagsinput('removeAll');
 					       alert('You have successfully shared this free offer to your friends.');
 					       $('.bs-example-modal-sm').modal('hide');
+					       isShared++;
 					   	}, 3000);
 					} else {
 						console.log(response.message);

@@ -65,6 +65,7 @@
     <div class="container">
       <div class="row col-md-12">
       	<h3>Current List of Registration Entries</h3>
+      	<hr>
       	<table class="display" cellspacing="0" width="100%">
       	        <thead>
       	            <tr>

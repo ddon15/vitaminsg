@@ -486,14 +486,14 @@ class ModelPremiumMemberDb extends Model
 
 	private function getCustomerAddress($customer_id)
 	{
-		$result = $this->db->query("SELECT * FROM " . DB_PREFIX . "address customer_id = '" . $this->db->escape($customer_id) . "'");
+		$result = $this->db->query("SELECT * FROM " . DB_PREFIX . "address WHERE customer_id = '" . (int)$customer_id . "'");
 
 		return $result->row;
 	}
 
 	private function getCustomerCountry($country_id)
 	{
-		$result = $this->db->query("SELECT * FROM " . DB_PREFIX . "country country_id = '" . $this->db->escape($country_id) . "'");
+		$result = $this->db->query("SELECT * FROM " . DB_PREFIX . "country WHERE country_id = '" . (int)$country_id . "'");
 
 		return $result->row;
 	}

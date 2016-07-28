@@ -93,7 +93,10 @@ ENDDOC;
 		
 		mail($to, $subject, $message, $headers);
 
-		$data['created_at'] = date("Y-m-d H:i:s");
+		$dtz = new DateTimeZone("Asia/Singapore"); //Your timezone
+		$now = new DateTime(date("Y-m-d"), $dtz);
+
+		$data['created_at'] = $now->format("Y-m-d H:i:s");
 
 		$fileentry = json_encode($data) . "\n";
 		$fp = fopen("entries.txt", 'a');

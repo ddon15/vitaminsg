@@ -1,5 +1,6 @@
-<!doctype html>
+
 <?php
+	ob_start();
 	include 'helper.php';
 
 	$status = "";
@@ -23,11 +24,12 @@
 			
 			Helper::sendEmail($member);
 			
-			header('Location:success.html');
+			header('Location:http://www.vit.sg/c/free-surbex/success.html', 301);
 			exit();
 		}	
 	}
 ?>
+<!doctype html>
 <html>
 
 <head>

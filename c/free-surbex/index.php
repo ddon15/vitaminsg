@@ -8,9 +8,9 @@
 	$mmobile = "";
 	$maddress = "";
 	$errors = [];
-	
-	if (!Helper::isFormSubmitted()) {
-		$errors = Helper::validateForm($_POST);
+
+	if (Helper::isFormSubmitted()) {
+		$errors = Helper::validateFormData($_POST);
 
 		if (sizeof($errors))
 			$status = "<div class='alert alert-danger'><ul><li>" . implode("</li><li>", $errors). "</li></ul></div>";

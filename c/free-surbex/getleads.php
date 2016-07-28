@@ -86,7 +86,7 @@
       	        <tbody>
       	        	<?php foreach ($leads as $key => $each): ?>
       	        		<tr>
-      	        		    <td><?php echo $key++; ?></td>
+      	        		    <td><?php echo $key + 1; ?></td>
       	        		    <td><?php echo $each->mname; ?></td>
       	        		    <td><?php echo $each->memail; ?></td>
       	        		    <td><?php echo $each->mmobile; ?></td>

@@ -24,7 +24,7 @@
 			
 			Helper::sendEmail($member);
 			
-			header('Location:http://www.vit.sg/c/free-surbex/success.html', 301);
+			header('Location:http://www.vit.sg/c/free-surbex/success.php', 301);
 			exit();
 		}	
 	}

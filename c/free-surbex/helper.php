@@ -19,7 +19,7 @@ class Helper
 	{
 		$requestMethod = $_SERVER['REQUEST_METHOD'];
 
-		return ('POST' === $requestMethod && isset($_POST'frm_submitted']) && $_POST['frm_submitted']);
+		return ('POST' === $requestMethod && isset($_POST['frm_submitted']) && $_POST['frm_submitted']);
 	}
 
 	public static function validateFormData($data)

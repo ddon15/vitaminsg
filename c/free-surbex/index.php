@@ -413,6 +413,8 @@
 	$(document).ready(function(e) {
 		var formSubmitted = '<?php $formSubmit; ?>';
 
+		console.log(formSubmitted);
+
 		if (formSubmitted) {
 			console.log('Form Submitted');
 			$('#form-reg')[0].reset();
@@ -421,7 +423,7 @@
 		$('#form-reg').on('submit', function(e) {
 			if (!isShared) {
 				alert('Share this information to your friends so they too can avail this Free Gift we are giving away.');
-				return;
+				return false;
 			}
 
 			$(this).submit();

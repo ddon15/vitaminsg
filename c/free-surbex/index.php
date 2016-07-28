@@ -1,5 +1,5 @@
+<!doctype html>
 <?php
-	
 	include 'helper.php';
 
 	$status = "";
@@ -23,12 +23,11 @@
 			
 			Helper::sendEmail($member);
 			
-			header('Location: success.html');
+			header('Location:success.php');
 			exit();
 		}	
 	}
 ?>
-<!doctype html>
 <html>
 
 <head>

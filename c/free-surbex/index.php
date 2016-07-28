@@ -8,6 +8,7 @@
 	$mmobile = "";
 	$maddress = "";
 	$errors = [];
+	$formSubmit = 0;
 
 	if (Helper::isFormSubmitted()) {
 		$errors = Helper::validateFormData($_POST);
@@ -32,7 +33,7 @@
 			$memail = "";
 			$mmobile = "";
 			$maddress = "";
-		
+			$formSubmit = 1;
 		}	
 	}
 ?>
@@ -410,6 +411,13 @@
 	}
 
 	$(document).ready(function(e) {
+		var formSubmitted = '<?php $formSubmit; ?>';
+
+		if (formSubmitted) {
+			console.log('Form Submitted');
+			$('#form-reg')[0].reset();
+		}
+
 		$('#form-reg').on('submit', function(e) {
 			if (!isShared) {
 				alert('Share this information to your friends so they too can avail this Free Gift we are giving away.');

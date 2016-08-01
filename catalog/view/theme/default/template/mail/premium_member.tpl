@@ -33,6 +33,37 @@
       </tr>
     </tbody>
   </table>
+
+  <!-- Billing and Shipping Address -->
+  <table style="border-collapse: collapse; width: 100%; border-top: 1px solid #DDDDDD; border-left: 1px solid #DDDDDD; margin-bottom: 20px;">
+    <thead>
+      <tr>
+        <td style="font-size: 12px; border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; background-color: #EFEFEF; font-weight: bold; text-align: left; padding: 7px; color: #222222;"><?php echo $text_billing_address; ?></td>
+        <td style="font-size: 12px; border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; background-color: #EFEFEF; font-weight: bold; text-align: left; padding: 7px; color: #222222;"><?php echo $text_shipping_address; ?></td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="font-size: 12px; border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; text-align: left; padding: 7px;">
+          <?php echo $customer['lastname']; ?><br />
+          <?php echo $customer['firstname']; ?><br />
+          <?php echo $customer_address['address_1']; ?><br />
+          <?php echo $customer_address['address_2']; ?><br />
+          <?php echo $customer_address['city'] . ' ' . $customer_address['postcode']; ?><br />
+          <?php echo $customer_address_country; ?><br />
+        </td>
+        <td style="font-size: 12px; border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; text-align: left; padding: 7px;">
+          <?php echo $customer['lastname']; ?><br />
+          <?php echo $customer['firstname']; ?><br />
+          <?php echo $customer_address['address_1']; ?><br />
+          <?php echo $customer_address['address_2']; ?><br />
+          <?php echo $customer_address['city'] . ' ' . $customer_address['postcode']; ?><br />
+          <?php echo $customer_address_country; ?><br />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
   <table style="border-collapse: collapse; width: 100%; border-top: 1px solid #DDDDDD; border-left: 1px solid #DDDDDD; margin-bottom: 20px;">
     <thead>
       <tr>

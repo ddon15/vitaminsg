@@ -19,4 +19,6 @@ $_['text_price']            = 'Price';
 $_['text_total']            = 'Total';	
 $_['text_reward_used']      = 'Vit$ (-%s)';	
 $_['text_footer']           = 'If you have any queries regarding your order, please contact us at info@vitamin.sg | or call us at +65 6255 7533';
+$_['text_billing_address']  = 'Billing Address'; 
+$_['text_shipping_address'] = 'Shipping Address';
 ?>

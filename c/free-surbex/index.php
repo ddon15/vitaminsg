@@ -231,7 +231,7 @@
 								      <a href = "https://www.facebook.com/vitaminsg/" class = "thumbnail" id="fb-like">
 								         <img src = "like-us-on-facebook.png" alt = "Like Us on Facebook">
 								      </a>
-								      <div class="fb-like" data-href="https://www.facebook.com/vitaminsg/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
+								      <div class="fb-like" data-href="https://www.facebook.com/vitaminsg/" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
 								   </div>
 								   
 								   <div class = "col-sm-8 col-md-4">
@@ -363,11 +363,12 @@
    }(document, 'script', 'facebook-jssdk'));
 </script>
 
-<script>(function(d, s, id) {d
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7";
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7&appId=648956708589658";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 

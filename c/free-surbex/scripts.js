@@ -1,8 +1,4 @@
 jQuery(document).ready(function($) {
-	
-	
-	
-	
 	$('.tncswal').on('click', function () {
 		var tnc = $(".tncwrap").html();
 		swal({
@@ -12,7 +8,4 @@ jQuery(document).ready(function($) {
 			confirmButtonText: "OK" });
 		return false;
 	});
-	
-	
-	
 });

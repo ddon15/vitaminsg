@@ -215,7 +215,7 @@
 									</div>
 								</div>
 								<br>
-								<p class="font-size-22px"><b>Step 2</b>. Share this offer with your friends, and they too will recieve a free bottle of Surbex Natopherol Vegicaps when they complete the registration form.</p>
+								<p class="font-size-22px"><b>Step 2</b>. LIKE our page and SHARE this offer with your friends via Facebook or Email, and they too will recieve a free bottle of Surbex Natopherol Vegicaps when they complete the registration form.</p>
 								<!-- <div class="row text-center">
 									<div class="fb-post" data-href="https://www.facebook.com/vitaminsg/posts/1003350073112542" data-width="500" data-show-text="true"><blockquote cite="https://www.facebook.com/vitaminsg/posts/1003350073112542" class="fb-xfbml-parse-ignore"><p>Did you know: Good things come in bundles... and now that applies to vitamins too!
 
@@ -231,7 +231,7 @@
 								      <a href = "https://www.facebook.com/vitaminsg/" class = "thumbnail" id="fb-like">
 								         <img src = "like-us-on-facebook.png" alt = "Like Us on Facebook">
 								      </a>
-								      <div class="fb-like" data-href="https://www.facebook.com/vitaminsg/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+								      <div class="fb-like" data-show-faces="true"data-href="https://www.facebook.com/vitaminsg/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
 								   </div>
 								   
 								   <div class = "col-sm-8 col-md-4">
@@ -378,8 +378,8 @@
 		{
 		  method: 'feed',
 		  name: 'Offer',
-		  link: 'https://www.facebook.com/vitaminsg/posts/1002221906558692',
-		  href: 'https://www.facebook.com/vitaminsg/posts/1002221906558692',
+		  link: 'https://www.facebook.com/vitaminsg/posts/1010990432348506',
+		  href: 'https://www.facebook.com/vitaminsg/posts/1010990432348506',
 		  // picture: 'http://fbrell.com/f8.jpg',
 		  // caption: 'Reference Documentation',
 		  // description: 'Dialogs provide a simple, consistent interface for applications to interface with users.'

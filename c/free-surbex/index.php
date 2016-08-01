@@ -283,7 +283,9 @@
 	        <h4 class="modal-title" id="myModalLabel">Send To:</h4>
 	      </div>
 	      <div class="modal-body">
-	      	<span>Type email and press enter to add.</span>
+	      	<span>1. Type your friend's email address and press the enter/return key to add it. </span> <br>
+	      	<span>2. Add as many friends as you want. </span><br>
+	      	<span>3. When you're done, hit "Send" to share with your friends! </span>
 	      	<div class="">
 	      		<select multiple data-role="tagsinput" id="tg"></select>
 	      	</div>
@@ -406,7 +408,7 @@
 
 		$('#form-reg').on('submit', function(e) {
 			if (isShared < 2) {
-				alert('Share this information to your friends so they too can avail this Free Gift we are giving away.');
+				alert('Help your friends get a free bottle too! Please like our page and share this giveaway with your friends via Facebook or email to proceed. Thank you.');
 				return false;
 			}
 
@@ -423,13 +425,21 @@
 		$('#btn-send').on('click', function(e) {
 			var emails = $('select#tg').val();
 			var elem = $(this);
-		
+			var senderEmail = $('#memail').val();
+			var senderName = $('#mname').val();
+			
+			if (!senderEmail) {
+				alert('You have not yet provided your email address.');
+				$('.bs-example-modal-sm').modal('hide');
+				return;
+			}
+
 			elem.button('loading');
 
 			$.ajax({
 				url: 'sendemail.php',
 				type: 'post',
-				data: {emails: emails},
+				data: {emails: emails, sender_email:senderEmail, sender_name: senderName },
 				async: false,
 				dataType: 'json',
 				success: function(response) {

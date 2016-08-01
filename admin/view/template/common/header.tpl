@@ -152,6 +152,7 @@ $(document).ready(function(){
                 <li><a href="<?php echo $special_promotions; ?>"><?php echo $text_promotions; ?></a></li>
           <?php }?>
           <?php //.[MY]?>
+          <li><a href="<?php echo $brand_promotions; ?>"><?php echo $text_brand_promotion; ?></a></li>
           <li><a class="parent"><?php echo $text_voucher; ?></a>
             <ul>
               <li><a href="<?php echo $voucher; ?>"><?php echo $text_voucher; ?></a></li>

@@ -100,4 +100,5 @@ $_['text_paypal_search']               = 'Search';
 $_['text_recurring_profile']           = 'Recurring Profiles';
 
 $_['text_promotion']                   = 'Sales Promotions';//[MY]
+$_['text_brand_promotion']             = 'Brand Promotions';//[MY]
 ?>

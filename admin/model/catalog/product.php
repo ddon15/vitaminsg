@@ -132,7 +132,7 @@ class ModelCatalogProduct extends Model {
 			}
 		} 
 
-		// $this->checkProductBrandPromotion($data['manufacturer_id'], $product_id);
+		$this->checkProductBrandPromotion($data['manufacturer_id'], $product_id);
 
 		$this->cache->delete('product');
 	}
@@ -293,7 +293,7 @@ class ModelCatalogProduct extends Model {
 
 		$this->db->query("DELETE FROM `" . DB_PREFIX . "product_profile` WHERE product_id = " . (int)$product_id);		if (isset($data['product_profiles'])) {			foreach ($data['product_profiles'] as $profile) {				$this->db->query("INSERT INTO `" . DB_PREFIX . "product_profile` SET `product_id` = " . (int)$product_id . ", customer_group_id = " . (int)$profile['customer_group_id'] . ", `profile_id` = " . (int)$profile['profile_id']);			}		}		$this->cache->delete('product');
 		
-		// $this->checkProductBrandPromotion($data['manufacturer_id'], $product_id);
+		$this->checkProductBrandPromotion($data['manufacturer_id'], $product_id);
 	}
 
 	public function copyProduct($product_id) {
@@ -710,10 +710,14 @@ class ModelCatalogProduct extends Model {
 		return $query->row['total'];
 	}
 	public function checkProductBrandPromotion($manufacturer_id, $product_id) {
-		$query = $this->db->query("SELECT DISTINCT * FROM " . DB_PREFIX . "brand_promotions WHERE id = '" & (int) $manufacturer_id & "'");
+		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "brand_promotions WHERE brand_id = '" . (int) $manufacturer_id . "'");
 
-		if ($product_special = $query->row) {
-			$this->db->query("INSERT INTO " . DB_PREFIX . "product_special SET product_id = '" . (int)$product_id . "', customer_group_id = '" . (int)$product_special['customer_group_id'] . "', priority = '" . (int)$product_special['priority'] . "', price = '" . (float)$product_special['price'] . "', date_start = '" . $this->db->escape($product_special['date_start']) . "', date_end = '" . $this->db->escape($product_special['date_end']) . "'");
+		if ($query->rows) {
+			$product_specials = $query->rows;
+			foreach ($product_specials as $product_special) {
+				$this->db->query("INSERT INTO " . DB_PREFIX . "product_special SET product_id = '" . (int)$product_id . "', customer_group_id = '" . (int)$product_special['customer_group_id'] . "', priority = '" . (int)$product_special['priority'] . "', price = '" . (float)$product_special['price'] . "', date_start = '" . $this->db->escape($product_special['date_start']) . "', date_end = '" . $this->db->escape($product_special['date_end']) . "'");
+			}
+			
 		}
 
 		return;

@@ -231,7 +231,7 @@
 								      <a href = "https://www.facebook.com/vitaminsg/" class = "thumbnail" id="fb-like">
 								         <img src = "like-us-on-facebook.png" alt = "Like Us on Facebook">
 								      </a>
-								      <div class="fb-like" data-href="https://www.facebook.com/vitaminsg/" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
+								     <div class="fb-like" data-href="https://www.facebook.com/vitaminsg/" data-width="1" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
 								   </div>
 								   
 								   <div class = "col-sm-8 col-md-4">

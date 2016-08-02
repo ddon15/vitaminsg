@@ -428,7 +428,7 @@
 			var senderEmail = $('#memail').val();
 			var senderName = $('#mname').val();
 
-			console.log(checkPageLikes);
+			console.log(checkPageLikes());
 
 			if (!senderEmail) {
 				alert('You have not yet provided your email address.');

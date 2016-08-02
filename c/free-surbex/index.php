@@ -352,7 +352,6 @@
 	window.fbAsyncInit = function() {
 		FB.init({
 			appId      : '648956708589658', // App ID
-			// channelUrl : '//www.vitamin.sg', // Channel File
 			status     : true, // check login status
 			cookie     : true, // enable cookies to allow the server to access the session
 			xfbml      : true  // parse XFBML
@@ -374,7 +373,7 @@
 	};
 
 	// Load the SDK asynchronously
-	(function(d){
+	(function(d) {
 	 var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
 	 if (d.getElementById(id)) {return;}
 	 js = d.createElement('script'); js.id = id; js.async = true;
@@ -389,7 +388,7 @@
 	  FB.api('/me/likes/164602346987323', function(response) {
 	    console.log(response.data);
 	    if (response.data) {
-	    	$('#fb-like-container').data('liked', 1);
+	    	$("#fb-like-container").data("liked", "1");
 	    }
 	  });
 	}
@@ -400,11 +399,11 @@
 		      FB.api('/me/likes/164602346987323', function(response) {
 			    console.log(response.data);
 			    if (response.data) {
-			    	$('#fb-like-container').data('liked', 1);
+			    	$("#fb-like-container").data("liked", "1");
 			    }
 			  });
 		     } else {
-		     	$('#fb-like-container').data('liked', 0);
+		     	$("#fb-like-container").data("liked", "0");
 		      	console.log('User cancelled login or did not fully authorize.');
 		     }
 		}, {scope: 'email, user_likes'});
@@ -423,7 +422,7 @@
 		},
 		function(response) {
 		 	if (response && response.post_id) {
-		  		$('#fb-shared-container').data('shared', 1);
+		  		$("#fb-shared-container").data("shared", "1");
 		   		console.log('Post was published');
 		  } else {
 		  		console.log('Post was not published');
@@ -485,7 +484,7 @@
 					       $('select#tg').tagsinput('removeAll');
 					       alert('You have successfully shared this free offer to your friends.');
 					       $('.bs-example-modal-sm').modal('hide');
-					       $('#myModal').data('emailed', 1);
+					       $("#myModal").data("emailed", "1");
 					   	}, 3000);
 					} else {
 						console.log(response.message);

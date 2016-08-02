@@ -348,52 +348,49 @@
 </script>
 
 <script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '648956708589658',
-      xfbml      : true,
-      version    : 'v2.7',
-      status	 : true,
-      cookie	 : true
-    });
-  };
-</script>
+  window.fbAsyncInit = function () {
+      FB.init({ appId: '648956708589658', cookie: true, xfbml: true, oauth: true });
 
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7&appId=648956708589658";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-
-FB.getLoginStatus(function(response) {
-      if (response.status === 'connected') {
-        // the user is logged in and has authenticated your
-        // app, and response.authResponse supplies
-        // the user's ID, a valid access token, a signed
-        // request, and the time the access token 
-        // and signed request each expire
-        var uid = response.authResponse.userID;
-        var accessToken = response.authResponse.accessToken;
-         console.log('we are fine');
-      } else if (response.status === 'not_authorized') {
-        // the user is logged in to Facebook, 
-        // but has not authenticated your app
-        console.log('please like us');
-         $("#container_notlike").show();
-      } else {
-        // the user isn't logged in to Facebook.
-         console.log('please login');
+      // *** here is my code ***
+      if (typeof facebookInit == 'function') {
+          facebookInit();
       }
-     });
+  };
 
-FB.Event.subscribe('edge.create',
-function(response) {
-     console.log('You liked the URL: ' + response);
-});
+  (function(d) {
+      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      d.getElementsByTagName('head')[0].appendChild(js);
+  }(document));
 
+  function facebookInit() {
+    FB.getLoginStatus(function(response) {
+          if (response.status === 'connected') {
+            // the user is logged in and has authenticated your
+            // app, and response.authResponse supplies
+            // the user's ID, a valid access token, a signed
+            // request, and the time the access token 
+            // and signed request each expire
+            var uid = response.authResponse.userID;
+            var accessToken = response.authResponse.accessToken;
+             console.log('we are fine');
+          } else if (response.status === 'not_authorized') {
+            // the user is logged in to Facebook, 
+            // but has not authenticated your app
+            console.log('please like us');
+             $("#container_notlike").show();
+          } else {
+            // the user isn't logged in to Facebook.
+             console.log('please login');
+          }
+         });
+
+    FB.Event.subscribe('edge.create',
+    function(response) {
+         console.log('You liked the URL: ' + response);
+    });
+  }
 </script>
 
 <script type="txt/javascript">

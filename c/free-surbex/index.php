@@ -381,7 +381,7 @@
 	window.fbAsyncInit = function() {
 		FB.init({
 			appId      : '648956708589658', // App ID
-			channelUrl : '//www.vitamin.sg', // Channel File
+			// channelUrl : '//www.vitamin.sg', // Channel File
 			status     : true, // check login status
 			cookie     : true, // enable cookies to allow the server to access the session
 			xfbml      : true  // parse XFBML

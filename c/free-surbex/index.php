@@ -414,7 +414,7 @@
 
 	function testAPI() {
 	  FB.api('/me', function(response) {
-	    console.log('Good to see you, ' + response.name + '.');
+	    console.log('Current Fb Login User, ' + response.name + '.');
 	  });
 	  FB.api('/me/likes/164602346987323', function(response) {
 	    console.log(response.data);
@@ -423,38 +423,6 @@
 	    }
 	  });
 	}
-
-	// function facebookInit() {
-	// 	FB.getLoginStatus(function(response) {
-	// 		if (response.status === 'connected') {
-	// 			// the user is logged in and has authenticated your
-	// 			// app, and response.authResponse supplies
-	// 			// the user's ID, a valid access token, a signed
-	// 			// request, and the time the access token 
-	// 			// and signed request each expire
-	// 			var uid = response.authResponse.userID;
-	// 			var accessToken = response.authResponse.accessToken;
-	// 			 console.log('we are fine');	
-	// 		} else if (response.status === 'not_authorized') {
-	// 			userLikedThePage = 0;
-	// 			console.log('please like us');
-	// 		} else {
-	// 			// the user isn't logged in to Facebook.
-	// 		 	console.log('please login');
-	// 		}
-	//     });
-
-	// 	FB.Event.subscribe('edge.create',
-	// 		function(response) {
-	//     		console.log('You liked the URL: ' + response);
-	// 		}
-	// 	);
-
-	// 	FB.api('/me/likes/PAGE_ID', function(response) {
-	// 	   console.log(response.data);
-	// 	 }
-	// }
-
 
 	document.getElementById('share-btn').onclick = function(e) {
 		FB.ui(

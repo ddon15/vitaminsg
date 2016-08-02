@@ -464,7 +464,7 @@
 		{
 			FB.api('/me/likes/648956708589658', function(response) {
 			    console.log(response.data);
-			}
+			});
 		}
 	});
 </script>

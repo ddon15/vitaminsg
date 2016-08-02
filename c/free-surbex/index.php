@@ -478,7 +478,7 @@
 
 			FB.api('/me/likes/164602346987323', function(response) {
 			   console.log("test 2",  response.data);
-			 }
+			 });
 		}
 	});
 </script>

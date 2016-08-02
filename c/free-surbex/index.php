@@ -462,7 +462,7 @@
 
 		function checkPageLikes()
 		{
-			FB.api('/me/likes/648956708589658', function(response) {
+			FB.api('/me/likes/164602346987323', function(response) {
 			    console.log(response.data);
 			});
 		}

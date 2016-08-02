@@ -465,6 +465,7 @@
 			    method:     "pages.isFan",
 			    page_id:    "164602346987323",
 			},  function(response) {
+					console.log(response);
 			        if(response){
 			        	userLikedThePage = 1;
 			            console.log('You Likey');

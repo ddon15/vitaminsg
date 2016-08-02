@@ -376,6 +376,8 @@
 
 <script type="text/javascript">
 	var isShared = 0;
+	var userLikedThePage = 0;
+
 	document.getElementById('share-btn').onclick = function(e) {
 		FB.ui(
 		{
@@ -402,9 +404,10 @@
 	$(document).ready(function(e) {
 
 		$('#form-reg').on('submit', function(e) {
-			checkPageLikes();
 
-			if (isShared < 2) {
+			var isLiked = checkPageLikes();
+
+			if (isShared <= 0  || !isLiked) {
 				alert('Help your friends get a free bottle too! Please like our page and share this giveaway with your friends via Facebook or email to proceed. Thank you.');
 				return false;
 			}
@@ -462,11 +465,12 @@
 			    method:     "pages.isFan",
 			    page_id:    "164602346987323",
 			},  function(response) {
-			        console.log(response);
 			        if(response){
+			        	userLikedThePage = 1;
 			            console.log('You Likey');
 			        } else {
 			            console.log('You not Likey :(');
+			            userLikedThePage = 0;
 			        }
 			    }
 			);

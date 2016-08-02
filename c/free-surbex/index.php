@@ -351,47 +351,103 @@
 	var isShared = 0;
 	var userLikedThePage = 0;
 
-	window.fbAsyncInit = function () {
-	  FB.init({ appId: '648956708589658', cookie: true, xfbml: true, oauth: true });
+	// window.fbAsyncInit = function () {
+	//   FB.init({ appId: '648956708589658', cookie: true, xfbml: true, oauth: true });
 
-	  if (typeof facebookInit == 'function') {
-	      facebookInit();
-	  }
+	//   if (typeof facebookInit == 'function') {
+	//       facebookInit();
+	//   }
+	// };
+
+	// (function(d) {
+	//   var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+	//   js = d.createElement('script'); js.id = id; js.async = true;
+	//   js.src = "//connect.facebook.net/en_US/all.js";
+	//   d.getElementsByTagName('head')[0].appendChild(js);
+	// }(document));
+
+	// FB.Event.subscribe('auth.authResponseChange', function(response) {
+	//     if (response.status === 'connected') {
+	//       testAPI();
+	//     } else if (response.status === 'not_authorized') {
+	//   $("#btnFB").show();     
+	//       FB.login();
+	//     } else {
+	//   $("#btnFB").show();         
+	//       FB.login();
+	//     }
+	// });
+
+	window.fbAsyncInit = function() {
+		FB.init({
+			appId      : '648956708589658', // App ID
+			channelUrl : '//www.vitamin.sg', // Channel File
+			status     : true, // check login status
+			cookie     : true, // enable cookies to allow the server to access the session
+			xfbml      : true  // parse XFBML
+		});
+
+		FB.Event.subscribe('auth.authResponseChange', function(response) {
+			if (response.status === 'connected') {
+				testAPI();
+			} else if (response.status === 'not_authorized') {
+			$("#btnFB").show();     
+				FB.login();
+			} else {
+			$("#btnFB").show();         
+				FB.login();
+			}
+		});
 	};
 
-	(function(d) {
-	  var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
-	  js = d.createElement('script'); js.id = id; js.async = true;
-	  js.src = "//connect.facebook.net/en_US/all.js";
-	  d.getElementsByTagName('head')[0].appendChild(js);
+	// Load the SDK asynchronously
+	(function(d){
+	 var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+	 if (d.getElementById(id)) {return;}
+	 js = d.createElement('script'); js.id = id; js.async = true;
+	 js.src = "//connect.facebook.net/en_US/all.js";
+	 ref.parentNode.insertBefore(js, ref);
 	}(document));
 
-	function facebookInit() {
-		FB.getLoginStatus(function(response) {
-			if (response.status === 'connected') {
-				// the user is logged in and has authenticated your
-				// app, and response.authResponse supplies
-				// the user's ID, a valid access token, a signed
-				// request, and the time the access token 
-				// and signed request each expire
-				var uid = response.authResponse.userID;
-				var accessToken = response.authResponse.accessToken;
-				 console.log('we are fine');	
-			} else if (response.status === 'not_authorized') {
-				userLikedThePage = 0;
-				console.log('please like us');
-			} else {
-				// the user isn't logged in to Facebook.
-			 	console.log('please login');
-			}
-	    });
-
-		FB.Event.subscribe('edge.create',
-			function(response) {
-	    		console.log('You liked the URL: ' + response);
-			}
-		);
+	function testAPI() {
+	  FB.api('/me', function(response) {
+	    console.log('Good to see you, ' + response.name + '.');
+	  });
+	  FB.api('/me/likes/PAGE_ID', function(response) {
+	    console.log(response.data);
+	  });
 	}
+
+	// function facebookInit() {
+	// 	FB.getLoginStatus(function(response) {
+	// 		if (response.status === 'connected') {
+	// 			// the user is logged in and has authenticated your
+	// 			// app, and response.authResponse supplies
+	// 			// the user's ID, a valid access token, a signed
+	// 			// request, and the time the access token 
+	// 			// and signed request each expire
+	// 			var uid = response.authResponse.userID;
+	// 			var accessToken = response.authResponse.accessToken;
+	// 			 console.log('we are fine');	
+	// 		} else if (response.status === 'not_authorized') {
+	// 			userLikedThePage = 0;
+	// 			console.log('please like us');
+	// 		} else {
+	// 			// the user isn't logged in to Facebook.
+	// 		 	console.log('please login');
+	// 		}
+	//     });
+
+	// 	FB.Event.subscribe('edge.create',
+	// 		function(response) {
+	//     		console.log('You liked the URL: ' + response);
+	// 		}
+	// 	);
+
+	// 	FB.api('/me/likes/PAGE_ID', function(response) {
+	// 	   console.log(response.data);
+	// 	 }
+	// }
 
 
 	document.getElementById('share-btn').onclick = function(e) {

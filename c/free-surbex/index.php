@@ -470,27 +470,6 @@
 				}
 			});
 		});
-
-		FB.login(function(response) {
-	        if (response.status == 'connected') {
-	            var user_id = response.authResponse.userID;
-	            var page_id = "164602346987323"; // coca cola page https://www.facebook.com/cocacola
-	            var fql_query = "SELECT uid FROM page_fan WHERE page_id=" + page_id + " and uid=" + user_id;
-
-	            FB.api('/me/likes/'+page_id, function(response) {
-	                if (response.data[0]) {
-	                	console.log('like the page');
-	                    userLikedThePage = 1;
-	                } else {
-	                	console.log('not like the page');
-	                    userLikedThePage = 0;
-	                }
-	            });
-	        } else {
-	        	console.log('User not login');
-	            // user is not logged in
-	        }
-	    });
 	});
 </script>
 </body>

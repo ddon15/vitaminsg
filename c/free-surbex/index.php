@@ -457,7 +457,8 @@
 				}
 			});
 		});
-
+		
+		/*FB testing*/
 		var page_like_or_unlike_callback = function(url, html_element) {
 		  console.log("page_like_or_unlike_callback");
 		  console.log(url);

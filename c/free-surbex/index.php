@@ -227,14 +227,14 @@
 									</div>
 								</div> -->
 								<div class = "row social-media">
-								   <div class = "col-sm-8 col-md-4">
+								   <div class = "col-sm-8 col-md-4" id="fb-like-container" data-liked="0">
 								      <a href = "#" class = "thumbnail" id="fb-like" style="padding: 17px 51px;">
 								         <!-- <img src = "like-us-on-facebook.png" alt = "Like Us on Facebook"> -->
 								      	<div class="fb-like" data-href="https://www.facebook.com/vitaminsg/" data-width="1" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
 								      </a>
 								   </div>
 								   
-								   <div class = "col-sm-8 col-md-4">
+								   <div class = "col-sm-8 col-md-4" id="fb-shared-container" data-shared="0">
 								      <a href = "#" class = "thumbnail" id="share-btn">
 								         <img src = "FB_share.png" alt = "Share Post">
 								      </a>
@@ -275,7 +275,7 @@
 	
 	<!-- Modals -->
 	<!-- Modal -->
-	<div class="modal fade bs-example-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal fade bs-example-modal-sm" data-emailed="0" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content">
 	      <div class="modal-header">
@@ -349,9 +349,6 @@
 
 <div id="fb-root"></div>
 <script>
-	var isShared = 0;
-	var userLikedThePage = 0;
-
 	window.fbAsyncInit = function() {
 		FB.init({
 			appId      : '648956708589658', // App ID
@@ -392,7 +389,7 @@
 	  FB.api('/me/likes/164602346987323', function(response) {
 	    console.log(response.data);
 	    if (response.data) {
-	    	userLikedThePage = 1;
+	    	$('#fb-like-container').data('liked', 1);
 	    }
 	  });
 	}
@@ -410,7 +407,7 @@
 		},
 		function(response) {
 		 	if (response && response.post_id) {
-		  		isShared++;
+		  		$('#fb-shared-container').data('shared', 1);
 		   		console.log('Post was published');
 		  } else {
 		  		console.log('Post was not published');
@@ -422,10 +419,15 @@
 
 	$(document).ready(function(e) {
 		$('#form-reg').on('submit', function(e) {
+			var isSharedToFb = $('#fb-shared-container').data('shared');
+			var isEmailed = $('#myModal').data('emailed');
+			var isShared = isSharedToFb || isEmailed;
+			var userLikedThePage = $('#fb-like-container').data('liked');
+
 			console.log('isShared:', isShared);
 			console.log('userLikedThePage:', userLikedThePage);
 
-			if (!isShared || !userLikedThePage) {
+			if (!userLikedThePage !! !isShared) {
 				alert('Help your friends get a free bottle too! Please like our page and share this giveaway with your friends via Facebook or email to proceed. Thank you.');
 				return false;
 			}
@@ -468,7 +470,7 @@
 					       $('select#tg').tagsinput('removeAll');
 					       alert('You have successfully shared this free offer to your friends.');
 					       $('.bs-example-modal-sm').modal('hide');
-					       isShared++;
+					       $('#myModal').data('emailed', 1);
 					   	}, 3000);
 					} else {
 						console.log(response.message);

@@ -427,7 +427,7 @@
 			console.log('isShared:', isShared);
 			console.log('userLikedThePage:', userLikedThePage);
 
-			if (!userLikedThePage !! !isShared) {
+			if (!userLikedThePage || !isShared) {
 				alert('Help your friends get a free bottle too! Please like our page and share this giveaway with your friends via Facebook or email to proceed. Thank you.');
 				return false;
 			}

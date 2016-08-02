@@ -387,18 +387,6 @@
 			xfbml      : true  // parse XFBML
 		});
 
-		FB.Event.subscribe('auth.authResponseChange', function(response) {
-			if (response.status === 'connected') {
-				console.log('connected');
-				testAPI();
-			} else if (response.status === 'not_authorized') {
-				console.log('not authorized');
-				FB.login();
-			} else {
-				console.log('not login');
-				FB.login();
-			}
-		});
 	};
 
 	// Load the SDK asynchronously
@@ -410,6 +398,19 @@
 	 ref.parentNode.insertBefore(js, ref);
 	}(document));
 
+	FB.Event.subscribe('auth.authResponseChange', function(response) {
+		if (response.status === 'connected') {
+			console.log('connected');
+			testAPI();
+		} else if (response.status === 'not_authorized') {
+			console.log('not authorized');
+			FB.login();
+		} else {
+			console.log('not login');
+			FB.login();
+		}
+	});
+	
 	function testAPI() {
 	  FB.api('/me', function(response) {
 	    console.log('Good to see you, ' + response.name + '.');

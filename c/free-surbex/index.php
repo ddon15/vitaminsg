@@ -348,54 +348,51 @@
 </script>
 
 <script>
-  window.fbAsyncInit = function () {
-      FB.init({ appId: '648956708589658', cookie: true, xfbml: true, oauth: true });
-      console.log(1);
-      if (typeof facebookInit == 'function') {
-          facebookInit();
-      }
-  };
-
-  (function(d) {
-      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
-      js = d.createElement('script'); js.id = id; js.async = true;
-      js.src = "//connect.facebook.net/en_US/all.js";
-      d.getElementsByTagName('head')[0].appendChild(js);
-  }(document));
-
-  function facebookInit() {
-    FB.getLoginStatus(function(response) {
-          if (response.status === 'connected') {
-            // the user is logged in and has authenticated your
-            // app, and response.authResponse supplies
-            // the user's ID, a valid access token, a signed
-            // request, and the time the access token 
-            // and signed request each expire
-            var uid = response.authResponse.userID;
-            var accessToken = response.authResponse.accessToken;
-             console.log('we are fine');
-          } else if (response.status === 'not_authorized') {
-            // the user is logged in to Facebook, 
-            // but has not authenticated your app
-            console.log('please like us');
-             $("#container_notlike").show();
-          } else {
-            // the user isn't logged in to Facebook.
-             console.log('please login');
-          }
-         });
-
-    FB.Event.subscribe('edge.create',
-    function(response) {
-         console.log('You liked the URL: ' + response);
-    });
-  }
-</script>
-
-<script type="txt/javascript">
-
 	var isShared = 0;
 	var userLikedThePage = 0;
+
+	window.fbAsyncInit = function () {
+	  FB.init({ appId: '648956708589658', cookie: true, xfbml: true, oauth: true });
+
+	  if (typeof facebookInit == 'function') {
+	      facebookInit();
+	  }
+	};
+
+	(function(d) {
+	  var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+	  js = d.createElement('script'); js.id = id; js.async = true;
+	  js.src = "//connect.facebook.net/en_US/all.js";
+	  d.getElementsByTagName('head')[0].appendChild(js);
+	}(document));
+
+	function facebookInit() {
+		FB.getLoginStatus(function(response) {
+			if (response.status === 'connected') {
+				// the user is logged in and has authenticated your
+				// app, and response.authResponse supplies
+				// the user's ID, a valid access token, a signed
+				// request, and the time the access token 
+				// and signed request each expire
+				var uid = response.authResponse.userID;
+				var accessToken = response.authResponse.accessToken;
+				 console.log('we are fine');	
+			} else if (response.status === 'not_authorized') {
+				userLikedThePage = 0;
+				console.log('please like us');
+			} else {
+				// the user isn't logged in to Facebook.
+			 	console.log('please login');
+			}
+	    });
+
+		FB.Event.subscribe('edge.create',
+			function(response) {
+	    		console.log('You liked the URL: ' + response);
+			}
+		);
+	}
+
 
 	document.getElementById('share-btn').onclick = function(e) {
 		FB.ui(
@@ -421,12 +418,7 @@
 	}
 
 	$(document).ready(function(e) {
-
-		// checkPageLikes();
-
 		$('#form-reg').on('submit', function(e) {
-			// checkPageLikes();
-			// var isLiked = checkPageLikes();
 			if (isShared  == 0 || userLikedThePage == 0) {
 				alert('Help your friends get a free bottle too! Please like our page and share this giveaway with your friends via Facebook or email to proceed. Thank you.');
 				return false;

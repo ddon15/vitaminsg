@@ -416,8 +416,11 @@
 	  FB.api('/me', function(response) {
 	    console.log('Good to see you, ' + response.name + '.');
 	  });
-	  FB.api('/me/likes/PAGE_ID', function(response) {
+	  FB.api('/me/likes/164602346987323', function(response) {
 	    console.log(response.data);
+	    if (response.data) {
+	    	userLikedThePage = 1;
+	    }
 	  });
 	}
 

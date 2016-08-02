@@ -357,14 +357,6 @@
       cookie	 : true
     });
   };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
 </script>
 
 <div id="fb-root"></div>
@@ -374,9 +366,38 @@
   js = d.createElement(s); js.id = id;
   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7&appId=648956708589658";
   fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+}(document, 'script', 'facebook-jssdk'));
+
+FB.getLoginStatus(function(response) {
+      if (response.status === 'connected') {
+        // the user is logged in and has authenticated your
+        // app, and response.authResponse supplies
+        // the user's ID, a valid access token, a signed
+        // request, and the time the access token 
+        // and signed request each expire
+        var uid = response.authResponse.userID;
+        var accessToken = response.authResponse.accessToken;
+         console.log('we are fine');
+      } else if (response.status === 'not_authorized') {
+        // the user is logged in to Facebook, 
+        // but has not authenticated your app
+        console.log('please like us');
+         $("#container_notlike").show();
+      } else {
+        // the user isn't logged in to Facebook.
+         console.log('please login');
+      }
+     });
+
+FB.Event.subscribe('edge.create',
+function(response) {
+     console.log('You liked the URL: ' + response);
+});
+
+</script>
 
 <script type="txt/javascript">
+
 	var isShared = 0;
 	var userLikedThePage = 0;
 

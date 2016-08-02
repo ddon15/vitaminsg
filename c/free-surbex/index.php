@@ -389,12 +389,13 @@
 
 		FB.Event.subscribe('auth.authResponseChange', function(response) {
 			if (response.status === 'connected') {
+				console.log('connected');
 				testAPI();
 			} else if (response.status === 'not_authorized') {
-			$("#btnFB").show();     
+				console.log('not authorized');
 				FB.login();
 			} else {
-			$("#btnFB").show();         
+				console.log('not login');
 				FB.login();
 			}
 		});

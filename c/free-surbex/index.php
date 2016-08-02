@@ -402,9 +402,8 @@
 	$(document).ready(function(e) {
 
 		$('#form-reg').on('submit', function(e) {
-			var hasLikePage = checkPageLikes();
-			console.log(hasLikePage);
-			
+			checkPageLikes();
+
 			if (isShared < 2) {
 				alert('Help your friends get a free bottle too! Please like our page and share this giveaway with your friends via Facebook or email to proceed. Thank you.');
 				return false;
@@ -459,9 +458,18 @@
 
 		function checkPageLikes()
 		{
-			FB.api('/me/likes/164602346987323', function(response) {
-			    console.log(response.data);
-			});
+			FB.api({
+			    method:     "pages.isFan",
+			    page_id:    "164602346987323",
+			},  function(response) {
+			        console.log(response);
+			        if(response){
+			            console.log('You Likey');
+			        } else {
+			            console.log('You not Likey :(');
+			        }
+			    }
+			);
 		}
 	});
 </script>

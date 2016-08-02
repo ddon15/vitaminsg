@@ -365,10 +365,10 @@
 				testAPI();
 			} else if (response.status === 'not_authorized') {
 				console.log('not authorized');
-				FB.login();
+				fbLogin();
 			} else {
 				console.log('not login');
-				FB.login();
+				fbLogin();
 			}
 		});
 	};
@@ -392,6 +392,22 @@
 	    	$('#fb-like-container').data('liked', 1);
 	    }
 	  });
+	}
+
+	function fbLogin() {
+		FB.login(function(response) {
+		  if (response.authResponse) {
+		      FB.api('/me/likes/164602346987323', function(response) {
+			    console.log(response.data);
+			    if (response.data) {
+			    	$('#fb-like-container').data('liked', 1);
+			    }
+			  });
+		     } else {
+		     	$('#fb-like-container').data('liked', 0);
+		      	console.log('User cancelled login or did not fully authorize.');
+		     }
+		}, {scope: 'email, user_likes'});
 	}
 
 	document.getElementById('share-btn').onclick = function(e) {

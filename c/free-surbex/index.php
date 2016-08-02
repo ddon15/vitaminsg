@@ -323,7 +323,7 @@
 	</div>
 </div>	
 
-<div id="fb-root"></div>
+
 
 <!-- Javascript Libraries -->	
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -347,41 +347,62 @@
   ga('send', 'pageview');
 </script>
 
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '648956708589658',
-      xfbml      : true,
-      version    : 'v2.7'
-    });
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
-
 <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7&appId=648956708589658";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-<script type="text/javascript">
+<script>
 	var isShared = 0;
+	var userLikedThePage = 0;
+
+	window.fbAsyncInit = function() {
+		FB.init({
+			appId      : '648956708589658', // App ID
+			// channelUrl : '//www.vitamin.sg', // Channel File
+			status     : true, // check login status
+			cookie     : true, // enable cookies to allow the server to access the session
+			xfbml      : true  // parse XFBML
+		});
+
+		FB.Event.subscribe('auth.authResponseChange', function(response) {
+			console.log(response);
+			if (response.status === 'connected') {
+				console.log('connected');
+				testAPI();
+			} else if (response.status === 'not_authorized') {
+				console.log('not authorized');
+				FB.login();
+			} else {
+				console.log('not login');
+				FB.login();
+			}
+		});
+	};
+
+	// Load the SDK asynchronously
+	(function(d){
+	 var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+	 if (d.getElementById(id)) {return;}
+	 js = d.createElement('script'); js.id = id; js.async = true;
+	 js.src = "//connect.facebook.net/en_US/all.js";
+	 ref.parentNode.insertBefore(js, ref);
+	}(document));
+
+	function testAPI() {
+	  FB.api('/me', function(response) {
+	    console.log('Current Fb Login User, ' + response.name + '.');
+	  });
+	  FB.api('/me/likes/164602346987323', function(response) {
+	    console.log(response.data);
+	    if (response.data) {
+	    	userLikedThePage = 1;
+	    }
+	  });
+	}
+
 	document.getElementById('share-btn').onclick = function(e) {
 		FB.ui(
 		{
 		  method: 'feed',
 		  name: 'Offer',
-		  link: 'https://www.facebook.com/vitaminsg/posts/1010990432348506',
+		  link: 'https://www.vitamin.sg/c/free-surbex',
 		  href: 'https://www.facebook.com/vitaminsg/posts/1010990432348506',
 		  // picture: 'http://fbrell.com/f8.jpg',
 		  // caption: 'Reference Documentation',
@@ -399,15 +420,12 @@
 		e.preventDefault();
 	}
 
-	document.getElementById('fb-like').onclick = function() {
-		console.log('test');
-		$('fb:like').trigger('click');
-	}
-
 	$(document).ready(function(e) {
-
 		$('#form-reg').on('submit', function(e) {
-			if (isShared < 2) {
+			console.log('isShared:', isShared);
+			console.log('userLikedThePage:', userLikedThePage);
+
+			if (!isShared || !userLikedThePage) {
 				alert('Help your friends get a free bottle too! Please like our page and share this giveaway with your friends via Facebook or email to proceed. Thank you.');
 				return false;
 			}
@@ -427,6 +445,7 @@
 			var elem = $(this);
 			var senderEmail = $('#memail').val();
 			var senderName = $('#mname').val();
+
 
 			if (!senderEmail) {
 				alert('You have not yet provided your email address.');

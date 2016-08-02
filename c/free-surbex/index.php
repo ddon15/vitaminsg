@@ -352,7 +352,7 @@
     FB.init({
       appId      : '648956708589658',
       xfbml      : true,
-      version    : 'v2.7'
+      version    : 'v2.7',
       status	 : true,
       cookie	 : true
     });
@@ -409,7 +409,7 @@
 	$(document).ready(function(e) {
 
 		var userId = null;
-		
+
 		FB.api('/me', 'post', function(response)
 		{
 			console.log(response);

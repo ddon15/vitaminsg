@@ -350,8 +350,7 @@
 <script>
   window.fbAsyncInit = function () {
       FB.init({ appId: '648956708589658', cookie: true, xfbml: true, oauth: true });
-
-      // *** here is my code ***
+      console.log(1);      // *** here is my code ***
       if (typeof facebookInit == 'function') {
           facebookInit();
       }

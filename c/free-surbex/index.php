@@ -353,9 +353,14 @@
       appId      : '648956708589658',
       xfbml      : true,
       version    : 'v2.7'
+      status	 : true,
+      cookie	 : true
     });
   };
 
+  FB.Event.subscribe('edge.create', function(href, widget) {
+  jQuery('#content').show();
+     });
   (function(d, s, id){
      var js, fjs = d.getElementsByTagName(s)[0];
      if (d.getElementById(id)) {return;}
@@ -374,7 +379,7 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-<script type="text/javascript">
+<script type="txt/javascript">
 	var isShared = 0;
 	var userLikedThePage = 0;
 
@@ -402,6 +407,13 @@
 	}
 
 	$(document).ready(function(e) {
+
+		var userId = null;
+		
+		FB.api('/me', 'post', function(response)
+		{
+			console.log(response);
+		});
 
 		$('#form-reg').on('submit', function(e) {
 
@@ -461,16 +473,11 @@
 
 		function checkPageLikes()
 		{
-			FB.api({method: 'pages.isFan', page_id: '164602346987323',}, function(response) {
-				console.log("test1:", response);
-		        if(response){
-		        	userLikedThePage = 1;
-		            console.log('You Likey');
-		        } else {
-		            console.log('You not Likey :(');
-		            userLikedThePage = 0;
-		        }
-			 });
+			FB.api({ method: 'fql.query', query: 'SELECT uid FROM page_fan WHERE uid= ' + user_id + ' AND page_id=164602346987323' },
+		    function(result) {
+		        if (result.length)
+		        { userLikedThePage = 1; }
+		    });
 
 			FB.api('/me/likes/164602346987323', function(response) {
 			   console.log("test 2",  response.data);

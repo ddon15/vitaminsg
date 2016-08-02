@@ -465,7 +465,7 @@
 			    method:     "pages.isFan",
 			    page_id:    "164602346987323",
 			},  function(response) {
-					console.log(response);
+					console.log("test1:", response);
 			        if(response){
 			        	userLikedThePage = 1;
 			            console.log('You Likey');
@@ -475,6 +475,10 @@
 			        }
 			    }
 			);
+
+			FB.api('/me/likes/164602346987323', function(response) {
+			   console.log("test 2",  response.data);
+			 }
 		}
 	});
 </script>

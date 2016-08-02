@@ -441,7 +441,6 @@
 		  allowDuplicates: false
 		});
 
-
 		$('#btn-send').on('click', function(e) {
 			var emails = $('select#tg').val();
 			var elem = $(this);
@@ -481,6 +480,4 @@
 	});
 </script>
 </body>
-
-
 </html>

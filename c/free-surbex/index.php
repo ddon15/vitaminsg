@@ -381,7 +381,7 @@
 		{
 		  method: 'feed',
 		  name: 'Offer',
-		  link: 'https://www.facebook.com/vitaminsg/posts/1010990432348506',
+		  link: 'https://www.vitamin.sg/c/free-surbex',
 		  href: 'https://www.facebook.com/vitaminsg/posts/1010990432348506',
 		  // picture: 'http://fbrell.com/f8.jpg',
 		  // caption: 'Reference Documentation',
@@ -428,6 +428,8 @@
 			var senderEmail = $('#memail').val();
 			var senderName = $('#mname').val();
 
+			console.log(checkPageLikes);
+
 			if (!senderEmail) {
 				alert('You have not yet provided your email address.');
 				$('.bs-example-modal-sm').modal('hide');
@@ -457,17 +459,13 @@
 				}
 			});
 		});
-		
-		/*FB testing*/
-		var page_like_or_unlike_callback = function(url, html_element) {
-		  console.log("page_like_or_unlike_callback");
-		  console.log(url);
-		  console.log(html_element);
-		}
 
-		// In your onload handler
-		FB.Event.subscribe('edge.create', page_like_or_unlike_callback);
-		FB.Event.subscribe('edge.remove', page_like_or_unlike_callback);
+		function checkPageLikes()
+		{
+			FB.api('/me/likes/648956708589658', function(response) {
+			    console.log(response.data);
+			}
+		}
 	});
 </script>
 </body>

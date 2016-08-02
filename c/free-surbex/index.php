@@ -399,14 +399,12 @@
 		e.preventDefault();
 	}
 
-	document.getElementById('fb-like').onclick = function() {
-		console.log('test');
-		$('fb:like').trigger('click');
-	}
-
 	$(document).ready(function(e) {
 
 		$('#form-reg').on('submit', function(e) {
+			var hasLikePage = checkPageLikes();
+			console.log(hasLikePage);
+			
 			if (isShared < 2) {
 				alert('Help your friends get a free bottle too! Please like our page and share this giveaway with your friends via Facebook or email to proceed. Thank you.');
 				return false;
@@ -428,7 +426,6 @@
 			var senderEmail = $('#memail').val();
 			var senderName = $('#mname').val();
 
-			console.log(checkPageLikes());
 
 			if (!senderEmail) {
 				alert('You have not yet provided your email address.');

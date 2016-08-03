@@ -522,7 +522,17 @@
 		$('a#fb-like').on('click', function(e) {
 			e.preventDefault();
 			FB.login(function(response) {
-			  $('#fb-like-container').data('liked', '1');
+				FB.api(
+				    "/164602346987323/likes",
+				    "POST",
+				    function (response) {
+						console.log(response);
+						if (response && !response.error) {
+							/* handle the result */
+							$('#fb-like-container').data('liked', '1');
+						}
+				    }
+				);
 			}, {
 			    scope: 'publish_actions', 
 			    return_scopes: true

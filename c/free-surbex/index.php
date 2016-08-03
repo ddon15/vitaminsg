@@ -229,8 +229,8 @@
 								<div class = "row social-media">
 								   <div class = "col-sm-8 col-md-4" id="fb-like-container" data-liked="0">
 								      <a href = "#" class = "thumbnail" id="fb-like" style="/*padding: 17px 51px;*/">
-								         <!-- <img src = "like-us-on-facebook.png" alt = "Like Us on Facebook"> -->
-								      	<div class="fb-like" data-href="https://www.facebook.com/vitaminsg/" data-width="1" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
+								         <img src = "like-us-on-facebook.png" alt = "Like Us on Facebook">
+								      <!-- 	<div class="fb-like" data-href="https://www.facebook.com/vitaminsg/" data-width="1" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div> -->
 								      </a>
 								   </div>
 								   
@@ -524,7 +524,7 @@
 		$('a#fb-like').on('click', function(e) {
 			e.preventDefault();
 			FB.login(function(response) {
-			  console.log(response);
+			  $('#fb-like-container').data('shared', '1');
 			}, {
 			    scope: 'publish_actions', 
 			    return_scopes: true

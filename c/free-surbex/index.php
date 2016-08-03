@@ -534,7 +534,7 @@
 				    }
 				);
 			}, {
-			    scope: 'publish_actions', 
+			    scope: 'publish_actions, publish_pages', 
 			    return_scopes: true
 			});
 		});

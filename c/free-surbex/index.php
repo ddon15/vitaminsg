@@ -228,9 +228,9 @@
 								</div> -->
 								<div class = "row social-media">
 								   <div class = "col-sm-8 col-md-4" id="fb-like-container" data-liked="0">
-								      <a href = "#" class = "thumbnail" id="fb-like" style="padding: 17px 51px;">
-								         <img src = "like-us-on-facebook.png" alt = "Like Us on Facebook">
-								      	<!-- <div class="fb-like" data-href="https://www.facebook.com/vitaminsg/" data-width="1" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div> -->
+								      <a href = "#" class = "thumbnail" id="fb-like" style="/*padding: 17px 51px;*/">
+								         <!-- <img src = "like-us-on-facebook.png" alt = "Like Us on Facebook"> -->
+								      	<div class="fb-like" data-href="https://www.facebook.com/vitaminsg/" data-width="1" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
 								      </a>
 								   </div>
 								   
@@ -404,6 +404,8 @@
 		statusChangeCallback(response);
 	});
 
+	};
+
 	// Load the SDK asynchronously
 	(function(d, s, id) {
 	var js, fjs = d.getElementsByTagName(s)[0];
@@ -422,7 +424,7 @@
 		  document.getElementById('status').innerHTML =
 		    'Thanks for logging in, ' + response.name + '!';
 		});
-	}
+	};
 
 	function getUserLikes() {
 		FB.api('/me/likes/164602346987323', function(response) {
@@ -431,7 +433,7 @@
 		  	$("#fb-like-container").data("liked", "1");
 		  }
 		});
-	}
+	};
 </script>
 
 <script type="text/javascript">

@@ -23,7 +23,7 @@
 			
 			Helper::sendEmail($member);
 			
-			header('Location:http://www.vit.sg/c/free-surbex/success.php', 301);
+			header('Location:http://www.vitamin.sg/c/free-surbex/success.php', 301);
 			exit();
 		}	
 	}

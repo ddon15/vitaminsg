@@ -444,13 +444,15 @@
 			FB.api('/me/likes/164602346987323', function(response) {
 				console.log(response.data);
 				if (response.data && isShared) {
-					thisForm.submit();
+					return true;
 				} else {
 					alert('Help your friends get a free bottle too! Please like our page and share this giveaway with your friends via Facebook or email to proceed. Thank you.');
 					return false;
 				}
 			});
-		
+			
+			thisForm.submit();
+
 			e.preventDefault();
 		});
 

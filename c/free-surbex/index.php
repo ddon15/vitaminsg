@@ -228,9 +228,9 @@
 								</div> -->
 								<div class = "row social-media">
 								   <div class = "col-sm-8 col-md-4" id="fb-like-container" data-liked="0">
-								      <a href = "#" class = "thumbnail" id="fb-like" style="/*padding: 17px 51px;*/">
-								         <img src = "like-us-on-facebook.png" alt = "Like Us on Facebook">
-								      <!-- 	<div class="fb-like" data-href="https://www.facebook.com/vitaminsg/" data-width="1" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div> -->
+								      <a href = "#" class = "thumbnail" id="fb-like" style="padding: 17px 51px;">
+								        <!-- <img src = "like-us-on-facebook.png" alt = "Like Us on Facebook"> -->
+								      	<div class="fb-like" data-href="https://www.facebook.com/vitaminsg/" data-width="1" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
 								      </a>
 								   </div>
 								   
@@ -436,23 +436,21 @@
 
 <script type="text/javascript">
 	$(document).ready(function(e) {
+		var isShared = 0;
+
 		$('#form-reg').on('submit', function(e) {
+			var thisForm = $(this);
 
-			var isSharedToFb = $('#fb-shared-container').data('shared');
-			var isEmailed = $('#myModal').data('emailed');
-			var isShared = isSharedToFb || isEmailed;
-			var userLikedThePage = $('#fb-like-container').data('liked');
-
-			console.log('isShared:', isShared);
-			console.log('userLikedThePage:', userLikedThePage);
-
-			if (!userLikedThePage || !isShared) {
-				alert('Help your friends get a free bottle too! Please like our page and share this giveaway with your friends via Facebook or email to proceed. Thank you.');
-				return false;
-			}
-
-			$(this).submit();
-
+			FB.api('/me/likes/164602346987323', function(response) {
+				console.log(response.data);
+				if (response.data && isShared) {
+					thisForm.submit();
+				} else {
+					alert('Help your friends get a free bottle too! Please like our page and share this giveaway with your friends via Facebook or email to proceed. Thank you.');
+					return false;
+				}
+			});
+		
 			e.preventDefault();
 		});
 
@@ -470,6 +468,7 @@
 			function(response) {
 			 	if (response && response.post_id) {
 			  		$("#fb-shared-container").data("shared", "1");
+			  		isShared = 1;
 			   		console.log('Post was published');
 			  } else {
 			  		console.log('Post was not published');
@@ -505,6 +504,7 @@
 				dataType: 'json',
 				success: function(response) {
 					if (response.success) {
+						isShared = 1;
 						setTimeout(function() {
 					       elem.button('reset');
 					       $('select#tg').tagsinput('removeAll');
@@ -519,25 +519,25 @@
 			});
 		});
 
-		$('a#fb-like').on('click', function(e) {
-			e.preventDefault();
-			FB.login(function(response) {
-				FB.api(
-				    "/164602346987323/likes",
-				    "POST",
-				    function (response) {
-						console.log(response);
-						if (response && !response.error) {
-							/* handle the result */
-							$('#fb-like-container').data('liked', '1');
-						}
-				    }
-				);
-			}, {
-			    scope: 'publish_actions, publish_pages', 
-			    return_scopes: true
-			});
-		});
+		// $('a#fb-like').on('click', function(e) {
+		// 	e.preventDefault();
+		// 	FB.login(function(response) {
+		// 		FB.api(
+		// 		    "/164602346987323/likes",
+		// 		    "POST",
+		// 		    function (response) {
+		// 				console.log(response);
+		// 				if (response && !response.error) {
+		// 					/* handle the result */
+		// 					$('#fb-like-container').data('liked', '1');
+		// 				}
+		// 		    }
+		// 		);
+		// 	}, {
+		// 	    scope: 'publish_actions, publish_pages', 
+		// 	    return_scopes: true
+		// 	});
+		// });
 	});
 </script>
 </body>

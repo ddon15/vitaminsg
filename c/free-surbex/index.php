@@ -423,7 +423,7 @@
 		});
 
 		FB.api('/me/likes/164602346987323', function(response) {
-		  console.log(response.data);
+		  console.log("vitsgpage:", response.data);
 		  if (response.data) {
 		  	$("#fb-like-container").data("liked", "1");
 		  }
@@ -472,7 +472,7 @@
 			  		console.log('Post was not published');
 			  }
 			});
-			
+
 			e.preventDefault();
 		});
 

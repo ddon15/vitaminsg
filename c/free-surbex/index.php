@@ -229,8 +229,8 @@
 								<div class = "row social-media">
 								   <div class = "col-sm-8 col-md-4" id="fb-like-container" data-liked="0">
 								      <a href = "#" class = "thumbnail" id="fb-like" style="padding: 17px 51px;">
-								         <!-- <img src = "like-us-on-facebook.png" alt = "Like Us on Facebook"> -->
-								      	<div class="fb-like" data-href="https://www.facebook.com/vitaminsg/" data-width="1" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
+								         <img src = "like-us-on-facebook.png" alt = "Like Us on Facebook">
+								      	<!-- <div class="fb-like" data-href="https://www.facebook.com/vitaminsg/" data-width="1" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div> -->
 								      </a>
 								   </div>
 								   
@@ -359,6 +359,7 @@
 		if (response.status === 'connected') {
 		  // Logged into your app and Facebook.
 		  testAPI();
+		  getUserLikes();
 		} else if (response.status === 'not_authorized') {
 		 	// The person is logged into Facebook, but not your app.
 		 	console.log('Not Authorized');
@@ -403,8 +404,6 @@
 		statusChangeCallback(response);
 	});
 
-	};
-
 	// Load the SDK asynchronously
 	(function(d, s, id) {
 	var js, fjs = d.getElementsByTagName(s)[0];
@@ -420,10 +419,14 @@
 		console.log('Welcome!  Fetching your information.... ');
 		FB.api('/me', function(response) {
 		  console.log('Successful login for: ' + response.name);
+		  document.getElementById('status').innerHTML =
+		    'Thanks for logging in, ' + response.name + '!';
 		});
+	}
 
+	function getUserLikes() {
 		FB.api('/me/likes/164602346987323', function(response) {
-		  console.log("vitsgpage:", response.data);
+		  console.log(response.data);
 		  if (response.data) {
 		  	$("#fb-like-container").data("liked", "1");
 		  }
@@ -472,6 +475,172 @@
 			  		console.log('Post was not published');
 			  }
 			});
+			e.preventDefault();
+		});
+
+		$('select#tg').tagsinput({
+		  allowDuplicates: false
+		});
+
+		$('#btn-send').on('click', function(e) {
+			var emails = $('select#tg').val();
+			var elem = $(this);
+			var senderEmail = $('#memail').val();
+			var senderName = $('#mname').val();
+
+
+			if (!senderEmail) {
+				alert('You have not yet provided your email address.');
+				$('.bs-example-modal-sm').modal('hide');
+				return;
+			}
+
+			elem.button('loading');
+
+			$.ajax({
+				url: 'sendemail.php',
+				type: 'post',
+				data: {emails: emails, sender_email:senderEmail, sender_name: senderName },
+				async: false,
+				dataType: 'json',
+				success: function(response) {
+					if (response.success) {
+						setTimeout(function() {
+					       elem.button('reset');
+					       $('select#tg').tagsinput('removeAll');
+					       alert('You have successfully shared this free offer to your friends.');
+					       $('.bs-example-modal-sm').modal('hide');
+					       $("#myModal").data("emailed", "1");
+					   	}, 3000);
+					} else {
+						console.log(response.message);
+					}
+				}
+			});
+		});
+
+		$('a#fb-like').on('click', function(e) {
+			e.preventDefault();
+			FB.login(function(response) {
+			  console.log(response);
+			}, {
+			    scope: 'publish_actions', 
+			    return_scopes: true
+			});
+		});
+	});
+</script>
+<!-- <div id="fb-root"></div>
+<script>
+	window.fbAsyncInit = function() {
+		FB.init({
+			appId      : '648956708589658', // App ID
+			status     : true, // check login status
+			cookie     : true, // enable cookies to allow the server to access the session
+			xfbml      : true  // parse XFBML
+		});
+
+		FB.Event.subscribe('auth.authResponseChange', function(response) {
+			console.log(response);
+			if (response.status === 'connected') {
+				console.log('connected');
+				testAPI();
+			} else if (response.status === 'not_authorized') {
+				console.log('not authorized');
+				fbLogin();
+			} else {
+				console.log('not login');
+				fbLogin();
+			}
+		})
+
+		var page_like_or_unlike_callback = function(url, html_element) {
+		  console.log("page_like_or_unlike_callback");
+		  console.log(url);
+		  console.log(html_element);
+		}
+
+		// In your onload handler
+		FB.Event.subscribe('edge.create', page_like_or_unlike_callback);
+	};
+
+	// Load the SDK asynchronously
+	(function(d) {
+	 var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+	 if (d.getElementById(id)) {return;}
+	 js = d.createElement('script'); js.id = id; js.async = true;
+	 js.src = "//connect.facebook.net/en_US/all.js";
+	 ref.parentNode.insertBefore(js, ref);
+	}(document));
+
+	function testAPI() {
+	  FB.api('/me', function(response) {
+	    console.log('Current Fb Login User, ' + response.name + '.');
+	  });
+	  FB.api('/me/likes/164602346987323', function(response) {
+	    console.log(response.data);
+	    if (response.data) {
+	    	$("#fb-like-container").data("liked", "1");
+	    }
+	  });
+	}
+
+	function fbLogin() {
+		FB.login(function(response) {
+		  if (response.authResponse) {
+		      FB.api('/me/likes/164602346987323', function(response) {
+			    console.log(response.data);
+			    if (response.data) {
+			    	$("#fb-like-container").data("liked", "1");
+			    }
+			  });
+		     } else {
+		     	$("#fb-like-container").data("liked", "0");
+		      	console.log('User cancelled login or did not fully authorize.');
+		     }
+		}, {scope: 'email, user_likes'});
+	}
+
+	document.getElementById('share-btn').onclick = function(e) {
+		FB.ui(
+		{
+		  method: 'feed',
+		  name: 'Offer',
+		  link: 'https://www.vitamin.sg/c/free-surbex',
+		  href: 'https://www.facebook.com/vitaminsg/posts/1010990432348506',
+		  // picture: 'http://fbrell.com/f8.jpg',
+		  // caption: 'Reference Documentation',
+		  // description: 'Dialogs provide a simple, consistent interface for applications to interface with users.'
+		},
+		function(response) {
+		 	if (response && response.post_id) {
+		  		$("#fb-shared-container").data("shared", "1");
+		   		console.log('Post was published');
+		  } else {
+		  		console.log('Post was not published');
+		  }
+		});
+
+		e.preventDefault();
+	}
+
+	$(document).ready(function(e) {
+		$('#form-reg').on('submit', function(e) {
+
+			var isSharedToFb = $('#fb-shared-container').data('shared');
+			var isEmailed = $('#myModal').data('emailed');
+			var isShared = isSharedToFb || isEmailed;
+			var userLikedThePage = $('#fb-like-container').data('liked');
+
+			console.log('isShared:', isShared);
+			console.log('userLikedThePage:', userLikedThePage);
+
+			if (!userLikedThePage || !isShared) {
+				alert('Help your friends get a free bottle too! Please like our page and share this giveaway with your friends via Facebook or email to proceed. Thank you.');
+				return false;
+			}
+
+			$(this).submit();
 
 			e.preventDefault();
 		});
@@ -517,6 +686,6 @@
 			});
 		});
 	});
-</script>
+</script> -->
 </body>
 </html>
